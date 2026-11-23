@@ -32,12 +32,12 @@ def add_indicators(frame: pd.DataFrame, config: dict) -> pd.DataFrame:
     )
     w = int(config["walking_window"])
     required_w = int(config["walking_required_bars"])
-    df["WALKING"] = df["WALKING_BAR"].rolling(w, min_periods=w).sum().ge(required_w).fillna(False)
+    df["WALKING_COUNT_3"] = df["WALKING_BAR"].rolling(w, min_periods=w).sum()\n    df["WALKING"] = df["WALKING_COUNT_3"].ge(required_w).fillna(False)
     df["DONCHIAN_BREAKOUT"] = (df["Close"] > df["DONCHIAN20_UPPER"]).fillna(False)
     df["ENTRY_SIGNAL"] = df["DONCHIAN_BREAKOUT"] & df["WALKING"] & df["ATR14"].notna() & (df["ATR14"] > 0)
     return df
 
 def entry_reason(row) -> str:
     return (f"Close {row.Close:.4f} sopra Donchian20 {row.DONCHIAN20_UPPER:.4f}; "
-            f"Walking attivo ({int(row.WALKING_BAR)} barra Walking oggi; conferma 2 su 3); "
+            f"Walking attivo ({int(row.WALKING_COUNT_3)}/3 ultime sedute); "
             f"ATR14 {row.ATR14:.4f}.")
