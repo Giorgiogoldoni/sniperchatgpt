@@ -80,7 +80,7 @@ def process_bar(state, symbol, instrument, date, row, config):
             "signal_date":date,"close":round(float(row.Close),8),
             "donchian20":round(float(row.DONCHIAN20_UPPER),8),
             "walking":bool(row.WALKING),"atr14":round(float(row.ATR14),8),
-            "stop_reference":round(float(row.Close)-float(config["atr_stop_multiple"])*float(row.ATR14),8),
+            "stop_reference_close_estimate":round(float(row.Close)-float(config["atr_stop_multiple"])*float(row.ATR14),8),
             "action":"BUY_PAPER_NEXT_OPEN","reason":entry_reason(row)
         })
 
