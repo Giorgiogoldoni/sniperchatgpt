@@ -13,7 +13,6 @@ on:
       - 'requirements.txt'
       - '.github/workflows/paper.yml'
   workflow_dispatch:
-  schedule:
 
 concurrency:
   group: sniperchatgpt-paper-${{ github.ref }}
