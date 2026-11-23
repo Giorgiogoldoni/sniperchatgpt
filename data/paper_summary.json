@@ -1,7 +1,7 @@
 {
   "paper_only": true,
-  "positions_open": 0,
-  "pending_entries": 27,
+  "positions_open": 8,
+  "pending_entries": 19,
   "pending_exits": 0,
   "closed_trades": 0,
   "signals_total": 27,
@@ -358,6 +358,95 @@
       "reason": "Close 5.5600 sopra Donchian20 5.3860; Walking attivo (1 barra Walking oggi; conferma 2 su 3); ATR14 0.0837."
     }
   ],
-  "open_positions": {},
-  "updated_at_utc": "2026-11-23T08:14:00.938919+00:00"
+  "open_positions": {
+    "3SNI.MI": {
+      "name": "GraniteShares 3x Short NIO Daily Etp",
+      "category": "LEVA_SHORT",
+      "signal_date": "2026-11-20",
+      "entry_date": "2026-11-23",
+      "entry_price": 3.2044999599456787,
+      "initial_atr": 0.17904933608340337,
+      "stop_price": 2.846401287778872,
+      "holding_sessions": 1,
+      "walking_false_streak": 0
+    },
+    "LVO.MI": {
+      "name": "Amundi S&P 500 VIX Futures Enhanced Roll UCITS ETF Acc",
+      "category": "MATERIE_PRIME_1X",
+      "signal_date": "2026-11-20",
+      "entry_date": "2026-11-23",
+      "entry_price": 0.7353000044822693,
+      "initial_atr": 0.0249450257464385,
+      "stop_price": 0.6854099529893923,
+      "holding_sessions": 1,
+      "walking_false_streak": 0
+    },
+    "SBUL.MI": {
+      "name": "WisdomTree Gold 1x Daily Short",
+      "category": "MATERIE_PRIME_SHORT",
+      "signal_date": "2026-11-20",
+      "entry_date": "2026-11-23",
+      "entry_price": 8.644000053405762,
+      "initial_atr": 0.16755277993670542,
+      "stop_price": 8.308894493532351,
+      "holding_sessions": 1,
+      "walking_false_streak": 0
+    },
+    "SNV3.MI": {
+      "name": "Leverage Shares -3x Short NVIDIA Etp Securities",
+      "category": "LEVA_SHORT",
+      "signal_date": "2026-11-20",
+      "entry_date": "2026-11-23",
+      "entry_price": 2.939500093460083,
+      "initial_atr": 0.28578601824695576,
+      "stop_price": 2.3679280569661714,
+      "holding_sessions": 1,
+      "walking_false_streak": 1
+    },
+    "SOXS.MI": {
+      "name": "Leverage Shares -4x Short Semiconductors Etp",
+      "category": "LEVA_SHORT",
+      "signal_date": "2026-11-20",
+      "entry_date": "2026-11-23",
+      "entry_price": 25.020000457763672,
+      "initial_atr": 3.694998363803368,
+      "stop_price": 17.630003730156936,
+      "holding_sessions": 1,
+      "walking_false_streak": 0
+    },
+    "SSIL.MI": {
+      "name": "WisdomTree Silver Short",
+      "category": "MATERIE_PRIME_SHORT",
+      "signal_date": "2026-11-20",
+      "entry_date": "2026-11-23",
+      "entry_price": 2.7320001125335693,
+      "initial_atr": 0.0799729824778818,
+      "stop_price": 2.5720541475778056,
+      "holding_sessions": 1,
+      "walking_false_streak": 0
+    },
+    "VIXL.MI": {
+      "name": "WisdomTree S&P 500 VIX Short-Term Futures 2.25x Daily Leveraged",
+      "category": "LEVA_SHORT",
+      "signal_date": "2026-11-20",
+      "entry_date": "2026-11-23",
+      "entry_price": 1.0149999856948853,
+      "initial_atr": 0.10813330736103212,
+      "stop_price": 0.798733370972821,
+      "holding_sessions": 1,
+      "walking_false_streak": 0
+    },
+    "XSPS.MI": {
+      "name": "Xtrackers S&P500 Short",
+      "category": "LEVA_SHORT",
+      "signal_date": "2026-11-20",
+      "entry_date": "2026-11-23",
+      "entry_price": 5.5320000648498535,
+      "initial_atr": 0.08374764846311568,
+      "stop_price": 5.364504767923622,
+      "holding_sessions": 1,
+      "walking_false_streak": 0
+    }
+  },
+  "updated_at_utc": "2026-11-23T08:19:46.078338+00:00"
 }

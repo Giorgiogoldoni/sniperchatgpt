@@ -1,0 +1,213 @@
+{
+  "paper_only": true,
+  "run_at_utc": "2026-11-23T08:19:46.078338+00:00",
+  "universe_total": 311,
+  "status_counts": {
+    "OK": 284,
+    "SKIPPED": 27
+  },
+  "by_category": {
+    "UNKNOWN": {
+      "universe": 0,
+      "ok": 0,
+      "skipped": 0,
+      "errors": 0,
+      "new_signals": 0
+    }
+  },
+  "signals_pending": [
+    "1MCS.L",
+    "1PAS.MI",
+    "2UKS.L",
+    "3EMS.MI",
+    "3GOS.MI",
+    "3HCS.MI",
+    "3M7S.MI",
+    "3SIS.MI",
+    "3SMI.MI",
+    "3SNF.MI",
+    "3SNV.MI",
+    "3UKS.L",
+    "3USS.MI",
+    "5USS.MI",
+    "EUJP.MI",
+    "MAGS.MI",
+    "SCOP.MI",
+    "SMST.MI",
+    "SUK1.L"
+  ],
+  "open_positions": [
+    "3SNI.MI",
+    "LVO.MI",
+    "SBUL.MI",
+    "SNV3.MI",
+    "SOXS.MI",
+    "SSIL.MI",
+    "VIXL.MI",
+    "XSPS.MI"
+  ],
+  "skipped_or_errors": [
+    {
+      "symbol": "2BUL.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_LONG"
+    },
+    {
+      "symbol": "2GOL.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "MATERIE_PRIME_LEVA"
+    },
+    {
+      "symbol": "2QQL.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_LONG"
+    },
+    {
+      "symbol": "3DAL.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_LONG"
+    },
+    {
+      "symbol": "3LAD.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_LONG"
+    },
+    {
+      "symbol": "3LBA.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_LONG"
+    },
+    {
+      "symbol": "3LGO.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_LONG"
+    },
+    {
+      "symbol": "3LJP.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_LONG"
+    },
+    {
+      "symbol": "3LMS.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 1 barre",
+      "category": "LEVA_LONG"
+    },
+    {
+      "symbol": "3LMT.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_LONG"
+    },
+    {
+      "symbol": "3LNF.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 1 barre",
+      "category": "LEVA_LONG"
+    },
+    {
+      "symbol": "3OIS.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 1 barre",
+      "category": "MATERIE_PRIME_SHORT"
+    },
+    {
+      "symbol": "3SAM.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_SHORT"
+    },
+    {
+      "symbol": "3SGO.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_SHORT"
+    },
+    {
+      "symbol": "3SML.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_SHORT"
+    },
+    {
+      "symbol": "3SMS.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 1 barre",
+      "category": "LEVA_SHORT"
+    },
+    {
+      "symbol": "3SMT.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_SHORT"
+    },
+    {
+      "symbol": "BCOM.DE",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "MATERIE_PRIME_1X"
+    },
+    {
+      "symbol": "DX3L.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_LONG"
+    },
+    {
+      "symbol": "DX3S.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_SHORT"
+    },
+    {
+      "symbol": "ESXS.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_SHORT"
+    },
+    {
+      "symbol": "QQQ3S.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_SHORT"
+    },
+    {
+      "symbol": "SCRU.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "MATERIE_PRIME_SHORT"
+    },
+    {
+      "symbol": "SDS.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_SHORT"
+    },
+    {
+      "symbol": "SGOL.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "MATERIE_PRIME_SHORT"
+    },
+    {
+      "symbol": "TECL.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_LONG"
+    },
+    {
+      "symbol": "XSND.MI",
+      "status": "SKIPPED",
+      "reason": "storico insufficiente: 0 barre",
+      "category": "LEVA_SHORT"
+    }
+  ]
+}
