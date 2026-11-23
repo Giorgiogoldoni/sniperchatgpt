@@ -28,6 +28,33 @@ class StrategyTests(unittest.TestCase):
         process_bar(s,"T",inst,"2026-01-05",row(102,101,103,False),CFG)
         self.assertEqual(s["positions"]["T"]["entry_price"],102)
 
+    def test_walking_exit_after_two_false_closes(self):
+        s=blank_state(); inst={"classification":"MATERIE_PRIME_LEVA","name":"Commodity"}
+        row=lambda op,lo,cl,signal=False,walk=True,atr=1: type("Bar",(),{
+            "Open":op,"Low":lo,"Close":cl,"ENTRY_SIGNAL":signal,"ATR14":atr,
+            "WALKING":walk,"DONCHIAN20_UPPER":cl-0.1,"WALKING_BAR":True,
+            "WALKING_COUNT_3":2})()
+        process_bar(s,"C",inst,"2026-01-02",row(50,49,50,True,True),CFG)
+        process_bar(s,"C",inst,"2026-01-05",row(51,50,52,False,True),CFG)
+        process_bar(s,"C",inst,"2026-01-06",row(52,51,53,False,False),CFG)
+        self.assertNotIn("C",s["pending_exits"])
+        process_bar(s,"C",inst,"2026-01-07",row(53,52,52.5,False,False),CFG)
+        self.assertEqual(s["pending_exits"]["C"],"WALKING_FALSE_2_CLOSES")
+        process_bar(s,"C",inst,"2026-01-08",row(50,49,50,False,True),CFG)
+        self.assertEqual(s["trades"][0]["exit_price"],50)
+
+    def test_max_ten_sessions(self):
+        s=blank_state(); inst={"classification":"LEVA_LONG","name":"Leveraged long"}
+        row=lambda op,lo,cl,signal=False: type("Bar",(),{
+            "Open":op,"Low":lo,"Close":cl,"ENTRY_SIGNAL":signal,"ATR14":1,
+            "WALKING":True,"DONCHIAN20_UPPER":cl-0.1,"WALKING_BAR":True,
+            "WALKING_COUNT_3":2})()
+        process_bar(s,"L",inst,"2026-01-02",row(100,99,100,True),CFG)
+        for day in range(5,15):
+            process_bar(s,"L",inst,f"2026-01-{day:02d}",row(100,99,101),CFG)
+        self.assertEqual(s["trades"][0]["exit_reason"],"MAX_10_SESSIONS")
+        self.assertEqual(s["trades"][0]["holding_sessions"],10)
+
     def test_atr_stop(self):
         s=blank_state(); inst={"classification":"LEVA_SHORT","name":"Inverse"}
         row=lambda op,lo,cl,signal,atr=1,walk=True: type("Bar",(),{
