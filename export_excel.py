@@ -12,14 +12,14 @@ wb=Workbook(); ws=wb.active; ws.title="Sintesi"
 for row in [
 ["SNIPERCHATGPT — BACKTEST STORICO"],["Generato UTC",summary["generated_utc"]],
 ["Universo",summary["universe_total"]],["Dati utilizzabili",summary["data_ok"]],
-["Esclusi",summary["skipped"]],["Errori",summary["errors"]],
+["Esclusi",summary["skipped"]],["Prezzi sospetti",summary.get("suspicious",0)],["Errori",summary["errors"]],
 ["Operazioni simulate",summary["trades_total"]],["Metodo",summary["method"]],[],
-["Categoria","Universo","Dati OK","Esclusi","Errori","Trade","Win rate %","Media netta %","Profit factor","Max drawdown %"]
+["Categoria","Universo","Dati OK","Esclusi","Errori","Trade","Win rate %","Media netta %","Profit factor","Drawdown medio strumenti %"]
 ]: ws.append(row)
 for x in summary["families"]:
     k="net_30bps_pct"
     ws.append([x["category"],x["universe"],x["data_ok"],x["skipped"],x["errors"],x.get(k+"_trades",0),
-               x.get(k+"_win_rate_pct",0),x.get(k+"_avg_net_pct",0),x.get(k+"_profit_factor",0),x.get(k+"_max_drawdown_pct",0)])
+               x.get(k+"_win_rate_pct",0),x.get(k+"_avg_net_pct",0),x.get(k+"_profit_factor",0),x.get(k+"_avg_instrument_drawdown_pct",0)])
 def add_frame(name,path):
     if path.exists():
         frame=pd.read_csv(path).fillna(""); sh=wb.create_sheet(name); sh.append(list(frame.columns))
