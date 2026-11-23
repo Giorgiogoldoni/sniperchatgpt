@@ -1,63 +1,87 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SniperChatGPT — Dashboard</title>
+<title>SNIPERCHATGPT — Trader Dashboard</title>
 <style>
-:root{color-scheme:dark;--bg:#0b1220;--panel:#131f32;--line:#26364d;--muted:#9aabc1;--txt:#edf3fb;--accent:#6eb6ff}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
-header{padding:26px max(18px,calc((100% - 1200px)/2));background:#101c2d;border-bottom:1px solid var(--line)}
-h1{margin:0;font-size:25px}header p{color:var(--muted);margin:5px 0}
-main{max-width:1200px;margin:auto;padding:20px 16px 50px}.status{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
-.pill{border:1px solid var(--line);border-radius:20px;padding:5px 10px;color:#b9d9ff;font-size:12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px;min-width:0}
-.k{color:var(--muted);font-size:12px}.v{font-size:25px;font-weight:700;margin-top:3px;overflow-wrap:anywhere}
-h2{font-size:18px;margin:26px 0 10px}.note{color:var(--muted);font-size:13px}
+:root{color-scheme:dark;--bg:#08111f;--panel:#111e30;--panel2:#17283e;--line:#293d56;--muted:#93a8c2;--txt:#edf4ff;--blue:#69b7ff;--green:#42d6a0;--red:#ff7185;--amber:#f5c66a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:22px max(16px,calc((100% - 1440px)/2));background:#0d1a2b;border-bottom:1px solid var(--line)}
+h1{font-size:24px;margin:0;letter-spacing:.5px}header p{color:var(--muted);margin:4px 0}
+main{max-width:1440px;margin:auto;padding:18px 16px 50px}.topline,.toolbar,.rowline{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.pill{border:1px solid var(--line);border-radius:20px;padding:4px 10px;color:#b9d9ff;font-size:11px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px;min-width:0}
+.k{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.5px}.v{font-size:23px;font-weight:750;margin-top:3px;overflow-wrap:anywhere}
+h2{font-size:17px;margin:25px 0 9px}.sub{color:var(--muted);font-size:12px}
+.toolbar{margin:12px 0}input,select,button{font:inherit;color:var(--txt);background:#14243a;border:1px solid var(--line);border-radius:8px;padding:9px 11px}
+input{min-width:180px;flex:1}button{cursor:pointer}button:hover{border-color:var(--blue);color:white}
 .tablewrap{overflow:auto;border:1px solid var(--line);border-radius:10px}
-table{border-collapse:collapse;width:100%;min-width:720px;background:var(--panel)}
-th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);font-size:13px}
-th{color:#bcd5f1;background:#192940;position:sticky;top:0}select{background:#17263b;color:var(--txt);border:1px solid var(--line);padding:9px;border-radius:8px}
-a{color:var(--accent)}.links{display:flex;gap:16px;flex-wrap:wrap;margin:16px 0}
-footer{margin-top:30px;color:var(--muted);font-size:12px}
+table{border-collapse:collapse;width:100%;min-width:850px;background:var(--panel)}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);font-size:12px;white-space:nowrap}
+th{color:#bcd5f1;background:#192b43;position:sticky;top:0;z-index:1}
+.ticker{border:0;background:transparent;color:var(--blue);padding:2px 0;font-weight:750;text-decoration:underline;text-underline-offset:3px}
+.good{color:var(--green)}.bad{color:var(--red)}.warn{color:var(--amber)}
+#detail{scroll-margin-top:12px;margin-top:18px}.detailhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+#chartbox{height:510px;width:100%;background:#0b1727;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+#chartbox iframe{width:100%;height:100%;border:0}
+.detailgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:9px;margin:12px 0}
+canvas{width:100%;height:250px;display:block}
+.chartpanel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px;min-width:0}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.links{display:flex;gap:15px;flex-wrap:wrap;margin:16px 0}a{color:var(--blue)}
+.hidden{display:none!important}.empty{padding:18px;color:var(--muted)}
+footer{margin-top:28px;color:var(--muted);font-size:11px}
+@media(max-width:760px){main{padding:12px 10px 36px}header{padding:17px 12px}h1{font-size:21px}#chartbox{height:410px}.twocol{grid-template-columns:1fr}.v{font-size:20px}}
 </style></head><body>
-<header><h1>SNIPERCHATGPT</h1><p>Motore indipendente ETF/ETP leva long, leva short e materie prime</p>
-<div class="status"><span class="pill">PAPER ONLY</span><span class="pill">Backtest in validazione</span><span class="pill">Nessun ordine reale</span></div></header>
-<main><div class="grid" id="cards"><div class="card">Caricamento dati…</div></div>
-<h2>Risultati per famiglia</h2><p class="note">Scenario di costo centrale: 30 basis point round trip. Dati storici aggiustati; i risultati passati non predicono rendimenti futuri.</p>
-<div class="tablewrap"><table id="families"><thead><tr><th>Famiglia</th><th>Universo</th><th>Dati OK</th><th>Trade</th><th>Win rate</th><th>Media netta</th><th>Profit factor</th><th>Drawdown medio strumenti</th></tr></thead><tbody></tbody></table></div>
-<h2>Dettaglio strumenti</h2><p><select id="filter"><option value="">Tutte le famiglie</option></select></p>
-<div class="tablewrap"><table id="instruments"><thead><tr><th>Ticker</th><th>Famiglia</th><th>Dati</th><th>Barre</th><th>Trade</th><th>Win rate</th><th>Media netta</th><th>Motivo esclusione</th></tr></thead><tbody></tbody></table></div>
+<header><h1>SNIPERCHATGPT <span style="color:var(--blue)">/ TRADER DESK</span></h1>
+<p>Selezione strumenti · analisi grafica · statistiche strategia Donchian 20 + Walking</p>
+<div class="topline"><span class="pill">PAPER ONLY</span><span class="pill">NESSUN ORDINE REALE</span><span class="pill">BACKTEST IN VALIDAZIONE</span></div></header>
+<main>
+<div class="grid" id="cards"><div class="card">Caricamento report…</div></div>
+<h2>Universo strumenti</h2>
+<div class="toolbar"><input id="search" placeholder="Cerca ticker o nome strumento…" autocomplete="off">
+<select id="filter"><option value="">Tutte le famiglie</option></select>
+<select id="statusFilter"><option value="">Tutti gli stati</option><option>OK</option><option>SUSPICIOUS</option><option>SKIPPED</option></select>
+<span class="sub" id="count"></span></div>
+<div class="tablewrap"><table id="instruments"><thead><tr><th>Ticker ↗</th><th>Famiglia</th><th>Stato dati</th><th>Barre</th><th>Trade</th><th>Win rate</th><th>Media netta</th><th>Profit factor</th><th>Drawdown max</th></tr></thead><tbody></tbody></table></div>
+<section id="detail" class="hidden">
+<div class="detailhead"><div><div class="k">SCHEDA STRUMENTO SELEZIONATO</div><h2 id="detailTitle" style="margin:3px 0">—</h2><div class="sub" id="detailMeta"></div></div><div class="toolbar"><select id="interval"><option value="D">Giornaliero</option><option value="W">Settimanale</option><option value="M">Mensile</option></select><button id="openTv">Apri su TradingView ↗</button></div></div>
+<div class="detailgrid" id="detailStats"></div>
+<h2>Grafico di mercato</h2><div id="chartbox"><div class="empty">Seleziona un ticker per caricare il grafico.</div></div>
+<p class="sub">Grafico interattivo TradingView. La disponibilità del simbolo e i dati dipendono dal mercato coperto da TradingView; non sono i dati OHLC usati dal backtest.</p>
+<div class="twocol">
+<div class="chartpanel"><h2 style="margin:0 0 8px">Performance operazioni simulate</h2><canvas id="equityChart" width="900" height="260"></canvas><div class="sub">Curva cumulata teorica delle operazioni chiuse, con costi round trip di 30 bps; non è un portafoglio composto.</div></div>
+<div class="chartpanel"><h2 style="margin:0 0 8px">Rendimento per operazione</h2><canvas id="tradeChart" width="900" height="260"></canvas><div class="sub">Rendimento netto per singola operazione in ordine cronologico.</div></div>
+</div>
+<h2>Storico operazioni</h2><div class="tablewrap"><table id="trades"><thead><tr><th>Segnale</th><th>Ingresso</th><th>Prezzo entrata</th><th>Uscita</th><th>Prezzo uscita</th><th>Giorni</th><th>Motivo uscita</th><th>Rendimento netto</th></tr></thead><tbody></tbody></table></div>
+</section>
+<h2>Risultati per famiglia</h2><p class="sub">Scenario centrale: costi teorici 30 bps round trip. Statistiche per operazione e per strumento, non portafoglio.</p>
+<div class="tablewrap"><table id="families"><thead><tr><th>Famiglia</th><th>Universo</th><th>Dati OK</th><th>Operazioni</th><th>Win rate</th><th>Media netta</th><th>Profit factor</th><th>DD medio strumenti</th></tr></thead><tbody></tbody></table></div>
 <div class="links"><a href="reports/sniperchatgpt_backtest.xlsx">Scarica Excel backtest</a><a href="reports/backtest_trades.csv">Operazioni CSV</a><a href="reports/backtest_data_audit.csv">Audit dati CSV</a><a href="README.md">Regole complete</a></div>
 <h2>Regole operative v1</h2><div class="card"><ol>
-<li>Breakout Donchian 20: chiusura sopra il massimo delle 20 sedute precedenti.</li>
+<li>Breakout Donchian 20: close sopra il massimo delle 20 sedute precedenti.</li>
 <li>Walking: almeno 2 delle ultime 3 sedute entro 1,5% dalla Bollinger superiore (20, 2), sopra la media e con banda superiore crescente.</li>
-<li>Ingresso all'apertura della seduta successiva.</li><li>Stop iniziale: ingresso meno 2 × ATR(14) del giorno del segnale.</li>
-<li>Uscita all'apertura dopo due chiusure consecutive senza Walking.</li><li>Durata massima: 10 sedute, uscita alla chiusura della decima.</li></ol>
-<p class="note">Segnali calcolati sul prezzo dell'ETP negoziato. I costi sono scenari teorici e possono non comprendere spread, slippage, fiscalità o impatto di mercato.</p></div>
-<footer id="stamp">Report non ancora disponibile. Avviare il workflow Backtest su GitHub Actions.</footer></main>
+<li>Ingresso all'apertura della seduta successiva; stop iniziale 2 × ATR(14) del giorno del segnale.</li>
+<li>Uscita all'apertura dopo 2 chiusure consecutive senza Walking; durata massima 10 sedute.</li></ol>
+<p class="sub">PAPER ONLY. I grafici TradingView sono indipendenti dai prezzi storici utilizzati nel backtest. Risultati passati non predicono rendimenti futuri.</p></div>
+<footer id="stamp">In attesa dei report automatici.</footer>
+</main>
 <script>
-var DATA=null;
-function fmt(x,d){if(x===undefined||x===null||x==="")return "—";return Number(x).toFixed(d===undefined?2:d)}
-function cell(x){return x===undefined||x===null?"—":x}
-async function load(){
- try{
- var r=await fetch("reports/backtest_summary.json?ts="+Date.now());if(!r.ok)throw Error("backtest non ancora generato");
- DATA=await r.json();
- var c=[["Universo",DATA.universe_total],["Dati utilizzabili",DATA.data_ok],["Esclusi",DATA.skipped],["Prezzi sospetti esclusi",DATA.suspicious||0],["Errori",DATA.errors],["Operazioni storiche",DATA.trades_total]];
- document.getElementById("cards").innerHTML=c.map(function(x){return '<div class="card"><div class="k">'+x[0]+'</div><div class="v">'+x[1]+'</div></div>'}).join("");
- var fam=DATA.families||[];
- document.querySelector("#families tbody").innerHTML=fam.map(function(x){return '<tr><td>'+x.category+'</td><td>'+x.universe+'</td><td>'+x.data_ok+'</td><td>'+(x.net_30bps_pct_trades||0)+'</td><td>'+fmt(x.net_30bps_pct_win_rate_pct)+'%</td><td>'+fmt(x.net_30bps_pct_avg_net_pct)+'%</td><td>'+fmt(x.net_30bps_pct_profit_factor,3)+'</td><td>'+fmt(x.net_30bps_pct_avg_instrument_drawdown_pct)+'%</td></tr>'}).join("");
- var filter=document.getElementById("filter");
- filter.innerHTML='<option value="">Tutte le famiglie</option>'+fam.map(function(x){return '<option>'+x.category+'</option>'}).join("");
- function render(){
-  var items=DATA.instruments||[];if(filter.value)items=items.filter(function(x){return x.category===filter.value});
-  document.querySelector("#instruments tbody").innerHTML=items.map(function(x){return '<tr><td>'+cell(x.symbol)+'</td><td>'+cell(x.category)+'</td><td>'+cell(x.status)+'</td><td>'+cell(x.bars)+'</td><td>'+(x.net_30bps_pct_trades||0)+'</td><td>'+fmt(x.net_30bps_pct_win_rate_pct)+'%</td><td>'+fmt(x.net_30bps_pct_avg_net_pct)+'%</td><td>'+cell(x.reason||"")+'</td></tr>'}).join("");
- }
- filter.onchange=render;render();
- document.getElementById("stamp").textContent="Ultimo aggiornamento UTC: "+DATA.generated_utc+" — "+DATA.method;
- }catch(e){
- document.getElementById("cards").innerHTML='<div class="card">In attesa del primo backtest automatico.</div>';
- document.getElementById("stamp").textContent=e.message+" · Dashboard pronta, risultati non ancora disponibili.";
- }
-}
+var DATA=null,TRADES=[],selected=null;
+function n(v){var x=Number(v);return isFinite(x)?x:0}
+function f(v,d){return v===undefined||v===null||v===""?"—":n(v).toFixed(d===undefined?2:d)}
+function esc(s){return String(s===undefined||s===null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function parseCSV(text){var rows=[],row=[],v="",q=false;for(var i=0;i<text.length;i++){var c=text[i];if(c==='"'){if(q&&text[i+1]==='"'){v+='"';i++}else q=!q}else if(c===","&&!q){row.push(v);v=""}else if((c==="\n"||c==="\r")&&!q){if(c==="\r"&&text[i+1]==="\n")i++;row.push(v);if(row.length>1)rows.push(row);row=[];v=""}else v+=c}if(v.length||row.length){row.push(v);rows.push(row)}var h=rows.shift()||[];return rows.map(function(r){var o={};h.forEach(function(k,i){o[k]=r[i]||""});return o})}
+function familyName(s){return ({LEVA_LONG:"Leva long",LEVA_SHORT:"Leva short",MATERIE_PRIME_1X:"Materie prime 1x",MATERIE_PRIME_LEVA:"Materie prime leva",MATERIE_PRIME_SHORT:"Materie prime short"})[s]||s}
+function tradesFor(symbol){return TRADES.filter(function(t){return t.symbol===symbol}).sort(function(a,b){return a.exit_date.localeCompare(b.exit_date)})}
+function renderTable(){var q=document.getElementById("search").value.toLowerCase(),fam=document.getElementById("filter").value,st=document.getElementById("statusFilter").value;var all=DATA.instruments||[];var items=all.filter(function(x){return (!fam||x.category===fam)&&(!st||x.status===st)&&((x.symbol||"").toLowerCase().includes(q)||(x.name||"").toLowerCase().includes(q))});document.getElementById("count").textContent=items.length+" / "+all.length+" strumenti";
+document.querySelector("#instruments tbody").innerHTML=items.map(function(x){return '<tr><td><button class="ticker" data-symbol="'+esc(x.symbol)+'">'+esc(x.symbol)+'</button></td><td>'+esc(familyName(x.category))+'</td><td class="'+(x.status==="OK"?"good":x.status==="SUSPICIOUS"?"warn":"bad")+'">'+esc(x.status)+'</td><td>'+esc(x.bars||"—")+'</td><td>'+f(x.net_30bps_pct_trades,0)+'</td><td>'+f(x.net_30bps_pct_win_rate_pct)+'%</td><td class="'+(n(x.net_30bps_pct_avg_net_pct)>=0?"good":"bad")+'">'+f(x.net_30bps_pct_avg_net_pct)+'%</td><td>'+f(x.net_30bps_pct_profit_factor,3)+'</td><td>'+f(x.net_30bps_pct_max_drawdown_pct)+'%</td></tr>'}).join("");
+document.querySelectorAll(".ticker").forEach(function(b){b.addEventListener("click",function(){selectTicker(b.getAttribute("data-symbol"))})})}
+function tvSymbol(s){var p=s.split(".");if(p.length<2)return s;var ex=p.pop();return (ex==="MI"?"MIL":ex==="L"?"LSE":ex.toUpperCase())+":"+p.join(".")}
+function loadTV(symbol){var box=document.getElementById("chartbox"),tv=tvSymbol(symbol),interval=document.getElementById("interval").value;box.innerHTML="";var frame=document.createElement("iframe");frame.title="Grafico TradingView "+symbol;frame.loading="lazy";frame.allowFullscreen=true;frame.src="https://www.tradingview.com/widgetembed/?frameElementId=tv_"+encodeURIComponent(symbol)+"&symbol="+encodeURIComponent(tv)+"&interval="+interval+"&hidesidetoolbar=0&symboledit=1&saveimage=0&toolbarbg=0b1727& studies=BB%40tv-basicstudies%7CATR%40tv-basicstudies&theme=dark&style=1&timezone=Europe%2FRome&withdateranges=1&hideideas=1&locale=it";box.appendChild(frame);document.getElementById("openTv").onclick=function(){window.open("https://www.tradingview.com/chart/?symbol="+encodeURIComponent(tv),"_blank","noopener")}}
+function drawChart(canvas,values,dates,mode){var ctx=canvas.getContext("2d"),w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.strokeStyle="#293d56";ctx.fillStyle="#93a8c2";ctx.font="14px sans-serif";for(var g=0;g<4;g++){var y=20+g*(h-48)/3;ctx.beginPath();ctx.moveTo(48,y);ctx.lineTo(w-12,y);ctx.stroke()}if(!values.length){ctx.fillText("Nessuna operazione disponibile",55,100);return}var min=Math.min(0,...values),max=Math.max(0,...values);if(max===min){max+=1;min-=1}var pad=8;function yy(v){return h-28-(v-min)/(max-min)*(h-52)};ctx.fillText(max.toFixed(1)+"%",4,yy(max)+4);ctx.fillText(min.toFixed(1)+"%",4,yy(min)+4);if(mode==="line"){ctx.strokeStyle="#69b7ff";ctx.lineWidth=3;ctx.beginPath();values.forEach(function(v,i){var x=50+i*(w-70)/Math.max(1,values.length-1);if(i===0)ctx.moveTo(x,yy(v));else ctx.lineTo(x,yy(v))});ctx.stroke();ctx.fillStyle="#69b7ff";ctx.beginPath();ctx.arc(w-20,yy(values[values.length-1]),4,0,Math.PI*2);ctx.fill()}else{var bw=Math.max(3,(w-70)/values.length*.65);values.forEach(function(v,i){var x=50+i*(w-70)/values.length;ctx.fillStyle=v>=0?"#42d6a0":"#ff7185";ctx.fillRect(x,yy(Math.max(0,v)),bw,Math.max(1,Math.abs(yy(v)-yy(0))))})}ctx.fillStyle="#93a8c2";ctx.fillText(dates[0]||"",50,h-6);ctx.fillText(dates[dates.length-1]||"",w-100,h-6)}
+function selectTicker(symbol){selected=symbol;var x=(DATA.instruments||[]).find(function(a){return a.symbol===symbol})||{},ts=tradesFor(symbol);document.getElementById("detail").classList.remove("hidden");document.getElementById("detailTitle").textContent=symbol+(x.name?" — "+x.name:"");document.getElementById("detailMeta").textContent=familyName(x.category)+" · "+(x.status||"")+" · "+(x.first_date||"")+(x.last_date?" → "+x.last_date:"");var wins=ts.filter(function(t){return n(t.net_30bps_pct)>0}).length,avg=ts.length?ts.reduce(function(a,t){return a+n(t.net_30bps_pct)},0)/ts.length:0,sum=ts.reduce(function(a,t){return a+n(t.net_30bps_pct)},0);var gains=ts.filter(function(t){return n(t.net_30bps_pct)>0}).reduce(function(a,t){return a+n(t.net_30bps_pct)},0),loss=ts.filter(function(t){return n(t.net_30bps_pct)<0}).reduce(function(a,t){return a+Math.abs(n(t.net_30bps_pct))},0);var pf=loss?gains/loss:gains?999:0;
+var stats=[["Operazioni",ts.length],["Win rate",ts.length?f(wins/ts.length*100)+"%":"—"],["Media netta",ts.length?f(avg)+"%":"—"],["Rendimento cumulato",ts.length?f(sum)+"%":"—"],["Profit factor",ts.length?f(pf,2):"—"],["Drawdown max",f(x.net_30bps_pct_max_drawdown_pct)+"%"]];document.getElementById("detailStats").innerHTML=stats.map(function(a){return '<div class="card"><div class="k">'+a[0]+'</div><div class="v">'+a[1]+'</div></div>'}).join("");
+loadTV(symbol);document.getElementById("trades").querySelector("tbody").innerHTML=ts.slice().reverse().map(function(t){return "<tr><td>"+esc(t.signal_date)+"</td><td>"+esc(t.entry_date)+"</td><td>"+f(t.entry_price,4)+"</td><td>"+esc(t.exit_date)+"</td><td>"+f(t.exit_price,4)+"</td><td>"+esc(t.holding_sessions)+"</td><td>"+esc(t.exit_reason)+"</td><td class='"+(n(t.net_30bps_pct)>=0?"good":"bad")+"'>"+f(t.net_30bps_pct)+"%</td></tr>"}).join("");var cum=0,curve=[],dates=[],rets=[];ts.forEach(function(t){var v=n(t.net_30bps_pct);cum+=v;curve.push(cum);rets.push(v);dates.push(t.exit_date)});drawChart(document.getElementById("equityChart"),curve,dates,"line");drawChart(document.getElementById("tradeChart"),rets,dates,"bar");document.getElementById("detail").scrollIntoView({behavior:"smooth",block:"start"})}
+async function load(){try{var r=await fetch("reports/backtest_summary.json?ts="+Date.now());if(!r.ok)throw Error("Report non disponibile");DATA=await r.json();var tr=await fetch("reports/backtest_trades.csv?ts="+Date.now());if(tr.ok)TRADES=parseCSV(await tr.text());var cards=[["Universo",DATA.universe_total],["Dati utilizzabili",DATA.data_ok],["Esclusi",DATA.skipped],["Prezzi sospetti",DATA.suspicious||0],["Errori",DATA.errors],["Operazioni storiche",DATA.trades_total]];document.getElementById("cards").innerHTML=cards.map(function(a){return '<div class="card"><div class="k">'+a[0]+'</div><div class="v">'+a[1]+'</div></div>'}).join("");var fam=DATA.families||[];document.querySelector("#families tbody").innerHTML=fam.map(function(x){return "<tr><td>"+esc(familyName(x.category))+"</td><td>"+x.universe+"</td><td>"+x.data_ok+"</td><td>"+x.net_30bps_pct_trades+"</td><td>"+f(x.net_30bps_pct_win_rate_pct)+"%</td><td>"+f(x.net_30bps_pct_avg_net_pct)+"%</td><td>"+f(x.net_30bps_pct_profit_factor,3)+"</td><td>"+f(x.net_30bps_pct_avg_instrument_drawdown_pct)+"%</td></tr>"}).join("");document.getElementById("filter").innerHTML='<option value="">Tutte le famiglie</option>'+fam.map(function(x){return '<option value="'+esc(x.category)+'">'+esc(familyName(x.category))+'</option>'}).join("");document.getElementById("search").addEventListener("input",renderTable);document.getElementById("filter").addEventListener("change",renderTable);document.getElementById("statusFilter").addEventListener("change",renderTable);document.getElementById("interval").addEventListener("change",function(){if(selected)loadTV(selected)});renderTable();document.getElementById("stamp").textContent="Ultimo report UTC: "+DATA.generated_utc+" · "+DATA.method+" · Dati TradingView e backtest sono due fonti distinte."}catch(e){document.getElementById("cards").innerHTML='<div class="card">In attesa del report del backtest.</div>';document.getElementById("stamp").textContent=e.message}}
 load();
 </script></body></html>
