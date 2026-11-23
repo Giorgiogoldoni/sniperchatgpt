@@ -1,6 +1,16 @@
 name: SniperChatGPT PAPER Update
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'strategy.py'
+      - 'paper_engine.py'
+      - 'run.py'
+      - 'tests/**'
+      - 'config.json'
+      - 'requirements.txt'
+      - '.github/workflows/paper.yml'
   workflow_dispatch:
   schedule:
     - cron: "30 17 * * 1-5"
