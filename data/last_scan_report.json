@@ -1,18 +1,56 @@
 {
   "paper_only": true,
-  "run_at_utc": "2026-11-23T08:19:46.078338+00:00",
+  "run_at_utc": "2026-11-23T08:23:51.950555+00:00",
   "universe_total": 311,
   "status_counts": {
     "OK": 284,
     "SKIPPED": 27
   },
   "by_category": {
-    "UNKNOWN": {
-      "universe": 0,
-      "ok": 0,
-      "skipped": 0,
+    "LEVA_LONG": {
+      "universe": 73,
+      "ok": 61,
+      "skipped": 12,
       "errors": 0,
-      "new_signals": 0
+      "signals_cumulative": 0,
+      "pending_entries": 0,
+      "open_positions": 0
+    },
+    "LEVA_SHORT": {
+      "universe": 86,
+      "ok": 76,
+      "skipped": 10,
+      "errors": 0,
+      "signals_cumulative": 19,
+      "pending_entries": 19,
+      "open_positions": 0
+    },
+    "MATERIE_PRIME_1X": {
+      "universe": 108,
+      "ok": 107,
+      "skipped": 1,
+      "errors": 0,
+      "signals_cumulative": 1,
+      "pending_entries": 1,
+      "open_positions": 0
+    },
+    "MATERIE_PRIME_LEVA": {
+      "universe": 26,
+      "ok": 25,
+      "skipped": 1,
+      "errors": 0,
+      "signals_cumulative": 0,
+      "pending_entries": 0,
+      "open_positions": 0
+    },
+    "MATERIE_PRIME_SHORT": {
+      "universe": 18,
+      "ok": 15,
+      "skipped": 3,
+      "errors": 0,
+      "signals_cumulative": 7,
+      "pending_entries": 7,
+      "open_positions": 0
     }
   },
   "signals_pending": [
@@ -26,74 +64,74 @@
     "3SIS.MI",
     "3SMI.MI",
     "3SNF.MI",
+    "3SNI.MI",
     "3SNV.MI",
     "3UKS.L",
     "3USS.MI",
     "5USS.MI",
     "EUJP.MI",
+    "LVO.MI",
     "MAGS.MI",
+    "SBUL.MI",
     "SCOP.MI",
     "SMST.MI",
-    "SUK1.L"
-  ],
-  "open_positions": [
-    "3SNI.MI",
-    "LVO.MI",
-    "SBUL.MI",
     "SNV3.MI",
     "SOXS.MI",
     "SSIL.MI",
+    "SUK1.L",
     "VIXL.MI",
     "XSPS.MI"
   ],
+  "last_completed_market_date": "2026-11-20",
+  "open_positions": [],
   "skipped_or_errors": [
     {
       "symbol": "2BUL.MI",
+      "category": "LEVA_LONG",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_LONG"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "2GOL.MI",
+      "category": "MATERIE_PRIME_LEVA",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "MATERIE_PRIME_LEVA"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "2QQL.MI",
+      "category": "LEVA_LONG",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_LONG"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "3DAL.MI",
+      "category": "LEVA_LONG",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_LONG"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "3LAD.MI",
+      "category": "LEVA_LONG",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_LONG"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "3LBA.MI",
+      "category": "LEVA_LONG",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_LONG"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "3LGO.MI",
+      "category": "LEVA_LONG",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_LONG"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "3LJP.MI",
+      "category": "LEVA_LONG",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_LONG"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "3LMS.MI",
@@ -103,9 +141,9 @@
     },
     {
       "symbol": "3LMT.MI",
+      "category": "LEVA_LONG",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_LONG"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "3LNF.MI",
@@ -115,99 +153,99 @@
     },
     {
       "symbol": "3OIS.MI",
+      "category": "MATERIE_PRIME_SHORT",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 1 barre",
-      "category": "MATERIE_PRIME_SHORT"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "3SAM.MI",
+      "category": "LEVA_SHORT",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_SHORT"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "3SGO.MI",
+      "category": "LEVA_SHORT",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_SHORT"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "3SML.MI",
+      "category": "LEVA_SHORT",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_SHORT"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "3SMS.MI",
+      "category": "LEVA_SHORT",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 1 barre",
-      "category": "LEVA_SHORT"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "3SMT.MI",
+      "category": "LEVA_SHORT",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_SHORT"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "BCOM.DE",
+      "category": "MATERIE_PRIME_1X",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "MATERIE_PRIME_1X"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "DX3L.MI",
+      "category": "LEVA_LONG",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_LONG"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "DX3S.MI",
+      "category": "LEVA_SHORT",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_SHORT"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "ESXS.MI",
+      "category": "LEVA_SHORT",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_SHORT"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "QQQ3S.MI",
+      "category": "LEVA_SHORT",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_SHORT"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "SCRU.MI",
+      "category": "MATERIE_PRIME_SHORT",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "MATERIE_PRIME_SHORT"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "SDS.MI",
+      "category": "LEVA_SHORT",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_SHORT"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "SGOL.MI",
+      "category": "MATERIE_PRIME_SHORT",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "MATERIE_PRIME_SHORT"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "TECL.MI",
+      "category": "LEVA_LONG",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_LONG"
+      "reason": "nessuna candela giornaliera completata disponibile"
     },
     {
       "symbol": "XSND.MI",
+      "category": "LEVA_SHORT",
       "status": "SKIPPED",
-      "reason": "storico insufficiente: 0 barre",
-      "category": "LEVA_SHORT"
+      "reason": "nessuna candela giornaliera completata disponibile"
     }
   ]
 }
