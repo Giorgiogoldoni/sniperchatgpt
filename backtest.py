@@ -133,7 +133,9 @@ def main():
       "method":"Donchian20 breakout + Walking 2/3; entry next open; ATR14x2 stop; exit after 2 Walking-false closes next open; max 10 sessions at close; adjusted OHLC",
       "history_period":config["history_period"],"costs_bps_round_trip":config["costs_bps_round_trip"],
       "paper_only":True,"not_a_live_signal":True,"universe_total":len(selected),
-      "data_ok":sum(x["status"]=="OK" for x in scan),"skipped":sum(x["status"]=="SKIPPED" for x in scan),
+      "data_ok":sum(x["status"]=="OK" for x in scan),"skipped":sum(x["status"] in ("SKIPPED","SUSPICIOUS") for x in scan),
+      "suspicious":sum(x["status"]=="SUSPICIOUS" for x in scan),
+      "price_jump_filter":{"max_daily_rise_pct":300,"max_daily_drop_pct":-80},
       "errors":sum(x["status"]=="ERROR" for x in scan),"trades_total":len(all_trades),
       "families":families,"instruments":instruments}
     (OUT/"backtest_summary.json").write_text(json.dumps(summary,indent=2,ensure_ascii=False)+"\n")
