@@ -36,10 +36,10 @@ jobs:
       - name: Unit tests
         run: python -m unittest discover -s tests -v
       - name: Run PAPER engine (manual only, after backtest approval)
-        if: github.event_name == "workflow_dispatch"
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         run: python run.py
       - name: Commit paper results
-        if: github.event_name == "workflow_dispatch"
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           git config user.name "sniperchatgpt-bot"
           git config user.email "sniperchatgpt-bot@users.noreply.github.com"
