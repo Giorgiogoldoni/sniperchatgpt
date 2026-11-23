@@ -9,6 +9,7 @@ on:
       - 'run.py'
       - 'tests/**'
       - 'config.json'
+      - 'data/paper_state.json'
       - 'requirements.txt'
       - '.github/workflows/paper.yml'
   workflow_dispatch:
