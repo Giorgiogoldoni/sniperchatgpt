@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Batched daily data refresh and independent PAPER engine."""
 import json, warnings
-from collections import Counter, defaultdict
+from collections import Counter
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
+import pandas as pd
 import yfinance as yf
 from paper_engine import load_state, save_state, process_frame, write_outputs
 
@@ -23,6 +26,14 @@ def split_symbol_frame(raw, symbol):
         frame=raw.copy()
     if not {"Open","High","Low","Close"}.issubset(frame.columns):
         return None
+    return frame
+
+def completed_daily_frame(frame, now=None):
+    """Exclude today's still-forming candle before the European close."""
+    now = now or datetime.now(ZoneInfo("Europe/Rome"))
+    if now.hour < 18:
+        today = now.date()
+        frame = frame[[pd.Timestamp(x).date() < today for x in frame.index]]
     return frame
 
 def main():
@@ -53,6 +64,10 @@ def main():
                     results.append({"symbol":symbol,"category":inst.get("classification"),"status":"SKIPPED","reason":"dati assenti o mapping Yahoo non disponibile"})
                     continue
                 frame=frame[~frame.index.duplicated(keep="last")].dropna(subset=["Open","High","Low","Close"])
+                frame=completed_daily_frame(frame)
+                if frame.empty:
+                    results.append({"symbol":symbol,"category":inst.get("classification"),"status":"SKIPPED","reason":"nessuna candela giornaliera completata disponibile"})
+                    continue
                 result=process_frame(state,symbol,inst,frame,config)
                 result["category"]=inst.get("classification")
                 results.append(result)
@@ -62,20 +77,23 @@ def main():
     summary=write_outputs(state)
     status_counts=dict(Counter(x["status"] for x in results))
     category_report={}
-    for category in sorted({x.get("category","UNKNOWN") for x in selected}):
+    for category in sorted({x.get("classification","UNKNOWN") for x in selected}):
         group=[x for x in results if x.get("category")==category]
         category_report[category]={
             "universe":sum(1 for x in selected if x.get("classification")==category),
             "ok":sum(x["status"]=="OK" for x in group),
             "skipped":sum(x["status"]=="SKIPPED" for x in group),
             "errors":sum(x["status"]=="ERROR" for x in group),
-            "new_signals":sum(1 for x in state["signals"][-len(selected):] if x.get("category")==category)
+            "signals_cumulative":sum(1 for x in state["signals"] if x.get("category")==category),
+            "pending_entries":sum(1 for symbol in state["pending_entries"] if next((z.get("classification") for z in selected if (z.get("yahoo") or z.get("id"))==symbol),None)==category),
+            "open_positions":sum(1 for symbol in state["positions"] if next((z.get("classification") for z in selected if (z.get("yahoo") or z.get("id"))==symbol),None)==category)
         }
     report={
         "paper_only":True,"run_at_utc":summary["updated_at_utc"],
         "universe_total":len(selected),"status_counts":status_counts,
         "by_category":category_report,
         "signals_pending":list(state["pending_entries"].keys()),
+        "last_completed_market_date":max(state["last_processed"].values()) if state["last_processed"] else None,
         "open_positions":list(state["positions"].keys()),
         "skipped_or_errors":[x for x in results if x["status"]!="OK"]
     }
