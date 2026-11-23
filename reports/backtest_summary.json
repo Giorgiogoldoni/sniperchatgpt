@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-23T09:13:29.239655+00:00",
+  "generated_utc": "2026-11-23T09:16:28.323551+00:00",
   "method": "Donchian20 breakout + Walking 2/3; entry next open; ATR14x2 stop; exit after 2 Walking-false closes next open; max 10 sessions at close; adjusted OHLC",
   "history_period": "2y",
   "costs_bps_round_trip": [
@@ -11,7 +11,12 @@
   "not_a_live_signal": true,
   "universe_total": 311,
   "data_ok": 255,
-  "skipped": 27,
+  "skipped": 56,
+  "suspicious": 29,
+  "price_jump_filter": {
+    "max_daily_rise_pct": 300,
+    "max_daily_drop_pct": -80
+  },
   "errors": 0,
   "trades_total": 2696,
   "families": [
