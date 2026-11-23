@@ -67,7 +67,7 @@ def main():
     config=json.loads((ROOT/"config.json").read_text())
     universe=json.loads((ROOT/"data/instrument_universe.json").read_text())["instruments"]
     selected=[x for x in universe if x.get("classification") in {"LEVA_LONG","LEVA_SHORT","MATERIE_PRIME_1X","MATERIE_PRIME_LEVA","MATERIE_PRIME_SHORT"}]
-    all_trades=[]; scan=[]; batch_size=20
+    all_trades=[]; scan=[]; market_data={}; batch_size=20
     for start in range(0,len(selected),batch_size):
         batch=selected[start:start+batch_size]; tickers=[x.get("yahoo") or x.get("id") for x in batch]
         try:
@@ -99,12 +99,28 @@ def main():
                                  "max_daily_change_pct":round(max_jump,2),"min_daily_change_pct":round(min_jump,2),
                                  "bars":len(frame)})
                     continue
+                indicated=add_indicators(frame,config)
+                cols=["Open","High","Low","Close","Volume","DONCHIAN20_UPPER","BB_UPPER","BB_MID","ATR14","WALKING","ENTRY_SIGNAL"]
+                export=indicated.reindex(columns=cols).copy()
+                export=export.replace([float("inf"),float("-inf")],pd.NA)
+                records=[]
+                for dt,values in export.iterrows():
+                    rec={"date":pd.Timestamp(dt).strftime("%Y-%m-%d")}
+                    for col in cols:
+                        value=values.get(col)
+                        if pd.isna(value): rec[col.lower()]=None
+                        elif col in ("WALKING","ENTRY_SIGNAL"): rec[col.lower()]=bool(value)
+                        elif col=="Volume": rec["volume"]=int(value)
+                        else: rec[col.lower()]=round(float(value),6)
+                    records.append(rec)
+                market_data[symbol]={"name":inst.get("name",symbol),"category":inst["classification"],"bars":records}
                 trades=simulate(symbol,inst,frame,config); all_trades.extend(trades)
                 scan.append({"symbol":symbol,"category":inst["classification"],"status":"OK","bars":len(frame),
                              "first_date":str(pd.Timestamp(frame.index[0]).date()),"last_date":str(pd.Timestamp(frame.index[-1]).date()),
                              "max_daily_change_pct":round(max_jump,2),"min_daily_change_pct":round(min_jump,2),"trades":len(trades)})
             except Exception as e: scan.append({"symbol":symbol,"category":inst["classification"],"status":"ERROR","reason":str(e)[:220]})
     OUT.mkdir(exist_ok=True)
+    (OUT/"market_data.json").write_text(json.dumps({"generated_utc":pd.Timestamp.now(tz="UTC").isoformat(),"source":"Yahoo Finance auto_adjust OHLCV; same daily bars used by backtest","instruments":market_data},separators=(",",":"),ensure_ascii=False)+"\\n",encoding="utf-8")
     pd.DataFrame(all_trades).to_csv(OUT/"backtest_trades.csv",index=False)
     pd.DataFrame(scan).to_csv(OUT/"backtest_data_audit.csv",index=False)
     keys=[f"net_{b}bps_pct" for b in config["costs_bps_round_trip"]]; families=[]
