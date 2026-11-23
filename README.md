@@ -41,4 +41,6 @@ python run.py
 ```
 
 ## Stato del progetto
-Prima versione infrastrutturale. Non considerare la strategia validata: occorrono test, backtest separati per famiglia e controllo della qualità dei dati prima di usare il paper trading come riferimento operativo.
+Prima versione infrastrutturale. Il workflow automatico esegue i test; il motore PAPER è manuale e resta disattivato fino al completamento dei backtest per famiglia. La prima scansione esplorativa è conservata in `data/initial_scan_snapshot.json` e non rappresenta ordini o posizioni.
+
+Non considerare la strategia validata: occorrono test, backtest separati per famiglia e controllo della qualità dei dati prima di usare il paper trading come riferimento operativo.
