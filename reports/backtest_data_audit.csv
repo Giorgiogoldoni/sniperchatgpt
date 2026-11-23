@@ -54,7 +54,7 @@ symbol,category,status,reason,max_daily_change_pct,min_daily_change_pct,bars,fir
 3LJP.MI,LEVA_LONG,SKIPPED,solo 0 barre OHLC,,,,,,
 3LMI.MI,LEVA_LONG,OK,,56.18,-42.32,502.0,2024-11-25,2026-11-20,4.0
 3LMO.MI,LEVA_LONG,SUSPICIOUS,discontinuità prezzo: variazione giornaliera oltre soglia,560177.79,-70.26,501.0,,,
-3LMS.MI,LEVA_LONG,SKIPPED,solo 1 barre OHLC,,,,,,
+3LMS.MI,LEVA_LONG,SKIPPED,solo 0 barre OHLC,,,,,,
 3LMT.MI,LEVA_LONG,SKIPPED,solo 0 barre OHLC,,,,,,
 3LNF.MI,LEVA_LONG,SKIPPED,solo 0 barre OHLC,,,,,,
 3LNV.MI,LEVA_LONG,OK,,26.19,-53.15,501.0,2024-11-25,2026-11-20,7.0

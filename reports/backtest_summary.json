@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-23T09:16:28.323551+00:00",
+  "generated_utc": "2026-11-23T14:11:18.199312+00:00",
   "method": "Donchian20 breakout + Walking 2/3; entry next open; ATR14x2 stop; exit after 2 Walking-false closes next open; max 10 sessions at close; adjusted OHLC",
   "history_period": "2y",
   "costs_bps_round_trip": [
@@ -1966,7 +1966,7 @@
       "symbol": "3LMS.MI",
       "category": "LEVA_LONG",
       "status": "SKIPPED",
-      "reason": "solo 1 barre OHLC",
+      "reason": "solo 0 barre OHLC",
       "net_20bps_pct_trades": 0,
       "net_20bps_pct_win_rate_pct": 0,
       "net_20bps_pct_avg_net_pct": 0,
