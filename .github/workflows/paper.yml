@@ -14,7 +14,6 @@ on:
       - '.github/workflows/paper.yml'
   workflow_dispatch:
   schedule:
-    - cron: "30 17 * * 1-5"
 
 concurrency:
   group: sniperchatgpt-paper-${{ github.ref }}
@@ -37,9 +36,11 @@ jobs:
         run: pip install -r requirements.txt
       - name: Unit tests
         run: python -m unittest discover -s tests -v
-      - name: Run PAPER engine
+      - name: Run PAPER engine (manual only, after backtest approval)
+        if: github.event_name == "workflow_dispatch"
         run: python run.py
       - name: Commit paper results
+        if: github.event_name == "workflow_dispatch"
         run: |
           git config user.name "sniperchatgpt-bot"
           git config user.email "sniperchatgpt-bot@users.noreply.github.com"
