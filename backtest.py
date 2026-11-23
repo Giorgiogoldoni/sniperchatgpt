@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Historical, instrument-level backtest using the same v1 entry/exit rules."""
 import json, math, warnings
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 import pandas as pd
 import yfinance as yf
@@ -48,6 +50,8 @@ def simulate(symbol, instrument, frame, config):
     return trades
 
 def metrics(trades,key):
+    trades=sorted(trades,key=lambda x:(x["exit_date"],x["entry_date"]))
+
     if not trades: return {"trades":0,"win_rate_pct":0,"avg_net_pct":0,"median_net_pct":0,"profit_factor":0,"max_drawdown_pct":0}
     vals=[float(t[key]) for t in trades]; wins=[x for x in vals if x>0]; losses=[x for x in vals if x<0]
     equity=peak=1.0; dd=0.0
@@ -81,11 +85,24 @@ def main():
                 if frame.empty or not {"Open","High","Low","Close"}.issubset(frame.columns):
                     scan.append({"symbol":symbol,"category":inst["classification"],"status":"SKIPPED","reason":"OHLC non disponibili"}); continue
                 frame=frame[~frame.index.duplicated(keep="last")].dropna(subset=["Open","High","Low","Close"])
+                now=datetime.now(ZoneInfo("Europe/Rome"))
+                if now.hour<18:
+                    frame=frame[[pd.Timestamp(d).date()<now.date() for d in frame.index]]
                 if len(frame)<int(config["minimum_bars"]):
                     scan.append({"symbol":symbol,"category":inst["classification"],"status":"SKIPPED","reason":f"solo {len(frame)} barre OHLC"}); continue
+                daily_returns=frame["Close"].pct_change().dropna()
+                max_jump=float(daily_returns.max()*100) if not daily_returns.empty else 0.0
+                min_jump=float(daily_returns.min()*100) if not daily_returns.empty else 0.0
+                if max_jump>300 or min_jump < -80:
+                    scan.append({"symbol":symbol,"category":inst["classification"],"status":"SUSPICIOUS",
+                                 "reason":"discontinuità prezzo: variazione giornaliera oltre soglia",
+                                 "max_daily_change_pct":round(max_jump,2),"min_daily_change_pct":round(min_jump,2),
+                                 "bars":len(frame)})
+                    continue
                 trades=simulate(symbol,inst,frame,config); all_trades.extend(trades)
                 scan.append({"symbol":symbol,"category":inst["classification"],"status":"OK","bars":len(frame),
-                             "first_date":str(pd.Timestamp(frame.index[0]).date()),"last_date":str(pd.Timestamp(frame.index[-1]).date()),"trades":len(trades)})
+                             "first_date":str(pd.Timestamp(frame.index[0]).date()),"last_date":str(pd.Timestamp(frame.index[-1]).date()),
+                             "max_daily_change_pct":round(max_jump,2),"min_daily_change_pct":round(min_jump,2),"trades":len(trades)})
             except Exception as e: scan.append({"symbol":symbol,"category":inst["classification"],"status":"ERROR","reason":str(e)[:220]})
     OUT.mkdir(exist_ok=True)
     pd.DataFrame(all_trades).to_csv(OUT/"backtest_trades.csv",index=False)
@@ -94,10 +111,17 @@ def main():
     for cat in sorted({x["classification"] for x in selected}):
         group=[t for t in all_trades if t["category"]==cat]; source=[s for s in scan if s["category"]==cat]
         rec={"category":cat,"universe":sum(x["classification"]==cat for x in selected),
-             "data_ok":sum(x["status"]=="OK" for x in source),"skipped":sum(x["status"]=="SKIPPED" for x in source),
+             "data_ok":sum(x["status"]=="OK" for x in source),"skipped":sum(x["status"] in ("SKIPPED","SUSPICIOUS") for x in source),
+             "suspicious":sum(x["status"]=="SUSPICIOUS" for x in source),
              "errors":sum(x["status"]=="ERROR" for x in source)}
         for key in keys:
-            for k,v in metrics(group,key).items(): rec[f"{key}_{k}"]=v
+            m=metrics(group,key)
+            for k,v in m.items():
+                if k!="max_drawdown_pct": rec[f"{key}_{k}"]=v
+            ticker_dd=[metrics([t for t in group if t["symbol"]==sym],key)["max_drawdown_pct"]
+                       for sym in sorted({t["symbol"] for t in group})]
+            rec[f"{key}_avg_instrument_drawdown_pct"]=round(sum(ticker_dd)/len(ticker_dd),3) if ticker_dd else 0
+            rec[f"{key}_worst_instrument_drawdown_pct"]=round(min(ticker_dd),3) if ticker_dd else 0
         families.append(rec)
     instruments=[]
     for item in scan:
