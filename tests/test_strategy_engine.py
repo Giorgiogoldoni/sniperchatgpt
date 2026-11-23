@@ -21,7 +21,7 @@ class StrategyTests(unittest.TestCase):
         inst={"classification":"LEVA_LONG","name":"Test ETP"}
         row=lambda op,lo,cl,signal,atr=1,walk=True: type("Bar",(),{
             "Open":op,"Low":lo,"Close":cl,"ENTRY_SIGNAL":signal,"ATR14":atr,
-            "WALKING":walk,"DONCHIAN20_UPPER":cl-0.1,"WALKING_BAR":True})()
+            "WALKING":walk,"DONCHIAN20_UPPER":cl-0.1,"WALKING_BAR":True,"WALKING_COUNT_3":2})()
         process_bar(s,"T",inst,"2026-01-02",row(100,99,100,True),CFG)
         self.assertIn("T",s["pending_entries"])
         self.assertNotIn("T",s["positions"])
