@@ -11,6 +11,9 @@ on:
       - 'requirements.txt'
       - '.github/workflows/backtest.yml'
   workflow_dispatch:
+concurrency:
+  group: sniperchatgpt-historical-backtest
+  cancel-in-progress: true
 permissions:
   contents: write
 jobs:
