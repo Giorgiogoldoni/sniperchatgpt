@@ -102,7 +102,6 @@ def main():
                 indicated=add_indicators(frame,config)
                 cols=["Open","High","Low","Close","Volume","DONCHIAN20_UPPER","BB_UPPER","BB_MID","ATR14","WALKING","ENTRY_SIGNAL"]
                 export=indicated.reindex(columns=cols).copy()
-                export=export.replace([float("inf"),float("-inf")],pd.NA)
                 records=[]
                 for dt,values in export.iterrows():
                     rec={"date":pd.Timestamp(dt).strftime("%Y-%m-%d")}
@@ -120,7 +119,7 @@ def main():
                              "max_daily_change_pct":round(max_jump,2),"min_daily_change_pct":round(min_jump,2),"trades":len(trades)})
             except Exception as e: scan.append({"symbol":symbol,"category":inst["classification"],"status":"ERROR","reason":str(e)[:220]})
     OUT.mkdir(exist_ok=True)
-    (OUT/"market_data.json").write_text(json.dumps({"generated_utc":pd.Timestamp.now(tz="UTC").isoformat(),"source":"Yahoo Finance auto_adjust OHLCV; same daily bars used by backtest","instruments":market_data},separators=(",",":"),ensure_ascii=False)+"\\n",encoding="utf-8")
+    (OUT/"market_data.json").write_text(json.dumps({"generated_utc":pd.Timestamp.now(tz="UTC").isoformat(),"source":"Yahoo Finance auto_adjust OHLCV; same daily bars used by backtest","instruments":market_data},separators=(",",":"),ensure_ascii=False)+"\n",encoding="utf-8")
     pd.DataFrame(all_trades).to_csv(OUT/"backtest_trades.csv",index=False)
     pd.DataFrame(scan).to_csv(OUT/"backtest_data_audit.csv",index=False)
     keys=[f"net_{b}bps_pct" for b in config["costs_bps_round_trip"]]; families=[]
