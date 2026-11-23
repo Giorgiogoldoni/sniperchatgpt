@@ -23,7 +23,7 @@ footer{margin-top:30px;color:var(--muted);font-size:12px}
 <div class="status"><span class="pill">PAPER ONLY</span><span class="pill">Backtest in validazione</span><span class="pill">Nessun ordine reale</span></div></header>
 <main><div class="grid" id="cards"><div class="card">Caricamento dati…</div></div>
 <h2>Risultati per famiglia</h2><p class="note">Scenario di costo centrale: 30 basis point round trip. Dati storici aggiustati; i risultati passati non predicono rendimenti futuri.</p>
-<div class="tablewrap"><table id="families"><thead><tr><th>Famiglia</th><th>Universo</th><th>Dati OK</th><th>Trade</th><th>Win rate</th><th>Media netta</th><th>Profit factor</th><th>Max drawdown</th></tr></thead><tbody></tbody></table></div>
+<div class="tablewrap"><table id="families"><thead><tr><th>Famiglia</th><th>Universo</th><th>Dati OK</th><th>Trade</th><th>Win rate</th><th>Media netta</th><th>Profit factor</th><th>Drawdown medio strumenti</th></tr></thead><tbody></tbody></table></div>
 <h2>Dettaglio strumenti</h2><p><select id="filter"><option value="">Tutte le famiglie</option></select></p>
 <div class="tablewrap"><table id="instruments"><thead><tr><th>Ticker</th><th>Famiglia</th><th>Dati</th><th>Barre</th><th>Trade</th><th>Win rate</th><th>Media netta</th><th>Motivo esclusione</th></tr></thead><tbody></tbody></table></div>
 <div class="links"><a href="reports/sniperchatgpt_backtest.xlsx">Scarica Excel backtest</a><a href="reports/backtest_trades.csv">Operazioni CSV</a><a href="reports/backtest_data_audit.csv">Audit dati CSV</a><a href="README.md">Regole complete</a></div>
@@ -42,10 +42,10 @@ async function load(){
  try{
  var r=await fetch("reports/backtest_summary.json?ts="+Date.now());if(!r.ok)throw Error("backtest non ancora generato");
  DATA=await r.json();
- var c=[["Universo",DATA.universe_total],["Dati utilizzabili",DATA.data_ok],["Esclusi",DATA.skipped],["Errori",DATA.errors],["Operazioni storiche",DATA.trades_total]];
+ var c=[["Universo",DATA.universe_total],["Dati utilizzabili",DATA.data_ok],["Esclusi",DATA.skipped],["Prezzi sospetti esclusi",DATA.suspicious||0],["Errori",DATA.errors],["Operazioni storiche",DATA.trades_total]];
  document.getElementById("cards").innerHTML=c.map(function(x){return '<div class="card"><div class="k">'+x[0]+'</div><div class="v">'+x[1]+'</div></div>'}).join("");
  var fam=DATA.families||[];
- document.querySelector("#families tbody").innerHTML=fam.map(function(x){return '<tr><td>'+x.category+'</td><td>'+x.universe+'</td><td>'+x.data_ok+'</td><td>'+(x.net_30bps_pct_trades||0)+'</td><td>'+fmt(x.net_30bps_pct_win_rate_pct)+'%</td><td>'+fmt(x.net_30bps_pct_avg_net_pct)+'%</td><td>'+fmt(x.net_30bps_pct_profit_factor,3)+'</td><td>'+fmt(x.net_30bps_pct_max_drawdown_pct)+'%</td></tr>'}).join("");
+ document.querySelector("#families tbody").innerHTML=fam.map(function(x){return '<tr><td>'+x.category+'</td><td>'+x.universe+'</td><td>'+x.data_ok+'</td><td>'+(x.net_30bps_pct_trades||0)+'</td><td>'+fmt(x.net_30bps_pct_win_rate_pct)+'%</td><td>'+fmt(x.net_30bps_pct_avg_net_pct)+'%</td><td>'+fmt(x.net_30bps_pct_profit_factor,3)+'</td><td>'+fmt(x.net_30bps_pct_avg_instrument_drawdown_pct)+'%</td></tr>'}).join("");
  var filter=document.getElementById("filter");
  filter.innerHTML='<option value="">Tutte le famiglie</option>'+fam.map(function(x){return '<option>'+x.category+'</option>'}).join("");
  function render(){
