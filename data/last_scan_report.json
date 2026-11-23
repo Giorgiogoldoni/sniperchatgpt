@@ -53,35 +53,7 @@
       "open_positions": 0
     }
   },
-  "signals_pending": [
-    "1MCS.L",
-    "1PAS.MI",
-    "2UKS.L",
-    "3EMS.MI",
-    "3GOS.MI",
-    "3HCS.MI",
-    "3M7S.MI",
-    "3SIS.MI",
-    "3SMI.MI",
-    "3SNF.MI",
-    "3SNI.MI",
-    "3SNV.MI",
-    "3UKS.L",
-    "3USS.MI",
-    "5USS.MI",
-    "EUJP.MI",
-    "LVO.MI",
-    "MAGS.MI",
-    "SBUL.MI",
-    "SCOP.MI",
-    "SMST.MI",
-    "SNV3.MI",
-    "SOXS.MI",
-    "SSIL.MI",
-    "SUK1.L",
-    "VIXL.MI",
-    "XSPS.MI"
-  ],
+  "signals_pending": [],
   "last_completed_market_date": "2026-11-20",
   "open_positions": [],
   "skipped_or_errors": [
@@ -247,5 +219,7 @@
       "status": "SKIPPED",
       "reason": "nessuna candela giornaliera completata disponibile"
     }
-  ]
+  ],
+  "mode": "DIAGNOSTIC_ONLY_NOT_EXECUTED",
+  "note": "Initial scan retained in data/initial_scan_snapshot.json. Paper trading is disabled pending family-specific backtests."
 }
