@@ -15,6 +15,10 @@ on:
   schedule:
     - cron: "30 17 * * 1-5"
 
+concurrency:
+  group: sniperchatgpt-paper-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
