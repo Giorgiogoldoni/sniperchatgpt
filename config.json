@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "paper_only": true,
+  "history_period": "2y",
+  "minimum_bars": 60,
+  "donchian_period": 20,
+  "bollinger_period": 20,
+  "bollinger_std": 2,
+  "walking_tolerance": 0.015,
+  "walking_window": 3,
+  "walking_required_bars": 2,
+  "atr_period": 14,
+  "atr_stop_multiple": 2,
+  "max_holding_sessions": 10,
+  "costs_bps_round_trip": [
+    20,
+    30,
+    50
+  ],
+  "timezone": "Europe/Rome"
+}
