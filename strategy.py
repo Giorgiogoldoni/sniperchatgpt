@@ -40,5 +40,5 @@ def add_indicators(frame: pd.DataFrame, config: dict) -> pd.DataFrame:
 
 def entry_reason(row) -> str:
     return (f"Close {row.Close:.4f} sopra Donchian20 {row.DONCHIAN20_UPPER:.4f}; "
-            f"Walking attivo ({int(getattr(row, 'WALKING_COUNT_3', 2))}/3 ultime sedute); "
+            "Walking attivo (almeno 2 delle ultime 3 sedute); "
             f"ATR14 {row.ATR14:.4f}.")
