@@ -6,6 +6,12 @@ import pandas as pd
 def add_mr_indicators(frame: pd.DataFrame, config: dict) -> pd.DataFrame:
     df = frame.copy().sort_index()
     close = pd.to_numeric(df["Close"], errors="coerce")
+    prev_close = close.shift(1)
+    high = pd.to_numeric(df["High"], errors="coerce")
+    low = pd.to_numeric(df["Low"], errors="coerce")
+    tr = pd.concat([high-low, (high-prev_close).abs(), (low-prev_close).abs()], axis=1).max(axis=1)
+    atr_period = int(config.get("atr_period", 14))
+    df["ATR14"] = tr.ewm(alpha=1/atr_period, adjust=False, min_periods=atr_period).mean()
     n = int(config.get("mr_bollinger_period", 20))
     mult = float(config.get("mr_bollinger_std", 2.0))
     df["MR_BB_MID"] = close.rolling(n, min_periods=n).mean()
