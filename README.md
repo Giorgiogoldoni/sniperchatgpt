@@ -39,6 +39,20 @@ Il segnale MR è calcolato autonomamente sullo stesso OHLC aggiustato dello stru
 
 La regola MR è una prima ipotesi di ricerca, non una strategia validata. In particolare, il rientro dalla banda inferiore può essere un falso rimbalzo in un mercato ribassista; stop, costi, liquidità, leva e risultati per famiglia devono essere verificati prima di qualunque utilizzo PAPER.
 
+### Primo backtest MR — 24 novembre 2026
+
+Su 255 strumenti con dati validi, la regola MR ha generato 2.348 operazioni. A 30 bps round trip: win rate 38,07%, media netta -0,529%, mediana -1,324%, profit factor 0,860. Il drawdown medio per strumento è -20,94%; il peggiore -86,31%. Non è un portafoglio simulato.
+
+| Famiglia | Operazioni | Media netta | Mediana | Profit factor | DD medio strumenti |
+|---|---:|---:|---:|---:|---:|
+| Leva long | 472 | +0,525% | -2,325% | 1,071 | -35,90% |
+| Leva short/inversi | 610 | +0,382% | -0,392% | 1,141 | -15,57% |
+| Materie prime 1x | 880 | -0,982% | -1,701% | 0,554 | -13,13% |
+| Materie prime leva | 216 | -2,753% | -3,769% | 0,528 | -32,85% |
+| Materie prime short | 170 | -1,553% | -1,864% | 0,504 | -28,58% |
+
+Lettura critica: il risultato aggregato è negativo; le medie leggermente positive nelle famiglie a leva long e short/inverse convivono con mediane negative e drawdown molto elevati. Sono quindi probabilmente influenzate da una coda di grandi vincite e non dimostrano un vantaggio robusto. Le categorie materie prime risultano deboli. Nessuna strategia MR è stata attivata in PAPER.
+
 ## Sicurezza e limiti
 - PAPER ONLY: nessun broker, API di esecuzione o ordine reale.
 - Una sola posizione aperta per strumento.
