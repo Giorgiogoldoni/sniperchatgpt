@@ -154,7 +154,8 @@ def simulate_mr_variant(symbol, instrument, frame, config, variant="A"):
     tolerance = float(config.get("mr_walking_tolerance", 0.015))
     near_lower = ((close / lower - 1).abs() <= tolerance).fillna(False)
     lower_falling = (lower < lower.shift(1)) & (lower.shift(1) < lower.shift(2))
-    walking_lower = (near_lower.rolling(3, min_periods=3).sum() >= 2) & lower_falling\n    c_signal = base & walking_lower
+    walking_lower = (near_lower.rolling(3, min_periods=3).sum() >= 2) & lower_falling
+    c_signal = base & walking_lower
 
     trades, pos, pending_entry, setup = [], None, None, None
     stop_multiple = float(config.get("mr_atr_stop_multiple", 2.0))
