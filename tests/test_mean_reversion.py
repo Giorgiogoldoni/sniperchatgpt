@@ -111,6 +111,13 @@ class MeanReversionTests(unittest.TestCase):
             str(fake.index[3].date()), str(fake.index[5].date()), str(fake.index[10].date())
         ])
         self.assertAlmostEqual(trade["deployed_weight_pct"], 100.0)
+        self.assertIn("regime", trade)
+        self.assertIn("net_30bps_on_deployed_pct", trade)
+        self.assertAlmostEqual(
+            trade["net_30bps_on_deployed_pct"],
+            trade["net_30bps_pct"] / (trade["deployed_weight_pct"] / 100.0),
+            places=4
+        )
 
 if __name__ == "__main__":
     unittest.main()
