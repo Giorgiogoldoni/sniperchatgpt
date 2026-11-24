@@ -38,6 +38,7 @@ def _finish(symbol, instrument, pos, date, price, reason, config):
     row = {
         "strategy": "MEAN_REVERSION", "symbol": symbol,
         "name": instrument.get("name", symbol), "category": instrument["classification"],
+        "regime": pos.get("regime", "UNKNOWN"),
         "signal_date": pos["signal_date"], "entry_date": pos["entry_date"],
         "entry_price": round(pos["entry_price"], 8), "exit_date": date,
         "exit_price": round(float(price), 8), "holding_sessions": pos["holding_sessions"],
@@ -124,6 +125,7 @@ def _finish_scaled(symbol, instrument, pos, date, price, reason, config):
     row = {
         "strategy": "MEAN_REVERSION_D", "variant": "D", "symbol": symbol,
         "name": instrument.get("name", symbol), "category": instrument["classification"],
+        "regime": pos.get("regime", "UNKNOWN"),
         "signal_date": pos["signal_date"], "entry_date": pos["entry_date"],
         "entry_price": round(weighted_entry, 8), "exit_date": date,
         "exit_price": round(float(price), 8), "holding_sessions": pos["holding_sessions"],
@@ -149,6 +151,12 @@ def simulate_mr_variant(symbol, instrument, frame, config, variant="A"):
         raise ValueError("variant must be A, B, C or D")
     df = add_mr_indicators(frame, config)
     close = pd.to_numeric(df["Close"], errors="coerce")
+    trend_sma = close.rolling(200, min_periods=200).mean()
+    trend_sma_lag = trend_sma.shift(20)
+    regime = pd.Series("UNKNOWN", index=df.index, dtype="object")
+    regime.loc[(close > trend_sma) & (trend_sma > trend_sma_lag)] = "UPTREND"
+    regime.loc[(close < trend_sma) & (trend_sma < trend_sma_lag)] = "DOWNTREND"
+    regime.loc[trend_sma.notna() & ~regime.isin(["UPTREND", "DOWNTREND"])] = "SIDEWAYS"
     lower = df["MR_BB_LOWER"]
     base = df["MR_ENTRY_SIGNAL"].fillna(False)
     tolerance = float(config.get("mr_walking_tolerance", 0.015))
@@ -180,6 +188,7 @@ def simulate_mr_variant(symbol, instrument, frame, config, variant="A"):
             pos = {
                 "signal_date": pending_entry["date"], "entry_date": day,
                 "holding_sessions": 0, "legs": [first_leg],
+                "regime": pending_entry.get("regime", "UNKNOWN"),
                 # Fixed from first fill: later tranches can never widen the original risk.
                 "stop_price": op - stop_multiple * atr,
                 "next_tranche": 1, "last_add_signal_date": None
@@ -207,7 +216,8 @@ def simulate_mr_variant(symbol, instrument, frame, config, variant="A"):
                 else:
                     simple = {"signal_date": pos["signal_date"], "entry_date": pos["entry_date"],
                               "entry_price": pos["legs"][0]["entry_price"],
-                              "stop_price": pos["stop_price"], "holding_sessions": pos["holding_sessions"]}
+                              "stop_price": pos["stop_price"], "holding_sessions": pos["holding_sessions"],
+                              "regime": pos.get("regime", "UNKNOWN")}
                     trades.append(_finish(symbol, instrument, simple, day, fill, "ATR14_X2_STOP", config))
                 pos = None
                 pending_add = None
@@ -220,7 +230,8 @@ def simulate_mr_variant(symbol, instrument, frame, config, variant="A"):
                 else:
                     simple = {"signal_date": pos["signal_date"], "entry_date": pos["entry_date"],
                               "entry_price": pos["legs"][0]["entry_price"],
-                              "stop_price": pos["stop_price"], "holding_sessions": pos["holding_sessions"]}
+                              "stop_price": pos["stop_price"], "holding_sessions": pos["holding_sessions"],
+                      "regime": pos.get("regime", "UNKNOWN")}
                     trades.append(_finish(symbol, instrument, simple, day, px, "BB_MID_REVERSION", config))
                 pos = None
                 pending_add = None
@@ -256,20 +267,22 @@ def simulate_mr_variant(symbol, instrument, frame, config, variant="A"):
                 if pd.notna(row.get("MR_BB_LOWER")) and px > float(row["MR_BB_LOWER"]):
                     setup["recoveries"] += 1
                 if setup["recoveries"] >= 2:
-                    pending_entry = {"date": setup["date"], "atr": setup["atr"]}
+                    pending_entry = {"date": setup["date"], "atr": setup["atr"],
+                                     "regime": setup.get("regime", "UNKNOWN")}
                     setup = None
                 elif setup["sessions"] >= 3:
                     setup = None
             elif bool(base.loc[date]):
                 atr = row.get("ATR14")
                 if pd.notna(atr) and float(atr) > 0:
-                    setup = {"date": day, "atr": float(atr), "sessions": 0, "recoveries": 0}
+                    setup = {"date": day, "atr": float(atr), "sessions": 0, "recoveries": 0,
+                             "regime": str(regime.loc[date])}
         else:
             signal = bool(base.loc[date]) if variant in {"A", "D"} else bool(c_signal.loc[date])
             if signal:
                 atr = row.get("ATR14")
                 if pd.notna(atr) and float(atr) > 0:
-                    pending_entry = {"date": day, "atr": float(atr)}
+                    pending_entry = {"date": day, "atr": float(atr), "regime": str(regime.loc[date])}
 
     if pos is not None and len(df):
         last = df.iloc[-1]
