@@ -22,5 +22,6 @@
   "mr_rsi_entry": 10,
   "mr_atr_stop_multiple": 2,
   "mr_max_holding_sessions": 10,
-  "timezone": "Europe/Rome"
+  "timezone": "Europe/Rome",
+  "mr_walking_tolerance": 0.015
 }
