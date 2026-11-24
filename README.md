@@ -29,6 +29,8 @@ Gli indicatori sono calcolati sull'OHLC dello **strumento negoziato**, non sul s
 
 Il motore MR è indipendente dal Trend Following: non legge i segnali TF, non condivide posizioni e non combina le condizioni dei due sistemi. Sono confrontate quattro varianti separate (A, B, C, D); nessuna è abilitata in PAPER.
 
+L'analisi per regime classifica ogni strumento alla data del setup: UPTREND se Close > SMA200 e SMA200 è crescente rispetto a 20 sedute prima; DOWNTREND se Close < SMA200 e SMA200 è decrescente rispetto a 20 sedute prima; SIDEWAYS negli altri casi con SMA200 disponibile; UNKNOWN prima di 200 barre. È un regime di trend del singolo strumento, non un benchmark comune di mercato.
+
 1. **A — baseline:** close sotto Bollinger inferiore (20,2) e RSI(2) <= 10; ingresso all'open successivo.
 2. **B — recupero:** dopo il setup A, attende almeno 2 chiusure su 3 sopra la banda inferiore; ingresso all'open successivo alla conferma. Il setup decade se non confermato entro 3 sedute.
 3. **C — Walking ribassista:** richiede il setup A, almeno 2 delle ultime 3 chiusure entro 1,5% dalla banda inferiore e banda inferiore discendente nelle ultime 2 transizioni; ingresso all'open successivo.
