@@ -35,7 +35,17 @@ def add_frame(name,path):
             for row in frame.itertuples(index=False,name=None): sh.append(list(row))
 add_frame("Audit strumenti",R/"backtest_data_audit.csv")
 add_frame("Operazioni TF",R/"backtest_trades.csv")
-add_frame("Operazioni MR",R/"mr_backtest_trades.csv")
+add_frame("Operazioni MR A",R/"mr_backtest_trades.csv")
+add_frame("Operazioni MR B",R/"mr_backtest_trades_b.csv")
+add_frame("Operazioni MR C",R/"mr_backtest_trades_c.csv")
+variants=mr_summary.get("variants",{})
+if variants:
+    comp=wb.create_sheet("Confronto MR A-B-C")
+    comp.append(["VARIANTE","COSTI BPS","OPERAZIONI","WIN RATE %","MEDIA NETTA %","MEDIANA NETTA %","PROFIT FACTOR","DD MEDIO STRUMENTI %","PEGGIOR DD STRUMENTO %"])
+    for variant, data in variants.items():
+        for bps, m in data["costs"].items():
+            comp.append([variant,int(bps),m["trades"],m["win_rate_pct"],m["avg_net_pct"],m["median_net_pct"],m["profit_factor"],m["avg_instrument_drawdown_pct"],m["worst_instrument_drawdown_pct"]])
+
 mr=wb.create_sheet("Sintesi MR")
 mr.append(["MEAN REVERSION — MOTORE INDIPENDENTE"])
 mr.append(["Costi round trip bps","Operazioni","Win rate %","Media netta %","Mediana netta %","Profit factor","DD medio strumenti %","Peggior DD strumento %"])
