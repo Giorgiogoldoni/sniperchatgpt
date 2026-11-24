@@ -47,8 +47,8 @@ rules=wb.create_sheet("Regole")
 for row in [
 ["Parametro","Regola v1"],["Universo","ETF/ETP leva long, leva short/inversi e materie prime"],
 ["Motori","Trend Following e Mean Reversion indipendenti; nessuna combinazione dei segnali"],
-["MR setup","Close sotto Bollinger inferiore (20,2) con RSI(2) <= 10 almeno una volta nelle ultime 3 sedute"],
-["MR ingresso","Close torna sopra Bollinger inferiore dopo il setup; ingresso all’open successivo"],
+["MR segnale","Close sotto Bollinger inferiore (20,2) e RSI(2) <= 10 sulla stessa seduta"],
+["MR ingresso","Segnale a chiusura; ingresso all’open successivo"],
 ["MR uscita","Chiusura alla Bollinger centrale; stop 2 x ATR(14); massimo 10 sedute"],
 ["Donchian","Close > massimo High delle 20 sedute precedenti"],
 ["Walking","Almeno 2 delle ultime 3 sedute: close entro 1,5% dalla Bollinger superiore 20,2; close sopra media e banda superiore crescente"],
