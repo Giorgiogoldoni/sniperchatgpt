@@ -45,7 +45,14 @@ if variants:
     comp.append(["VARIANTE","COSTI BPS","OPERAZIONI","WIN RATE %","MEDIA NETTA %","MEDIANA NETTA %","PROFIT FACTOR","DD MEDIO STRUMENTI %","PEGGIOR DD STRUMENTO %"])
     for variant, data in variants.items():
         for bps, m in data["costs"].items():
+            if bps == "exposure":
+                continue
             comp.append([variant,int(bps),m["trades"],m["win_rate_pct"],m["avg_net_pct"],m["median_net_pct"],m["profit_factor"],m["avg_instrument_drawdown_pct"],m["worst_instrument_drawdown_pct"]])
+    exposure=variants.get("D",{}).get("costs",{}).get("exposure",{})
+    if exposure:
+        comp.append([])
+        comp.append(["MR-D ESPOSIZIONE","Media capitale investito %","Trade con 100% investito %","Media tranche per trade","Trade 1 tranche","Trade 2 tranche","Trade 3 tranche"])
+        comp.append(["D",exposure.get("avg_deployed_weight_pct"),exposure.get("full_deployment_trades_pct"),exposure.get("avg_tranches_per_trade"),exposure.get("one_tranche_trades"),exposure.get("two_tranche_trades"),exposure.get("three_tranche_trades")])
 
 mr=wb.create_sheet("Sintesi MR")
 mr.append(["MEAN REVERSION — MOTORE INDIPENDENTE"])
