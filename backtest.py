@@ -7,7 +7,7 @@ from pathlib import Path
 import pandas as pd
 import yfinance as yf
 from strategy import add_indicators
-from mean_reversion import add_mr_indicators, simulate_mr, metrics_mr
+from mean_reversion import add_mr_indicators, simulate_mr_variant, metrics_mr
 ROOT=Path(__file__).resolve().parent
 OUT=ROOT/"reports"
 warnings.filterwarnings("ignore")
@@ -68,7 +68,7 @@ def main():
     config=json.loads((ROOT/"config.json").read_text())
     universe=json.loads((ROOT/"data/instrument_universe.json").read_text())["instruments"]
     selected=[x for x in universe if x.get("classification") in {"LEVA_LONG","LEVA_SHORT","MATERIE_PRIME_1X","MATERIE_PRIME_LEVA","MATERIE_PRIME_SHORT"}]
-    all_trades=[]; mr_all_trades=[]; scan=[]; market_data={}; mr_diag={"valid_bars":0,"below_lower":0,"rsi2_le_10":0,"both_conditions":0,"entry_signals":0}; batch_size=20
+    all_trades=[]; mr_all_trades=[]; mr_variant_trades={"A":[],"B":[],"C":[]}; scan=[]; market_data={}; mr_diag={"valid_bars":0,"below_lower":0,"rsi2_le_10":0,"both_conditions":0,"entry_signals":0}; batch_size=20
     for start in range(0,len(selected),batch_size):
         batch=selected[start:start+batch_size]; tickers=[x.get("yahoo") or x.get("id") for x in batch]
         try:
@@ -135,6 +135,8 @@ def main():
     (OUT/"market_data.json").write_text(json.dumps({"generated_utc":pd.Timestamp.now(tz="UTC").isoformat(),"source":"Yahoo Finance auto_adjust OHLCV; same daily bars used by backtest","instruments":market_data},separators=(",",":"),ensure_ascii=False)+"\n",encoding="utf-8")
     pd.DataFrame(all_trades).to_csv(OUT/"backtest_trades.csv",index=False)
     pd.DataFrame(mr_all_trades).to_csv(OUT/"mr_backtest_trades.csv",index=False)
+    for variant in ("B","C"):
+        pd.DataFrame(mr_variant_trades[variant]).to_csv(OUT/f"mr_backtest_trades_{variant.lower()}.csv",index=False)
     pd.DataFrame(scan).to_csv(OUT/"backtest_data_audit.csv",index=False)
     def mr_instrument_drawdowns(trades,key):
         values=[metrics_mr([t for t in trades if t["symbol"]==sym],key)["max_drawdown_pct"]
@@ -161,13 +163,32 @@ def main():
             m.update(mr_instrument_drawdowns(group,key))
             for k,v in m.items(): rec[key+"_"+k]=v
         mr_families.append(rec)
+    def summarize_mr_variant(trades):
+        costs={}
+        for bps in config["costs_bps_round_trip"]:
+            key="net_"+str(bps)+"bps_pct"
+            m=metrics_mr(trades,key); m.pop("max_drawdown_pct",None)
+            m.update(mr_instrument_drawdowns(trades,key)); costs[str(bps)]=m
+        families=[]
+        for cat in sorted({x["classification"] for x in selected}):
+            group=[t for t in trades if t["category"]==cat]; rec={"category":cat}
+            for bps in config["costs_bps_round_trip"]:
+                key="net_"+str(bps)+"bps_pct"; m=metrics_mr(group,key); m.pop("max_drawdown_pct",None)
+                m.update(mr_instrument_drawdowns(group,key))
+                for k,v in m.items(): rec[key+"_"+k]=v
+            families.append(rec)
+        return {"trades_total":len(trades),"costs":costs,"families":families}
+    mr_variants={v:summarize_mr_variant(mr_variant_trades[v]) for v in ("A","B","C")}
     mr_summary={"strategy":"MEAN_REVERSION","rules":{
         "setup":"Close sotto Bollinger inferiore (20,2) e RSI(2) <= 10 sulla stessa seduta",
         "entry":"Segnale sulla chiusura; ingresso all'open della seduta successiva",
         "stop":"2 x ATR(14) dal prezzo di ingresso, ATR calcolato alla data del segnale",
         "exit":"Chiusura al raggiungimento/superamento della Bollinger centrale; stop ATR; massimo 10 sedute",
-        "independent_from_trend_following":True},
-        "trades_total":len(mr_all_trades),"diagnostics":mr_diag,"costs":mr_costs,"families":mr_families,"paper_only":True}
+        "independent_from_trend_following":True,
+        "A":"Baseline: entry next open after oversold signal",
+        "B":"After oversold setup, enter next open once at least 2 of the next 3 closes are above the lower Bollinger band; discard if not confirmed within 3 sessions",
+        "C":"At oversold signal, require at least 2 of the last 3 closes within 1.5% of the lower band and lower band falling on each of the last 2 transitions"},
+        "trades_total":len(mr_all_trades),"diagnostics":mr_diag,"costs":mr_costs,"families":mr_families,"variants":mr_variants,"paper_only":True}
     (OUT/"mr_backtest_summary.json").write_text(json.dumps(mr_summary,indent=2,ensure_ascii=False)+"\n")
     keys=[f"net_{b}bps_pct" for b in config["costs_bps_round_trip"]]; families=[]
     for cat in sorted({x["classification"] for x in selected}):
