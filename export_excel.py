@@ -7,7 +7,8 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment
 from openpyxl.utils import get_column_letter
 ROOT=Path(__file__).resolve().parent; R=ROOT/"reports"
-summary=json.loads((R/"backtest_summary.json").read_text(encoding="utf-8"))\nmr_summary=json.loads((R/"mr_backtest_summary.json").read_text(encoding="utf-8"))
+summary=json.loads((R/"backtest_summary.json").read_text(encoding="utf-8"))
+mr_summary=json.loads((R/"mr_backtest_summary.json").read_text(encoding="utf-8"))
 wb=Workbook(); ws=wb.active; ws.title="Sintesi"
 for row in [
 ["SNIPERCHATGPT — BACKTEST STORICO"],["Generato UTC",summary["generated_utc"]],
@@ -25,10 +26,22 @@ def add_frame(name,path):
         frame=pd.read_csv(path).fillna(""); sh=wb.create_sheet(name); sh.append(list(frame.columns))
         for row in frame.itertuples(index=False,name=None): sh.append(list(row))
 add_frame("Audit strumenti",R/"backtest_data_audit.csv")
-add_frame("Operazioni TF",R/"backtest_trades.csv")\nadd_frame("Operazioni MR",R/"mr_backtest_trades.csv")\nmr=wb.create_sheet("Sintesi MR")\nmr.append(["MEAN REVERSION — MOTORE INDIPENDENTE"])\nmr.append(["Costi round trip bps","Operazioni","Win rate %","Media netta %","Profit factor","Max drawdown %"])\nfor bps,m in mr_summary["costs"].items(): mr.append([int(bps),m["trades"],m["win_rate_pct"],m["avg_net_pct"],m["profit_factor"],m["max_drawdown_pct"]])\nmr.append([])\nmr.append(["Regola","Descrizione"])\nfor key,value in mr_summary["rules"].items(): mr.append([key,str(value)])
+add_frame("Operazioni TF",R/"backtest_trades.csv")
+add_frame("Operazioni MR",R/"mr_backtest_trades.csv")
+mr=wb.create_sheet("Sintesi MR")
+mr.append(["MEAN REVERSION — MOTORE INDIPENDENTE"])
+mr.append(["Costi round trip bps","Operazioni","Win rate %","Media netta %","Profit factor","Max drawdown %"])
+for bps,m in mr_summary["costs"].items(): mr.append([int(bps),m["trades"],m["win_rate_pct"],m["avg_net_pct"],m["profit_factor"],m["max_drawdown_pct"]])
+mr.append([])
+mr.append(["Regola","Descrizione"])
+for key,value in mr_summary["rules"].items(): mr.append([key,str(value)])
 rules=wb.create_sheet("Regole")
 for row in [
-["Parametro","Regola v1"],["Universo","ETF/ETP leva long, leva short/inversi e materie prime"],\n["Motori","Trend Following e Mean Reversion indipendenti; nessuna combinazione dei segnali"],\n["MR setup","Close sotto Bollinger inferiore (20,2) con RSI(2) <= 10 almeno una volta nelle ultime 3 sedute"],\n["MR ingresso","Close torna sopra Bollinger inferiore dopo il setup; ingresso all’open successivo"],\n["MR uscita","Chiusura alla Bollinger centrale; stop 2 x ATR(14); massimo 10 sedute"],
+["Parametro","Regola v1"],["Universo","ETF/ETP leva long, leva short/inversi e materie prime"],
+["Motori","Trend Following e Mean Reversion indipendenti; nessuna combinazione dei segnali"],
+["MR setup","Close sotto Bollinger inferiore (20,2) con RSI(2) <= 10 almeno una volta nelle ultime 3 sedute"],
+["MR ingresso","Close torna sopra Bollinger inferiore dopo il setup; ingresso all’open successivo"],
+["MR uscita","Chiusura alla Bollinger centrale; stop 2 x ATR(14); massimo 10 sedute"],
 ["Donchian","Close > massimo High delle 20 sedute precedenti"],
 ["Walking","Almeno 2 delle ultime 3 sedute: close entro 1,5% dalla Bollinger superiore 20,2; close sopra media e banda superiore crescente"],
 ["Ingresso","Open della seduta successiva al segnale"],["Stop iniziale","Prezzo ingresso - 2 x ATR(14) calcolato alla data segnale"],
