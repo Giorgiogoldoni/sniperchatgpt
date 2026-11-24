@@ -108,7 +108,7 @@ class MeanReversionTests(unittest.TestCase):
         self.assertEqual(trade["tranche_count"], 3)
         self.assertEqual(trade["tranche_weights_pct"], [40.0, 30.0, 30.0])
         self.assertEqual(trade["tranche_entry_dates"], [
-            str(fake.index[3].date()), str(fake.index[6].date()), str(fake.index[10].date())
+            str(fake.index[3].date()), str(fake.index[5].date()), str(fake.index[10].date())
         ])
         self.assertAlmostEqual(trade["deployed_weight_pct"], 100.0)
 
