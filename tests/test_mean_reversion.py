@@ -81,23 +81,24 @@ class MeanReversionTests(unittest.TestCase):
         self.assertEqual(trades[0]["variant"], "C")
 
 
+
     def test_variant_d_stages_two_addons_after_fresh_walking_confirmations(self):
-        frame = self.frame.iloc[:10].copy()
+        frame = self.frame.iloc[:11].copy()
         fake = frame.copy()
         fake["ATR14"] = 1.0
         fake["MR_BB_MID"] = 200.0
-        fake["MR_BB_LOWER"] = [110,109,108,107,106,105,104,103,102,101]
+        fake["MR_BB_LOWER"] = [110,109,108,107,106,105,104,103,102,101,100]
         fake["MR_RSI2"] = 5.0
         fake["MR_ENTRY_SIGNAL"] = False
         fake.iloc[2, fake.columns.get_loc("MR_ENTRY_SIGNAL")] = True
-        # Initial setup -> 40% at row 3 open.
-        # A first post-entry lower-band Walking event at row 4 -> 30% at row 5 open.
-        # Walking resets on rows 5-6, then a second fresh event at row 7 -> 30% at row 8 open.
-        fake["Close"] = [111,110,109,108,106,115,116,102,101,100]
+        # Entry 40% at row 3. First fresh 2/3 lower-band walk at row 5
+        # schedules 30% at row 6. A reset follows; a second fresh walk at row 9
+        # schedules the final 30% at row 10.
+        fake["Close"] = [115,115,109,120,106,105,115,116,102,101,100]
         fake["Low"] = fake["Close"] - 0.2
         fake.iloc[3, fake.columns.get_loc("Open")] = 100.0
-        fake.iloc[5, fake.columns.get_loc("Open")] = 99.0
-        fake.iloc[8, fake.columns.get_loc("Open")] = 98.0
+        fake.iloc[6, fake.columns.get_loc("Open")] = 99.0
+        fake.iloc[10, fake.columns.get_loc("Open")] = 98.5
         cfg = dict(self.config, mr_d_tranche_weights=[0.4, 0.3, 0.3], mr_walking_tolerance=0.015)
         with patch("mean_reversion.add_mr_indicators", return_value=fake):
             trades = simulate_mr_variant("TEST", self.instrument, frame, cfg, "D")
@@ -107,7 +108,7 @@ class MeanReversionTests(unittest.TestCase):
         self.assertEqual(trade["tranche_count"], 3)
         self.assertEqual(trade["tranche_weights_pct"], [40.0, 30.0, 30.0])
         self.assertEqual(trade["tranche_entry_dates"], [
-            str(fake.index[3].date()), str(fake.index[5].date()), str(fake.index[8].date())
+            str(fake.index[3].date()), str(fake.index[6].date()), str(fake.index[10].date())
         ])
         self.assertAlmostEqual(trade["deployed_weight_pct"], 100.0)
 
