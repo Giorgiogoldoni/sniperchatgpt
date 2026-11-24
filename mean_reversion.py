@@ -194,7 +194,7 @@ def simulate_mr_variant(symbol, instrument, frame, config, variant="A"):
             # confirmation can schedule it. No more than one add per session.
             if variant == "D" and pending_add is not None:
                 leg_index = pending_add["leg_index"]
-                if leg_index < len(weights):
+                if leg_index < len(weights) and op > pos["stop_price"]:
                     pos["legs"].append({"entry_date": day, "entry_price": op,
                                         "weight": weights[leg_index]})
                     pos["next_tranche"] = leg_index + 1
