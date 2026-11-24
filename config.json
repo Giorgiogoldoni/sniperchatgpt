@@ -17,5 +17,11 @@
     30,
     50
   ],
+  "mr_bollinger_period": 20,
+  "mr_bollinger_std": 2,
+  "mr_rsi_entry": 10,
+  "mr_setup_lookback": 3,
+  "mr_atr_stop_multiple": 2,
+  "mr_max_holding_sessions": 10,
   "timezone": "Europe/Rome"
 }
