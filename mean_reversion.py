@@ -19,7 +19,6 @@ def add_mr_indicators(frame: pd.DataFrame, config: dict) -> pd.DataFrame:
     rsi = rsi.mask((losses == 0) & (gains > 0), 100)
     rsi = rsi.mask((losses == 0) & (gains == 0), 50)
     df["MR_RSI2"] = rsi
-    lookback = int(config.get("mr_setup_lookback", 3))
     threshold = float(config.get("mr_rsi_entry", 10))
     # Classic oversold mean-reversion entry: buy only after a completed
     # close below the lower band with RSI(2) <= threshold; fill next session open.
