@@ -142,8 +142,8 @@ def main():
             for k,v in m.items(): rec["net_"+str(bps)+"bps_pct_"+k]=v
         mr_families.append(rec)
     mr_summary={"strategy":"MEAN_REVERSION","rules":{
-        "setup":"Close sotto Bollinger inferiore (20,2) e RSI(2) <= 10 almeno una volta nelle ultime 3 sedute",
-        "entry":"Close torna sopra Bollinger inferiore dopo il setup; ingresso all'open della seduta successiva",
+        "setup":"Close sotto Bollinger inferiore (20,2) e RSI(2) <= 10 sulla stessa seduta",
+        "entry":"Segnale sulla chiusura; ingresso all'open della seduta successiva",
         "stop":"2 x ATR(14) dal prezzo di ingresso, ATR calcolato alla data del segnale",
         "exit":"Chiusura al raggiungimento/superamento della Bollinger centrale; stop ATR; massimo 10 sedute",
         "independent_from_trend_following":True},
