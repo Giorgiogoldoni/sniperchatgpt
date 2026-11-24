@@ -21,17 +21,11 @@ def add_mr_indicators(frame: pd.DataFrame, config: dict) -> pd.DataFrame:
     df["MR_RSI2"] = rsi
     lookback = int(config.get("mr_setup_lookback", 3))
     threshold = float(config.get("mr_rsi_entry", 10))
-    # Entry only after price closes back above the lower band, with a recent
-    # oversold close below that band. The signal is known only at the close.
+    # Classic oversold mean-reversion entry: buy only after a completed
+    # close below the lower band with RSI(2) <= threshold; fill next session open.
     below = close.le(df["MR_BB_LOWER"])
     oversold = df["MR_RSI2"].le(threshold)
-    recent_setup = (below & oversold).rolling(lookback, min_periods=1).max().astype(bool)
-    df["MR_ENTRY_SIGNAL"] = (
-        close.gt(df["MR_BB_LOWER"]) &
-        close.shift(1).le(df["MR_BB_LOWER"].shift(1)) &
-        recent_setup &
-        df["MR_BB_MID"].notna()
-    ).fillna(False)
+    df["MR_ENTRY_SIGNAL"] = (below & oversold & df["MR_BB_MID"].notna()).fillna(False)
     return df
 
 def _finish(symbol, instrument, pos, date, price, reason, config):
