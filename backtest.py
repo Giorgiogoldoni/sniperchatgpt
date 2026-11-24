@@ -110,7 +110,7 @@ def main():
                 records=[]
                 for dt,values in export.iterrows():
                     rec={"date":pd.Timestamp(dt).strftime("%Y-%m-%d")}
-                    for col in cols:
+                    for col in export.columns:
                         value=values.get(col)
                         if pd.isna(value): rec[col.lower()]=None
                         elif col in ("WALKING","ENTRY_SIGNAL","MR_ENTRY_SIGNAL"): rec[col.lower()]=bool(value)
