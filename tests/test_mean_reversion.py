@@ -1,7 +1,8 @@
 import unittest
 import pandas as pd
 
-from mean_reversion import add_mr_indicators, simulate_mr
+from mean_reversion import add_mr_indicators, simulate_mr, simulate_mr_variant
+from unittest.mock import patch
 
 
 class MeanReversionTests(unittest.TestCase):
@@ -38,6 +39,46 @@ class MeanReversionTests(unittest.TestCase):
         self.assertAlmostEqual(trades[0]["entry_price"], 88.0)
         self.assertEqual(trades[0]["strategy"], "MEAN_REVERSION")
 
+
+    def test_variant_b_waits_for_two_of_three_recovery_closes(self):
+        frame = self.frame.iloc[:8].copy()
+        fake = frame.copy()
+        fake["ATR14"] = 1.0
+        fake["MR_BB_MID"] = 200.0
+        fake["MR_BB_LOWER"] = 95.0
+        fake["MR_RSI2"] = 5.0
+        fake["MR_ENTRY_SIGNAL"] = False
+        fake.iloc[1, fake.columns.get_loc("MR_ENTRY_SIGNAL")] = True
+        fake.iloc[2, fake.columns.get_loc("Close")] = 96.0
+        fake.iloc[3, fake.columns.get_loc("Close")] = 97.0
+        fake.iloc[4, fake.columns.get_loc("Open")] = 104.0
+        with patch("mean_reversion.add_mr_indicators", return_value=fake):
+            trades = simulate_mr_variant("TEST", self.instrument, frame, self.config, "B")
+        self.assertEqual(len(trades), 1)
+        self.assertEqual(trades[0]["signal_date"], str(fake.index[1].date()))
+        self.assertEqual(trades[0]["entry_date"], str(fake.index[4].date()))
+        self.assertAlmostEqual(trades[0]["entry_price"], 104.0)
+        self.assertEqual(trades[0]["variant"], "B")
+
+    def test_variant_c_requires_lower_band_walk_and_enters_next_open(self):
+        frame = self.frame.iloc[:6].copy()
+        fake = frame.copy()
+        fake["ATR14"] = 1.0
+        fake["MR_BB_MID"] = 200.0
+        fake["MR_BB_LOWER"] = [103.0, 102.0, 101.0, 100.0, 99.0, 98.0]
+        fake["MR_RSI2"] = 5.0
+        fake["MR_ENTRY_SIGNAL"] = False
+        fake.iloc[4, fake.columns.get_loc("MR_ENTRY_SIGNAL")] = True
+        fake.iloc[5, fake.columns.get_loc("Open")] = 105.0
+        fake.iloc[3, fake.columns.get_loc("Close")] = 100.5
+        fake.iloc[4, fake.columns.get_loc("Close")] = 99.5
+        fake.iloc[5, fake.columns.get_loc("Close")] = 97.5
+        with patch("mean_reversion.add_mr_indicators", return_value=fake):
+            trades = simulate_mr_variant("TEST", self.instrument, frame, self.config, "C")
+        self.assertEqual(len(trades), 1)
+        self.assertEqual(trades[0]["entry_date"], str(fake.index[5].date()))
+        self.assertAlmostEqual(trades[0]["entry_price"], 105.0)
+        self.assertEqual(trades[0]["variant"], "C")
 
 if __name__ == "__main__":
     unittest.main()
