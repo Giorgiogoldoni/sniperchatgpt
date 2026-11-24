@@ -243,7 +243,8 @@ def simulate_mr_variant(symbol, instrument, frame, config, variant="A"):
                 else:
                     simple = {"signal_date": pos["signal_date"], "entry_date": pos["entry_date"],
                               "entry_price": pos["legs"][0]["entry_price"],
-                              "stop_price": pos["stop_price"], "holding_sessions": pos["holding_sessions"]}
+                              "stop_price": pos["stop_price"], "holding_sessions": pos["holding_sessions"],
+                              "regime": pos.get("regime", "UNKNOWN")}
                     trades.append(_finish(symbol, instrument, simple, day, px, "MAX_HOLDING_SESSIONS", config))
                 pos = None
                 pending_add = None
@@ -292,7 +293,8 @@ def simulate_mr_variant(symbol, instrument, frame, config, variant="A"):
         else:
             simple = {"signal_date": pos["signal_date"], "entry_date": pos["entry_date"],
                       "entry_price": pos["legs"][0]["entry_price"],
-                      "stop_price": pos["stop_price"], "holding_sessions": pos["holding_sessions"]}
+                      "stop_price": pos["stop_price"], "holding_sessions": pos["holding_sessions"],
+                      "regime": pos.get("regime", "UNKNOWN")}
             trades.append(_finish(symbol, instrument, simple, str(pd.Timestamp(df.index[-1]).date()),
                                   float(last.Close), "END_OF_DATA", config))
     for trade in trades:
