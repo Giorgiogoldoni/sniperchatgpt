@@ -110,56 +110,145 @@ def metrics_mr(trades, key):
             "best_trade_pct": round(max(vals), 3), "worst_trade_pct": round(min(vals), 3)}
 
 
+
+def _finish_scaled(symbol, instrument, pos, date, price, reason, config):
+    """Close all tranches; returns are measured against the full planned allocation."""
+    gross_contribution = 0.0
+    deployed = sum(x["weight"] for x in pos["legs"])
+    weighted_entry = sum(x["entry_price"] * x["weight"] for x in pos["legs"]) / deployed
+    weighted_cost = 0.0
+    for leg in pos["legs"]:
+        leg_return = float(price) / leg["entry_price"] - 1.0
+        gross_contribution += leg["weight"] * leg_return * 100.0
+        weighted_cost += leg["weight"]
+    row = {
+        "strategy": "MEAN_REVERSION_D", "variant": "D", "symbol": symbol,
+        "name": instrument.get("name", symbol), "category": instrument["classification"],
+        "signal_date": pos["signal_date"], "entry_date": pos["entry_date"],
+        "entry_price": round(weighted_entry, 8), "exit_date": date,
+        "exit_price": round(float(price), 8), "holding_sessions": pos["holding_sessions"],
+        "exit_reason": reason, "gross_return_pct": round(gross_contribution, 5),
+        "deployed_weight_pct": round(deployed * 100.0, 2),
+        "tranche_count": len(pos["legs"]),
+        "tranche_weights_pct": [round(x["weight"] * 100, 2) for x in pos["legs"]],
+        "tranche_entry_prices": [round(x["entry_price"], 8) for x in pos["legs"]],
+        "tranche_entry_dates": [x["entry_date"] for x in pos["legs"]],
+        "return_on_deployed_capital_pct": round(gross_contribution / deployed, 5) if deployed else 0.0
+    }
+    for bps in config["costs_bps_round_trip"]:
+        cost = sum(x["weight"] * float(bps) / 100.0 for x in pos["legs"])
+        row[f"net_{bps}bps_pct"] = round(gross_contribution - cost, 5)
+        row[f"net_{bps}bps_on_deployed_pct"] = round(
+            (gross_contribution - cost) / deployed, 5) if deployed else 0.0
+    return row
+
+
 def simulate_mr_variant(symbol, instrument, frame, config, variant="A"):
-    """Run an isolated MR variant: A baseline, B lower-band recovery, C lower-band walk."""
-    if variant not in {"A", "B", "C"}:
-        raise ValueError("variant must be A, B or C")
+    """Independent MR engines A/B/C and staged-entry D. D uses 40/30/30 tranches."""
+    if variant not in {"A", "B", "C", "D"}:
+        raise ValueError("variant must be A, B, C or D")
     df = add_mr_indicators(frame, config)
     close = pd.to_numeric(df["Close"], errors="coerce")
     lower = df["MR_BB_LOWER"]
     base = df["MR_ENTRY_SIGNAL"].fillna(False)
-    # C: at least 2/3 closes within 1.5% of the lower band and a strictly
-    # falling lower band over the same three completed sessions.
-    near_lower = ((close / lower - 1).abs() <= float(config.get("mr_walking_tolerance", 0.015))).fillna(False)
+    tolerance = float(config.get("mr_walking_tolerance", 0.015))
+    near_lower = ((close / lower - 1).abs() <= tolerance).fillna(False)
     lower_falling = (lower < lower.shift(1)) & (lower.shift(1) < lower.shift(2))
     c_signal = base & (near_lower.rolling(3, min_periods=3).sum() >= 2) & lower_falling
+
     trades, pos, pending_entry, setup = [], None, None, None
     stop_multiple = float(config.get("mr_atr_stop_multiple", 2.0))
     max_days = int(config.get("mr_max_holding_sessions", 10))
+    weights = config.get("mr_d_tranche_weights", [0.40, 0.30, 0.30])
+    weights = [float(x) for x in weights]
+    if variant == "D" and (len(weights) != 3 or any(x <= 0 for x in weights) or sum(weights) > 1.000001):
+        raise ValueError("MR-D tranche weights must be three positive weights totaling no more than 100%")
+    pending_add = None
+    previous_c = False
 
     for date, row in df.iterrows():
         day = str(pd.Timestamp(date).date())
         op, hi, lo, px = (float(row[x]) for x in ("Open", "High", "Low", "Close"))
         if not all(math.isfinite(x) and x > 0 for x in (op, hi, lo, px)):
             continue
-        # Orders generated at a completed prior close are filled at today's open.
+
         if pending_entry is not None and pos is None:
             atr = float(pending_entry["atr"])
-            pos = {"signal_date": pending_entry["date"], "entry_date": day,
-                   "entry_price": op, "stop_price": op - stop_multiple * atr,
-                   "holding_sessions": 0}
+            first_weight = weights[0] if variant == "D" else 1.0
+            first_leg = {"entry_date": day, "entry_price": op, "weight": first_weight}
+            pos = {
+                "signal_date": pending_entry["date"], "entry_date": day,
+                "holding_sessions": 0, "legs": [first_leg],
+                # Fixed from first fill: later tranches can never widen the original risk.
+                "stop_price": op - stop_multiple * atr,
+                "next_tranche": 1, "last_add_signal_date": None
+            }
             pending_entry = None
             setup = None
+
         if pos is not None:
             pos["holding_sessions"] += 1
+
+            # Add-on order is filled at today's open; only a completed prior-close
+            # confirmation can schedule it. No more than one add per session.
+            if variant == "D" and pending_add is not None:
+                leg_index = pending_add["leg_index"]
+                if leg_index < len(weights):
+                    pos["legs"].append({"entry_date": day, "entry_price": op,
+                                        "weight": weights[leg_index]})
+                    pos["next_tranche"] = leg_index + 1
+                pending_add = None
+
             if lo <= pos["stop_price"]:
                 fill = op if op < pos["stop_price"] else pos["stop_price"]
-                trades.append(_finish(symbol, instrument, pos, day, fill, "ATR14_X2_STOP", config))
+                if variant == "D":
+                    trades.append(_finish_scaled(symbol, instrument, pos, day, fill, "ATR14_X2_INITIAL_STOP", config))
+                else:
+                    simple = {"signal_date": pos["signal_date"], "entry_date": pos["entry_date"],
+                              "entry_price": pos["legs"][0]["entry_price"],
+                              "stop_price": pos["stop_price"], "holding_sessions": pos["holding_sessions"]}
+                    trades.append(_finish(symbol, instrument, simple, day, fill, "ATR14_X2_STOP", config))
                 pos = None
+                pending_add = None
                 continue
+
             mid = row.get("MR_BB_MID")
             if pd.notna(mid) and px >= float(mid):
-                trades.append(_finish(symbol, instrument, pos, day, px, "BB_MID_REVERSION", config))
+                if variant == "D":
+                    trades.append(_finish_scaled(symbol, instrument, pos, day, px, "BB_MID_REVERSION", config))
+                else:
+                    simple = {"signal_date": pos["signal_date"], "entry_date": pos["entry_date"],
+                              "entry_price": pos["legs"][0]["entry_price"],
+                              "stop_price": pos["stop_price"], "holding_sessions": pos["holding_sessions"]}
+                    trades.append(_finish(symbol, instrument, simple, day, px, "BB_MID_REVERSION", config))
                 pos = None
+                pending_add = None
                 continue
+
             if pos["holding_sessions"] >= max_days:
-                trades.append(_finish(symbol, instrument, pos, day, px, "MAX_HOLDING_SESSIONS", config))
+                if variant == "D":
+                    trades.append(_finish_scaled(symbol, instrument, pos, day, px, "MAX_HOLDING_SESSIONS", config))
+                else:
+                    simple = {"signal_date": pos["signal_date"], "entry_date": pos["entry_date"],
+                              "entry_price": pos["legs"][0]["entry_price"],
+                              "stop_price": pos["stop_price"], "holding_sessions": pos["holding_sessions"]}
+                    trades.append(_finish(symbol, instrument, simple, day, px, "MAX_HOLDING_SESSIONS", config))
                 pos = None
+                pending_add = None
                 continue
+
+            if variant == "D" and pending_add is None and pos["next_tranche"] < len(weights):
+                # Require a fresh C-style Walking event after the preceding fill.
+                c_now = bool(c_signal.loc[date])
+                if c_now and not previous_c and day != pos["entry_date"] and day != pos["last_add_signal_date"]:
+                    pending_add = {"leg_index": pos["next_tranche"]}
+                    pos["last_add_signal_date"] = day
+                previous_c = c_now
             continue
 
         if pending_entry is not None:
             continue
+
         if variant == "B":
             if setup is not None:
                 setup["sessions"] += 1
@@ -175,7 +264,7 @@ def simulate_mr_variant(symbol, instrument, frame, config, variant="A"):
                 if pd.notna(atr) and float(atr) > 0:
                     setup = {"date": day, "atr": float(atr), "sessions": 0, "recoveries": 0}
         else:
-            signal = bool(base.loc[date]) if variant == "A" else bool(c_signal.loc[date])
+            signal = bool(base.loc[date]) if variant in {"A", "D"} else bool(c_signal.loc[date])
             if signal:
                 atr = row.get("ATR14")
                 if pd.notna(atr) and float(atr) > 0:
@@ -183,8 +272,15 @@ def simulate_mr_variant(symbol, instrument, frame, config, variant="A"):
 
     if pos is not None and len(df):
         last = df.iloc[-1]
-        trades.append(_finish(symbol, instrument, pos, str(pd.Timestamp(df.index[-1]).date()),
-                              float(last.Close), "END_OF_DATA", config))
+        if variant == "D":
+            trades.append(_finish_scaled(symbol, instrument, pos, str(pd.Timestamp(df.index[-1]).date()),
+                                          float(last.Close), "END_OF_DATA", config))
+        else:
+            simple = {"signal_date": pos["signal_date"], "entry_date": pos["entry_date"],
+                      "entry_price": pos["legs"][0]["entry_price"],
+                      "stop_price": pos["stop_price"], "holding_sessions": pos["holding_sessions"]}
+            trades.append(_finish(symbol, instrument, simple, str(pd.Timestamp(df.index[-1]).date()),
+                                  float(last.Close), "END_OF_DATA", config))
     for trade in trades:
         trade["strategy"] = "MEAN_REVERSION_" + variant
         trade["variant"] = variant
