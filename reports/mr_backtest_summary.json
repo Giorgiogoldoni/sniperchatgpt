@@ -9,7 +9,8 @@
     "A": "Baseline: entry next open after oversold signal",
     "B": "After oversold setup, enter next open once at least 2 of the next 3 closes are above the lower Bollinger band; discard if not confirmed within 3 sessions",
     "C": "At oversold signal, require at least 2 of the last 3 closes within 1.5% of the lower band and lower band falling on each of the last 2 transitions",
-    "D": "40% initial entry on A signal; add 30% on each of two fresh post-entry lower-band Walking confirmations (2 of 3 closes within 1.5%, lower band falling); fixed initial stop, common exit; unused allocation stays in cash"
+    "D": "40% initial entry on A signal; add 30% on each of two fresh post-entry lower-band Walking confirmations (2 of 3 closes within 1.5%, lower band falling); fixed initial stop, common exit; unused allocation stays in cash",
+    "regime_analysis": "At setup date classify each instrument independently: UPTREND if close > SMA200 and SMA200 > SMA200 from 20 sessions earlier; DOWNTREND if close < SMA200 and SMA200 < its 20-session lag; SIDEWAYS otherwise when SMA200 is available; UNKNOWN before 200 bars. This is instrument-trend context, not a common market benchmark."
   },
   "trades_total": 2357,
   "diagnostics": {
@@ -395,6 +396,140 @@
           "net_50bps_pct_avg_instrument_drawdown_pct": -30.074,
           "net_50bps_pct_worst_instrument_drawdown_pct": -52.737
         }
+      ],
+      "regimes": [
+        {
+          "regime": "DOWNTREND",
+          "trades": 702,
+          "costs": {
+            "20": {
+              "trades": 702,
+              "win_rate_pct": 37.46,
+              "avg_net_pct": -0.584,
+              "median_net_pct": -1.377,
+              "profit_factor": 0.846,
+              "best_trade_pct": 57.637,
+              "worst_trade_pct": -48.268
+            },
+            "30": {
+              "trades": 702,
+              "win_rate_pct": 37.46,
+              "avg_net_pct": -0.684,
+              "median_net_pct": -1.477,
+              "profit_factor": 0.823,
+              "best_trade_pct": 57.537,
+              "worst_trade_pct": -48.368
+            },
+            "50": {
+              "trades": 702,
+              "win_rate_pct": 37.04,
+              "avg_net_pct": -0.884,
+              "median_net_pct": -1.677,
+              "profit_factor": 0.778,
+              "best_trade_pct": 57.337,
+              "worst_trade_pct": -48.568
+            }
+          }
+        },
+        {
+          "regime": "SIDEWAYS",
+          "trades": 356,
+          "costs": {
+            "20": {
+              "trades": 356,
+              "win_rate_pct": 41.85,
+              "avg_net_pct": 0.487,
+              "median_net_pct": -0.61,
+              "profit_factor": 1.151,
+              "best_trade_pct": 54.187,
+              "worst_trade_pct": -52.733
+            },
+            "30": {
+              "trades": 356,
+              "win_rate_pct": 41.01,
+              "avg_net_pct": 0.387,
+              "median_net_pct": -0.71,
+              "profit_factor": 1.118,
+              "best_trade_pct": 54.087,
+              "worst_trade_pct": -52.833
+            },
+            "50": {
+              "trades": 356,
+              "win_rate_pct": 39.89,
+              "avg_net_pct": 0.187,
+              "median_net_pct": -0.91,
+              "profit_factor": 1.055,
+              "best_trade_pct": 53.887,
+              "worst_trade_pct": -53.033
+            }
+          }
+        },
+        {
+          "regime": "UNKNOWN",
+          "trades": 911,
+          "costs": {
+            "20": {
+              "trades": 911,
+              "win_rate_pct": 42.15,
+              "avg_net_pct": -0.078,
+              "median_net_pct": -0.905,
+              "profit_factor": 0.98,
+              "best_trade_pct": 173.743,
+              "worst_trade_pct": -53.936
+            },
+            "30": {
+              "trades": 911,
+              "win_rate_pct": 41.38,
+              "avg_net_pct": -0.178,
+              "median_net_pct": -1.005,
+              "profit_factor": 0.956,
+              "best_trade_pct": 173.643,
+              "worst_trade_pct": -54.036
+            },
+            "50": {
+              "trades": 911,
+              "win_rate_pct": 40.4,
+              "avg_net_pct": -0.378,
+              "median_net_pct": -1.205,
+              "profit_factor": 0.908,
+              "best_trade_pct": 173.443,
+              "worst_trade_pct": -54.236
+            }
+          }
+        },
+        {
+          "regime": "UPTREND",
+          "trades": 388,
+          "costs": {
+            "20": {
+              "trades": 388,
+              "win_rate_pct": 36.6,
+              "avg_net_pct": -1.442,
+              "median_net_pct": -1.632,
+              "profit_factor": 0.54,
+              "best_trade_pct": 26.835,
+              "worst_trade_pct": -29.327
+            },
+            "30": {
+              "trades": 388,
+              "win_rate_pct": 36.34,
+              "avg_net_pct": -1.542,
+              "median_net_pct": -1.732,
+              "profit_factor": 0.518,
+              "best_trade_pct": 26.735,
+              "worst_trade_pct": -29.427
+            },
+            "50": {
+              "trades": 388,
+              "win_rate_pct": 35.57,
+              "avg_net_pct": -1.742,
+              "median_net_pct": -1.932,
+              "profit_factor": 0.476,
+              "best_trade_pct": 26.535,
+              "worst_trade_pct": -29.627
+            }
+          }
+        }
       ]
     },
     "B": {
@@ -584,6 +719,140 @@
           "net_50bps_pct_worst_trade_pct": -20.678,
           "net_50bps_pct_avg_instrument_drawdown_pct": -21.406,
           "net_50bps_pct_worst_instrument_drawdown_pct": -49.826
+        }
+      ],
+      "regimes": [
+        {
+          "regime": "DOWNTREND",
+          "trades": 448,
+          "costs": {
+            "20": {
+              "trades": 448,
+              "win_rate_pct": 45.54,
+              "avg_net_pct": -0.679,
+              "median_net_pct": -0.285,
+              "profit_factor": 0.818,
+              "best_trade_pct": 46.018,
+              "worst_trade_pct": -51.261
+            },
+            "30": {
+              "trades": 448,
+              "win_rate_pct": 44.2,
+              "avg_net_pct": -0.779,
+              "median_net_pct": -0.385,
+              "profit_factor": 0.794,
+              "best_trade_pct": 45.918,
+              "worst_trade_pct": -51.361
+            },
+            "50": {
+              "trades": 448,
+              "win_rate_pct": 43.3,
+              "avg_net_pct": -0.979,
+              "median_net_pct": -0.585,
+              "profit_factor": 0.749,
+              "best_trade_pct": 45.718,
+              "worst_trade_pct": -51.561
+            }
+          }
+        },
+        {
+          "regime": "SIDEWAYS",
+          "trades": 228,
+          "costs": {
+            "20": {
+              "trades": 228,
+              "win_rate_pct": 47.81,
+              "avg_net_pct": -0.976,
+              "median_net_pct": -0.443,
+              "profit_factor": 0.748,
+              "best_trade_pct": 35.886,
+              "worst_trade_pct": -43.08
+            },
+            "30": {
+              "trades": 228,
+              "win_rate_pct": 47.37,
+              "avg_net_pct": -1.076,
+              "median_net_pct": -0.543,
+              "profit_factor": 0.726,
+              "best_trade_pct": 35.786,
+              "worst_trade_pct": -43.18
+            },
+            "50": {
+              "trades": 228,
+              "win_rate_pct": 44.74,
+              "avg_net_pct": -1.276,
+              "median_net_pct": -0.743,
+              "profit_factor": 0.684,
+              "best_trade_pct": 35.586,
+              "worst_trade_pct": -43.38
+            }
+          }
+        },
+        {
+          "regime": "UNKNOWN",
+          "trades": 557,
+          "costs": {
+            "20": {
+              "trades": 557,
+              "win_rate_pct": 49.37,
+              "avg_net_pct": -1.135,
+              "median_net_pct": -0.053,
+              "profit_factor": 0.727,
+              "best_trade_pct": 62.582,
+              "worst_trade_pct": -59.244
+            },
+            "30": {
+              "trades": 557,
+              "win_rate_pct": 48.47,
+              "avg_net_pct": -1.235,
+              "median_net_pct": -0.153,
+              "profit_factor": 0.707,
+              "best_trade_pct": 62.482,
+              "worst_trade_pct": -59.344
+            },
+            "50": {
+              "trades": 557,
+              "win_rate_pct": 45.42,
+              "avg_net_pct": -1.435,
+              "median_net_pct": -0.353,
+              "profit_factor": 0.668,
+              "best_trade_pct": 62.282,
+              "worst_trade_pct": -59.544
+            }
+          }
+        },
+        {
+          "regime": "UPTREND",
+          "trades": 244,
+          "costs": {
+            "20": {
+              "trades": 244,
+              "win_rate_pct": 45.49,
+              "avg_net_pct": -1.852,
+              "median_net_pct": -0.793,
+              "profit_factor": 0.451,
+              "best_trade_pct": 18.897,
+              "worst_trade_pct": -30.776
+            },
+            "30": {
+              "trades": 244,
+              "win_rate_pct": 45.49,
+              "avg_net_pct": -1.952,
+              "median_net_pct": -0.893,
+              "profit_factor": 0.43,
+              "best_trade_pct": 18.797,
+              "worst_trade_pct": -30.876
+            },
+            "50": {
+              "trades": 244,
+              "win_rate_pct": 40.98,
+              "avg_net_pct": -2.152,
+              "median_net_pct": -1.093,
+              "profit_factor": 0.392,
+              "best_trade_pct": 18.597,
+              "worst_trade_pct": -31.076
+            }
+          }
         }
       ]
     },
@@ -775,6 +1044,140 @@
           "net_50bps_pct_avg_instrument_drawdown_pct": -22.159,
           "net_50bps_pct_worst_instrument_drawdown_pct": -44.854
         }
+      ],
+      "regimes": [
+        {
+          "regime": "DOWNTREND",
+          "trades": 358,
+          "costs": {
+            "20": {
+              "trades": 358,
+              "win_rate_pct": 33.52,
+              "avg_net_pct": -0.98,
+              "median_net_pct": -1.372,
+              "profit_factor": 0.64,
+              "best_trade_pct": 28.309,
+              "worst_trade_pct": -42.656
+            },
+            "30": {
+              "trades": 358,
+              "win_rate_pct": 33.52,
+              "avg_net_pct": -1.08,
+              "median_net_pct": -1.472,
+              "profit_factor": 0.612,
+              "best_trade_pct": 28.209,
+              "worst_trade_pct": -42.756
+            },
+            "50": {
+              "trades": 358,
+              "win_rate_pct": 32.96,
+              "avg_net_pct": -1.28,
+              "median_net_pct": -1.672,
+              "profit_factor": 0.562,
+              "best_trade_pct": 28.009,
+              "worst_trade_pct": -42.956
+            }
+          }
+        },
+        {
+          "regime": "SIDEWAYS",
+          "trades": 228,
+          "costs": {
+            "20": {
+              "trades": 228,
+              "win_rate_pct": 37.72,
+              "avg_net_pct": -0.59,
+              "median_net_pct": -0.677,
+              "profit_factor": 0.728,
+              "best_trade_pct": 42.058,
+              "worst_trade_pct": -20.398
+            },
+            "30": {
+              "trades": 228,
+              "win_rate_pct": 35.96,
+              "avg_net_pct": -0.69,
+              "median_net_pct": -0.777,
+              "profit_factor": 0.691,
+              "best_trade_pct": 41.958,
+              "worst_trade_pct": -20.498
+            },
+            "50": {
+              "trades": 228,
+              "win_rate_pct": 34.65,
+              "avg_net_pct": -0.89,
+              "median_net_pct": -0.977,
+              "profit_factor": 0.624,
+              "best_trade_pct": 41.758,
+              "worst_trade_pct": -20.698
+            }
+          }
+        },
+        {
+          "regime": "UNKNOWN",
+          "trades": 437,
+          "costs": {
+            "20": {
+              "trades": 437,
+              "win_rate_pct": 44.85,
+              "avg_net_pct": -0.105,
+              "median_net_pct": -0.2,
+              "profit_factor": 0.942,
+              "best_trade_pct": 26.41,
+              "worst_trade_pct": -21.457
+            },
+            "30": {
+              "trades": 437,
+              "win_rate_pct": 43.71,
+              "avg_net_pct": -0.205,
+              "median_net_pct": -0.3,
+              "profit_factor": 0.889,
+              "best_trade_pct": 26.31,
+              "worst_trade_pct": -21.557
+            },
+            "50": {
+              "trades": 437,
+              "win_rate_pct": 42.56,
+              "avg_net_pct": -0.405,
+              "median_net_pct": -0.5,
+              "profit_factor": 0.794,
+              "best_trade_pct": 26.11,
+              "worst_trade_pct": -21.757
+            }
+          }
+        },
+        {
+          "regime": "UPTREND",
+          "trades": 218,
+          "costs": {
+            "20": {
+              "trades": 218,
+              "win_rate_pct": 35.32,
+              "avg_net_pct": -1.049,
+              "median_net_pct": -1.629,
+              "profit_factor": 0.557,
+              "best_trade_pct": 26.601,
+              "worst_trade_pct": -19.473
+            },
+            "30": {
+              "trades": 218,
+              "win_rate_pct": 34.4,
+              "avg_net_pct": -1.149,
+              "median_net_pct": -1.729,
+              "profit_factor": 0.528,
+              "best_trade_pct": 26.501,
+              "worst_trade_pct": -19.573
+            },
+            "50": {
+              "trades": 218,
+              "win_rate_pct": 33.03,
+              "avg_net_pct": -1.349,
+              "median_net_pct": -1.929,
+              "profit_factor": 0.474,
+              "best_trade_pct": 26.301,
+              "worst_trade_pct": -19.773
+            }
+          }
+        }
       ]
     },
     "D": {
@@ -790,8 +1193,8 @@
           "worst_trade_pct": -21.575,
           "avg_instrument_drawdown_pct": -9.359,
           "worst_instrument_drawdown_pct": -47.273,
-          "avg_net_on_deployed_capital_pct": 0.0,
-          "median_net_on_deployed_capital_pct": 0.0
+          "avg_net_on_deployed_capital_pct": -0.296,
+          "median_net_on_deployed_capital_pct": -1.042
         },
         "30": {
           "trades": 2357,
@@ -803,8 +1206,8 @@
           "worst_trade_pct": -21.615,
           "avg_instrument_drawdown_pct": -9.578,
           "worst_instrument_drawdown_pct": -47.456,
-          "avg_net_on_deployed_capital_pct": 0.0,
-          "median_net_on_deployed_capital_pct": 0.0
+          "avg_net_on_deployed_capital_pct": -0.396,
+          "median_net_on_deployed_capital_pct": -1.142
         },
         "50": {
           "trades": 2357,
@@ -816,8 +1219,8 @@
           "worst_trade_pct": -21.695,
           "avg_instrument_drawdown_pct": -10.035,
           "worst_instrument_drawdown_pct": -47.822,
-          "avg_net_on_deployed_capital_pct": 0.0,
-          "median_net_on_deployed_capital_pct": 0.0
+          "avg_net_on_deployed_capital_pct": -0.596,
+          "median_net_on_deployed_capital_pct": -1.342
         },
         "exposure": {
           "avg_deployed_weight_pct": 44.48,
@@ -978,6 +1381,164 @@
           "net_50bps_pct_worst_trade_pct": -11.1,
           "net_50bps_pct_avg_instrument_drawdown_pct": -14.998,
           "net_50bps_pct_worst_instrument_drawdown_pct": -25.099
+        }
+      ],
+      "regimes": [
+        {
+          "regime": "DOWNTREND",
+          "trades": 702,
+          "costs": {
+            "20": {
+              "trades": 702,
+              "win_rate_pct": 37.75,
+              "avg_net_pct": -0.228,
+              "median_net_pct": -0.572,
+              "profit_factor": 0.859,
+              "best_trade_pct": 23.055,
+              "worst_trade_pct": -19.307,
+              "avg_net_on_deployed_capital_pct": -0.503,
+              "median_net_on_deployed_capital_pct": -1.356
+            },
+            "30": {
+              "trades": 702,
+              "win_rate_pct": 37.75,
+              "avg_net_pct": -0.273,
+              "median_net_pct": -0.612,
+              "profit_factor": 0.834,
+              "best_trade_pct": 23.015,
+              "worst_trade_pct": -19.347,
+              "avg_net_on_deployed_capital_pct": -0.603,
+              "median_net_on_deployed_capital_pct": -1.456
+            },
+            "50": {
+              "trades": 702,
+              "win_rate_pct": 37.32,
+              "avg_net_pct": -0.362,
+              "median_net_pct": -0.692,
+              "profit_factor": 0.788,
+              "best_trade_pct": 22.935,
+              "worst_trade_pct": -19.427,
+              "avg_net_on_deployed_capital_pct": -0.803,
+              "median_net_on_deployed_capital_pct": -1.656
+            }
+          }
+        },
+        {
+          "regime": "SIDEWAYS",
+          "trades": 356,
+          "costs": {
+            "20": {
+              "trades": 356,
+              "win_rate_pct": 42.42,
+              "avg_net_pct": 0.171,
+              "median_net_pct": -0.235,
+              "profit_factor": 1.124,
+              "best_trade_pct": 26.402,
+              "worst_trade_pct": -21.093,
+              "avg_net_on_deployed_capital_pct": 0.495,
+              "median_net_on_deployed_capital_pct": -0.576
+            },
+            "30": {
+              "trades": 356,
+              "win_rate_pct": 41.85,
+              "avg_net_pct": 0.127,
+              "median_net_pct": -0.275,
+              "profit_factor": 1.091,
+              "best_trade_pct": 26.332,
+              "worst_trade_pct": -21.133,
+              "avg_net_on_deployed_capital_pct": 0.395,
+              "median_net_on_deployed_capital_pct": -0.676
+            },
+            "50": {
+              "trades": 356,
+              "win_rate_pct": 40.45,
+              "avg_net_pct": 0.04,
+              "median_net_pct": -0.355,
+              "profit_factor": 1.028,
+              "best_trade_pct": 26.192,
+              "worst_trade_pct": -21.213,
+              "avg_net_on_deployed_capital_pct": 0.195,
+              "median_net_on_deployed_capital_pct": -0.876
+            }
+          }
+        },
+        {
+          "regime": "UNKNOWN",
+          "trades": 911,
+          "costs": {
+            "20": {
+              "trades": 911,
+              "win_rate_pct": 42.7,
+              "avg_net_pct": -0.008,
+              "median_net_pct": -0.362,
+              "profit_factor": 0.995,
+              "best_trade_pct": 69.497,
+              "worst_trade_pct": -21.575,
+              "avg_net_on_deployed_capital_pct": -0.03,
+              "median_net_on_deployed_capital_pct": -0.751
+            },
+            "30": {
+              "trades": 911,
+              "win_rate_pct": 41.93,
+              "avg_net_pct": -0.053,
+              "median_net_pct": -0.417,
+              "profit_factor": 0.969,
+              "best_trade_pct": 69.457,
+              "worst_trade_pct": -21.615,
+              "avg_net_on_deployed_capital_pct": -0.13,
+              "median_net_on_deployed_capital_pct": -0.851
+            },
+            "50": {
+              "trades": 911,
+              "win_rate_pct": 40.94,
+              "avg_net_pct": -0.143,
+              "median_net_pct": -0.503,
+              "profit_factor": 0.918,
+              "best_trade_pct": 69.377,
+              "worst_trade_pct": -21.695,
+              "avg_net_on_deployed_capital_pct": -0.33,
+              "median_net_on_deployed_capital_pct": -1.051
+            }
+          }
+        },
+        {
+          "regime": "UPTREND",
+          "trades": 388,
+          "costs": {
+            "20": {
+              "trades": 388,
+              "win_rate_pct": 36.86,
+              "avg_net_pct": -0.576,
+              "median_net_pct": -0.653,
+              "profit_factor": 0.573,
+              "best_trade_pct": 10.734,
+              "worst_trade_pct": -11.731,
+              "avg_net_on_deployed_capital_pct": -1.275,
+              "median_net_on_deployed_capital_pct": -1.632
+            },
+            "30": {
+              "trades": 388,
+              "win_rate_pct": 36.6,
+              "avg_net_pct": -0.621,
+              "median_net_pct": -0.693,
+              "profit_factor": 0.549,
+              "best_trade_pct": 10.694,
+              "worst_trade_pct": -11.771,
+              "avg_net_on_deployed_capital_pct": -1.375,
+              "median_net_on_deployed_capital_pct": -1.732
+            },
+            "50": {
+              "trades": 388,
+              "win_rate_pct": 35.82,
+              "avg_net_pct": -0.709,
+              "median_net_pct": -0.773,
+              "profit_factor": 0.505,
+              "best_trade_pct": 10.614,
+              "worst_trade_pct": -11.851,
+              "avg_net_on_deployed_capital_pct": -1.575,
+              "median_net_on_deployed_capital_pct": -1.932
+            }
+          }
         }
       ]
     }
