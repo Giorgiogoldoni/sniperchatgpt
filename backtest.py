@@ -244,7 +244,6 @@ def main():
       "families":families,"instruments":instruments,
       "mean_reversion":{"summary_file":"mr_backtest_summary.json","trades_file":"mr_backtest_trades.csv",
                         "trades_total":len(mr_all_trades),"independent_engine":True}}
-    (OUT/"backtest_summary.json").write_text(json.dumps(summary,indent=2,ensure_ascii=False)+"
-")
+    (OUT/"backtest_summary.json").write_text(json.dumps(summary,indent=2,ensure_ascii=False)+"\\n")
     print(json.dumps({k:summary[k] for k in ("universe_total","data_ok","skipped","errors","trades_total","families")},indent=2,ensure_ascii=False))
 if __name__=="__main__": main()
