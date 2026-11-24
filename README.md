@@ -27,7 +27,7 @@ Gli indicatori sono calcolati sull'OHLC dello **strumento negoziato**, non sul s
 
 ## Motore parallelo Mean Reversion (MR) — sperimentale
 
-Il motore MR è separato dal Trend Following: non legge i segnali TF, non condivide posizioni e non combina condizioni dei due sistemi. Sono confrontate tre varianti MR indipendenti (A, B, C), senza attivazione PAPER.
+Il motore MR è separato dal Trend Following: non legge i segnali TF, non condivide posizioni e non combina condizioni dei due sistemi. Sono confrontate quattro varianti MR indipendenti (A, B, C, D), senza attivazione PAPER.
 
 1. **A — baseline:** chiusura sotto la Bollinger inferiore (20, 2) e RSI(2) <= 10 sulla stessa seduta; ingresso all’open successivo.
 2. **B — recupero:** dopo il setup A, attende almeno 2 chiusure su 3 sopra la banda inferiore; ingresso all’open successivo alla conferma. Se non conferma entro 3 sedute, il setup decade.
@@ -37,7 +37,7 @@ Il motore MR è separato dal Trend Following: non legge i segnali TF, non condiv
 4. Gestione comune: stop iniziale 2 × ATR(14), uscita alla Bollinger centrale, stop o massimo 10 sedute.
 5. Costi: scenari round trip 20 / 30 / 50 bps.
 
-Il segnale MR è calcolato autonomamente sullo stesso OHLC aggiustato dello strumento negoziato. Il primo test con conferma del rientro sopra la banda ha prodotto zero segnali ed è stato scartato come troppo restrittivo; la versione attuale testa l'ingresso classico sull'eccesso. Gli esiti delle tre varianti sono confrontati in `reports/mr_backtest_summary.json`; le operazioni sono in `reports/mr_backtest_trades.csv` (A), `reports/mr_backtest_trades_b.csv` (B) e `reports/mr_backtest_trades_c.csv` (C). La dashboard distingue i marcatori TF (verde) e MR (blu): ogni ingresso è collocato al prezzo effettivo, con segmento orizzontale fino alla data di uscita. I due livelli possono essere nascosti separatamente.
+Il segnale MR è calcolato autonomamente sullo stesso OHLC aggiustato dello strumento negoziato. Il primo test con conferma del rientro sopra la banda ha prodotto zero segnali ed è stato scartato come troppo restrittivo; la versione attuale testa l'ingresso classico sull'eccesso. Gli esiti A/B/C/D sono confrontati in `reports/mr_backtest_summary.json`; le operazioni sono in `reports/mr_backtest_trades.csv` (A), `reports/mr_backtest_trades_b.csv` (B), `reports/mr_backtest_trades_c.csv` (C) e `reports/mr_backtest_trades_d.csv` (D). La dashboard distingue i marcatori TF (verde) e MR (blu): ogni ingresso è collocato al prezzo effettivo, con segmento orizzontale fino alla data di uscita. I due livelli possono essere nascosti separatamente.
 
 La regola MR è una prima ipotesi di ricerca, non una strategia validata. In particolare, il rientro dalla banda inferiore può essere un falso rimbalzo in un mercato ribassista; stop, costi, liquidità, leva e risultati per famiglia devono essere verificati prima di qualunque utilizzo PAPER.
 
