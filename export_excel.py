@@ -54,6 +54,14 @@ if variants:
         comp.append(["MR-D ESPOSIZIONE","Media capitale investito %","Trade con 100% investito %","Media tranche per trade","Trade 1 tranche","Trade 2 tranche","Trade 3 tranche"])
         comp.append(["D",exposure.get("avg_deployed_weight_pct"),exposure.get("full_deployment_trades_pct"),exposure.get("avg_tranches_per_trade"),exposure.get("one_tranche_trades"),exposure.get("two_tranche_trades"),exposure.get("three_tranche_trades")])
 
+reg=wb.create_sheet("Regimi MR")
+reg.append(["VARIANTE","REGIME STRUMENTO","OPERAZIONI","WIN RATE %","MEDIA NETTA %","MEDIANA NETTA %","PROFIT FACTOR","MEDIA NETTA SU CAPITALE IMPIEGATO %"])
+for variant, data in variants.items():
+    for item in data.get("regimes",[]):
+        m=item.get("costs",{}).get("30",{})
+        reg.append([variant,item.get("regime"),item.get("trades"),m.get("win_rate_pct"),m.get("avg_net_pct"),
+                    m.get("median_net_pct"),m.get("profit_factor"),m.get("avg_net_on_deployed_capital_pct","")])
+
 mr=wb.create_sheet("Sintesi MR")
 mr.append(["MEAN REVERSION — MOTORE INDIPENDENTE"])
 mr.append(["Costi round trip bps","Operazioni","Win rate %","Media netta %","Mediana netta %","Profit factor","DD medio strumenti %","Peggior DD strumento %"])
