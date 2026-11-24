@@ -239,7 +239,7 @@ def simulate_mr_variant(symbol, instrument, frame, config, variant="A"):
 
             if variant == "D" and pending_add is None and pos["next_tranche"] < len(weights):
                 # Require a fresh C-style Walking event after the preceding fill.
-                c_now = bool(c_signal.loc[date])
+                c_now = bool(walking_lower.loc[date])
                 if c_now and not previous_c and day != pos["entry_date"] and day != pos["last_add_signal_date"]:
                     pending_add = {"leg_index": pos["next_tranche"]}
                     pos["last_add_signal_date"] = day
