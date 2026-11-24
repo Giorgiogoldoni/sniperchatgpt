@@ -7,6 +7,7 @@ from pathlib import Path
 import pandas as pd
 import yfinance as yf
 from strategy import add_indicators
+from mean_reversion import add_mr_indicators, simulate_mr, metrics_mr
 ROOT=Path(__file__).resolve().parent
 OUT=ROOT/"reports"
 warnings.filterwarnings("ignore")
@@ -67,7 +68,7 @@ def main():
     config=json.loads((ROOT/"config.json").read_text())
     universe=json.loads((ROOT/"data/instrument_universe.json").read_text())["instruments"]
     selected=[x for x in universe if x.get("classification") in {"LEVA_LONG","LEVA_SHORT","MATERIE_PRIME_1X","MATERIE_PRIME_LEVA","MATERIE_PRIME_SHORT"}]
-    all_trades=[]; scan=[]; market_data={}; batch_size=20
+    all_trades=[]; mr_all_trades=[]; scan=[]; market_data={}; batch_size=20
     for start in range(0,len(selected),batch_size):
         batch=selected[start:start+batch_size]; tickers=[x.get("yahoo") or x.get("id") for x in batch]
         try:
@@ -100,20 +101,25 @@ def main():
                                  "bars":len(frame)})
                     continue
                 indicated=add_indicators(frame,config)
+                mr_indicated=add_mr_indicators(frame,config)
                 cols=["Open","High","Low","Close","Volume","DONCHIAN20_UPPER","BB_UPPER","BB_MID","ATR14","WALKING","ENTRY_SIGNAL"]
                 export=indicated.reindex(columns=cols).copy()
+                export["MR_BB_LOWER"]=mr_indicated["MR_BB_LOWER"]
+                export["MR_RSI2"]=mr_indicated["MR_RSI2"]
+                export["MR_ENTRY_SIGNAL"]=mr_indicated["MR_ENTRY_SIGNAL"]
                 records=[]
                 for dt,values in export.iterrows():
                     rec={"date":pd.Timestamp(dt).strftime("%Y-%m-%d")}
                     for col in cols:
                         value=values.get(col)
                         if pd.isna(value): rec[col.lower()]=None
-                        elif col in ("WALKING","ENTRY_SIGNAL"): rec[col.lower()]=bool(value)
+                        elif col in ("WALKING","ENTRY_SIGNAL","MR_ENTRY_SIGNAL"): rec[col.lower()]=bool(value)
                         elif col=="Volume": rec["volume"]=int(value)
                         else: rec[col.lower()]=round(float(value),6)
                     records.append(rec)
                 market_data[symbol]={"name":inst.get("name",symbol),"category":inst["classification"],"bars":records}
                 trades=simulate(symbol,inst,frame,config); all_trades.extend(trades)
+                mr_trades=simulate_mr(symbol,inst,frame,config); mr_all_trades.extend(mr_trades)
                 scan.append({"symbol":symbol,"category":inst["classification"],"status":"OK","bars":len(frame),
                              "first_date":str(pd.Timestamp(frame.index[0]).date()),"last_date":str(pd.Timestamp(frame.index[-1]).date()),
                              "max_daily_change_pct":round(max_jump,2),"min_daily_change_pct":round(min_jump,2),"trades":len(trades)})
@@ -121,7 +127,28 @@ def main():
     OUT.mkdir(exist_ok=True)
     (OUT/"market_data.json").write_text(json.dumps({"generated_utc":pd.Timestamp.now(tz="UTC").isoformat(),"source":"Yahoo Finance auto_adjust OHLCV; same daily bars used by backtest","instruments":market_data},separators=(",",":"),ensure_ascii=False)+"\n",encoding="utf-8")
     pd.DataFrame(all_trades).to_csv(OUT/"backtest_trades.csv",index=False)
+    pd.DataFrame(mr_all_trades).to_csv(OUT/"mr_backtest_trades.csv",index=False)
     pd.DataFrame(scan).to_csv(OUT/"backtest_data_audit.csv",index=False)
+    mr_costs={}
+    for bps in config["costs_bps_round_trip"]:
+        key="net_"+str(bps)+"bps_pct"
+        mr_costs[str(bps)]=metrics_mr(mr_all_trades,key)
+    mr_families=[]
+    for cat in sorted({x["classification"] for x in selected}):
+        group=[t for t in mr_all_trades if t["category"]==cat]
+        rec={"category":cat}
+        for bps in config["costs_bps_round_trip"]:
+            m=metrics_mr(group,"net_"+str(bps)+"bps_pct")
+            for k,v in m.items(): rec["net_"+str(bps)+"bps_pct_"+k]=v
+        mr_families.append(rec)
+    mr_summary={"strategy":"MEAN_REVERSION","rules":{
+        "setup":"Close sotto Bollinger inferiore (20,2) e RSI(2) <= 10 almeno una volta nelle ultime 3 sedute",
+        "entry":"Close torna sopra Bollinger inferiore dopo il setup; ingresso all'open della seduta successiva",
+        "stop":"2 x ATR(14) dal prezzo di ingresso, ATR calcolato alla data del segnale",
+        "exit":"Chiusura al raggiungimento/superamento della Bollinger centrale; stop ATR; massimo 10 sedute",
+        "independent_from_trend_following":True},
+        "trades_total":len(mr_all_trades),"costs":mr_costs,"families":mr_families,"paper_only":True}
+    (OUT/"mr_backtest_summary.json").write_text(json.dumps(mr_summary,indent=2,ensure_ascii=False)+"\n")
     keys=[f"net_{b}bps_pct" for b in config["costs_bps_round_trip"]]; families=[]
     for cat in sorted({x["classification"] for x in selected}):
         group=[t for t in all_trades if t["category"]==cat]; source=[s for s in scan if s["category"]==cat]
@@ -152,7 +179,9 @@ def main():
       "suspicious":sum(x["status"]=="SUSPICIOUS" for x in scan),
       "price_jump_filter":{"max_daily_rise_pct":300,"max_daily_drop_pct":-80},
       "errors":sum(x["status"]=="ERROR" for x in scan),"trades_total":len(all_trades),
-      "families":families,"instruments":instruments}
+      "families":families,"instruments":instruments,
+      "mean_reversion":{"summary_file":"mr_backtest_summary.json","trades_file":"mr_backtest_trades.csv",
+                        "trades_total":len(mr_all_trades),"independent_engine":True}}
     (OUT/"backtest_summary.json").write_text(json.dumps(summary,indent=2,ensure_ascii=False)+"\n")
     print(json.dumps({k:summary[k] for k in ("universe_total","data_ok","skipped","errors","trades_total","families")},indent=2,ensure_ascii=False))
 if __name__=="__main__": main()
