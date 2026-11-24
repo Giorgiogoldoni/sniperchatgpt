@@ -23,5 +23,10 @@
   "mr_atr_stop_multiple": 2,
   "mr_max_holding_sessions": 10,
   "timezone": "Europe/Rome",
-  "mr_walking_tolerance": 0.015
+  "mr_walking_tolerance": 0.015,
+  "mr_d_tranche_weights": [
+    0.4,
+    0.3,
+    0.3
+  ]
 }
