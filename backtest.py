@@ -68,7 +68,7 @@ def main():
     config=json.loads((ROOT/"config.json").read_text())
     universe=json.loads((ROOT/"data/instrument_universe.json").read_text())["instruments"]
     selected=[x for x in universe if x.get("classification") in {"LEVA_LONG","LEVA_SHORT","MATERIE_PRIME_1X","MATERIE_PRIME_LEVA","MATERIE_PRIME_SHORT"}]
-    all_trades=[]; mr_all_trades=[]; mr_variant_trades={"A":[],"B":[],"C":[]}; scan=[]; market_data={}; mr_diag={"valid_bars":0,"below_lower":0,"rsi2_le_10":0,"both_conditions":0,"entry_signals":0}; batch_size=20
+    all_trades=[]; mr_all_trades=[]; mr_variant_trades={"A":[],"B":[],"C":[],"D":[]}; scan=[]; market_data={}; mr_diag={"valid_bars":0,"below_lower":0,"rsi2_le_10":0,"both_conditions":0,"entry_signals":0}; batch_size=20
     for start in range(0,len(selected),batch_size):
         batch=selected[start:start+batch_size]; tickers=[x.get("yahoo") or x.get("id") for x in batch]
         try:
@@ -126,7 +126,7 @@ def main():
                     records.append(rec)
                 market_data[symbol]={"name":inst.get("name",symbol),"category":inst["classification"],"bars":records}
                 trades=simulate(symbol,inst,frame,config); all_trades.extend(trades)
-                mr_trades=simulate_mr(symbol,inst,frame,config); mr_all_trades.extend(mr_trades)
+                current_mr={}\n                for variant in ("A","B","C","D"):\n                    current_mr[variant]=simulate_mr_variant(symbol,inst,frame,config,variant)\n                    mr_variant_trades[variant].extend(current_mr[variant])\n                mr_all_trades.extend(current_mr["A"])
                 scan.append({"symbol":symbol,"category":inst["classification"],"status":"OK","bars":len(frame),
                              "first_date":str(pd.Timestamp(frame.index[0]).date()),"last_date":str(pd.Timestamp(frame.index[-1]).date()),
                              "max_daily_change_pct":round(max_jump,2),"min_daily_change_pct":round(min_jump,2),"trades":len(trades)})
@@ -135,7 +135,7 @@ def main():
     (OUT/"market_data.json").write_text(json.dumps({"generated_utc":pd.Timestamp.now(tz="UTC").isoformat(),"source":"Yahoo Finance auto_adjust OHLCV; same daily bars used by backtest","instruments":market_data},separators=(",",":"),ensure_ascii=False)+"\n",encoding="utf-8")
     pd.DataFrame(all_trades).to_csv(OUT/"backtest_trades.csv",index=False)
     pd.DataFrame(mr_all_trades).to_csv(OUT/"mr_backtest_trades.csv",index=False)
-    for variant in ("B","C"):
+    for variant in ("B","C","D"):
         pd.DataFrame(mr_variant_trades[variant]).to_csv(OUT/f"mr_backtest_trades_{variant.lower()}.csv",index=False)
     pd.DataFrame(scan).to_csv(OUT/"backtest_data_audit.csv",index=False)
     def mr_instrument_drawdowns(trades,key):
@@ -178,7 +178,7 @@ def main():
                 for k,v in m.items(): rec[key+"_"+k]=v
             families.append(rec)
         return {"trades_total":len(trades),"costs":costs,"families":families}
-    mr_variants={v:summarize_mr_variant(mr_variant_trades[v]) for v in ("A","B","C")}
+    mr_variants={v:summarize_mr_variant(mr_variant_trades[v]) for v in ("A","B","C","D")}
     mr_summary={"strategy":"MEAN_REVERSION","rules":{
         "setup":"Close sotto Bollinger inferiore (20,2) e RSI(2) <= 10 sulla stessa seduta",
         "entry":"Segnale sulla chiusura; ingresso all'open della seduta successiva",
@@ -187,7 +187,7 @@ def main():
         "independent_from_trend_following":True,
         "A":"Baseline: entry next open after oversold signal",
         "B":"After oversold setup, enter next open once at least 2 of the next 3 closes are above the lower Bollinger band; discard if not confirmed within 3 sessions",
-        "C":"At oversold signal, require at least 2 of the last 3 closes within 1.5% of the lower band and lower band falling on each of the last 2 transitions"},
+        "C":"At oversold signal, require at least 2 of the last 3 closes within 1.5% of the lower band and lower band falling on each of the last 2 transitions",\n        "D":"40% initial entry on A signal; add 30% on each of two fresh post-entry lower-band Walking confirmations (2 of 3 closes within 1.5%, lower band falling); fixed initial stop, common exit; unused allocation stays in cash"},
         "trades_total":len(mr_all_trades),"diagnostics":mr_diag,"costs":mr_costs,"families":mr_families,"variants":mr_variants,"paper_only":True}
     (OUT/"mr_backtest_summary.json").write_text(json.dumps(mr_summary,indent=2,ensure_ascii=False)+"\n")
     keys=[f"net_{b}bps_pct" for b in config["costs_bps_round_trip"]]; families=[]
