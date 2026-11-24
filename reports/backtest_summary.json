@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-23T14:11:18.199312+00:00",
+  "generated_utc": "2026-11-24T08:51:39.231778+00:00",
   "method": "Donchian20 breakout + Walking 2/3; entry next open; ATR14x2 stop; exit after 2 Walking-false closes next open; max 10 sessions at close; adjusted OHLC",
   "history_period": "2y",
   "costs_bps_round_trip": [
@@ -1966,7 +1966,7 @@
       "symbol": "3LMS.MI",
       "category": "LEVA_LONG",
       "status": "SKIPPED",
-      "reason": "solo 0 barre OHLC",
+      "reason": "solo 1 barre OHLC",
       "net_20bps_pct_trades": 0,
       "net_20bps_pct_win_rate_pct": 0,
       "net_20bps_pct_avg_net_pct": 0,
@@ -2014,7 +2014,7 @@
       "symbol": "3LNF.MI",
       "category": "LEVA_LONG",
       "status": "SKIPPED",
-      "reason": "solo 0 barre OHLC",
+      "reason": "solo 1 barre OHLC",
       "net_20bps_pct_trades": 0,
       "net_20bps_pct_win_rate_pct": 0,
       "net_20bps_pct_avg_net_pct": 0,
@@ -2899,7 +2899,7 @@
       "symbol": "3SMS.MI",
       "category": "LEVA_SHORT",
       "status": "SKIPPED",
-      "reason": "solo 0 barre OHLC",
+      "reason": "solo 1 barre OHLC",
       "net_20bps_pct_trades": 0,
       "net_20bps_pct_win_rate_pct": 0,
       "net_20bps_pct_avg_net_pct": 0,
@@ -10553,5 +10553,11 @@
       "net_50bps_pct_best_trade_pct": 2.243,
       "net_50bps_pct_worst_trade_pct": -3.868
     }
-  ]
+  ],
+  "mean_reversion": {
+    "summary_file": "mr_backtest_summary.json",
+    "trades_file": "mr_backtest_trades.csv",
+    "trades_total": 0,
+    "independent_engine": true
+  }
 }
