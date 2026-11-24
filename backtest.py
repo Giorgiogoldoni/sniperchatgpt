@@ -136,17 +136,30 @@ def main():
     pd.DataFrame(all_trades).to_csv(OUT/"backtest_trades.csv",index=False)
     pd.DataFrame(mr_all_trades).to_csv(OUT/"mr_backtest_trades.csv",index=False)
     pd.DataFrame(scan).to_csv(OUT/"backtest_data_audit.csv",index=False)
+    def mr_instrument_drawdowns(trades,key):
+        values=[metrics_mr([t for t in trades if t["symbol"]==sym],key)["max_drawdown_pct"]
+                for sym in sorted({t["symbol"] for t in trades})]
+        return {
+            "avg_instrument_drawdown_pct":round(sum(values)/len(values),3) if values else 0,
+            "worst_instrument_drawdown_pct":round(min(values),3) if values else 0
+        }
     mr_costs={}
     for bps in config["costs_bps_round_trip"]:
         key="net_"+str(bps)+"bps_pct"
-        mr_costs[str(bps)]=metrics_mr(mr_all_trades,key)
+        m=metrics_mr(mr_all_trades,key)
+        m.pop("max_drawdown_pct",None)
+        m.update(mr_instrument_drawdowns(mr_all_trades,key))
+        mr_costs[str(bps)]=m
     mr_families=[]
     for cat in sorted({x["classification"] for x in selected}):
         group=[t for t in mr_all_trades if t["category"]==cat]
         rec={"category":cat}
         for bps in config["costs_bps_round_trip"]:
-            m=metrics_mr(group,"net_"+str(bps)+"bps_pct")
-            for k,v in m.items(): rec["net_"+str(bps)+"bps_pct_"+k]=v
+            key="net_"+str(bps)+"bps_pct"
+            m=metrics_mr(group,key)
+            m.pop("max_drawdown_pct",None)
+            m.update(mr_instrument_drawdowns(group,key))
+            for k,v in m.items(): rec[key+"_"+k]=v
         mr_families.append(rec)
     mr_summary={"strategy":"MEAN_REVERSION","rules":{
         "setup":"Close sotto Bollinger inferiore (20,2) e RSI(2) <= 10 sulla stessa seduta",
