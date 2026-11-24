@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-24T09:00:48.831727+00:00",
+  "generated_utc": "2026-11-24T09:04:10.903100+00:00",
   "method": "Donchian20 breakout + Walking 2/3; entry next open; ATR14x2 stop; exit after 2 Walking-false closes next open; max 10 sessions at close; adjusted OHLC",
   "history_period": "2y",
   "costs_bps_round_trip": [
@@ -10557,7 +10557,7 @@
   "mean_reversion": {
     "summary_file": "mr_backtest_summary.json",
     "trades_file": "mr_backtest_trades.csv",
-    "trades_total": 0,
+    "trades_total": 2348,
     "independent_engine": true
   }
 }
