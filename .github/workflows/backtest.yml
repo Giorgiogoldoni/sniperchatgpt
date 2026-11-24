@@ -6,6 +6,7 @@ on:
       - 'backtest.py'
       - 'export_excel.py'
       - 'strategy.py'
+      - 'mean_reversion.py'
       - 'config.json'
       - 'data/instrument_universe.json'
       - 'requirements.txt'
