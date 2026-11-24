@@ -23,8 +23,16 @@ for x in summary["families"]:
                x.get(k+"_win_rate_pct",0),x.get(k+"_avg_net_pct",0),x.get(k+"_profit_factor",0),x.get(k+"_avg_instrument_drawdown_pct",0)])
 def add_frame(name,path):
     if path.exists():
-        frame=pd.read_csv(path).fillna(""); sh=wb.create_sheet(name); sh.append(list(frame.columns))
-        for row in frame.itertuples(index=False,name=None): sh.append(list(row))
+        try:
+            frame=pd.read_csv(path).fillna("")
+        except pd.errors.EmptyDataError:
+            frame=pd.DataFrame()
+        sh=wb.create_sheet(name)
+        if frame.empty:
+            sh.append(["Nessuna operazione disponibile nel report corrente"])
+        else:
+            sh.append(list(frame.columns))
+            for row in frame.itertuples(index=False,name=None): sh.append(list(row))
 add_frame("Audit strumenti",R/"backtest_data_audit.csv")
 add_frame("Operazioni TF",R/"backtest_trades.csv")
 add_frame("Operazioni MR",R/"mr_backtest_trades.csv")
