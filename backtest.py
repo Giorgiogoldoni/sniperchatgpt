@@ -126,13 +126,18 @@ def main():
                     records.append(rec)
                 market_data[symbol]={"name":inst.get("name",symbol),"category":inst["classification"],"bars":records}
                 trades=simulate(symbol,inst,frame,config); all_trades.extend(trades)
-                current_mr={}\n                for variant in ("A","B","C","D"):\n                    current_mr[variant]=simulate_mr_variant(symbol,inst,frame,config,variant)\n                    mr_variant_trades[variant].extend(current_mr[variant])\n                mr_all_trades.extend(current_mr["A"])
+                current_mr={}
+                for variant in ("A","B","C","D"):
+                    current_mr[variant]=simulate_mr_variant(symbol,inst,frame,config,variant)
+                    mr_variant_trades[variant].extend(current_mr[variant])
+                mr_all_trades.extend(current_mr["A"])
                 scan.append({"symbol":symbol,"category":inst["classification"],"status":"OK","bars":len(frame),
                              "first_date":str(pd.Timestamp(frame.index[0]).date()),"last_date":str(pd.Timestamp(frame.index[-1]).date()),
                              "max_daily_change_pct":round(max_jump,2),"min_daily_change_pct":round(min_jump,2),"trades":len(trades)})
             except Exception as e: scan.append({"symbol":symbol,"category":inst["classification"],"status":"ERROR","reason":str(e)[:220]})
     OUT.mkdir(exist_ok=True)
-    (OUT/"market_data.json").write_text(json.dumps({"generated_utc":pd.Timestamp.now(tz="UTC").isoformat(),"source":"Yahoo Finance auto_adjust OHLCV; same daily bars used by backtest","instruments":market_data},separators=(",",":"),ensure_ascii=False)+"\n",encoding="utf-8")
+    (OUT/"market_data.json").write_text(json.dumps({"generated_utc":pd.Timestamp.now(tz="UTC").isoformat(),"source":"Yahoo Finance auto_adjust OHLCV; same daily bars used by backtest","instruments":market_data},separators=(",",":"),ensure_ascii=False)+"
+",encoding="utf-8")
     pd.DataFrame(all_trades).to_csv(OUT/"backtest_trades.csv",index=False)
     pd.DataFrame(mr_all_trades).to_csv(OUT/"mr_backtest_trades.csv",index=False)
     for variant in ("B","C","D"):
@@ -187,9 +192,11 @@ def main():
         "independent_from_trend_following":True,
         "A":"Baseline: entry next open after oversold signal",
         "B":"After oversold setup, enter next open once at least 2 of the next 3 closes are above the lower Bollinger band; discard if not confirmed within 3 sessions",
-        "C":"At oversold signal, require at least 2 of the last 3 closes within 1.5% of the lower band and lower band falling on each of the last 2 transitions",\n        "D":"40% initial entry on A signal; add 30% on each of two fresh post-entry lower-band Walking confirmations (2 of 3 closes within 1.5%, lower band falling); fixed initial stop, common exit; unused allocation stays in cash"},
+        "C":"At oversold signal, require at least 2 of the last 3 closes within 1.5% of the lower band and lower band falling on each of the last 2 transitions",
+        "D":"40% initial entry on A signal; add 30% on each of two fresh post-entry lower-band Walking confirmations (2 of 3 closes within 1.5%, lower band falling); fixed initial stop, common exit; unused allocation stays in cash"},
         "trades_total":len(mr_all_trades),"diagnostics":mr_diag,"costs":mr_costs,"families":mr_families,"variants":mr_variants,"paper_only":True}
-    (OUT/"mr_backtest_summary.json").write_text(json.dumps(mr_summary,indent=2,ensure_ascii=False)+"\n")
+    (OUT/"mr_backtest_summary.json").write_text(json.dumps(mr_summary,indent=2,ensure_ascii=False)+"
+")
     keys=[f"net_{b}bps_pct" for b in config["costs_bps_round_trip"]]; families=[]
     for cat in sorted({x["classification"] for x in selected}):
         group=[t for t in all_trades if t["category"]==cat]; source=[s for s in scan if s["category"]==cat]
@@ -223,6 +230,7 @@ def main():
       "families":families,"instruments":instruments,
       "mean_reversion":{"summary_file":"mr_backtest_summary.json","trades_file":"mr_backtest_trades.csv",
                         "trades_total":len(mr_all_trades),"independent_engine":True}}
-    (OUT/"backtest_summary.json").write_text(json.dumps(summary,indent=2,ensure_ascii=False)+"\n")
+    (OUT/"backtest_summary.json").write_text(json.dumps(summary,indent=2,ensure_ascii=False)+"
+")
     print(json.dumps({k:summary[k] for k in ("universe_total","data_ok","skipped","errors","trades_total","families")},indent=2,ensure_ascii=False))
 if __name__=="__main__": main()
