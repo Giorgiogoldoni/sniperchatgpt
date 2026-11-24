@@ -27,15 +27,16 @@ Gli indicatori sono calcolati sull'OHLC dello **strumento negoziato**, non sul s
 
 ## Motore parallelo Mean Reversion (MR) — sperimentale
 
-Il motore MR è separato dal Trend Following: non legge i segnali TF, non condivide posizioni e non combina condizioni dei due sistemi. Sono confrontate quattro varianti MR indipendenti (A, B, C, D), senza attivazione PAPER.
+Il motore MR è indipendente dal Trend Following: non legge i segnali TF, non condivide posizioni e non combina le condizioni dei due sistemi. Sono confrontate quattro varianti separate (A, B, C, D); nessuna è abilitata in PAPER.
 
-1. **A — baseline:** chiusura sotto la Bollinger inferiore (20, 2) e RSI(2) <= 10 sulla stessa seduta; ingresso all’open successivo.
-2. **B — recupero:** dopo il setup A, attende almeno 2 chiusure su 3 sopra la banda inferiore; ingresso all’open successivo alla conferma. Se non conferma entro 3 sedute, il setup decade.
-3. **C — Walking ribassista:** richiede il setup A, almeno 2 delle ultime 3 chiusure entro ±1,5% dalla banda inferiore e banda inferiore discendente nelle ultime 2 transizioni; ingresso all’open successivo.
-3. Stop iniziale: prezzo d'ingresso meno 2 × ATR(14), calcolato alla data del segnale.
-4. Uscita: alla chiusura quando il prezzo raggiunge/supera la Bollinger centrale; in alternativa stop ATR o massimo 10 sedute.
-4. Gestione comune: stop iniziale 2 × ATR(14), uscita alla Bollinger centrale, stop o massimo 10 sedute.
-5. Costi: scenari round trip 20 / 30 / 50 bps.
+1. **A — baseline:** close sotto Bollinger inferiore (20,2) e RSI(2) <= 10; ingresso all'open successivo.
+2. **B — recupero:** dopo il setup A, attende almeno 2 chiusure su 3 sopra la banda inferiore; ingresso all'open successivo alla conferma. Il setup decade se non confermato entro 3 sedute.
+3. **C — Walking ribassista:** richiede il setup A, almeno 2 delle ultime 3 chiusure entro 1,5% dalla banda inferiore e banda inferiore discendente nelle ultime 2 transizioni; ingresso all'open successivo.
+4. **D — ingressi scaglionati:** prima tranche 40% sul setup A; seconda e terza tranche da 30% ciascuna dopo due nuovi eventi Walking inferiori distinti, confermati dopo l'ingresso. Ogni evento richiede almeno 2 delle ultime 3 chiusure entro 1,5% dalla banda inferiore e banda inferiore discendente nelle ultime 2 transizioni.
+5. **Rischio D:** stop iniziale fissato a 2 × ATR(14) dalla prima entrata. Le tranche successive non allontanano lo stop. Uscita comune alla Bollinger centrale, allo stop o al massimo dopo 10 sedute dalla prima entrata. La quota non ancora investita resta liquida; esposizione massima 100%.
+6. **Costi:** scenari round trip 20 / 30 / 50 bps. D riporta rendimento sulla dotazione massima pianificata e rendimento sul capitale effettivamente investito, oltre all'esposizione raggiunta.
+
+Gestione comune A/B/C: stop iniziale 2 × ATR(14), uscita alla Bollinger centrale, stop o massimo 10 sedute.
 
 Il segnale MR è calcolato autonomamente sullo stesso OHLC aggiustato dello strumento negoziato. Il primo test con conferma del rientro sopra la banda ha prodotto zero segnali ed è stato scartato come troppo restrittivo; la versione attuale testa l'ingresso classico sull'eccesso. Gli esiti A/B/C/D sono confrontati in `reports/mr_backtest_summary.json`; le operazioni sono in `reports/mr_backtest_trades.csv` (A), `reports/mr_backtest_trades_b.csv` (B), `reports/mr_backtest_trades_c.csv` (C) e `reports/mr_backtest_trades_d.csv` (D). La dashboard distingue i marcatori TF (verde) e MR (blu): ogni ingresso è collocato al prezzo effettivo, con segmento orizzontale fino alla data di uscita. I due livelli possono essere nascosti separatamente.
 
