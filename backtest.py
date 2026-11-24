@@ -169,7 +169,7 @@ def main():
     (OUT/"current_signals.json").write_text(json.dumps({"generated_utc":pd.Timestamp.now(tz="UTC").isoformat(),
         "as_of_timezone":"Europe/Rome","paper_only":True,"signal_count":len(current_signals),
         "signals":sorted(current_signals,key=lambda x:(x["engine"],x["variant"],x["symbol"]))},
-        indent=2,ensure_ascii=False)+"\\n",encoding="utf-8")
+        indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     pd.DataFrame(all_trades).to_csv(OUT/"backtest_trades.csv",index=False)
     pd.DataFrame(mr_all_trades).to_csv(OUT/"mr_backtest_trades.csv",index=False)
     for variant in ("B","C","D"):
