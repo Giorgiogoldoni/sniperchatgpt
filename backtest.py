@@ -68,7 +68,7 @@ def main():
     config=json.loads((ROOT/"config.json").read_text())
     universe=json.loads((ROOT/"data/instrument_universe.json").read_text())["instruments"]
     selected=[x for x in universe if x.get("classification") in {"LEVA_LONG","LEVA_SHORT","MATERIE_PRIME_1X","MATERIE_PRIME_LEVA","MATERIE_PRIME_SHORT"}]
-    all_trades=[]; mr_all_trades=[]; mr_variant_trades={"A":[],"B":[],"C":[],"D":[]}; scan=[]; market_data={}; mr_diag={"valid_bars":0,"below_lower":0,"rsi2_le_10":0,"both_conditions":0,"entry_signals":0}; batch_size=20
+    all_trades=[]; mr_all_trades=[]; mr_variant_trades={"A":[],"B":[],"C":[],"D":[]}; scan=[]; market_data={}; current_signals=[]; mr_diag={"valid_bars":0,"below_lower":0,"rsi2_le_10":0,"both_conditions":0,"entry_signals":0}; batch_size=20
     for start in range(0,len(selected),batch_size):
         batch=selected[start:start+batch_size]; tickers=[x.get("yahoo") or x.get("id") for x in batch]
         try:
@@ -131,12 +131,45 @@ def main():
                     current_mr[variant]=simulate_mr_variant(symbol,inst,frame,config,variant)
                     mr_variant_trades[variant].extend(current_mr[variant])
                 mr_all_trades.extend(current_mr["A"])
+                # Fresh completed-bar entry candidates only; exclude instruments
+                # already carrying an open position in the corresponding simulator.
+                last_date=str(pd.Timestamp(indicated.index[-1]).date())
+                last=indicated.iloc[-1]
+                tf_open=any(t.get("exit_reason")=="END_OF_DATA" for t in trades)
+                if bool(last.get("ENTRY_SIGNAL",False)) and not tf_open:
+                    current_signals.append({"engine":"TF","variant":"Donchian20 + Walking",
+                        "symbol":symbol,"name":inst.get("name",symbol),"category":inst["classification"],
+                        "signal_date":last_date,"reference_close":round(float(last.Close),6),
+                        "atr14":round(float(last.ATR14),6),"entry_timing":"Prossima apertura",
+                        "risk_note":"Stop iniziale = prezzo effettivo di apertura − 2 × ATR(14)",
+                        "reason":"Close sopra Donchian 20 e Walking attivo"})
+                mr_last=mr_indicated.iloc[-1]
+                lower=mr_indicated["MR_BB_LOWER"]
+                near=((mr_indicated["Close"]/lower-1).abs()<=float(config.get("mr_walking_tolerance",0.015))).fillna(False)
+                c_now=bool(near.tail(3).sum()>=2 and len(lower.dropna())>=3 and
+                           lower.iloc[-1]<lower.iloc[-2]<lower.iloc[-3])
+                mr_base=bool(mr_last.get("MR_ENTRY_SIGNAL",False))
+                for variant,condition in (("MR-A",mr_base),("MR-C",mr_base and c_now),("MR-D",mr_base)):
+                    open_variant=any(t.get("exit_reason")=="END_OF_DATA" for t in current_mr[variant[-1]])
+                    if condition and not open_variant:
+                        current_signals.append({"engine":"MR","variant":variant,"symbol":symbol,
+                            "name":inst.get("name",symbol),"category":inst["classification"],
+                            "signal_date":last_date,"reference_close":round(float(mr_last.Close),6),
+                            "atr14":round(float(mr_last.ATR14),6),"entry_timing":"Prossima apertura",
+                            "risk_note":"Stop iniziale = prezzo effettivo di apertura − 2 × ATR(14)",
+                            "allocation":"40% iniziale; solo variante D" if variant=="MR-D" else "100% teorico",
+                            "reason":"Close sotto Bollinger inferiore e RSI(2) ≤ 10"+
+                                ("; Walking inferiore confermato" if variant=="MR-C" else "")})
                 scan.append({"symbol":symbol,"category":inst["classification"],"status":"OK","bars":len(frame),
                              "first_date":str(pd.Timestamp(frame.index[0]).date()),"last_date":str(pd.Timestamp(frame.index[-1]).date()),
                              "max_daily_change_pct":round(max_jump,2),"min_daily_change_pct":round(min_jump,2),"trades":len(trades)})
             except Exception as e: scan.append({"symbol":symbol,"category":inst["classification"],"status":"ERROR","reason":str(e)[:220]})
     OUT.mkdir(exist_ok=True)
     (OUT/"market_data.json").write_text(json.dumps({"generated_utc":pd.Timestamp.now(tz="UTC").isoformat(),"source":"Yahoo Finance auto_adjust OHLCV; same daily bars used by backtest","instruments":market_data},separators=(",",":"),ensure_ascii=False)+"\n",encoding="utf-8")
+    (OUT/"current_signals.json").write_text(json.dumps({"generated_utc":pd.Timestamp.now(tz="UTC").isoformat(),
+        "as_of_timezone":"Europe/Rome","paper_only":True,"signal_count":len(current_signals),
+        "signals":sorted(current_signals,key=lambda x:(x["engine"],x["variant"],x["symbol"]))},
+        indent=2,ensure_ascii=False)+"\\n",encoding="utf-8")
     pd.DataFrame(all_trades).to_csv(OUT/"backtest_trades.csv",index=False)
     pd.DataFrame(mr_all_trades).to_csv(OUT/"mr_backtest_trades.csv",index=False)
     for variant in ("B","C","D"):
