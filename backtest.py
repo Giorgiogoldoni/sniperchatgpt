@@ -149,7 +149,22 @@ def main():
                 c_now=bool(near.tail(3).sum()>=2 and len(lower.dropna())>=3 and
                            lower.iloc[-1]<lower.iloc[-2]<lower.iloc[-3])
                 mr_base=bool(mr_last.get("MR_ENTRY_SIGNAL",False))
-                for variant,condition in (("MR-A",mr_base),("MR-C",mr_base and c_now),("MR-D",mr_base)):
+                # B enters on the close that completes its second recovery above
+                # the lower band, within three sessions after an oversold setup.
+                b_now=False
+                base_series=mr_indicated["MR_ENTRY_SIGNAL"].fillna(False).astype(bool)
+                above=(mr_indicated["Close"]>mr_indicated["MR_BB_LOWER"]).fillna(False)
+                n_bars=len(mr_indicated)
+                for setup_i in range(max(0,n_bars-4),n_bars-1):
+                    if not bool(base_series.iloc[setup_i]): continue
+                    post=list(range(setup_i+1,min(setup_i+4,n_bars)))
+                    count_before=0
+                    for k in post:
+                        count_now=count_before+int(bool(above.iloc[k]))
+                        if k==n_bars-1 and count_now>=2 and count_before<2:
+                            b_now=True
+                        count_before=count_now
+                for variant,condition in (("MR-A",mr_base),("MR-B",b_now),("MR-C",mr_base and c_now),("MR-D",mr_base)):
                     open_variant=any(t.get("exit_reason")=="END_OF_DATA" for t in current_mr[variant[-1]])
                     if condition and not open_variant:
                         current_signals.append({"engine":"MR","variant":variant,"symbol":symbol,
