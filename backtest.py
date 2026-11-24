@@ -181,11 +181,26 @@ def main():
                 m.update(mr_instrument_drawdowns(group,key))
                 for k,v in m.items(): rec[key+"_"+k]=v
             families.append(rec)
+        regimes=[]
+        for regime_name in sorted({t.get("regime","UNKNOWN") for t in trades}):
+            regime_trades=[t for t in trades if t.get("regime","UNKNOWN")==regime_name]
+            regime_rec={"regime":regime_name,"trades":len(regime_trades),"costs":{}}
+            for bps in config["costs_bps_round_trip"]:
+                key=f"net_{bps}bps_pct"
+                rm=metrics_mr(regime_trades,key); rm.pop("max_drawdown_pct",None)
+                regime_rec["costs"][str(bps)]=rm
+                if regime_trades and all("deployed_weight_pct" in t for t in regime_trades):
+                    deployed_key=f"net_{bps}bps_on_deployed_pct"
+                    dm=metrics_mr([dict(t,_net_on_deployed=t.get(deployed_key,0)) for t in regime_trades],"_net_on_deployed")
+                    regime_rec["costs"][str(bps)]["avg_net_on_deployed_capital_pct"]=dm["avg_net_pct"]
+                    regime_rec["costs"][str(bps)]["median_net_on_deployed_capital_pct"]=dm["median_net_pct"]
+            regimes.append(regime_rec)
         if trades and all("deployed_weight_pct" in t for t in trades):
             deployed=[float(t["deployed_weight_pct"]) for t in trades]
             for bps in config["costs_bps_round_trip"]:
                 key="net_"+str(bps)+"bps_pct"
-                net_deployed=[dict(t, _net_on_deployed=t.get(key+"_on_deployed_pct",0)) for t in trades]
+                deployed_key=f"net_{bps}bps_on_deployed_pct"
+                net_deployed=[dict(t, _net_on_deployed=t.get(deployed_key,0)) for t in trades]
                 m=metrics_mr(net_deployed,"_net_on_deployed")
                 costs[str(bps)]["avg_net_on_deployed_capital_pct"]=m["avg_net_pct"]
                 costs[str(bps)]["median_net_on_deployed_capital_pct"]=m["median_net_pct"]
@@ -197,7 +212,7 @@ def main():
                 "two_tranche_trades":sum(int(t.get("tranche_count",0))==2 for t in trades),
                 "three_tranche_trades":sum(int(t.get("tranche_count",0))==3 for t in trades)
             }
-        return {"trades_total":len(trades),"costs":costs,"families":families}
+        return {"trades_total":len(trades),"costs":costs,"families":families,"regimes":regimes}
     mr_variants={v:summarize_mr_variant(mr_variant_trades[v]) for v in ("A","B","C","D")}
     mr_summary={"strategy":"MEAN_REVERSION","rules":{
         "setup":"Close sotto Bollinger inferiore (20,2) e RSI(2) <= 10 sulla stessa seduta",
@@ -208,7 +223,8 @@ def main():
         "A":"Baseline: entry next open after oversold signal",
         "B":"After oversold setup, enter next open once at least 2 of the next 3 closes are above the lower Bollinger band; discard if not confirmed within 3 sessions",
         "C":"At oversold signal, require at least 2 of the last 3 closes within 1.5% of the lower band and lower band falling on each of the last 2 transitions",
-        "D":"40% initial entry on A signal; add 30% on each of two fresh post-entry lower-band Walking confirmations (2 of 3 closes within 1.5%, lower band falling); fixed initial stop, common exit; unused allocation stays in cash"},
+        "D":"40% initial entry on A signal; add 30% on each of two fresh post-entry lower-band Walking confirmations (2 of 3 closes within 1.5%, lower band falling); fixed initial stop, common exit; unused allocation stays in cash",
+        "regime_analysis":"At setup date classify each instrument independently: UPTREND if close > SMA200 and SMA200 > SMA200 from 20 sessions earlier; DOWNTREND if close < SMA200 and SMA200 < its 20-session lag; SIDEWAYS otherwise when SMA200 is available; UNKNOWN before 200 bars. This is instrument-trend context, not a common market benchmark."},
         "trades_total":len(mr_all_trades),"diagnostics":mr_diag,"costs":mr_costs,"families":mr_families,"variants":mr_variants,"paper_only":True}
     (OUT/"mr_backtest_summary.json").write_text(json.dumps(mr_summary,indent=2,ensure_ascii=False)+"\n")
     keys=[f"net_{b}bps_pct" for b in config["costs_bps_round_trip"]]; families=[]
