@@ -38,9 +38,10 @@ add_frame("Operazioni TF",R/"backtest_trades.csv")
 add_frame("Operazioni MR A",R/"mr_backtest_trades.csv")
 add_frame("Operazioni MR B",R/"mr_backtest_trades_b.csv")
 add_frame("Operazioni MR C",R/"mr_backtest_trades_c.csv")
+add_frame("Operazioni MR D",R/"mr_backtest_trades_d.csv")
 variants=mr_summary.get("variants",{})
 if variants:
-    comp=wb.create_sheet("Confronto MR A-B-C")
+    comp=wb.create_sheet("Confronto MR A-B-C-D")
     comp.append(["VARIANTE","COSTI BPS","OPERAZIONI","WIN RATE %","MEDIA NETTA %","MEDIANA NETTA %","PROFIT FACTOR","DD MEDIO STRUMENTI %","PEGGIOR DD STRUMENTO %"])
     for variant, data in variants.items():
         for bps, m in data["costs"].items():
@@ -58,7 +59,7 @@ for row in [
 ["Parametro","Regola v1"],["Universo","ETF/ETP leva long, leva short/inversi e materie prime"],
 ["Motori","Trend Following e Mean Reversion indipendenti; nessuna combinazione dei segnali"],
 ["MR segnale","Close sotto Bollinger inferiore (20,2) e RSI(2) <= 10 sulla stessa seduta"],
-["MR ingresso","Segnale a chiusura; ingresso all’open successivo"],
+["MR ingresso","Segnale a chiusura; ingresso all’open successivo"],\n["MR-D","40% all’ingresso A; 30% + 30% su due nuovi Walking inferiori confermati dopo l’ingresso; stop iniziale fisso, non allargato dagli incrementi; massimo 100%"],
 ["MR uscita","Chiusura alla Bollinger centrale; stop 2 x ATR(14); massimo 10 sedute"],
 ["Donchian","Close > massimo High delle 20 sedute precedenti"],
 ["Walking","Almeno 2 delle ultime 3 sedute: close entro 1,5% dalla Bollinger superiore 20,2; close sopra media e banda superiore crescente"],
