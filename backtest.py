@@ -68,7 +68,7 @@ def main():
     config=json.loads((ROOT/"config.json").read_text())
     universe=json.loads((ROOT/"data/instrument_universe.json").read_text())["instruments"]
     selected=[x for x in universe if x.get("classification") in {"LEVA_LONG","LEVA_SHORT","MATERIE_PRIME_1X","MATERIE_PRIME_LEVA","MATERIE_PRIME_SHORT"}]
-    all_trades=[]; mr_all_trades=[]; scan=[]; market_data={}; batch_size=20
+    all_trades=[]; mr_all_trades=[]; scan=[]; market_data={}; mr_diag={"valid_bars":0,"below_lower":0,"rsi2_le_10":0,"both_conditions":0,"entry_signals":0}; batch_size=20
     for start in range(0,len(selected),batch_size):
         batch=selected[start:start+batch_size]; tickers=[x.get("yahoo") or x.get("id") for x in batch]
         try:
@@ -102,6 +102,13 @@ def main():
                     continue
                 indicated=add_indicators(frame,config)
                 mr_indicated=add_mr_indicators(frame,config)
+                below=mr_indicated["Close"].le(mr_indicated["MR_BB_LOWER"])
+                oversold=mr_indicated["MR_RSI2"].le(float(config.get("mr_rsi_entry",10)))
+                mr_diag["valid_bars"]+=len(frame)
+                mr_diag["below_lower"]+=int(below.sum())
+                mr_diag["rsi2_le_10"]+=int(oversold.sum())
+                mr_diag["both_conditions"]+=int((below & oversold).sum())
+                mr_diag["entry_signals"]+=int(mr_indicated["MR_ENTRY_SIGNAL"].sum())
                 cols=["Open","High","Low","Close","Volume","DONCHIAN20_UPPER","BB_UPPER","BB_MID","ATR14","WALKING","ENTRY_SIGNAL"]
                 export=indicated.reindex(columns=cols).copy()
                 export["MR_BB_LOWER"]=mr_indicated["MR_BB_LOWER"]
@@ -147,7 +154,7 @@ def main():
         "stop":"2 x ATR(14) dal prezzo di ingresso, ATR calcolato alla data del segnale",
         "exit":"Chiusura al raggiungimento/superamento della Bollinger centrale; stop ATR; massimo 10 sedute",
         "independent_from_trend_following":True},
-        "trades_total":len(mr_all_trades),"costs":mr_costs,"families":mr_families,"paper_only":True}
+        "trades_total":len(mr_all_trades),"diagnostics":mr_diag,"costs":mr_costs,"families":mr_families,"paper_only":True}
     (OUT/"mr_backtest_summary.json").write_text(json.dumps(mr_summary,indent=2,ensure_ascii=False)+"\n")
     keys=[f"net_{b}bps_pct" for b in config["costs_bps_round_trip"]]; families=[]
     for cat in sorted({x["classification"] for x in selected}):
