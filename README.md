@@ -25,6 +25,21 @@ Tutti gli strumenti sono acquistati come ETP (anche quelli short/inversi): non v
 
 Gli indicatori sono calcolati sull'OHLC dello **strumento negoziato**, non sul sottostante.
 
+## Motore parallelo Mean Reversion (MR) — sperimentale
+
+Il motore MR è separato dal Trend Following: non legge i segnali TF, non condivide posizioni e non combina condizioni dei due sistemi. I due risultati sono valutati e visualizzati separatamente.
+
+1. Setup: chiusura sotto la Bollinger inferiore (20, 2) con RSI(2) <= 10 almeno una volta nelle ultime 3 sedute.
+2. Conferma: la chiusura torna sopra la Bollinger inferiore dopo il setup.
+3. Ingresso: open della seduta successiva al segnale.
+4. Stop iniziale: prezzo d'ingresso meno 2 × ATR(14), calcolato alla data del segnale.
+5. Uscita: alla chiusura quando il prezzo raggiunge/supera la Bollinger centrale; in alternativa stop ATR o massimo 10 sedute.
+6. Costi: scenari round trip 20 / 30 / 50 bps.
+
+Il segnale MR è calcolato autonomamente sullo stesso OHLC aggiustato dello strumento negoziato. Gli esiti MR sono in `reports/mr_backtest_summary.json` e `reports/mr_backtest_trades.csv`. La dashboard distingue i marcatori TF (verde) e MR (blu): ogni ingresso è collocato al prezzo effettivo, con segmento orizzontale fino alla data di uscita. I due livelli possono essere nascosti separatamente.
+
+La regola MR è una prima ipotesi di ricerca, non una strategia validata. In particolare, il rientro dalla banda inferiore può essere un falso rimbalzo in un mercato ribassista; stop, costi, liquidità, leva e risultati per famiglia devono essere verificati prima di qualunque utilizzo PAPER.
+
 ## Sicurezza e limiti
 - PAPER ONLY: nessun broker, API di esecuzione o ordine reale.
 - Una sola posizione aperta per strumento.
