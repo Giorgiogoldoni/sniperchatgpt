@@ -182,6 +182,22 @@ def main():
                 m.update(mr_instrument_drawdowns(group,key))
                 for k,v in m.items(): rec[key+"_"+k]=v
             families.append(rec)
+        if trades and all("deployed_weight_pct" in t for t in trades):
+            deployed=[float(t["deployed_weight_pct"]) for t in trades]
+            for bps in config["costs_bps_round_trip"]:
+                key="net_"+str(bps)+"bps_pct"
+                net_deployed=[dict(t, _net_on_deployed=t.get(key+"_on_deployed_pct",0)) for t in trades]
+                m=metrics_mr(net_deployed,"_net_on_deployed")
+                costs[str(bps)]["avg_net_on_deployed_capital_pct"]=m["avg_net_pct"]
+                costs[str(bps)]["median_net_on_deployed_capital_pct"]=m["median_net_pct"]
+            costs["exposure"]={
+                "avg_deployed_weight_pct":round(sum(deployed)/len(deployed),2),
+                "full_deployment_trades_pct":round(sum(x>=99.99 for x in deployed)/len(deployed)*100,2),
+                "avg_tranches_per_trade":round(sum(int(t.get("tranche_count",0)) for t in trades)/len(trades),2),
+                "one_tranche_trades":sum(int(t.get("tranche_count",0))==1 for t in trades),
+                "two_tranche_trades":sum(int(t.get("tranche_count",0))==2 for t in trades),
+                "three_tranche_trades":sum(int(t.get("tranche_count",0))==3 for t in trades)
+            }
         return {"trades_total":len(trades),"costs":costs,"families":families}
     mr_variants={v:summarize_mr_variant(mr_variant_trades[v]) for v in ("A","B","C","D")}
     mr_summary={"strategy":"MEAN_REVERSION","rules":{
