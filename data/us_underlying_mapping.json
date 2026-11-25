@@ -1,0 +1,2820 @@
+{
+  "schema_version": "1.0",
+  "generated_utc": "2026-11-25T05:38:38.845Z",
+  "purpose": "Radar USA informativo separato dai motori TF e MR. Mappatura iniziale da sottoporre a validazione contro KID/prospetto e benchmark ufficiale.",
+  "universe_source": "data/instrument_universe.json",
+  "universe_count": 311,
+  "methodology": [
+    "Azione USA diretta per ETP su singola azione: mapping ticker dell'emittente, da validare contro benchmark.",
+    "Future commodity quando il nome identifica chiaramente la materia prima; futures continuous ticker indicativi Yahoo Finance.",
+    "ETF USA proxy per indici/settori non quotati direttamente negli USA; confidenza ridotta e proxy mai presentato come sottostante esatto.",
+    "Nessuna equivalenza artificiale per BTP/Bund/Gilts e strumenti senza benchmark identificabile.",
+    "Il segno long/short e la leva giornaliera dell'ETP vanno gestiti separatamente: il radar confronta i rendimenti del benchmark, non copia il segnale."
+  ],
+  "sources": [
+    "Yahoo Finance commodity futures directory: https://finance.yahoo.com/markets/commodities/",
+    "CME/market futures symbol reference: https://help.symbolik.com/hc/en-us/articles/4402442860051-Futures-Symbols-and-Data",
+    "WisdomTree product KID/prospectus required for final benchmark validation."
+  ],
+  "records": [
+    {
+      "etp": "1GIS.L",
+      "name": "WisdomTree Gilts 10Y 1x Daily Short",
+      "us_reference": "nessuno",
+      "reference_type": "future/indice UK non equivalente USA",
+      "confidence": "media",
+      "mapping_status": "no_direct_equivalent",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "1MCS.L",
+      "name": "WisdomTree FTSE 250 1x Daily Short",
+      "us_reference": "FLGB",
+      "reference_type": "ETF UK proxy; non replica FTSE 250",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "1PAS.MI",
+      "name": "WisdomTree Palladium 1x Daily Short",
+      "us_reference": "PA=F",
+      "reference_type": "future palladio",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "2BUL.MI",
+      "name": "WisdomTree S&P500 2x Daily",
+      "us_reference": "SPY;ES=F",
+      "reference_type": "ETF/future indice USA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "2CAR.MI",
+      "name": "WisdomTree STOXX Europe Automobiles 2x Daily Leveraged",
+      "us_reference": "CARZ",
+      "reference_type": "ETF auto globale/USA proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "2GOL.MI",
+      "name": "WisdomTree Gold 2x",
+      "us_reference": "GC=F",
+      "reference_type": "future oro",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "2MCL.L",
+      "name": "WisdomTree FTSE 250 2x Daily Leveraged",
+      "us_reference": "FLGB",
+      "reference_type": "ETF UK proxy; non replica FTSE 250",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "2OIG.MI",
+      "name": "WisdomTree STOXX Europe Oil & Gas 2x Daily Short",
+      "us_reference": "IXC",
+      "reference_type": "ETF energia globale proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "2PAL.MI",
+      "name": "WisdomTree Palladium 2x Daily Leveraged",
+      "us_reference": "PA=F",
+      "reference_type": "future palladio",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "2QQL.MI",
+      "name": "WisdomTree Nasdaq 2x Daily",
+      "us_reference": "QQQ;NQ=F",
+      "reference_type": "ETF/future Nasdaq-100",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "2STR.MI",
+      "name": "WisdomTree STOXX Europe Travel & Leisure 2x Daily Short",
+      "us_reference": "PEJ",
+      "reference_type": "ETF leisure USA proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "2TRV.MI",
+      "name": "WisdomTree STOXX Europe Travel & Leisure 2x Daily Leveraged",
+      "us_reference": "PEJ",
+      "reference_type": "ETF leisure USA proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "2UKL.L",
+      "name": "WisdomTree FTSE 100 2x Daily Leveraged",
+      "us_reference": "EWU",
+      "reference_type": "ETF Regno Unito proxy USA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "2UKS.L",
+      "name": "WisdomTree FTSE 100 2x Daily Short",
+      "us_reference": "EWU",
+      "reference_type": "ETF Regno Unito proxy USA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3AAP.MI",
+      "name": "Leverage Shares 3x Apple Etp Securities",
+      "us_reference": "AAPL",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3AMZ.MI",
+      "name": "Leverage Shares 3x Amazon Etp Securities",
+      "us_reference": "AMZN",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3BAS.MI",
+      "name": "WisdomTree EURO STOXX Banks 3x Daily Short",
+      "us_reference": "EUFN",
+      "reference_type": "ETF banche Europa proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3BRL.MI",
+      "name": "WisdomTree Brent Crude Oil 3x Daily Leveraged",
+      "us_reference": "CL=F",
+      "reference_type": "future WTI",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3BRS.MI",
+      "name": "WisdomTree Brent Crude Oil 3x Daily Short",
+      "us_reference": "CL=F",
+      "reference_type": "future WTI",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3BTL.MI",
+      "name": "WisdomTree BTP 10Y 3x Daily Leveraged",
+      "us_reference": "nessuno",
+      "reference_type": "nessun equivalente USA diretto; BTP future europeo",
+      "confidence": "alta",
+      "mapping_status": "no_direct_equivalent",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3BUL.MI",
+      "name": "WisdomTree Bund 10Y 3x Daily Leveraged",
+      "us_reference": "nessuno",
+      "reference_type": "nessun equivalente USA diretto; Bund future europeo",
+      "confidence": "alta",
+      "mapping_status": "no_direct_equivalent",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3BUS.MI",
+      "name": "WisdomTree Bund 10Y 3x Daily Short",
+      "us_reference": "nessuno",
+      "reference_type": "nessun equivalente USA diretto; Bund future europeo",
+      "confidence": "alta",
+      "mapping_status": "no_direct_equivalent",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3CFL.MI",
+      "name": "WisdomTree Coffee 3x Daily Leveraged",
+      "us_reference": "KC=F",
+      "reference_type": "future caffè",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3CON.MI",
+      "name": "Leverage Shares 3x Long Coinbase Etp Securities",
+      "us_reference": "COIN",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3DAL.MI",
+      "name": "WisdomTree DAX 3x Daily",
+      "us_reference": "EWG",
+      "reference_type": "ETF Germania proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3DEL.MI",
+      "name": "WisdomTree DAX 3x Daily Leveraged",
+      "us_reference": "EWG",
+      "reference_type": "ETF Germania proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3DES.MI",
+      "name": "WisdomTree DAX 3x Daily Short",
+      "us_reference": "EWG",
+      "reference_type": "ETF Germania proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3EDF.MI",
+      "name": "WisdomTree STOXX Europe Aerospace & Defence 3x Daily Leveraged",
+      "us_reference": "ITA",
+      "reference_type": "ETF difesa USA proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3EDS.MI",
+      "name": "WisdomTree STOXX Europe Aerospace & Defence 3x Daily Short",
+      "us_reference": "ITA",
+      "reference_type": "ETF difesa USA proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3EML.MI",
+      "name": "WisdomTree Emerging Markets 3x Daily Leveraged",
+      "us_reference": "EEM",
+      "reference_type": "ETF mercati emergenti proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3EMS.MI",
+      "name": "WisdomTree Emerging Markets 3x Daily Short",
+      "us_reference": "EEM",
+      "reference_type": "ETF mercati emergenti proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3EUL.MI",
+      "name": "WisdomTree EURO STOXX 50® 3x Daily Leveraged",
+      "us_reference": "FEZ",
+      "reference_type": "ETF Euro Stoxx 50 proxy USA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3EUS.MI",
+      "name": "WisdomTree EURO STOXX 50® 3x Daily Short",
+      "us_reference": "FEZ",
+      "reference_type": "ETF Euro Stoxx 50 proxy USA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3FB.MI",
+      "name": "Leverage Shares 3x Facebook Etp Securities",
+      "us_reference": "META",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3GIL.L",
+      "name": "WisdomTree Gilts 10Y 3x Daily Leveraged",
+      "us_reference": "nessuno",
+      "reference_type": "future/indice UK non equivalente USA",
+      "confidence": "media",
+      "mapping_status": "no_direct_equivalent",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3GIS.L",
+      "name": "WisdomTree Gilts 10Y 3x Daily Short",
+      "us_reference": "nessuno",
+      "reference_type": "future/indice UK non equivalente USA",
+      "confidence": "media",
+      "mapping_status": "no_direct_equivalent",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3GOL.MI",
+      "name": "WisdomTree Gold 3x",
+      "us_reference": "GC=F",
+      "reference_type": "future oro",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3GOO.MI",
+      "name": "Leverage Shares 3x Alphabet Etp Securities",
+      "us_reference": "GOOGL",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3GOS.MI",
+      "name": "WisdomTree Gold 3x Daily Short",
+      "us_reference": "GC=F",
+      "reference_type": "future oro",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3HCL.MI",
+      "name": "WisdomTree Copper 3x Daily Leveraged",
+      "us_reference": "HG=F",
+      "reference_type": "future rame",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3HCS.MI",
+      "name": "WisdomTree Copper 3x Daily Short",
+      "us_reference": "HG=F",
+      "reference_type": "future rame",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3ITL.MI",
+      "name": "WisdomTree FTSE MIB 3x Daily Leveraged",
+      "us_reference": "EWI",
+      "reference_type": "ETF Italia proxy USA",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3ITS.MI",
+      "name": "WisdomTree FTSE MIB 3x Daily Short",
+      "us_reference": "EWI",
+      "reference_type": "ETF Italia proxy USA",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LAA.MI",
+      "name": "GraniteShares 3x Long Alibaba Daily Etp",
+      "us_reference": "BABA",
+      "reference_type": "ADR USA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LAD.MI",
+      "name": "GraniteShares 3x AMD",
+      "us_reference": "AMD",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LAM.MI",
+      "name": "GraniteShares 3x Long AMD Daily ETP",
+      "us_reference": "AMD",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LAP.MI",
+      "name": "GraniteShares 3x Apple",
+      "us_reference": "AAPL",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LBA.MI",
+      "name": "GraniteShares 3x BAC",
+      "us_reference": "BAC",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LCO.MI",
+      "name": "GraniteShares 3x Coinbase",
+      "us_reference": "COIN",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LCR.MI",
+      "name": "GraniteShares 3x Long Unicredit Daily Etp",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "3LFB.MI",
+      "name": "GraniteShares 3x Long Facebook Daily Etp",
+      "us_reference": "META",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LGO.MI",
+      "name": "GraniteShares 3x Alphabet",
+      "us_reference": "GOOGL",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LJP.MI",
+      "name": "GraniteShares 3x JPMorgan",
+      "us_reference": "JPM",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LMI.MI",
+      "name": "GraniteShares 3x Long MicroStrategy Daily Etp",
+      "us_reference": "MSTR",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LMO.MI",
+      "name": "GraniteShares 3x Long Moderna Daily Etp",
+      "us_reference": "MRNA",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LMS.MI",
+      "name": "GraniteShares 3x Microsoft",
+      "us_reference": "MSFT",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LMT.MI",
+      "name": "GraniteShares 3x Meta",
+      "us_reference": "META",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LNF.MI",
+      "name": "GraniteShares 3x Netflix",
+      "us_reference": "NFLX",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LNV.MI",
+      "name": "GraniteShares 3x Nvidia",
+      "us_reference": "NVDA",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LPP.MI",
+      "name": "GraniteShares 3x Long PayPal Daily Etp",
+      "us_reference": "PYPL",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LSQ.MI",
+      "name": "GraniteShares 3x Long Square Daily Etp",
+      "us_reference": "XYZ",
+      "reference_type": "azione USA diretta (ticker aggiornato)",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LTS.MI",
+      "name": "GraniteShares 3x Tesla",
+      "us_reference": "TSLA",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LUB.MI",
+      "name": "GraniteShares 3x Long Uber Daily Etp",
+      "us_reference": "UBER",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3LZN.MI",
+      "name": "GraniteShares 3x Long Amazon Daily Etp",
+      "us_reference": "AMZN",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3M7S.MI",
+      "name": "WisdomTree Magnificent 7 3x Daily Short",
+      "us_reference": "MAGS",
+      "reference_type": "ETF USA proxy paniere",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3MG7.MI",
+      "name": "WisdomTree Magnificent 7 3x Daily Leveraged",
+      "us_reference": "MAGS",
+      "reference_type": "ETF USA proxy paniere",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3MSF.MI",
+      "name": "Leverage Shares 3x Microsoft Etp Securities",
+      "us_reference": "MSFT",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3MST.MI",
+      "name": "Leverage Shares 3x Long MicroStrategy Etp",
+      "us_reference": "MSTR",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3NFL.MI",
+      "name": "Leverage Shares 3x Netflix Etp Securities",
+      "us_reference": "NFLX",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3NGL.MI",
+      "name": "WisdomTree Natural Gas 3x Daily Leveraged",
+      "us_reference": "NG=F",
+      "reference_type": "future gas naturale",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3NIO.MI",
+      "name": "Leverage Shares 3x NIO Etp Securities",
+      "us_reference": "NIO",
+      "reference_type": "ADR USA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3NVD.MI",
+      "name": "Leverage Shares 3x NVIDIA Etp Securities",
+      "us_reference": "NVDA",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3OIL.MI",
+      "name": "WisdomTree Crude Oil 3x",
+      "us_reference": "CL=F",
+      "reference_type": "future WTI",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3OIS.MI",
+      "name": "WisdomTree WTI Crude Oil 3x Daily Short",
+      "us_reference": "CL=F",
+      "reference_type": "future WTI",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3RAC.MI",
+      "name": "Leverage Shares 3x Long Ferrari (RACE) Etp",
+      "us_reference": "RACE",
+      "reference_type": "ADR USA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SAA.MI",
+      "name": "GraniteShares 3x Short Alibaba Daily Etp",
+      "us_reference": "BABA",
+      "reference_type": "ADR USA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SAM.MI",
+      "name": "GraniteShares 3x Short Amazon",
+      "us_reference": "AMZN",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SAP.MI",
+      "name": "GraniteShares 3x Short Apple",
+      "us_reference": "AAPL",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SCR.MI",
+      "name": "GraniteShares 3x Short Unicredit Daily Etp",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "3SEM.MI",
+      "name": "WisdomTree PHLX Semiconductor 3x Daily Leveraged",
+      "us_reference": "SOXX",
+      "reference_type": "ETF settore USA proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SGO.MI",
+      "name": "GraniteShares 3x Short Alphabet",
+      "us_reference": "GOOGL",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SIL.MI",
+      "name": "WisdomTree Silver 3x",
+      "us_reference": "SI=F",
+      "reference_type": "future argento",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SIS.MI",
+      "name": "WisdomTree Silver 3x Daily Short",
+      "us_reference": "SI=F",
+      "reference_type": "future argento",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SMI.MI",
+      "name": "GraniteShares 3x Short MicroStrategy Daily Etp",
+      "us_reference": "MSTR",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SML.MI",
+      "name": "3SML",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "3SMS.MI",
+      "name": "GraniteShares 3x Short Microsoft",
+      "us_reference": "MSFT",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SMT.MI",
+      "name": "GraniteShares 3x Short Meta",
+      "us_reference": "META",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SNF.MI",
+      "name": "GraniteShares 3x Short Netflix Daily Etp",
+      "us_reference": "NFLX",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SNI.MI",
+      "name": "GraniteShares 3x Short NIO Daily Etp",
+      "us_reference": "NIO",
+      "reference_type": "ADR USA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SNV.MI",
+      "name": "GraniteShares 3x Short Nvidia",
+      "us_reference": "NVDA",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SPA.MI",
+      "name": "GraniteShares 3x Short Palantir Daily Etp",
+      "us_reference": "PLTR",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SQ.MI",
+      "name": "Leverage Shares 3x Square Etp Securities",
+      "us_reference": "XYZ",
+      "reference_type": "azione USA diretta (ticker aggiornato)",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SRA.MI",
+      "name": "Leverage Shares 3x Short Ferrari (RACE) Etp",
+      "us_reference": "RACE",
+      "reference_type": "ADR USA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SSQ.MI",
+      "name": "GraniteShares 3x Short Square Daily Etp",
+      "us_reference": "XYZ",
+      "reference_type": "azione USA diretta (ticker aggiornato)",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3STS.MI",
+      "name": "GraniteShares 3x Short Tesla",
+      "us_reference": "TSLA",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3SUL.MI",
+      "name": "WisdomTree Sugar 3x Daily Leveraged",
+      "us_reference": "SB=F",
+      "reference_type": "future zucchero #11",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3TSL.MI",
+      "name": "Leverage Shares 3x Tesla Etp",
+      "us_reference": "TSLA",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3TYL.MI",
+      "name": "WisdomTree US Treasuries 10Y 3x Daily Leveraged",
+      "us_reference": "IEF;ZN=F",
+      "reference_type": "ETF Treasury 7-10y/future Treasury USA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3UBS.MI",
+      "name": "WisdomTree Bund 30Y 3x Daily Short",
+      "us_reference": "nessuno",
+      "reference_type": "nessun equivalente USA diretto; Bund future europeo",
+      "confidence": "alta",
+      "mapping_status": "no_direct_equivalent",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3UKL.L",
+      "name": "WisdomTree FTSE 100 3x Daily Leveraged",
+      "us_reference": "EWU",
+      "reference_type": "ETF Regno Unito proxy USA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3UKS.L",
+      "name": "WisdomTree FTSE 100 3x Daily Short",
+      "us_reference": "EWU",
+      "reference_type": "ETF Regno Unito proxy USA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3USL.MI",
+      "name": "WisdomTree S&P500 3x Daily",
+      "us_reference": "SPY;ES=F",
+      "reference_type": "ETF/future indice USA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3USS.MI",
+      "name": "WisdomTree S&P500 3x Short",
+      "us_reference": "SPY;ES=F",
+      "reference_type": "ETF/future indice USA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "3WHL.MI",
+      "name": "WisdomTree Wheat 3x Daily Leveraged",
+      "us_reference": "ZW=F",
+      "reference_type": "future grano Chicago SRW",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "5BTS.MI",
+      "name": "WisdomTree BTP 10Y 5x Daily Short",
+      "us_reference": "nessuno",
+      "reference_type": "nessun equivalente USA diretto; BTP future europeo",
+      "confidence": "alta",
+      "mapping_status": "no_direct_equivalent",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "5BUS.MI",
+      "name": "WisdomTree Bund 10Y 5x Daily Short",
+      "us_reference": "nessuno",
+      "reference_type": "nessun equivalente USA diretto; Bund future europeo",
+      "confidence": "alta",
+      "mapping_status": "no_direct_equivalent",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "5EUL.MI",
+      "name": "WisdomTree EURO STOXX 50 5x Daily Leveraged",
+      "us_reference": "FEZ",
+      "reference_type": "ETF Euro Stoxx 50 proxy USA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "5EUS.MI",
+      "name": "WisdomTree EURO STOXX 50 5x Daily Short",
+      "us_reference": "FEZ",
+      "reference_type": "ETF Euro Stoxx 50 proxy USA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "5ITL.MI",
+      "name": "WisdomTree FTSE MIB 5x Daily Leveraged",
+      "us_reference": "EWI",
+      "reference_type": "ETF Italia proxy USA",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "5ITS.MI",
+      "name": "WisdomTree FTSE MIB 5x Daily Short",
+      "us_reference": "EWI",
+      "reference_type": "ETF Italia proxy USA",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "5MIB.MI",
+      "name": "GraniteShares 5x Long Mib Daily Etp",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "5QQQ.MI",
+      "name": "Leverage Shares 5x Long Nasdaq 100 Etp",
+      "us_reference": "QQQ;NQ=F",
+      "reference_type": "ETF/future Nasdaq-100",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "5SIT.MI",
+      "name": "GraniteShares 5x Short Mib Daily Etp",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "5SPY.MI",
+      "name": "Leverage Shares 5x Long S&P 500 Etp",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "5TYS.MI",
+      "name": "WisdomTree US Treasuries 10Y 5x Daily Short",
+      "us_reference": "IEF;ZN=F",
+      "reference_type": "ETF Treasury 7-10y/future Treasury USA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "5USL.MI",
+      "name": "WisdomTree S&P 500 5x Daily Leveraged",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "5USS.MI",
+      "name": "WisdomTree S&P 500 5x Daily Short",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "AIGA.MI",
+      "name": "WisdomTree Agriculture",
+      "us_reference": "DBA",
+      "reference_type": "ETF agricolo proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "AIGC.MI",
+      "name": "WisdomTree Broad Commodities",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "AIGE.MI",
+      "name": "WisdomTree Energy",
+      "us_reference": "XLE",
+      "reference_type": "ETF energia USA proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "AIGG.MI",
+      "name": "WisdomTree Grains",
+      "us_reference": "DBA",
+      "reference_type": "ETF agricolo proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "AIGI.MI",
+      "name": "WisdomTree Industrial Metals",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "AIGL.MI",
+      "name": "WisdomTree Livestock",
+      "us_reference": "LE=F;HE=F;GF=F",
+      "reference_type": "paniere futures bestiame",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "AIGO.MI",
+      "name": "WisdomTree Petroleum",
+      "us_reference": "XLE",
+      "reference_type": "ETF energia USA proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "AIGP.MI",
+      "name": "iShares Diversified Commodity",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "AIGS.MI",
+      "name": "WisdomTree Softs",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "ALUM.MI",
+      "name": "WisdomTree Aluminium",
+      "us_reference": "ALUM",
+      "reference_type": "nessun future Yahoo verificato; proxy non assegnato",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "ARM3.MI",
+      "name": "Leverage Shares 3x Arm Etp Securities",
+      "us_reference": "ARM",
+      "reference_type": "ADR USA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "AUEU.MI",
+      "name": "WisdomTree Short AUD Long EUR",
+      "us_reference": "6A=F;6E=F",
+      "reference_type": "future AUD e EUR; segno da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "BCOM.DE",
+      "name": "iShares Bloomberg Commodity",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "BENE.MI",
+      "name": "WisdomTree Energy Enhanced",
+      "us_reference": "XLE",
+      "reference_type": "ETF energia USA proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "BRENT.MI",
+      "name": "BRENT",
+      "us_reference": "BZ=F",
+      "reference_type": "future Brent",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "BRES.MI",
+      "name": "BRES",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "BRNT.MI",
+      "name": "WisdomTree Brent Crude",
+      "us_reference": "BZ=F",
+      "reference_type": "future Brent",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "BULL.MI",
+      "name": "WisdomTree Gold",
+      "us_reference": "GC=F",
+      "reference_type": "future oro",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "CARB.MI",
+      "name": "WisdomTree Carbon",
+      "us_reference": "KRBN",
+      "reference_type": "ETF carbonio proxy (non EUA spot)",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "CCEUAS.MI",
+      "name": "UBS CMCI Composite SF UCITS ETF hEUR acc",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "CCUSAS.MI",
+      "name": "UBS CMCI Composite SF UCITS ETF USD acc",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "CHE3.MI",
+      "name": "WisdomTree Short CHF Long EUR 3x Daily",
+      "us_reference": "6S=F;6E=F",
+      "reference_type": "future CHF e EUR; segno da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "CHEU.MI",
+      "name": "WisdomTree Short CHF Long EUR",
+      "us_reference": "6S=F;6E=F",
+      "reference_type": "future CHF e EUR; segno da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "CMOC.MI",
+      "name": "Invesco Bloomberg Commodity Carbon Tilted UCITS ETF USD",
+      "us_reference": "KRBN",
+      "reference_type": "ETF carbonio proxy (non EUA spot)",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "CMOD.MI",
+      "name": "WisdomTree Commodity",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "CMOE.MI",
+      "name": "Invesco Bloomberg Commodity UCITS ETF EUR Hedged",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "CO2.MI",
+      "name": "SparkChange Physical Carbon EUA ETC",
+      "us_reference": "KRBN",
+      "reference_type": "ETF carbonio proxy (non EUA spot)",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "COCO.MI",
+      "name": "WisdomTree Cocoa",
+      "us_reference": "CC=F",
+      "reference_type": "future cacao",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "COFF.MI",
+      "name": "WisdomTree Coffee",
+      "us_reference": "KC=F",
+      "reference_type": "future caffè",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "COMF.MI",
+      "name": "L&G Longer Dated All Commodities UCITS ETF",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "COMH.MI",
+      "name": "Amundi Bloomberg Equal-weight Commodity ex-Agriculture UCITS",
+      "us_reference": "DBA",
+      "reference_type": "ETF agricolo proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "COMO.MI",
+      "name": "Amundi Bloomberg Equal-weight Commodity ex-Agriculture UCITS",
+      "us_reference": "DBA",
+      "reference_type": "ETF agricolo proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "COMS.SW",
+      "name": "WisdomTree Enhanced Commodity UCITS ETF - CHF Hedged Acc",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "COPA.MI",
+      "name": "WisdomTree Copper",
+      "us_reference": "HG=F",
+      "reference_type": "future rame",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "COPM.MI",
+      "name": "COPM",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "COPR.L",
+      "name": "WisdomTree Copper IE",
+      "us_reference": "HG=F",
+      "reference_type": "future rame",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "COPX.MI",
+      "name": "COPX",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "CORN.MI",
+      "name": "WisdomTree Corn",
+      "us_reference": "ZC=F",
+      "reference_type": "future mais",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "COTN.MI",
+      "name": "WisdomTree Cotton",
+      "us_reference": "CT=F",
+      "reference_type": "future cotone",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "CPER.MI",
+      "name": "Leverage Shares Copper Etc",
+      "us_reference": "HG=F",
+      "reference_type": "future rame",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "CRRE.MI",
+      "name": "WisdomTree Enhanced Commodity Carry - EUR Daily Hedged",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "CRRP.L",
+      "name": "WisdomTree Enhanced Commodity Carry - GBP Daily Hedged",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "CRRY.MI",
+      "name": "WisdomTree Enhanced Commodity Carry",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "CRUD.MI",
+      "name": "WisdomTree Crude Oil",
+      "us_reference": "CL=F",
+      "reference_type": "future WTI",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "DX3L.MI",
+      "name": "WisdomTree DAX 3x Long",
+      "us_reference": "EWG",
+      "reference_type": "ETF Germania proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "DX3S.MI",
+      "name": "WisdomTree DAX 3x Short",
+      "us_reference": "EWG",
+      "reference_type": "ETF Germania proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EALU.MI",
+      "name": "WisdomTree Aluminium - EUR Daily Hedged",
+      "us_reference": "ALUM",
+      "reference_type": "nessun future Yahoo verificato; proxy non assegnato",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EBRT.MI",
+      "name": "WisdomTree Brent Crude Oil - EUR Daily Hedged",
+      "us_reference": "CL=F",
+      "reference_type": "future WTI",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EBUL.MI",
+      "name": "WisdomTree Gold - EUR Daily Hedged",
+      "us_reference": "GC=F",
+      "reference_type": "future oro",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "ECEH.MI",
+      "name": "L&G Multi Strategy Enhanced Commodities EUR Hedged Acc UCITS",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "ECH3.MI",
+      "name": "WisdomTree Long CHF Short EUR 3x Daily",
+      "us_reference": "6S=F;6E=F",
+      "reference_type": "future CHF e EUR; segno da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "ECOF.MI",
+      "name": "WisdomTree Coffee - EUR Daily Hedged",
+      "us_reference": "KC=F",
+      "reference_type": "future caffè",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "ECOP.MI",
+      "name": "WisdomTree Copper - EUR Daily Hedged",
+      "us_reference": "HG=F",
+      "reference_type": "future rame",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "ECRD.MI",
+      "name": "WisdomTree WTI Crude Oil - EUR Daily Hedged",
+      "us_reference": "CL=F",
+      "reference_type": "future WTI",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "ECRN.MI",
+      "name": "WisdomTree Corn - EUR Daily Hedged",
+      "us_reference": "ZC=F",
+      "reference_type": "future mais",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "ECTN.MI",
+      "name": "WisdomTree Cotton - EUR Daily Hedged",
+      "us_reference": "CT=F",
+      "reference_type": "future cotone",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EFCM.MI",
+      "name": "WisdomTree Broad Commodities Longer Dated - EUR Daily Hedged",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EGB3.MI",
+      "name": "WisdomTree Long GBP Short EUR 3x Daily",
+      "us_reference": "6B=F;6E=F",
+      "reference_type": "future GBP e EUR; segno da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EIMT.MI",
+      "name": "WisdomTree Industrial Metals - EUR Daily Hedged",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "EJP3.MI",
+      "name": "WisdomTree Long JPY Short EUR 3x Daily",
+      "us_reference": "6J=F;6E=F",
+      "reference_type": "future JPY e EUR; segno da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "ENCO.MI",
+      "name": "L&G Multi-Strategy Enhanced Commodities UCITS ETF",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "ENGS.MI",
+      "name": "WisdomTree Natural Gas - EUR Daily Hedged",
+      "us_reference": "NG=F",
+      "reference_type": "future gas naturale",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "ENIK.MI",
+      "name": "WisdomTree Nickel - EUR Daily Hedged",
+      "us_reference": "JJN",
+      "reference_type": "ETN metalli industriali proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "ENTR.MI",
+      "name": "L&G New Energy Commodities ETF USD Acc",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "ESOY.MI",
+      "name": "WisdomTree Soybeans - EUR Daily Hedged",
+      "us_reference": "ZS=F",
+      "reference_type": "future soia",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "ESUG.MI",
+      "name": "WisdomTree Sugar - EUR Daily Hedged",
+      "us_reference": "SB=F",
+      "reference_type": "future zucchero #11",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "ESVR.MI",
+      "name": "WisdomTree Silver - EUR Daily Hedged",
+      "us_reference": "SI=F",
+      "reference_type": "future argento",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "ESXS.MI",
+      "name": "WisdomTree Euro Stoxx 50 2x Short",
+      "us_reference": "FEZ",
+      "reference_type": "ETF Euro Stoxx 50 proxy USA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EUAU.MI",
+      "name": "WisdomTree Long AUD Short EUR",
+      "us_reference": "6A=F;6E=F",
+      "reference_type": "future AUD e EUR; segno da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EUCH.MI",
+      "name": "WisdomTree Long CHF Short EUR",
+      "us_reference": "6S=F;6E=F",
+      "reference_type": "future CHF e EUR; segno da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EUGB.MI",
+      "name": "WisdomTree Long GBP Short EUR",
+      "us_reference": "6B=F;6E=F",
+      "reference_type": "future GBP e EUR; segno da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EUJP.MI",
+      "name": "WisdomTree Long JPY Short EUR",
+      "us_reference": "6J=F;6E=F",
+      "reference_type": "future JPY e EUR; segno da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EUNO.MI",
+      "name": "WisdomTree Long NOK Short EUR",
+      "us_reference": "nessuno",
+      "reference_type": "nessun proxy futures Yahoo assegnato",
+      "confidence": "bassa",
+      "mapping_status": "no_direct_equivalent",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EUS3.MI",
+      "name": "WisdomTree Long USD Short EUR 3x Daily",
+      "us_reference": "6E=F",
+      "reference_type": "future Euro FX; convenzione da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EUS5.MI",
+      "name": "WisdomTree Long USD Short EUR 5x Daily",
+      "us_reference": "6E=F",
+      "reference_type": "future Euro FX; convenzione da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EUSE.MI",
+      "name": "WisdomTree Long SEK Short EUR",
+      "us_reference": "6S=F;6E=F",
+      "reference_type": "proxy FX non equivalente SEK",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EUUS.MI",
+      "name": "WisdomTree Long USD Short EUR",
+      "us_reference": "6E=F",
+      "reference_type": "future Euro FX; convenzione da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EWAT.MI",
+      "name": "WisdomTree Wheat - EUR Daily Hedged",
+      "us_reference": "ZW=F",
+      "reference_type": "future grano Chicago SRW",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EXAG.DE",
+      "name": "WisdomTree Enhanced Commodity ex-Agriculture UCITS ETF - EUR Hedged Acc",
+      "us_reference": "DBA",
+      "reference_type": "ETF agricolo proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EXXY.MI",
+      "name": "iShares Diversified Commodity Swap UCITS ETF (DE)",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "EZNC.MI",
+      "name": "WisdomTree Zinc - EUR Daily Hedged",
+      "us_reference": "DBB",
+      "reference_type": "ETF metalli industriali proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "FCRU.MI",
+      "name": "WisdomTree WTI Crude Oil Longer Dated",
+      "us_reference": "CL=F",
+      "reference_type": "future WTI",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "GAS.MI",
+      "name": "GAS",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "GBE3.MI",
+      "name": "WisdomTree Short GBP Long EUR 3x Daily",
+      "us_reference": "6B=F;6E=F",
+      "reference_type": "future GBP e EUR; segno da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "GBEU.MI",
+      "name": "WisdomTree Short GBP Long EUR",
+      "us_reference": "6B=F;6E=F",
+      "reference_type": "future GBP e EUR; segno da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "GBS.MI",
+      "name": "Gold Bullion Securities",
+      "us_reference": "GC=F",
+      "reference_type": "future oro",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "GBSE.MI",
+      "name": "WisdomTree Physical Gold - EUR Daily Hedged",
+      "us_reference": "GC=F",
+      "reference_type": "future oro",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "GBSP.L",
+      "name": "WisdomTree Physical Gold - GBP Daily Hedged",
+      "us_reference": "GC=F",
+      "reference_type": "future oro",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "GDX.MI",
+      "name": "GDX",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "GDXJ.MI",
+      "name": "GDXJ",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "GPT3.MI",
+      "name": "Leverage Shares 3x Long Artificial Intelligence (AI) Etp",
+      "us_reference": "INTC",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "GPTS.MI",
+      "name": "Leverage Shares -3x Short Artificial Intelligence (AI) Etp",
+      "us_reference": "INTC",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "GSCE.MI",
+      "name": "BNP Paribas Easy Energy & Metals Enhanced Roll UCITS ETF EUR",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "HIM3.MI",
+      "name": "Leverage Shares 3x Long Hims & Hers Health Etp",
+      "us_reference": "HIMS",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "HOD3.MI",
+      "name": "Leverage Shares 3x Long Robinhood (Hood) Etp Securities",
+      "us_reference": "HOOD",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "INTS.MI",
+      "name": "Leverage Shares -3x Short Intel (Intc) Etp Securities",
+      "us_reference": "INTC",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "JPE3.MI",
+      "name": "WisdomTree Short JPY Long EUR 3x Daily",
+      "us_reference": "6J=F;6E=F",
+      "reference_type": "future JPY e EUR; segno da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "JPEU.MI",
+      "name": "WisdomTree Short JPY Long EUR",
+      "us_reference": "6J=F;6E=F",
+      "reference_type": "future JPY e EUR; segno da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "KRBN.MI",
+      "name": "KraneShares Global Carbon Strategy ETC Securities",
+      "us_reference": "KRBN",
+      "reference_type": "ETF carbonio proxy (non EUA spot)",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LAGR.MI",
+      "name": "WisdomTree Agriculture 2x Daily Leveraged",
+      "us_reference": "DBA",
+      "reference_type": "ETF agricolo proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LALU.MI",
+      "name": "WisdomTree Aluminium 2x Daily Leveraged",
+      "us_reference": "ALUM",
+      "reference_type": "nessun future Yahoo verificato; proxy non assegnato",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LBRT.MI",
+      "name": "WisdomTree Brent Crude Oil 2x Daily Leveraged",
+      "us_reference": "CL=F",
+      "reference_type": "future WTI",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LBUL.MI",
+      "name": "WisdomTree Gold 2x Daily Leveraged",
+      "us_reference": "GC=F",
+      "reference_type": "future oro",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LCFE.MI",
+      "name": "WisdomTree Coffee 2x Daily Leveraged",
+      "us_reference": "KC=F",
+      "reference_type": "future caffè",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LCOC.MI",
+      "name": "WisdomTree Cocoa 2x Daily Leveraged",
+      "us_reference": "CC=F",
+      "reference_type": "future cacao",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LCOP.MI",
+      "name": "WisdomTree Copper 2x Daily Leveraged",
+      "us_reference": "HG=F",
+      "reference_type": "future rame",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LCOR.MI",
+      "name": "WisdomTree Corn 2x Daily Leveraged",
+      "us_reference": "ZC=F",
+      "reference_type": "future mais",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LEAD.MI",
+      "name": "LEAD",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "LNGA.MI",
+      "name": "WisdomTree Natural Gas 2x Daily Leveraged",
+      "us_reference": "NG=F",
+      "reference_type": "future gas naturale",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LNIK.MI",
+      "name": "WisdomTree Nickel 2x Daily Leveraged",
+      "us_reference": "JJN",
+      "reference_type": "ETN metalli industriali proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LOIL.MI",
+      "name": "WisdomTree WTI Crude Oil 2x Daily Leveraged",
+      "us_reference": "CL=F",
+      "reference_type": "future WTI",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LPET.MI",
+      "name": "WisdomTree Petroleum 2x Daily Leveraged",
+      "us_reference": "XLE",
+      "reference_type": "ETF energia USA proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LPLA.MI",
+      "name": "WisdomTree Platinum 2x Daily Leveraged",
+      "us_reference": "PL=F",
+      "reference_type": "future platino",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LQQ.MI",
+      "name": "Leverage Shares 3x Nasdaq",
+      "us_reference": "QQQ;NQ=F",
+      "reference_type": "ETF/future Nasdaq-100",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LSIL.MI",
+      "name": "WisdomTree Silver 2x Daily Leveraged",
+      "us_reference": "SI=F",
+      "reference_type": "future argento",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LSUG.MI",
+      "name": "WisdomTree Sugar 2x Daily Leveraged",
+      "us_reference": "SB=F",
+      "reference_type": "future zucchero #11",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LVO.MI",
+      "name": "Amundi S&P 500 VIX Futures Enhanced Roll UCITS ETF Acc",
+      "us_reference": "^VIX;VIXY",
+      "reference_type": "indice/ETF volatilità proxy; struttura futures diversa",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "LWEA.MI",
+      "name": "WisdomTree Wheat 2x Daily Leveraged",
+      "us_reference": "ZW=F",
+      "reference_type": "future grano Chicago SRW",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "MAGS.MI",
+      "name": "Leverage Shares -3x Short Magnificent 7 Etp",
+      "us_reference": "MAGS",
+      "reference_type": "ETF USA proxy paniere",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "META.MI",
+      "name": "WisdomTree Industrial Metals Enhanced",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "NCLR.MI",
+      "name": "WisdomTree Uranium and Nuclear Energy UCITS ETF - USD Acc",
+      "us_reference": "URA",
+      "reference_type": "ETF uranio proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "NGAS.MI",
+      "name": "WisdomTree Natural Gas",
+      "us_reference": "NG=F",
+      "reference_type": "future gas naturale",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "NICK.MI",
+      "name": "WisdomTree Nickel",
+      "us_reference": "JJN",
+      "reference_type": "ETN metalli industriali proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "NOEU.MI",
+      "name": "WisdomTree Short NOK Long EUR",
+      "us_reference": "nessuno",
+      "reference_type": "nessun proxy futures Yahoo assegnato",
+      "confidence": "bassa",
+      "mapping_status": "no_direct_equivalent",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "OIH.MI",
+      "name": "OIH",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "PCOM.MI",
+      "name": "WisdomTree Broad Commodities UCITS ETF - USD Acc",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "PHAG.MI",
+      "name": "WisdomTree Physical Silver",
+      "us_reference": "SI=F",
+      "reference_type": "future argento",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "PHAU.MI",
+      "name": "WisdomTree Physical Gold",
+      "us_reference": "GC=F",
+      "reference_type": "future oro",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "PHPD.MI",
+      "name": "WisdomTree Physical Palladium",
+      "us_reference": "PA=F",
+      "reference_type": "future palladio",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "PHPM.MI",
+      "name": "WisdomTree Physical Precious Metals",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "PHPT.MI",
+      "name": "WisdomTree Physical Platinum",
+      "us_reference": "PL=F",
+      "reference_type": "future platino",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "QQQ3.MI",
+      "name": "WisdomTree Nasdaq 3x Daily",
+      "us_reference": "QQQ;NQ=F",
+      "reference_type": "ETF/future Nasdaq-100",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "QQQ3S.MI",
+      "name": "WisdomTree Nasdaq 3x Short",
+      "us_reference": "QQQ;NQ=F",
+      "reference_type": "ETF/future Nasdaq-100",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "QQQS.MI",
+      "name": "WisdomTree NASDAQ 100 3x Daily Short",
+      "us_reference": "QQQ;NQ=F",
+      "reference_type": "ETF/future Nasdaq-100",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "QS5L.MI",
+      "name": "WisdomTree NASDAQ 100 5x Daily Leveraged",
+      "us_reference": "QQQ;NQ=F",
+      "reference_type": "ETF/future Nasdaq-100",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "QS5S.MI",
+      "name": "WisdomTree NASDAQ 100 5x Daily Short",
+      "us_reference": "QQQ;NQ=F",
+      "reference_type": "ETF/future Nasdaq-100",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SALL.MI",
+      "name": "WisdomTree Broad Commodities 1x Daily Short",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SBA3.MI",
+      "name": "Leverage Shares -3x Short Alibaba Etp Securities",
+      "us_reference": "BABA",
+      "reference_type": "ADR USA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SBRT.MI",
+      "name": "WisdomTree Brent Crude Oil 1x Daily Short",
+      "us_reference": "CL=F",
+      "reference_type": "future WTI",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SBUL.MI",
+      "name": "WisdomTree Gold 1x Daily Short",
+      "us_reference": "GC=F",
+      "reference_type": "future oro",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SC3S.MI",
+      "name": "WisdomTree PHLX Semiconductor 3x Daily Short",
+      "us_reference": "SOXX",
+      "reference_type": "ETF settore USA proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SCOP.MI",
+      "name": "WisdomTree Copper 1x Daily Short",
+      "us_reference": "HG=F",
+      "reference_type": "future rame",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SCRU.MI",
+      "name": "WisdomTree Crude Oil Short",
+      "us_reference": "CL=F",
+      "reference_type": "future WTI",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SDS.MI",
+      "name": "WisdomTree S&P500 2x Short",
+      "us_reference": "SPY;ES=F",
+      "reference_type": "ETF/future indice USA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SEEU.MI",
+      "name": "WisdomTree Short SEK Long EUR",
+      "us_reference": "6S=F;6E=F",
+      "reference_type": "proxy FX non equivalente SEK",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SGBS.MI",
+      "name": "WisdomTree Physical Swiss Gold",
+      "us_reference": "GC=F",
+      "reference_type": "future oro",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SGLD.MI",
+      "name": "iShares Physical Gold",
+      "us_reference": "GC=F",
+      "reference_type": "future oro",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SGOL.MI",
+      "name": "WisdomTree Gold Short",
+      "us_reference": "GC=F",
+      "reference_type": "future oro",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SILV.MI",
+      "name": "SILV",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "SIMT.MI",
+      "name": "WisdomTree Industrial Metals 1x Daily Short",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "SLVR.MI",
+      "name": "WisdomTree Silver",
+      "us_reference": "SI=F",
+      "reference_type": "future argento",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SMCI.MI",
+      "name": "Leverage Shares 2x Super Micro Computer Etp",
+      "us_reference": "SMCI",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SMST.MI",
+      "name": "Leverage Shares -3x Short MicroStrategy Etp",
+      "us_reference": "MSTR",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SNGA.MI",
+      "name": "SNGA",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "SNIK.MI",
+      "name": "WisdomTree Nickel 1x Daily Short",
+      "us_reference": "JJN",
+      "reference_type": "ETN metalli industriali proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SNV3.MI",
+      "name": "Leverage Shares -3x Short NVIDIA Etp Securities",
+      "us_reference": "NVDA",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SOIL.MI",
+      "name": "WisdomTree WTI Crude Oil 1x Daily Short",
+      "us_reference": "CL=F",
+      "reference_type": "future WTI",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SOXL.MI",
+      "name": "Leverage Shares 4x Long Semiconductors Etp",
+      "us_reference": "SOXX",
+      "reference_type": "ETF settore USA proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SOXS.MI",
+      "name": "Leverage Shares -4x Short Semiconductors Etp",
+      "us_reference": "SOXX",
+      "reference_type": "ETF settore USA proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SOYB.MI",
+      "name": "WisdomTree Soybeans",
+      "us_reference": "ZS=F",
+      "reference_type": "future soia",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SOYO.MI",
+      "name": "WisdomTree Soybean Oil",
+      "us_reference": "ZL=F",
+      "reference_type": "future olio di soia",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SQQQ.MI",
+      "name": "Leverage Shares -5x Short Nasdaq 100 Etp",
+      "us_reference": "QQQ;NQ=F",
+      "reference_type": "ETF/future Nasdaq-100",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SSIL.MI",
+      "name": "WisdomTree Silver Short",
+      "us_reference": "SI=F",
+      "reference_type": "future argento",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SUGA.MI",
+      "name": "WisdomTree Sugar",
+      "us_reference": "SB=F",
+      "reference_type": "future zucchero #11",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "SUK1.L",
+      "name": "WisdomTree FTSE 100 1x Daily Short",
+      "us_reference": "EWU",
+      "reference_type": "ETF Regno Unito proxy USA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "TECL.MI",
+      "name": "Leverage Shares 3x Technology",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "TINM.MI",
+      "name": "WisdomTree Tin",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "TSLQ.MI",
+      "name": "Leverage Shares -3x Short Tesla Etp Securities",
+      "us_reference": "TSLA",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "U3O8.MI",
+      "name": "U3O8",
+      "us_reference": "URA",
+      "reference_type": "ETF uranio proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "UGAS.MI",
+      "name": "UGAS",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "UL3S.MI",
+      "name": "WisdomTree US Treasuries 30Y 3x Daily Short",
+      "us_reference": "IEF;ZN=F",
+      "reference_type": "ETF Treasury 7-10y/future Treasury USA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "UNH3.MI",
+      "name": "Leverage Shares 3x Long Unitedhealth (Unh) Etp Securities",
+      "us_reference": "UNH",
+      "reference_type": "azione USA diretta",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "USE3.MI",
+      "name": "WisdomTree Short USD Long EUR 3x Daily",
+      "us_reference": "6E=F",
+      "reference_type": "future Euro FX; convenzione da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "USE5.MI",
+      "name": "WisdomTree Short USD Long EUR 5x Daily",
+      "us_reference": "6E=F",
+      "reference_type": "future Euro FX; convenzione da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "USEU.MI",
+      "name": "WisdomTree Short USD Long EUR",
+      "us_reference": "6E=F",
+      "reference_type": "future Euro FX; convenzione da normalizzare",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "VIXL.MI",
+      "name": "WisdomTree S&P 500 VIX Short-Term Futures 2.25x Daily Leveraged",
+      "us_reference": "^VIX;VIXY",
+      "reference_type": "indice/ETF volatilità proxy; struttura futures diversa",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "WAXG.DE",
+      "name": "WisdomTree Enhanced Commodity ex-Agriculture UCITS ETF - USD Acc",
+      "us_reference": "DBA",
+      "reference_type": "ETF agricolo proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "WCCA.MI",
+      "name": "WisdomTree California Carbon",
+      "us_reference": "KRBN",
+      "reference_type": "ETF carbonio proxy (non EUA spot)",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "WCOA.MI",
+      "name": "WisdomTree Enhanced Commodity UCITS ETF - USD Acc",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "WCOE.MI",
+      "name": "WisdomTree Enhanced Commodity UCITS ETF - EUR Hedged Acc",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "WCOG.L",
+      "name": "WisdomTree Enhanced Commodity UCITS ETF USD",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "WCOM.L",
+      "name": "WisdomTree Enhanced Commodity UCITS ETF - GBP Hedged Acc",
+      "us_reference": "PDBC",
+      "reference_type": "ETF broad commodities proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "WEAT.MI",
+      "name": "WisdomTree Wheat",
+      "us_reference": "ZW=F",
+      "reference_type": "future grano Chicago SRW",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "WENU.MI",
+      "name": "WisdomTree Strategic Metals UCITS ETF - USD Acc",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "WGLD.MI",
+      "name": "WisdomTree Core Physical Gold",
+      "us_reference": "GC=F",
+      "reference_type": "future oro",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "WSLV.MI",
+      "name": "WisdomTree Core Physical Silver",
+      "us_reference": "SI=F",
+      "reference_type": "future argento",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "WTI.MI",
+      "name": "WTI",
+      "us_reference": null,
+      "reference_type": "non assegnato",
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "direction_rule": "Nessuna conferma USA finché il benchmark ufficiale non viene verificato"
+    },
+    {
+      "etp": "XAGZ.MI",
+      "name": "L&G Multi-Strategy Enhanced Commodities ex-Agriculture & Liv",
+      "us_reference": "DBA",
+      "reference_type": "ETF agricolo proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "XBJF.DE",
+      "name": "WisdomTree Short CNY Long USD",
+      "us_reference": "CNH= X",
+      "reference_type": "nessuno",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "XDBC.MI",
+      "name": "Xtrackers Bloomberg Commodity ex-Agriculture & Livestock Swa",
+      "us_reference": "LE=F;HE=F;GF=F",
+      "reference_type": "paniere futures bestiame",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "XSDX.MI",
+      "name": "Xtrackers DAX Short",
+      "us_reference": "EWG",
+      "reference_type": "ETF Germania proxy",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "XSND.MI",
+      "name": "Xtrackers Nasdaq Short",
+      "us_reference": "QQQ;NQ=F",
+      "reference_type": "ETF/future Nasdaq-100",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "XSPS.MI",
+      "name": "Xtrackers S&P500 Short",
+      "us_reference": "SPY;ES=F",
+      "reference_type": "ETF/future indice USA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    },
+    {
+      "etp": "ZINC.MI",
+      "name": "WisdomTree Zinc",
+      "us_reference": "DBB",
+      "reference_type": "ETF metalli industriali proxy",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "direction_rule": "Da verificare rispetto all'indice/future effettivamente replicato dall'ETP; nessun segnale automatico da questo mapping"
+    }
+  ]
+}
