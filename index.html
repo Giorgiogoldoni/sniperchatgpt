@@ -46,6 +46,12 @@ footer{margin-top:28px;color:var(--muted);font-size:11px}
 </div>
 <p class="sub">Sono candidati generati dai dati giornalieri Yahoo Finance adjusted, non ordini né raccomandazioni personalizzate. Il prezzo della prossima apertura non è noto in anticipo: stop e dimensionamento vanno calcolati sul prezzo effettivo di esecuzione. Nessun segnale significa nessuna operazione da proporre.</p>
 </section>
+<section id="usaRadar">
+<h2>USA Radar — conferma del sottostante</h2>
+<p class="sub">Riferimento USA dopo la chiusura · informativo e indipendente da TF/MR · proxy esplicitamente segnalati.</p>
+<div class="signalmeta" id="usaRadarStamp">Caricamento radar USA…</div>
+<div class="signaltable"><table id="usaRadarTable"><thead><tr><th>ETP</th><th>Riferimento USA</th><th>Ultima seduta</th><th>Variazione %</th><th>Qualità mapping</th><th>Stato</th></tr></thead><tbody><tr><td colspan="6" class="signalempty">In attesa del primo aggiornamento serale.</td></tr></tbody></table></div>
+</section>
 <div class="grid" id="cards"><div class="card">Caricamento report…</div></div>
 <h2>Universo strumenti</h2>
 <div class="toolbar"><input id="search" placeholder="Cerca ticker o nome strumento…" autocomplete="off">
@@ -155,5 +161,23 @@ async function load(){try{var r=await fetch("reports/backtest_summary.json?ts="+
     document.querySelector("#mrSignals tbody").innerHTML='<tr><td colspan="6" class="signalempty">Errore caricamento dati segnali.</td></tr>';
   }
 })();
+
+// USA Radar: informational layer only; never changes TF/MR signals.
+(async function(){
+  var stamp=document.getElementById("usaRadarStamp"), body=document.querySelector("#usaRadarTable tbody");
+  try{
+    var response=await fetch("reports/us_radar.json?ts="+Date.now(),{cache:"no-store"});
+    if(!response.ok) throw Error("HTTP "+response.status);
+    var payload=await response.json(), rows=(payload.records||[]).filter(function(x){return x.radar_status!=="NON_MAPPATO";});
+    body.innerHTML=rows.map(function(x){
+      var q=(x.quotes||[]).find(function(z){return z.status==="OK";});
+      var change=q&&q.change_pct!==null?q.change_pct.toFixed(2)+"%":"—";
+      var cls=q&&q.change_pct>0?"good":q&&q.change_pct<0?"bad":"warn";
+      return "<tr><td><b>"+x.etp+"</b></td><td>"+(x.reference||"—")+"</td><td>"+(q?q.date:"—")+"</td><td class='"+cls+"'>"+change+"</td><td>"+x.confidence+"</td><td>"+x.radar_status+"</td></tr>";
+    }).join("")||'<tr><td colspan="6" class="signalempty">Nessun riferimento disponibile.</td></tr>';
+    stamp.textContent="Aggiornamento: "+(payload.generated_rome||payload.generated_utc)+" · "+payload.quotes_count+" riferimenti interrogati · PAPER ONLY";
+  }catch(error){stamp.textContent="Radar USA non ancora disponibile: "+error.message;}
+})();
+
 load();
 </script></body></html>
