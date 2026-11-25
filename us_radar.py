@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Fetch USA reference closes for the independent informational radar. PAPER only."""
-import json
+import json, os, sys
 from pathlib import Path
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
@@ -11,6 +11,10 @@ MAPPING=ROOT/"data/us_underlying_mapping.json"
 OUT=ROOT/"reports/us_radar.json"
 
 def main():
+    local_now=datetime.now(ZoneInfo("Europe/Rome"))
+    if os.environ.get("GITHUB_EVENT_NAME")=="schedule" and local_now.hour!=23:
+        print("Skip: outside Rome 23:xx scheduled window (DST guard).")
+        return
     mapping=json.loads(MAPPING.read_text(encoding="utf-8"))
     refs=set()
     for row in mapping["records"]:
