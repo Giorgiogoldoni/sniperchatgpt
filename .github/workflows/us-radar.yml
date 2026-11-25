@@ -1,9 +1,10 @@
 name: SNIPER USA Radar — evening reference
 on:
   schedule:
-    # GitHub cron is UTC. Two runs cover the Rome 23:30 slot across DST.
+    # UTC schedules: evening close refresh plus a morning retry for delayed vendor data.
     - cron: '30 21 * * 1-5'
     - cron: '30 22 * * 1-5'
+    - cron: '30 6 * * 1-5'
   push:
     branches: [main]
     paths:
