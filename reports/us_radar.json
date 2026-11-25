@@ -1,0 +1,5210 @@
+{
+  "schema_version": "1.0",
+  "generated_utc": "2026-11-25T05:41:16.359181+00:00",
+  "generated_rome": "2026-11-25T06:41:16.359193+01:00",
+  "paper_only": true,
+  "interpretation": "Il radar mostra il movimento del riferimento USA; non modifica né genera segnali TF/MR.",
+  "quotes_count": 79,
+  "records_count": 311,
+  "records": [
+    {
+      "etp": "1GIS.L",
+      "name": "WisdomTree Gilts 10Y 1x Daily Short",
+      "reference": "nessuno",
+      "confidence": "media",
+      "mapping_status": "no_direct_equivalent",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "1MCS.L",
+      "name": "WisdomTree FTSE 250 1x Daily Short",
+      "reference": "FLGB",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "FLGB",
+          "date": "2026-11-24",
+          "close": 35.369999,
+          "change_pct": 0.683,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "1PAS.MI",
+      "name": "WisdomTree Palladium 1x Daily Short",
+      "reference": "PA=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "PA=F",
+          "date": "2026-11-25",
+          "close": 847.0,
+          "change_pct": -1.282,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "2BUL.MI",
+      "name": "WisdomTree S&P500 2x Daily",
+      "reference": "SPY;ES=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SPY",
+          "date": "2026-11-24",
+          "close": 718.780029,
+          "change_pct": -0.486,
+          "status": "OK"
+        },
+        {
+          "ticker": "ES=F",
+          "date": "2026-11-25",
+          "close": 7156.25,
+          "change_pct": -0.849,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "2CAR.MI",
+      "name": "WisdomTree STOXX Europe Automobiles 2x Daily Leveraged",
+      "reference": "CARZ",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "CARZ",
+          "date": "2026-11-24",
+          "close": 83.809998,
+          "change_pct": -3.278,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "2GOL.MI",
+      "name": "WisdomTree Gold 2x",
+      "reference": "GC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GC=F",
+          "date": "2026-11-25",
+          "close": 3533.800049,
+          "change_pct": -0.789,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "2MCL.L",
+      "name": "WisdomTree FTSE 250 2x Daily Leveraged",
+      "reference": "FLGB",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "FLGB",
+          "date": "2026-11-24",
+          "close": 35.369999,
+          "change_pct": 0.683,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "2OIG.MI",
+      "name": "WisdomTree STOXX Europe Oil & Gas 2x Daily Short",
+      "reference": "IXC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "IXC",
+          "date": "2026-11-24",
+          "close": 55.099998,
+          "change_pct": 0.805,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "2PAL.MI",
+      "name": "WisdomTree Palladium 2x Daily Leveraged",
+      "reference": "PA=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "PA=F",
+          "date": "2026-11-25",
+          "close": 847.0,
+          "change_pct": -1.282,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "2QQL.MI",
+      "name": "WisdomTree Nasdaq 2x Daily",
+      "reference": "QQQ;NQ=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "QQQ",
+          "date": "2026-11-24",
+          "close": 638.099976,
+          "change_pct": -1.986,
+          "status": "OK"
+        },
+        {
+          "ticker": "NQ=F",
+          "date": "2026-11-25",
+          "close": 25894.25,
+          "change_pct": -1.452,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "2STR.MI",
+      "name": "WisdomTree STOXX Europe Travel & Leisure 2x Daily Short",
+      "reference": "PEJ",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PEJ",
+          "date": "2026-11-24",
+          "close": 67.190002,
+          "change_pct": 0.75,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "2TRV.MI",
+      "name": "WisdomTree STOXX Europe Travel & Leisure 2x Daily Leveraged",
+      "reference": "PEJ",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PEJ",
+          "date": "2026-11-24",
+          "close": 67.190002,
+          "change_pct": 0.75,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "2UKL.L",
+      "name": "WisdomTree FTSE 100 2x Daily Leveraged",
+      "reference": "EWU",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "EWU",
+          "date": "2026-11-24",
+          "close": 45.869999,
+          "change_pct": 0.769,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "2UKS.L",
+      "name": "WisdomTree FTSE 100 2x Daily Short",
+      "reference": "EWU",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "EWU",
+          "date": "2026-11-24",
+          "close": 45.869999,
+          "change_pct": 0.769,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3AAP.MI",
+      "name": "Leverage Shares 3x Apple Etp Securities",
+      "reference": "AAPL",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "AAPL",
+          "date": "2026-11-24",
+          "close": 354.070007,
+          "change_pct": 1.429,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3AMZ.MI",
+      "name": "Leverage Shares 3x Amazon Etp Securities",
+      "reference": "AMZN",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "AMZN",
+          "date": "2026-11-24",
+          "close": 252.289993,
+          "change_pct": -1.214,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3BAS.MI",
+      "name": "WisdomTree EURO STOXX Banks 3x Daily Short",
+      "reference": "EUFN",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "EUFN",
+          "date": "2026-11-24",
+          "close": 37.52,
+          "change_pct": 0.214,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3BRL.MI",
+      "name": "WisdomTree Brent Crude Oil 3x Daily Leveraged",
+      "reference": "CL=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "CL=F",
+          "date": "2026-11-25",
+          "close": 80.660004,
+          "change_pct": -1.694,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3BRS.MI",
+      "name": "WisdomTree Brent Crude Oil 3x Daily Short",
+      "reference": "CL=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "CL=F",
+          "date": "2026-11-25",
+          "close": 80.660004,
+          "change_pct": -1.694,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3BTL.MI",
+      "name": "WisdomTree BTP 10Y 3x Daily Leveraged",
+      "reference": "nessuno",
+      "confidence": "alta",
+      "mapping_status": "no_direct_equivalent",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "3BUL.MI",
+      "name": "WisdomTree Bund 10Y 3x Daily Leveraged",
+      "reference": "nessuno",
+      "confidence": "alta",
+      "mapping_status": "no_direct_equivalent",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "3BUS.MI",
+      "name": "WisdomTree Bund 10Y 3x Daily Short",
+      "reference": "nessuno",
+      "confidence": "alta",
+      "mapping_status": "no_direct_equivalent",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "3CFL.MI",
+      "name": "WisdomTree Coffee 3x Daily Leveraged",
+      "reference": "KC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "KC=F",
+          "date": "2026-11-24",
+          "close": 268.549988,
+          "change_pct": -2.114,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3CON.MI",
+      "name": "Leverage Shares 3x Long Coinbase Etp Securities",
+      "reference": "COIN",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "COIN",
+          "date": "2026-11-24",
+          "close": 102.349998,
+          "change_pct": -5.911,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3DAL.MI",
+      "name": "WisdomTree DAX 3x Daily",
+      "reference": "EWG",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "EWG",
+          "date": "2026-11-24",
+          "close": 40.07,
+          "change_pct": -0.05,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3DEL.MI",
+      "name": "WisdomTree DAX 3x Daily Leveraged",
+      "reference": "EWG",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "EWG",
+          "date": "2026-11-24",
+          "close": 40.07,
+          "change_pct": -0.05,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3DES.MI",
+      "name": "WisdomTree DAX 3x Daily Short",
+      "reference": "EWG",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "EWG",
+          "date": "2026-11-24",
+          "close": 40.07,
+          "change_pct": -0.05,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3EDF.MI",
+      "name": "WisdomTree STOXX Europe Aerospace & Defence 3x Daily Leveraged",
+      "reference": "ITA",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "ITA",
+          "date": "2026-11-24",
+          "close": 68.120003,
+          "change_pct": -0.526,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3EDS.MI",
+      "name": "WisdomTree STOXX Europe Aerospace & Defence 3x Daily Short",
+      "reference": "ITA",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "ITA",
+          "date": "2026-11-24",
+          "close": 68.120003,
+          "change_pct": -0.526,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3EML.MI",
+      "name": "WisdomTree Emerging Markets 3x Daily Leveraged",
+      "reference": "EEM",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "EEM",
+          "date": "2026-11-24",
+          "close": 56.689999,
+          "change_pct": -1.971,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3EMS.MI",
+      "name": "WisdomTree Emerging Markets 3x Daily Short",
+      "reference": "EEM",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "EEM",
+          "date": "2026-11-24",
+          "close": 56.689999,
+          "change_pct": -1.971,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3EUL.MI",
+      "name": "WisdomTree EURO STOXX 50® 3x Daily Leveraged",
+      "reference": "FEZ",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "FEZ",
+          "date": "2026-11-24",
+          "close": 63.09,
+          "change_pct": 0.0,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3EUS.MI",
+      "name": "WisdomTree EURO STOXX 50® 3x Daily Short",
+      "reference": "FEZ",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "FEZ",
+          "date": "2026-11-24",
+          "close": 63.09,
+          "change_pct": 0.0,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3FB.MI",
+      "name": "Leverage Shares 3x Facebook Etp Securities",
+      "reference": "META",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "META",
+          "date": "2026-11-24",
+          "close": 589.820007,
+          "change_pct": -1.302,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3GIL.L",
+      "name": "WisdomTree Gilts 10Y 3x Daily Leveraged",
+      "reference": "nessuno",
+      "confidence": "media",
+      "mapping_status": "no_direct_equivalent",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "3GIS.L",
+      "name": "WisdomTree Gilts 10Y 3x Daily Short",
+      "reference": "nessuno",
+      "confidence": "media",
+      "mapping_status": "no_direct_equivalent",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "3GOL.MI",
+      "name": "WisdomTree Gold 3x",
+      "reference": "GC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GC=F",
+          "date": "2026-11-25",
+          "close": 3533.800049,
+          "change_pct": -0.789,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3GOO.MI",
+      "name": "Leverage Shares 3x Alphabet Etp Securities",
+      "reference": "GOOGL",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GOOGL",
+          "date": "2026-11-24",
+          "close": 279.049988,
+          "change_pct": -1.081,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3GOS.MI",
+      "name": "WisdomTree Gold 3x Daily Short",
+      "reference": "GC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GC=F",
+          "date": "2026-11-25",
+          "close": 3533.800049,
+          "change_pct": -0.789,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3HCL.MI",
+      "name": "WisdomTree Copper 3x Daily Leveraged",
+      "reference": "HG=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "HG=F",
+          "date": "2026-11-25",
+          "close": 5.42,
+          "change_pct": 1.072,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3HCS.MI",
+      "name": "WisdomTree Copper 3x Daily Short",
+      "reference": "HG=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "HG=F",
+          "date": "2026-11-25",
+          "close": 5.42,
+          "change_pct": 1.072,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3ITL.MI",
+      "name": "WisdomTree FTSE MIB 3x Daily Leveraged",
+      "reference": "EWI",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "EWI",
+          "date": "2026-11-24",
+          "close": 54.830002,
+          "change_pct": -0.4,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3ITS.MI",
+      "name": "WisdomTree FTSE MIB 3x Daily Short",
+      "reference": "EWI",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "EWI",
+          "date": "2026-11-24",
+          "close": 54.830002,
+          "change_pct": -0.4,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LAA.MI",
+      "name": "GraniteShares 3x Long Alibaba Daily Etp",
+      "reference": "BABA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "BABA",
+          "date": "2026-11-24",
+          "close": 84.860001,
+          "change_pct": -1.371,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LAD.MI",
+      "name": "GraniteShares 3x AMD",
+      "reference": "AMD",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "AMD",
+          "date": "2026-11-24",
+          "close": 413.269989,
+          "change_pct": -8.863,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LAM.MI",
+      "name": "GraniteShares 3x Long AMD Daily ETP",
+      "reference": "AMD",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "AMD",
+          "date": "2026-11-24",
+          "close": 413.269989,
+          "change_pct": -8.863,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LAP.MI",
+      "name": "GraniteShares 3x Apple",
+      "reference": "AAPL",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "AAPL",
+          "date": "2026-11-24",
+          "close": 354.070007,
+          "change_pct": 1.429,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LBA.MI",
+      "name": "GraniteShares 3x BAC",
+      "reference": "BAC",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "BAC",
+          "date": "2026-11-24",
+          "close": 48.560001,
+          "change_pct": 0.872,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LCO.MI",
+      "name": "GraniteShares 3x Coinbase",
+      "reference": "COIN",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "COIN",
+          "date": "2026-11-24",
+          "close": 102.349998,
+          "change_pct": -5.911,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LCR.MI",
+      "name": "GraniteShares 3x Long Unicredit Daily Etp",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "3LFB.MI",
+      "name": "GraniteShares 3x Long Facebook Daily Etp",
+      "reference": "META",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "META",
+          "date": "2026-11-24",
+          "close": 589.820007,
+          "change_pct": -1.302,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LGO.MI",
+      "name": "GraniteShares 3x Alphabet",
+      "reference": "GOOGL",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GOOGL",
+          "date": "2026-11-24",
+          "close": 279.049988,
+          "change_pct": -1.081,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LJP.MI",
+      "name": "GraniteShares 3x JPMorgan",
+      "reference": "JPM",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "JPM",
+          "date": "2026-11-24",
+          "close": 317.100006,
+          "change_pct": 0.139,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LMI.MI",
+      "name": "GraniteShares 3x Long MicroStrategy Daily Etp",
+      "reference": "MSTR",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "MSTR",
+          "date": "2026-11-24",
+          "close": 77.550003,
+          "change_pct": -8.116,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LMO.MI",
+      "name": "GraniteShares 3x Long Moderna Daily Etp",
+      "reference": "MRNA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "MRNA",
+          "date": "2026-11-24",
+          "close": 227.380005,
+          "change_pct": 7.214,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LMS.MI",
+      "name": "GraniteShares 3x Microsoft",
+      "reference": "MSFT",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "MSFT",
+          "date": "2026-11-24",
+          "close": 496.130005,
+          "change_pct": 0.737,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LMT.MI",
+      "name": "GraniteShares 3x Meta",
+      "reference": "META",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "META",
+          "date": "2026-11-24",
+          "close": 589.820007,
+          "change_pct": -1.302,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LNF.MI",
+      "name": "GraniteShares 3x Netflix",
+      "reference": "NFLX",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "NFLX",
+          "date": "2026-11-24",
+          "close": 58.869999,
+          "change_pct": 1.325,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LNV.MI",
+      "name": "GraniteShares 3x Nvidia",
+      "reference": "NVDA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "NVDA",
+          "date": "2026-11-24",
+          "close": 155.380005,
+          "change_pct": -5.859,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LPP.MI",
+      "name": "GraniteShares 3x Long PayPal Daily Etp",
+      "reference": "PYPL",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "PYPL",
+          "date": "2026-11-24",
+          "close": 56.169998,
+          "change_pct": 1.684,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LSQ.MI",
+      "name": "GraniteShares 3x Long Square Daily Etp",
+      "reference": "XYZ",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "XYZ",
+          "date": "2026-11-24",
+          "close": 74.150002,
+          "change_pct": 1.242,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LTS.MI",
+      "name": "GraniteShares 3x Tesla",
+      "reference": "TSLA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "TSLA",
+          "date": "2026-11-24",
+          "close": 384.679993,
+          "change_pct": -0.202,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LUB.MI",
+      "name": "GraniteShares 3x Long Uber Daily Etp",
+      "reference": "UBER",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "UBER",
+          "date": "2026-11-24",
+          "close": 64.699997,
+          "change_pct": 0.983,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3LZN.MI",
+      "name": "GraniteShares 3x Long Amazon Daily Etp",
+      "reference": "AMZN",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "AMZN",
+          "date": "2026-11-24",
+          "close": 252.289993,
+          "change_pct": -1.214,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3M7S.MI",
+      "name": "WisdomTree Magnificent 7 3x Daily Short",
+      "reference": "MAGS",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "MAGS",
+          "date": "2026-11-24",
+          "close": 65.75,
+          "change_pct": -0.919,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3MG7.MI",
+      "name": "WisdomTree Magnificent 7 3x Daily Leveraged",
+      "reference": "MAGS",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "MAGS",
+          "date": "2026-11-24",
+          "close": 65.75,
+          "change_pct": -0.919,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3MSF.MI",
+      "name": "Leverage Shares 3x Microsoft Etp Securities",
+      "reference": "MSFT",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "MSFT",
+          "date": "2026-11-24",
+          "close": 496.130005,
+          "change_pct": 0.737,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3MST.MI",
+      "name": "Leverage Shares 3x Long MicroStrategy Etp",
+      "reference": "MSTR",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "MSTR",
+          "date": "2026-11-24",
+          "close": 77.550003,
+          "change_pct": -8.116,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3NFL.MI",
+      "name": "Leverage Shares 3x Netflix Etp Securities",
+      "reference": "NFLX",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "NFLX",
+          "date": "2026-11-24",
+          "close": 58.869999,
+          "change_pct": 1.325,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3NGL.MI",
+      "name": "WisdomTree Natural Gas 3x Daily Leveraged",
+      "reference": "NG=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "NG=F",
+          "date": "2026-11-25",
+          "close": 3.684,
+          "change_pct": 10.864,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3NIO.MI",
+      "name": "Leverage Shares 3x NIO Etp Securities",
+      "reference": "NIO",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "NIO",
+          "date": "2026-11-24",
+          "close": 2.58,
+          "change_pct": 0.389,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3NVD.MI",
+      "name": "Leverage Shares 3x NVIDIA Etp Securities",
+      "reference": "NVDA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "NVDA",
+          "date": "2026-11-24",
+          "close": 155.380005,
+          "change_pct": -5.859,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3OIL.MI",
+      "name": "WisdomTree Crude Oil 3x",
+      "reference": "CL=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "CL=F",
+          "date": "2026-11-25",
+          "close": 80.660004,
+          "change_pct": -1.694,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3OIS.MI",
+      "name": "WisdomTree WTI Crude Oil 3x Daily Short",
+      "reference": "CL=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "CL=F",
+          "date": "2026-11-25",
+          "close": 80.660004,
+          "change_pct": -1.694,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3RAC.MI",
+      "name": "Leverage Shares 3x Long Ferrari (RACE) Etp",
+      "reference": "RACE",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "RACE",
+          "date": "2026-11-24",
+          "close": 397.820007,
+          "change_pct": -0.358,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SAA.MI",
+      "name": "GraniteShares 3x Short Alibaba Daily Etp",
+      "reference": "BABA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "BABA",
+          "date": "2026-11-24",
+          "close": 84.860001,
+          "change_pct": -1.371,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SAM.MI",
+      "name": "GraniteShares 3x Short Amazon",
+      "reference": "AMZN",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "AMZN",
+          "date": "2026-11-24",
+          "close": 252.289993,
+          "change_pct": -1.214,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SAP.MI",
+      "name": "GraniteShares 3x Short Apple",
+      "reference": "AAPL",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "AAPL",
+          "date": "2026-11-24",
+          "close": 354.070007,
+          "change_pct": 1.429,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SCR.MI",
+      "name": "GraniteShares 3x Short Unicredit Daily Etp",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "3SEM.MI",
+      "name": "WisdomTree PHLX Semiconductor 3x Daily Leveraged",
+      "reference": "SOXX",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SOXX",
+          "date": "2026-11-24",
+          "close": 128.619995,
+          "change_pct": -8.273,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SGO.MI",
+      "name": "GraniteShares 3x Short Alphabet",
+      "reference": "GOOGL",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GOOGL",
+          "date": "2026-11-24",
+          "close": 279.049988,
+          "change_pct": -1.081,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SIL.MI",
+      "name": "WisdomTree Silver 3x",
+      "reference": "SI=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SI=F",
+          "date": "2026-11-25",
+          "close": 40.174999,
+          "change_pct": -1.435,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SIS.MI",
+      "name": "WisdomTree Silver 3x Daily Short",
+      "reference": "SI=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SI=F",
+          "date": "2026-11-25",
+          "close": 40.174999,
+          "change_pct": -1.435,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SMI.MI",
+      "name": "GraniteShares 3x Short MicroStrategy Daily Etp",
+      "reference": "MSTR",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "MSTR",
+          "date": "2026-11-24",
+          "close": 77.550003,
+          "change_pct": -8.116,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SML.MI",
+      "name": "3SML",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "3SMS.MI",
+      "name": "GraniteShares 3x Short Microsoft",
+      "reference": "MSFT",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "MSFT",
+          "date": "2026-11-24",
+          "close": 496.130005,
+          "change_pct": 0.737,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SMT.MI",
+      "name": "GraniteShares 3x Short Meta",
+      "reference": "META",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "META",
+          "date": "2026-11-24",
+          "close": 589.820007,
+          "change_pct": -1.302,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SNF.MI",
+      "name": "GraniteShares 3x Short Netflix Daily Etp",
+      "reference": "NFLX",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "NFLX",
+          "date": "2026-11-24",
+          "close": 58.869999,
+          "change_pct": 1.325,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SNI.MI",
+      "name": "GraniteShares 3x Short NIO Daily Etp",
+      "reference": "NIO",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "NIO",
+          "date": "2026-11-24",
+          "close": 2.58,
+          "change_pct": 0.389,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SNV.MI",
+      "name": "GraniteShares 3x Short Nvidia",
+      "reference": "NVDA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "NVDA",
+          "date": "2026-11-24",
+          "close": 155.380005,
+          "change_pct": -5.859,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SPA.MI",
+      "name": "GraniteShares 3x Short Palantir Daily Etp",
+      "reference": "PLTR",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "PLTR",
+          "date": "2026-11-24",
+          "close": 161.179993,
+          "change_pct": 1.142,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SQ.MI",
+      "name": "Leverage Shares 3x Square Etp Securities",
+      "reference": "XYZ",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "XYZ",
+          "date": "2026-11-24",
+          "close": 74.150002,
+          "change_pct": 1.242,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SRA.MI",
+      "name": "Leverage Shares 3x Short Ferrari (RACE) Etp",
+      "reference": "RACE",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "RACE",
+          "date": "2026-11-24",
+          "close": 397.820007,
+          "change_pct": -0.358,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SSQ.MI",
+      "name": "GraniteShares 3x Short Square Daily Etp",
+      "reference": "XYZ",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "XYZ",
+          "date": "2026-11-24",
+          "close": 74.150002,
+          "change_pct": 1.242,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3STS.MI",
+      "name": "GraniteShares 3x Short Tesla",
+      "reference": "TSLA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "TSLA",
+          "date": "2026-11-24",
+          "close": 384.679993,
+          "change_pct": -0.202,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3SUL.MI",
+      "name": "WisdomTree Sugar 3x Daily Leveraged",
+      "reference": "SB=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SB=F",
+          "date": "2026-11-24",
+          "close": 17.66,
+          "change_pct": 0.284,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3TSL.MI",
+      "name": "Leverage Shares 3x Tesla Etp",
+      "reference": "TSLA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "TSLA",
+          "date": "2026-11-24",
+          "close": 384.679993,
+          "change_pct": -0.202,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3TYL.MI",
+      "name": "WisdomTree US Treasuries 10Y 3x Daily Leveraged",
+      "reference": "IEF;ZN=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "IEF",
+          "date": "2026-11-24",
+          "close": 91.639999,
+          "change_pct": 0.0,
+          "status": "OK"
+        },
+        {
+          "ticker": "ZN=F",
+          "date": "2026-11-25",
+          "close": 106.9375,
+          "change_pct": 0.073,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3UBS.MI",
+      "name": "WisdomTree Bund 30Y 3x Daily Short",
+      "reference": "nessuno",
+      "confidence": "alta",
+      "mapping_status": "no_direct_equivalent",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "3UKL.L",
+      "name": "WisdomTree FTSE 100 3x Daily Leveraged",
+      "reference": "EWU",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "EWU",
+          "date": "2026-11-24",
+          "close": 45.869999,
+          "change_pct": 0.769,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3UKS.L",
+      "name": "WisdomTree FTSE 100 3x Daily Short",
+      "reference": "EWU",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "EWU",
+          "date": "2026-11-24",
+          "close": 45.869999,
+          "change_pct": 0.769,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3USL.MI",
+      "name": "WisdomTree S&P500 3x Daily",
+      "reference": "SPY;ES=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SPY",
+          "date": "2026-11-24",
+          "close": 718.780029,
+          "change_pct": -0.486,
+          "status": "OK"
+        },
+        {
+          "ticker": "ES=F",
+          "date": "2026-11-25",
+          "close": 7156.25,
+          "change_pct": -0.849,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3USS.MI",
+      "name": "WisdomTree S&P500 3x Short",
+      "reference": "SPY;ES=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SPY",
+          "date": "2026-11-24",
+          "close": 718.780029,
+          "change_pct": -0.486,
+          "status": "OK"
+        },
+        {
+          "ticker": "ES=F",
+          "date": "2026-11-25",
+          "close": 7156.25,
+          "change_pct": -0.849,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "3WHL.MI",
+      "name": "WisdomTree Wheat 3x Daily Leveraged",
+      "reference": "ZW=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "ZW=F",
+          "date": "2026-11-25",
+          "close": 582.75,
+          "change_pct": 2.282,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "5BTS.MI",
+      "name": "WisdomTree BTP 10Y 5x Daily Short",
+      "reference": "nessuno",
+      "confidence": "alta",
+      "mapping_status": "no_direct_equivalent",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "5BUS.MI",
+      "name": "WisdomTree Bund 10Y 5x Daily Short",
+      "reference": "nessuno",
+      "confidence": "alta",
+      "mapping_status": "no_direct_equivalent",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "5EUL.MI",
+      "name": "WisdomTree EURO STOXX 50 5x Daily Leveraged",
+      "reference": "FEZ",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "FEZ",
+          "date": "2026-11-24",
+          "close": 63.09,
+          "change_pct": 0.0,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "5EUS.MI",
+      "name": "WisdomTree EURO STOXX 50 5x Daily Short",
+      "reference": "FEZ",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "FEZ",
+          "date": "2026-11-24",
+          "close": 63.09,
+          "change_pct": 0.0,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "5ITL.MI",
+      "name": "WisdomTree FTSE MIB 5x Daily Leveraged",
+      "reference": "EWI",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "EWI",
+          "date": "2026-11-24",
+          "close": 54.830002,
+          "change_pct": -0.4,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "5ITS.MI",
+      "name": "WisdomTree FTSE MIB 5x Daily Short",
+      "reference": "EWI",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "EWI",
+          "date": "2026-11-24",
+          "close": 54.830002,
+          "change_pct": -0.4,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "5MIB.MI",
+      "name": "GraniteShares 5x Long Mib Daily Etp",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "5QQQ.MI",
+      "name": "Leverage Shares 5x Long Nasdaq 100 Etp",
+      "reference": "QQQ;NQ=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "QQQ",
+          "date": "2026-11-24",
+          "close": 638.099976,
+          "change_pct": -1.986,
+          "status": "OK"
+        },
+        {
+          "ticker": "NQ=F",
+          "date": "2026-11-25",
+          "close": 25894.25,
+          "change_pct": -1.452,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "5SIT.MI",
+      "name": "GraniteShares 5x Short Mib Daily Etp",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "5SPY.MI",
+      "name": "Leverage Shares 5x Long S&P 500 Etp",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "5TYS.MI",
+      "name": "WisdomTree US Treasuries 10Y 5x Daily Short",
+      "reference": "IEF;ZN=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "IEF",
+          "date": "2026-11-24",
+          "close": 91.639999,
+          "change_pct": 0.0,
+          "status": "OK"
+        },
+        {
+          "ticker": "ZN=F",
+          "date": "2026-11-25",
+          "close": 106.9375,
+          "change_pct": 0.073,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "5USL.MI",
+      "name": "WisdomTree S&P 500 5x Daily Leveraged",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "5USS.MI",
+      "name": "WisdomTree S&P 500 5x Daily Short",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "AIGA.MI",
+      "name": "WisdomTree Agriculture",
+      "reference": "DBA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "DBA",
+          "date": "2026-11-24",
+          "close": 26.280001,
+          "change_pct": 0.152,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "AIGC.MI",
+      "name": "WisdomTree Broad Commodities",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "AIGE.MI",
+      "name": "WisdomTree Energy",
+      "reference": "XLE",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "XLE",
+          "date": "2026-11-24",
+          "close": 60.450001,
+          "change_pct": 0.969,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "AIGG.MI",
+      "name": "WisdomTree Grains",
+      "reference": "DBA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "DBA",
+          "date": "2026-11-24",
+          "close": 26.280001,
+          "change_pct": 0.152,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "AIGI.MI",
+      "name": "WisdomTree Industrial Metals",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "AIGL.MI",
+      "name": "WisdomTree Livestock",
+      "reference": "LE=F;HE=F;GF=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "LE=F",
+          "date": "2026-11-24",
+          "close": 225.899994,
+          "change_pct": 0.601,
+          "status": "OK"
+        },
+        {
+          "ticker": "HE=F",
+          "date": "2026-11-24",
+          "close": 51.799999,
+          "change_pct": -1.239,
+          "status": "OK"
+        },
+        {
+          "ticker": "GF=F",
+          "date": "2026-11-24",
+          "close": 332.899994,
+          "change_pct": -0.426,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "AIGO.MI",
+      "name": "WisdomTree Petroleum",
+      "reference": "XLE",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "XLE",
+          "date": "2026-11-24",
+          "close": 60.450001,
+          "change_pct": 0.969,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "AIGP.MI",
+      "name": "iShares Diversified Commodity",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "AIGS.MI",
+      "name": "WisdomTree Softs",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "ALUM.MI",
+      "name": "WisdomTree Aluminium",
+      "reference": "ALUM",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "DATO_NON_DISPONIBILE",
+      "quotes": []
+    },
+    {
+      "etp": "ARM3.MI",
+      "name": "Leverage Shares 3x Arm Etp Securities",
+      "reference": "ARM",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "ARM",
+          "date": "2026-11-24",
+          "close": 161.559998,
+          "change_pct": -8.553,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "AUEU.MI",
+      "name": "WisdomTree Short AUD Long EUR",
+      "reference": "6A=F;6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6A=F",
+          "date": "2026-11-25",
+          "close": 0.65885,
+          "change_pct": -0.746,
+          "status": "OK"
+        },
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "BCOM.DE",
+      "name": "iShares Bloomberg Commodity",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "BENE.MI",
+      "name": "WisdomTree Energy Enhanced",
+      "reference": "XLE",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "XLE",
+          "date": "2026-11-24",
+          "close": 60.450001,
+          "change_pct": 0.969,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "BRENT.MI",
+      "name": "BRENT",
+      "reference": "BZ=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "BZ=F",
+          "date": "2026-11-25",
+          "close": 87.419998,
+          "change_pct": -4.354,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "BRES.MI",
+      "name": "BRES",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "BRNT.MI",
+      "name": "WisdomTree Brent Crude",
+      "reference": "BZ=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "BZ=F",
+          "date": "2026-11-25",
+          "close": 87.419998,
+          "change_pct": -4.354,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "BULL.MI",
+      "name": "WisdomTree Gold",
+      "reference": "GC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GC=F",
+          "date": "2026-11-25",
+          "close": 3533.800049,
+          "change_pct": -0.789,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "CARB.MI",
+      "name": "WisdomTree Carbon",
+      "reference": "KRBN",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "KRBN",
+          "date": "2026-11-24",
+          "close": 33.103001,
+          "change_pct": 0.343,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "CCEUAS.MI",
+      "name": "UBS CMCI Composite SF UCITS ETF hEUR acc",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "CCUSAS.MI",
+      "name": "UBS CMCI Composite SF UCITS ETF USD acc",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "CHE3.MI",
+      "name": "WisdomTree Short CHF Long EUR 3x Daily",
+      "reference": "6S=F;6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6S=F",
+          "date": "2026-11-25",
+          "close": 1.1986,
+          "change_pct": -0.104,
+          "status": "OK"
+        },
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "CHEU.MI",
+      "name": "WisdomTree Short CHF Long EUR",
+      "reference": "6S=F;6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6S=F",
+          "date": "2026-11-25",
+          "close": 1.1986,
+          "change_pct": -0.104,
+          "status": "OK"
+        },
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "CMOC.MI",
+      "name": "Invesco Bloomberg Commodity Carbon Tilted UCITS ETF USD",
+      "reference": "KRBN",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "KRBN",
+          "date": "2026-11-24",
+          "close": 33.103001,
+          "change_pct": 0.343,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "CMOD.MI",
+      "name": "WisdomTree Commodity",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "CMOE.MI",
+      "name": "Invesco Bloomberg Commodity UCITS ETF EUR Hedged",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "CO2.MI",
+      "name": "SparkChange Physical Carbon EUA ETC",
+      "reference": "KRBN",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "KRBN",
+          "date": "2026-11-24",
+          "close": 33.103001,
+          "change_pct": 0.343,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "COCO.MI",
+      "name": "WisdomTree Cocoa",
+      "reference": "CC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "CC=F",
+          "date": "2026-11-24",
+          "close": 5281.0,
+          "change_pct": 1.832,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "COFF.MI",
+      "name": "WisdomTree Coffee",
+      "reference": "KC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "KC=F",
+          "date": "2026-11-24",
+          "close": 268.549988,
+          "change_pct": -2.114,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "COMF.MI",
+      "name": "L&G Longer Dated All Commodities UCITS ETF",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "COMH.MI",
+      "name": "Amundi Bloomberg Equal-weight Commodity ex-Agriculture UCITS",
+      "reference": "DBA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "DBA",
+          "date": "2026-11-24",
+          "close": 26.280001,
+          "change_pct": 0.152,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "COMO.MI",
+      "name": "Amundi Bloomberg Equal-weight Commodity ex-Agriculture UCITS",
+      "reference": "DBA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "DBA",
+          "date": "2026-11-24",
+          "close": 26.280001,
+          "change_pct": 0.152,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "COMS.SW",
+      "name": "WisdomTree Enhanced Commodity UCITS ETF - CHF Hedged Acc",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "COPA.MI",
+      "name": "WisdomTree Copper",
+      "reference": "HG=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "HG=F",
+          "date": "2026-11-25",
+          "close": 5.42,
+          "change_pct": 1.072,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "COPM.MI",
+      "name": "COPM",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "COPR.L",
+      "name": "WisdomTree Copper IE",
+      "reference": "HG=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "HG=F",
+          "date": "2026-11-25",
+          "close": 5.42,
+          "change_pct": 1.072,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "COPX.MI",
+      "name": "COPX",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "CORN.MI",
+      "name": "WisdomTree Corn",
+      "reference": "ZC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "ZC=F",
+          "date": "2026-11-25",
+          "close": 448.5,
+          "change_pct": 3.341,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "COTN.MI",
+      "name": "WisdomTree Cotton",
+      "reference": "CT=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "CT=F",
+          "date": "2026-11-24",
+          "close": 79.120003,
+          "change_pct": 2.051,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "CPER.MI",
+      "name": "Leverage Shares Copper Etc",
+      "reference": "HG=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "HG=F",
+          "date": "2026-11-25",
+          "close": 5.42,
+          "change_pct": 1.072,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "CRRE.MI",
+      "name": "WisdomTree Enhanced Commodity Carry - EUR Daily Hedged",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "CRRP.L",
+      "name": "WisdomTree Enhanced Commodity Carry - GBP Daily Hedged",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "CRRY.MI",
+      "name": "WisdomTree Enhanced Commodity Carry",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "CRUD.MI",
+      "name": "WisdomTree Crude Oil",
+      "reference": "CL=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "CL=F",
+          "date": "2026-11-25",
+          "close": 80.660004,
+          "change_pct": -1.694,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "DX3L.MI",
+      "name": "WisdomTree DAX 3x Long",
+      "reference": "EWG",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "EWG",
+          "date": "2026-11-24",
+          "close": 40.07,
+          "change_pct": -0.05,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "DX3S.MI",
+      "name": "WisdomTree DAX 3x Short",
+      "reference": "EWG",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "EWG",
+          "date": "2026-11-24",
+          "close": 40.07,
+          "change_pct": -0.05,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "EALU.MI",
+      "name": "WisdomTree Aluminium - EUR Daily Hedged",
+      "reference": "ALUM",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "DATO_NON_DISPONIBILE",
+      "quotes": []
+    },
+    {
+      "etp": "EBRT.MI",
+      "name": "WisdomTree Brent Crude Oil - EUR Daily Hedged",
+      "reference": "CL=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "CL=F",
+          "date": "2026-11-25",
+          "close": 80.660004,
+          "change_pct": -1.694,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "EBUL.MI",
+      "name": "WisdomTree Gold - EUR Daily Hedged",
+      "reference": "GC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GC=F",
+          "date": "2026-11-25",
+          "close": 3533.800049,
+          "change_pct": -0.789,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "ECEH.MI",
+      "name": "L&G Multi Strategy Enhanced Commodities EUR Hedged Acc UCITS",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "ECH3.MI",
+      "name": "WisdomTree Long CHF Short EUR 3x Daily",
+      "reference": "6S=F;6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6S=F",
+          "date": "2026-11-25",
+          "close": 1.1986,
+          "change_pct": -0.104,
+          "status": "OK"
+        },
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "ECOF.MI",
+      "name": "WisdomTree Coffee - EUR Daily Hedged",
+      "reference": "KC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "KC=F",
+          "date": "2026-11-24",
+          "close": 268.549988,
+          "change_pct": -2.114,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "ECOP.MI",
+      "name": "WisdomTree Copper - EUR Daily Hedged",
+      "reference": "HG=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "HG=F",
+          "date": "2026-11-25",
+          "close": 5.42,
+          "change_pct": 1.072,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "ECRD.MI",
+      "name": "WisdomTree WTI Crude Oil - EUR Daily Hedged",
+      "reference": "CL=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "CL=F",
+          "date": "2026-11-25",
+          "close": 80.660004,
+          "change_pct": -1.694,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "ECRN.MI",
+      "name": "WisdomTree Corn - EUR Daily Hedged",
+      "reference": "ZC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "ZC=F",
+          "date": "2026-11-25",
+          "close": 448.5,
+          "change_pct": 3.341,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "ECTN.MI",
+      "name": "WisdomTree Cotton - EUR Daily Hedged",
+      "reference": "CT=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "CT=F",
+          "date": "2026-11-24",
+          "close": 79.120003,
+          "change_pct": 2.051,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "EFCM.MI",
+      "name": "WisdomTree Broad Commodities Longer Dated - EUR Daily Hedged",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "EGB3.MI",
+      "name": "WisdomTree Long GBP Short EUR 3x Daily",
+      "reference": "6B=F;6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6B=F",
+          "date": "2026-11-25",
+          "close": 1.3091,
+          "change_pct": -0.206,
+          "status": "OK"
+        },
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "EIMT.MI",
+      "name": "WisdomTree Industrial Metals - EUR Daily Hedged",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "EJP3.MI",
+      "name": "WisdomTree Long JPY Short EUR 3x Daily",
+      "reference": "6J=F;6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6J=F",
+          "date": "2026-11-25",
+          "close": 0.00628,
+          "change_pct": -0.167,
+          "status": "OK"
+        },
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "ENCO.MI",
+      "name": "L&G Multi-Strategy Enhanced Commodities UCITS ETF",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "ENGS.MI",
+      "name": "WisdomTree Natural Gas - EUR Daily Hedged",
+      "reference": "NG=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "NG=F",
+          "date": "2026-11-25",
+          "close": 3.684,
+          "change_pct": 10.864,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "ENIK.MI",
+      "name": "WisdomTree Nickel - EUR Daily Hedged",
+      "reference": "JJN",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "DATO_NON_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "JJN",
+          "status": "UNAVAILABLE",
+          "reason": "nessuna chiusura disponibile"
+        }
+      ]
+    },
+    {
+      "etp": "ENTR.MI",
+      "name": "L&G New Energy Commodities ETF USD Acc",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "ESOY.MI",
+      "name": "WisdomTree Soybeans - EUR Daily Hedged",
+      "reference": "ZS=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "ZS=F",
+          "date": "2026-11-25",
+          "close": 1222.75,
+          "change_pct": -0.912,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "ESUG.MI",
+      "name": "WisdomTree Sugar - EUR Daily Hedged",
+      "reference": "SB=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SB=F",
+          "date": "2026-11-24",
+          "close": 17.66,
+          "change_pct": 0.284,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "ESVR.MI",
+      "name": "WisdomTree Silver - EUR Daily Hedged",
+      "reference": "SI=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SI=F",
+          "date": "2026-11-25",
+          "close": 40.174999,
+          "change_pct": -1.435,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "ESXS.MI",
+      "name": "WisdomTree Euro Stoxx 50 2x Short",
+      "reference": "FEZ",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "FEZ",
+          "date": "2026-11-24",
+          "close": 63.09,
+          "change_pct": 0.0,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "EUAU.MI",
+      "name": "WisdomTree Long AUD Short EUR",
+      "reference": "6A=F;6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6A=F",
+          "date": "2026-11-25",
+          "close": 0.65885,
+          "change_pct": -0.746,
+          "status": "OK"
+        },
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "EUCH.MI",
+      "name": "WisdomTree Long CHF Short EUR",
+      "reference": "6S=F;6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6S=F",
+          "date": "2026-11-25",
+          "close": 1.1986,
+          "change_pct": -0.104,
+          "status": "OK"
+        },
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "EUGB.MI",
+      "name": "WisdomTree Long GBP Short EUR",
+      "reference": "6B=F;6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6B=F",
+          "date": "2026-11-25",
+          "close": 1.3091,
+          "change_pct": -0.206,
+          "status": "OK"
+        },
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "EUJP.MI",
+      "name": "WisdomTree Long JPY Short EUR",
+      "reference": "6J=F;6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6J=F",
+          "date": "2026-11-25",
+          "close": 0.00628,
+          "change_pct": -0.167,
+          "status": "OK"
+        },
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "EUNO.MI",
+      "name": "WisdomTree Long NOK Short EUR",
+      "reference": "nessuno",
+      "confidence": "bassa",
+      "mapping_status": "no_direct_equivalent",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "EUS3.MI",
+      "name": "WisdomTree Long USD Short EUR 3x Daily",
+      "reference": "6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "EUS5.MI",
+      "name": "WisdomTree Long USD Short EUR 5x Daily",
+      "reference": "6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "EUSE.MI",
+      "name": "WisdomTree Long SEK Short EUR",
+      "reference": "6S=F;6E=F",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "6S=F",
+          "date": "2026-11-25",
+          "close": 1.1986,
+          "change_pct": -0.104,
+          "status": "OK"
+        },
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "EUUS.MI",
+      "name": "WisdomTree Long USD Short EUR",
+      "reference": "6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "EWAT.MI",
+      "name": "WisdomTree Wheat - EUR Daily Hedged",
+      "reference": "ZW=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "ZW=F",
+          "date": "2026-11-25",
+          "close": 582.75,
+          "change_pct": 2.282,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "EXAG.DE",
+      "name": "WisdomTree Enhanced Commodity ex-Agriculture UCITS ETF - EUR Hedged Acc",
+      "reference": "DBA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "DBA",
+          "date": "2026-11-24",
+          "close": 26.280001,
+          "change_pct": 0.152,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "EXXY.MI",
+      "name": "iShares Diversified Commodity Swap UCITS ETF (DE)",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "EZNC.MI",
+      "name": "WisdomTree Zinc - EUR Daily Hedged",
+      "reference": "DBB",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "DBB",
+          "date": "2026-11-24",
+          "close": 22.0,
+          "change_pct": -3.297,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "FCRU.MI",
+      "name": "WisdomTree WTI Crude Oil Longer Dated",
+      "reference": "CL=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "CL=F",
+          "date": "2026-11-25",
+          "close": 80.660004,
+          "change_pct": -1.694,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "GAS.MI",
+      "name": "GAS",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "GBE3.MI",
+      "name": "WisdomTree Short GBP Long EUR 3x Daily",
+      "reference": "6B=F;6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6B=F",
+          "date": "2026-11-25",
+          "close": 1.3091,
+          "change_pct": -0.206,
+          "status": "OK"
+        },
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "GBEU.MI",
+      "name": "WisdomTree Short GBP Long EUR",
+      "reference": "6B=F;6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6B=F",
+          "date": "2026-11-25",
+          "close": 1.3091,
+          "change_pct": -0.206,
+          "status": "OK"
+        },
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "GBS.MI",
+      "name": "Gold Bullion Securities",
+      "reference": "GC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GC=F",
+          "date": "2026-11-25",
+          "close": 3533.800049,
+          "change_pct": -0.789,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "GBSE.MI",
+      "name": "WisdomTree Physical Gold - EUR Daily Hedged",
+      "reference": "GC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GC=F",
+          "date": "2026-11-25",
+          "close": 3533.800049,
+          "change_pct": -0.789,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "GBSP.L",
+      "name": "WisdomTree Physical Gold - GBP Daily Hedged",
+      "reference": "GC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GC=F",
+          "date": "2026-11-25",
+          "close": 3533.800049,
+          "change_pct": -0.789,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "GDX.MI",
+      "name": "GDX",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "GDXJ.MI",
+      "name": "GDXJ",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "GPT3.MI",
+      "name": "Leverage Shares 3x Long Artificial Intelligence (AI) Etp",
+      "reference": "INTC",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "INTC",
+          "date": "2026-11-24",
+          "close": 54.799999,
+          "change_pct": -8.146,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "GPTS.MI",
+      "name": "Leverage Shares -3x Short Artificial Intelligence (AI) Etp",
+      "reference": "INTC",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "INTC",
+          "date": "2026-11-24",
+          "close": 54.799999,
+          "change_pct": -8.146,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "GSCE.MI",
+      "name": "BNP Paribas Easy Energy & Metals Enhanced Roll UCITS ETF EUR",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "HIM3.MI",
+      "name": "Leverage Shares 3x Long Hims & Hers Health Etp",
+      "reference": "HIMS",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "HIMS",
+          "date": "2026-11-24",
+          "close": 14.74,
+          "change_pct": -2.125,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "HOD3.MI",
+      "name": "Leverage Shares 3x Long Robinhood (Hood) Etp Securities",
+      "reference": "HOOD",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "HOOD",
+          "date": "2026-11-24",
+          "close": 65.650002,
+          "change_pct": -2.553,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "INTS.MI",
+      "name": "Leverage Shares -3x Short Intel (Intc) Etp Securities",
+      "reference": "INTC",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "INTC",
+          "date": "2026-11-24",
+          "close": 54.799999,
+          "change_pct": -8.146,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "JPE3.MI",
+      "name": "WisdomTree Short JPY Long EUR 3x Daily",
+      "reference": "6J=F;6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6J=F",
+          "date": "2026-11-25",
+          "close": 0.00628,
+          "change_pct": -0.167,
+          "status": "OK"
+        },
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "JPEU.MI",
+      "name": "WisdomTree Short JPY Long EUR",
+      "reference": "6J=F;6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6J=F",
+          "date": "2026-11-25",
+          "close": 0.00628,
+          "change_pct": -0.167,
+          "status": "OK"
+        },
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "KRBN.MI",
+      "name": "KraneShares Global Carbon Strategy ETC Securities",
+      "reference": "KRBN",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "KRBN",
+          "date": "2026-11-24",
+          "close": 33.103001,
+          "change_pct": 0.343,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "LAGR.MI",
+      "name": "WisdomTree Agriculture 2x Daily Leveraged",
+      "reference": "DBA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "DBA",
+          "date": "2026-11-24",
+          "close": 26.280001,
+          "change_pct": 0.152,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "LALU.MI",
+      "name": "WisdomTree Aluminium 2x Daily Leveraged",
+      "reference": "ALUM",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "DATO_NON_DISPONIBILE",
+      "quotes": []
+    },
+    {
+      "etp": "LBRT.MI",
+      "name": "WisdomTree Brent Crude Oil 2x Daily Leveraged",
+      "reference": "CL=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "CL=F",
+          "date": "2026-11-25",
+          "close": 80.660004,
+          "change_pct": -1.694,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "LBUL.MI",
+      "name": "WisdomTree Gold 2x Daily Leveraged",
+      "reference": "GC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GC=F",
+          "date": "2026-11-25",
+          "close": 3533.800049,
+          "change_pct": -0.789,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "LCFE.MI",
+      "name": "WisdomTree Coffee 2x Daily Leveraged",
+      "reference": "KC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "KC=F",
+          "date": "2026-11-24",
+          "close": 268.549988,
+          "change_pct": -2.114,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "LCOC.MI",
+      "name": "WisdomTree Cocoa 2x Daily Leveraged",
+      "reference": "CC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "CC=F",
+          "date": "2026-11-24",
+          "close": 5281.0,
+          "change_pct": 1.832,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "LCOP.MI",
+      "name": "WisdomTree Copper 2x Daily Leveraged",
+      "reference": "HG=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "HG=F",
+          "date": "2026-11-25",
+          "close": 5.42,
+          "change_pct": 1.072,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "LCOR.MI",
+      "name": "WisdomTree Corn 2x Daily Leveraged",
+      "reference": "ZC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "ZC=F",
+          "date": "2026-11-25",
+          "close": 448.5,
+          "change_pct": 3.341,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "LEAD.MI",
+      "name": "LEAD",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "LNGA.MI",
+      "name": "WisdomTree Natural Gas 2x Daily Leveraged",
+      "reference": "NG=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "NG=F",
+          "date": "2026-11-25",
+          "close": 3.684,
+          "change_pct": 10.864,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "LNIK.MI",
+      "name": "WisdomTree Nickel 2x Daily Leveraged",
+      "reference": "JJN",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "DATO_NON_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "JJN",
+          "status": "UNAVAILABLE",
+          "reason": "nessuna chiusura disponibile"
+        }
+      ]
+    },
+    {
+      "etp": "LOIL.MI",
+      "name": "WisdomTree WTI Crude Oil 2x Daily Leveraged",
+      "reference": "CL=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "CL=F",
+          "date": "2026-11-25",
+          "close": 80.660004,
+          "change_pct": -1.694,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "LPET.MI",
+      "name": "WisdomTree Petroleum 2x Daily Leveraged",
+      "reference": "XLE",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "XLE",
+          "date": "2026-11-24",
+          "close": 60.450001,
+          "change_pct": 0.969,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "LPLA.MI",
+      "name": "WisdomTree Platinum 2x Daily Leveraged",
+      "reference": "PL=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "PL=F",
+          "date": "2026-11-25",
+          "close": 1235.099976,
+          "change_pct": -1.875,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "LQQ.MI",
+      "name": "Leverage Shares 3x Nasdaq",
+      "reference": "QQQ;NQ=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "QQQ",
+          "date": "2026-11-24",
+          "close": 638.099976,
+          "change_pct": -1.986,
+          "status": "OK"
+        },
+        {
+          "ticker": "NQ=F",
+          "date": "2026-11-25",
+          "close": 25894.25,
+          "change_pct": -1.452,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "LSIL.MI",
+      "name": "WisdomTree Silver 2x Daily Leveraged",
+      "reference": "SI=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SI=F",
+          "date": "2026-11-25",
+          "close": 40.174999,
+          "change_pct": -1.435,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "LSUG.MI",
+      "name": "WisdomTree Sugar 2x Daily Leveraged",
+      "reference": "SB=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SB=F",
+          "date": "2026-11-24",
+          "close": 17.66,
+          "change_pct": 0.284,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "LVO.MI",
+      "name": "Amundi S&P 500 VIX Futures Enhanced Roll UCITS ETF Acc",
+      "reference": "^VIX;VIXY",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "^VIX",
+          "date": "2026-11-24",
+          "close": 26.360001,
+          "change_pct": -0.977,
+          "status": "OK"
+        },
+        {
+          "ticker": "VIXY",
+          "date": "2026-11-24",
+          "close": 22.290001,
+          "change_pct": -1.284,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "LWEA.MI",
+      "name": "WisdomTree Wheat 2x Daily Leveraged",
+      "reference": "ZW=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "ZW=F",
+          "date": "2026-11-25",
+          "close": 582.75,
+          "change_pct": 2.282,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "MAGS.MI",
+      "name": "Leverage Shares -3x Short Magnificent 7 Etp",
+      "reference": "MAGS",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "MAGS",
+          "date": "2026-11-24",
+          "close": 65.75,
+          "change_pct": -0.919,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "META.MI",
+      "name": "WisdomTree Industrial Metals Enhanced",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "NCLR.MI",
+      "name": "WisdomTree Uranium and Nuclear Energy UCITS ETF - USD Acc",
+      "reference": "URA",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "URA",
+          "date": "2026-11-24",
+          "close": 27.6,
+          "change_pct": -2.714,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "NGAS.MI",
+      "name": "WisdomTree Natural Gas",
+      "reference": "NG=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "NG=F",
+          "date": "2026-11-25",
+          "close": 3.684,
+          "change_pct": 10.864,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "NICK.MI",
+      "name": "WisdomTree Nickel",
+      "reference": "JJN",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "DATO_NON_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "JJN",
+          "status": "UNAVAILABLE",
+          "reason": "nessuna chiusura disponibile"
+        }
+      ]
+    },
+    {
+      "etp": "NOEU.MI",
+      "name": "WisdomTree Short NOK Long EUR",
+      "reference": "nessuno",
+      "confidence": "bassa",
+      "mapping_status": "no_direct_equivalent",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "OIH.MI",
+      "name": "OIH",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "PCOM.MI",
+      "name": "WisdomTree Broad Commodities UCITS ETF - USD Acc",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "PHAG.MI",
+      "name": "WisdomTree Physical Silver",
+      "reference": "SI=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SI=F",
+          "date": "2026-11-25",
+          "close": 40.174999,
+          "change_pct": -1.435,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "PHAU.MI",
+      "name": "WisdomTree Physical Gold",
+      "reference": "GC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GC=F",
+          "date": "2026-11-25",
+          "close": 3533.800049,
+          "change_pct": -0.789,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "PHPD.MI",
+      "name": "WisdomTree Physical Palladium",
+      "reference": "PA=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "PA=F",
+          "date": "2026-11-25",
+          "close": 847.0,
+          "change_pct": -1.282,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "PHPM.MI",
+      "name": "WisdomTree Physical Precious Metals",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "PHPT.MI",
+      "name": "WisdomTree Physical Platinum",
+      "reference": "PL=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "PL=F",
+          "date": "2026-11-25",
+          "close": 1235.099976,
+          "change_pct": -1.875,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "QQQ3.MI",
+      "name": "WisdomTree Nasdaq 3x Daily",
+      "reference": "QQQ;NQ=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "QQQ",
+          "date": "2026-11-24",
+          "close": 638.099976,
+          "change_pct": -1.986,
+          "status": "OK"
+        },
+        {
+          "ticker": "NQ=F",
+          "date": "2026-11-25",
+          "close": 25894.25,
+          "change_pct": -1.452,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "QQQ3S.MI",
+      "name": "WisdomTree Nasdaq 3x Short",
+      "reference": "QQQ;NQ=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "QQQ",
+          "date": "2026-11-24",
+          "close": 638.099976,
+          "change_pct": -1.986,
+          "status": "OK"
+        },
+        {
+          "ticker": "NQ=F",
+          "date": "2026-11-25",
+          "close": 25894.25,
+          "change_pct": -1.452,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "QQQS.MI",
+      "name": "WisdomTree NASDAQ 100 3x Daily Short",
+      "reference": "QQQ;NQ=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "QQQ",
+          "date": "2026-11-24",
+          "close": 638.099976,
+          "change_pct": -1.986,
+          "status": "OK"
+        },
+        {
+          "ticker": "NQ=F",
+          "date": "2026-11-25",
+          "close": 25894.25,
+          "change_pct": -1.452,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "QS5L.MI",
+      "name": "WisdomTree NASDAQ 100 5x Daily Leveraged",
+      "reference": "QQQ;NQ=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "QQQ",
+          "date": "2026-11-24",
+          "close": 638.099976,
+          "change_pct": -1.986,
+          "status": "OK"
+        },
+        {
+          "ticker": "NQ=F",
+          "date": "2026-11-25",
+          "close": 25894.25,
+          "change_pct": -1.452,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "QS5S.MI",
+      "name": "WisdomTree NASDAQ 100 5x Daily Short",
+      "reference": "QQQ;NQ=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "QQQ",
+          "date": "2026-11-24",
+          "close": 638.099976,
+          "change_pct": -1.986,
+          "status": "OK"
+        },
+        {
+          "ticker": "NQ=F",
+          "date": "2026-11-25",
+          "close": 25894.25,
+          "change_pct": -1.452,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SALL.MI",
+      "name": "WisdomTree Broad Commodities 1x Daily Short",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SBA3.MI",
+      "name": "Leverage Shares -3x Short Alibaba Etp Securities",
+      "reference": "BABA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "BABA",
+          "date": "2026-11-24",
+          "close": 84.860001,
+          "change_pct": -1.371,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SBRT.MI",
+      "name": "WisdomTree Brent Crude Oil 1x Daily Short",
+      "reference": "CL=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "CL=F",
+          "date": "2026-11-25",
+          "close": 80.660004,
+          "change_pct": -1.694,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SBUL.MI",
+      "name": "WisdomTree Gold 1x Daily Short",
+      "reference": "GC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GC=F",
+          "date": "2026-11-25",
+          "close": 3533.800049,
+          "change_pct": -0.789,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SC3S.MI",
+      "name": "WisdomTree PHLX Semiconductor 3x Daily Short",
+      "reference": "SOXX",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SOXX",
+          "date": "2026-11-24",
+          "close": 128.619995,
+          "change_pct": -8.273,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SCOP.MI",
+      "name": "WisdomTree Copper 1x Daily Short",
+      "reference": "HG=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "HG=F",
+          "date": "2026-11-25",
+          "close": 5.42,
+          "change_pct": 1.072,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SCRU.MI",
+      "name": "WisdomTree Crude Oil Short",
+      "reference": "CL=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "CL=F",
+          "date": "2026-11-25",
+          "close": 80.660004,
+          "change_pct": -1.694,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SDS.MI",
+      "name": "WisdomTree S&P500 2x Short",
+      "reference": "SPY;ES=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SPY",
+          "date": "2026-11-24",
+          "close": 718.780029,
+          "change_pct": -0.486,
+          "status": "OK"
+        },
+        {
+          "ticker": "ES=F",
+          "date": "2026-11-25",
+          "close": 7156.25,
+          "change_pct": -0.849,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SEEU.MI",
+      "name": "WisdomTree Short SEK Long EUR",
+      "reference": "6S=F;6E=F",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "6S=F",
+          "date": "2026-11-25",
+          "close": 1.1986,
+          "change_pct": -0.104,
+          "status": "OK"
+        },
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SGBS.MI",
+      "name": "WisdomTree Physical Swiss Gold",
+      "reference": "GC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GC=F",
+          "date": "2026-11-25",
+          "close": 3533.800049,
+          "change_pct": -0.789,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SGLD.MI",
+      "name": "iShares Physical Gold",
+      "reference": "GC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GC=F",
+          "date": "2026-11-25",
+          "close": 3533.800049,
+          "change_pct": -0.789,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SGOL.MI",
+      "name": "WisdomTree Gold Short",
+      "reference": "GC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GC=F",
+          "date": "2026-11-25",
+          "close": 3533.800049,
+          "change_pct": -0.789,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SILV.MI",
+      "name": "SILV",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "SIMT.MI",
+      "name": "WisdomTree Industrial Metals 1x Daily Short",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "SLVR.MI",
+      "name": "WisdomTree Silver",
+      "reference": "SI=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SI=F",
+          "date": "2026-11-25",
+          "close": 40.174999,
+          "change_pct": -1.435,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SMCI.MI",
+      "name": "Leverage Shares 2x Super Micro Computer Etp",
+      "reference": "SMCI",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SMCI",
+          "date": "2026-11-24",
+          "close": 22.620001,
+          "change_pct": -7.786,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SMST.MI",
+      "name": "Leverage Shares -3x Short MicroStrategy Etp",
+      "reference": "MSTR",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "MSTR",
+          "date": "2026-11-24",
+          "close": 77.550003,
+          "change_pct": -8.116,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SNGA.MI",
+      "name": "SNGA",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "SNIK.MI",
+      "name": "WisdomTree Nickel 1x Daily Short",
+      "reference": "JJN",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "DATO_NON_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "JJN",
+          "status": "UNAVAILABLE",
+          "reason": "nessuna chiusura disponibile"
+        }
+      ]
+    },
+    {
+      "etp": "SNV3.MI",
+      "name": "Leverage Shares -3x Short NVIDIA Etp Securities",
+      "reference": "NVDA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "NVDA",
+          "date": "2026-11-24",
+          "close": 155.380005,
+          "change_pct": -5.859,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SOIL.MI",
+      "name": "WisdomTree WTI Crude Oil 1x Daily Short",
+      "reference": "CL=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "CL=F",
+          "date": "2026-11-25",
+          "close": 80.660004,
+          "change_pct": -1.694,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SOXL.MI",
+      "name": "Leverage Shares 4x Long Semiconductors Etp",
+      "reference": "SOXX",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SOXX",
+          "date": "2026-11-24",
+          "close": 128.619995,
+          "change_pct": -8.273,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SOXS.MI",
+      "name": "Leverage Shares -4x Short Semiconductors Etp",
+      "reference": "SOXX",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SOXX",
+          "date": "2026-11-24",
+          "close": 128.619995,
+          "change_pct": -8.273,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SOYB.MI",
+      "name": "WisdomTree Soybeans",
+      "reference": "ZS=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "ZS=F",
+          "date": "2026-11-25",
+          "close": 1222.75,
+          "change_pct": -0.912,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SOYO.MI",
+      "name": "WisdomTree Soybean Oil",
+      "reference": "ZL=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "ZL=F",
+          "date": "2026-11-25",
+          "close": 57.689999,
+          "change_pct": -0.723,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SQQQ.MI",
+      "name": "Leverage Shares -5x Short Nasdaq 100 Etp",
+      "reference": "QQQ;NQ=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "QQQ",
+          "date": "2026-11-24",
+          "close": 638.099976,
+          "change_pct": -1.986,
+          "status": "OK"
+        },
+        {
+          "ticker": "NQ=F",
+          "date": "2026-11-25",
+          "close": 25894.25,
+          "change_pct": -1.452,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SSIL.MI",
+      "name": "WisdomTree Silver Short",
+      "reference": "SI=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SI=F",
+          "date": "2026-11-25",
+          "close": 40.174999,
+          "change_pct": -1.435,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SUGA.MI",
+      "name": "WisdomTree Sugar",
+      "reference": "SB=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SB=F",
+          "date": "2026-11-24",
+          "close": 17.66,
+          "change_pct": 0.284,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "SUK1.L",
+      "name": "WisdomTree FTSE 100 1x Daily Short",
+      "reference": "EWU",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "EWU",
+          "date": "2026-11-24",
+          "close": 45.869999,
+          "change_pct": 0.769,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "TECL.MI",
+      "name": "Leverage Shares 3x Technology",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "TINM.MI",
+      "name": "WisdomTree Tin",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "TSLQ.MI",
+      "name": "Leverage Shares -3x Short Tesla Etp Securities",
+      "reference": "TSLA",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "TSLA",
+          "date": "2026-11-24",
+          "close": 384.679993,
+          "change_pct": -0.202,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "U3O8.MI",
+      "name": "U3O8",
+      "reference": "URA",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "URA",
+          "date": "2026-11-24",
+          "close": 27.6,
+          "change_pct": -2.714,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "UGAS.MI",
+      "name": "UGAS",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "UL3S.MI",
+      "name": "WisdomTree US Treasuries 30Y 3x Daily Short",
+      "reference": "IEF;ZN=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "IEF",
+          "date": "2026-11-24",
+          "close": 91.639999,
+          "change_pct": 0.0,
+          "status": "OK"
+        },
+        {
+          "ticker": "ZN=F",
+          "date": "2026-11-25",
+          "close": 106.9375,
+          "change_pct": 0.073,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "UNH3.MI",
+      "name": "Leverage Shares 3x Long Unitedhealth (Unh) Etp Securities",
+      "reference": "UNH",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "UNH",
+          "date": "2026-11-24",
+          "close": 341.880005,
+          "change_pct": 1.726,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "USE3.MI",
+      "name": "WisdomTree Short USD Long EUR 3x Daily",
+      "reference": "6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "USE5.MI",
+      "name": "WisdomTree Short USD Long EUR 5x Daily",
+      "reference": "6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "USEU.MI",
+      "name": "WisdomTree Short USD Long EUR",
+      "reference": "6E=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "6E=F",
+          "date": "2026-11-25",
+          "close": 1.09545,
+          "change_pct": -0.187,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "VIXL.MI",
+      "name": "WisdomTree S&P 500 VIX Short-Term Futures 2.25x Daily Leveraged",
+      "reference": "^VIX;VIXY",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "^VIX",
+          "date": "2026-11-24",
+          "close": 26.360001,
+          "change_pct": -0.977,
+          "status": "OK"
+        },
+        {
+          "ticker": "VIXY",
+          "date": "2026-11-24",
+          "close": 22.290001,
+          "change_pct": -1.284,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "WAXG.DE",
+      "name": "WisdomTree Enhanced Commodity ex-Agriculture UCITS ETF - USD Acc",
+      "reference": "DBA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "DBA",
+          "date": "2026-11-24",
+          "close": 26.280001,
+          "change_pct": 0.152,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "WCCA.MI",
+      "name": "WisdomTree California Carbon",
+      "reference": "KRBN",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "KRBN",
+          "date": "2026-11-24",
+          "close": 33.103001,
+          "change_pct": 0.343,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "WCOA.MI",
+      "name": "WisdomTree Enhanced Commodity UCITS ETF - USD Acc",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "WCOE.MI",
+      "name": "WisdomTree Enhanced Commodity UCITS ETF - EUR Hedged Acc",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "WCOG.L",
+      "name": "WisdomTree Enhanced Commodity UCITS ETF USD",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "WCOM.L",
+      "name": "WisdomTree Enhanced Commodity UCITS ETF - GBP Hedged Acc",
+      "reference": "PDBC",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "PDBC",
+          "date": "2026-11-24",
+          "close": 17.280001,
+          "change_pct": -0.289,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "WEAT.MI",
+      "name": "WisdomTree Wheat",
+      "reference": "ZW=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "ZW=F",
+          "date": "2026-11-25",
+          "close": 582.75,
+          "change_pct": 2.282,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "WENU.MI",
+      "name": "WisdomTree Strategic Metals UCITS ETF - USD Acc",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "WGLD.MI",
+      "name": "WisdomTree Core Physical Gold",
+      "reference": "GC=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "GC=F",
+          "date": "2026-11-25",
+          "close": 3533.800049,
+          "change_pct": -0.789,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "WSLV.MI",
+      "name": "WisdomTree Core Physical Silver",
+      "reference": "SI=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SI=F",
+          "date": "2026-11-25",
+          "close": 40.174999,
+          "change_pct": -1.435,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "WTI.MI",
+      "name": "WTI",
+      "reference": null,
+      "confidence": "non valutata",
+      "mapping_status": "manual_review_required",
+      "radar_status": "NON_MAPPATO",
+      "quotes": []
+    },
+    {
+      "etp": "XAGZ.MI",
+      "name": "L&G Multi-Strategy Enhanced Commodities ex-Agriculture & Liv",
+      "reference": "DBA",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "DBA",
+          "date": "2026-11-24",
+          "close": 26.280001,
+          "change_pct": 0.152,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "XBJF.DE",
+      "name": "WisdomTree Short CNY Long USD",
+      "reference": "CNH= X",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "DATO_NON_DISPONIBILE",
+      "quotes": []
+    },
+    {
+      "etp": "XDBC.MI",
+      "name": "Xtrackers Bloomberg Commodity ex-Agriculture & Livestock Swa",
+      "reference": "LE=F;HE=F;GF=F",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "LE=F",
+          "date": "2026-11-24",
+          "close": 225.899994,
+          "change_pct": 0.601,
+          "status": "OK"
+        },
+        {
+          "ticker": "HE=F",
+          "date": "2026-11-24",
+          "close": 51.799999,
+          "change_pct": -1.239,
+          "status": "OK"
+        },
+        {
+          "ticker": "GF=F",
+          "date": "2026-11-24",
+          "close": 332.899994,
+          "change_pct": -0.426,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "XSDX.MI",
+      "name": "Xtrackers DAX Short",
+      "reference": "EWG",
+      "confidence": "media",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "EWG",
+          "date": "2026-11-24",
+          "close": 40.07,
+          "change_pct": -0.05,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "XSND.MI",
+      "name": "Xtrackers Nasdaq Short",
+      "reference": "QQQ;NQ=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "QQQ",
+          "date": "2026-11-24",
+          "close": 638.099976,
+          "change_pct": -1.986,
+          "status": "OK"
+        },
+        {
+          "ticker": "NQ=F",
+          "date": "2026-11-25",
+          "close": 25894.25,
+          "change_pct": -1.452,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "XSPS.MI",
+      "name": "Xtrackers S&P500 Short",
+      "reference": "SPY;ES=F",
+      "confidence": "alta",
+      "mapping_status": "candidate",
+      "radar_status": "RIFERIMENTO_DISPONIBILE",
+      "quotes": [
+        {
+          "ticker": "SPY",
+          "date": "2026-11-24",
+          "close": 718.780029,
+          "change_pct": -0.486,
+          "status": "OK"
+        },
+        {
+          "ticker": "ES=F",
+          "date": "2026-11-25",
+          "close": 7156.25,
+          "change_pct": -0.849,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "etp": "ZINC.MI",
+      "name": "WisdomTree Zinc",
+      "reference": "DBB",
+      "confidence": "bassa",
+      "mapping_status": "proxy_or_unverified",
+      "radar_status": "PROXY_DA_VERIFICARE",
+      "quotes": [
+        {
+          "ticker": "DBB",
+          "date": "2026-11-24",
+          "close": 22.0,
+          "change_pct": -3.297,
+          "status": "OK"
+        }
+      ]
+    }
+  ]
+}
