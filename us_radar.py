@@ -12,8 +12,8 @@ OUT=ROOT/"reports/us_radar.json"
 
 def main():
     local_now=datetime.now(ZoneInfo("Europe/Rome"))
-    if os.environ.get("GITHUB_EVENT_NAME")=="schedule" and local_now.hour!=23:
-        print("Skip: outside Rome 23:xx scheduled window (DST guard).")
+    if os.environ.get("GITHUB_EVENT_NAME")=="schedule" and local_now.hour not in (7,23):
+        print("Skip: outside Rome 07:xx or 23:xx scheduled windows (DST guard).")
         return
     mapping=json.loads(MAPPING.read_text(encoding="utf-8"))
     refs=set()
