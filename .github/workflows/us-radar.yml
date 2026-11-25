@@ -4,6 +4,12 @@ on:
     # GitHub cron is UTC. Two runs cover the Rome 23:30 slot across DST.
     - cron: '30 21 * * 1-5'
     - cron: '30 22 * * 1-5'
+  push:
+    branches: [main]
+    paths:
+      - 'us_radar.py'
+      - 'data/us_underlying_mapping.json'
+      - '.github/workflows/us-radar.yml'
   workflow_dispatch:
 permissions:
   contents: write
