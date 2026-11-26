@@ -1,0 +1,49 @@
+{
+  "generated_utc": "2026-11-26T10:29:56.415835+00:00",
+  "instruments": 284,
+  "category_counts": {
+    "LEVA_SHORT": 76,
+    "MATERIE_PRIME_SHORT": 15,
+    "LEVA_LONG": 61,
+    "MATERIE_PRIME_LEVA": 25,
+    "MATERIE_PRIME_1X": 107
+  },
+  "benchmark_stats": {
+    "SPY": {
+      "instruments_with_points": 284,
+      "points": 21363,
+      "latest": "2026-11-27"
+    },
+    "QQQ": {
+      "instruments_with_points": 284,
+      "points": 21363,
+      "latest": "2026-11-27"
+    },
+    "DBC": {
+      "instruments_with_points": 284,
+      "points": 21363,
+      "latest": "2026-11-27"
+    },
+    "GLD": {
+      "instruments_with_points": 284,
+      "points": 21363,
+      "latest": "2026-11-27"
+    }
+  },
+  "fetch_status": {
+    "total": 311,
+    "ok": 284,
+    "unavailable": 27
+  },
+  "benchmark_labels": {
+    "SPY": "S&P 500",
+    "QQQ": "Nasdaq 100",
+    "DBC": "Broad commodities",
+    "GLD": "Gold"
+  },
+  "method": {
+    "RS": "12-week relative log return",
+    "RS-Momentum": "4-week change in RS",
+    "normalization": "rolling 52-week z-score, clipped +/-4, centered 100, scale 5"
+  }
+}
