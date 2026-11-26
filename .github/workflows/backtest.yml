@@ -9,6 +9,7 @@ on:
       - 'mean_reversion.py'
       - 'tests/**'
       - 'config.json'
+      - 'rrg_sniper.py'
       - 'data/instrument_universe.json'
       - 'requirements.txt'
       - '.github/workflows/backtest.yml'
@@ -34,6 +35,8 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Historical backtest
         run: python backtest.py
+      - name: Generate RRG rotation data
+        run: python rrg_sniper.py
       - name: Create Excel workbook
         run: python export_excel.py
       - name: Commit reports for dashboard
