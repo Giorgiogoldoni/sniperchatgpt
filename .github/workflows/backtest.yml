@@ -35,8 +35,6 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Historical backtest
         run: python backtest.py
-      - name: Generate RRG rotation data
-        run: python rrg_sniper.py
       - name: Create Excel workbook
         run: python export_excel.py
       - name: Commit reports for dashboard
