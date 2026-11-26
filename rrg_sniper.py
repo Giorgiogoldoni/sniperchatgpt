@@ -11,7 +11,11 @@ BENCH={"SPY":"S&P 500","QQQ":"Nasdaq 100","DBC":"Broad commodities","GLD":"Gold"
 def weekly(series):
     s=series.dropna().copy()
     s.index=pd.to_datetime(s.index)
-    return s.resample("W-FRI").last().dropna()
+    w=s.resample("W-FRI").last().dropna()
+    # Do not label an incomplete week as a completed Friday bar.
+    if len(w) and w.index[-1].normalize()>s.index.max().normalize():
+        w=w.iloc[:-1]
+    return w
 def extract_close(raw,symbol):
     if raw is None or raw.empty:return None
     try:
