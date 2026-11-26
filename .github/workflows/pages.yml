@@ -26,6 +26,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Validate RRG JavaScript
+        run: |
+          python - <<'PY'
+          import re, pathlib
+          html=pathlib.Path('rrg-sniper.html').read_text(encoding='utf-8')
+          scripts=re.findall(r'<script>(.*?)</script>',html,re.S)
+          if not scripts: raise SystemExit('No inline script found')
+          pathlib.Path('/tmp/rrg-sniper.js').write_text('\\n'.join(scripts),encoding='utf-8')
+          PY
+          node --check /tmp/rrg-sniper.js
       - uses: actions/configure-pages@v5
         with:
           enablement: true
