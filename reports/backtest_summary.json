@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-26T10:24:54.007438+00:00",
+  "generated_utc": "2026-11-26T10:32:10.224702+00:00",
   "method": "Donchian20 breakout + Walking 2/3; entry next open; ATR14x2 stop; exit after 2 Walking-false closes next open; max 10 sessions at close; adjusted OHLC",
   "history_period": "2y",
   "costs_bps_round_trip": [
