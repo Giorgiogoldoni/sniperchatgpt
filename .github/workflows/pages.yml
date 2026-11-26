@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'index.html'
+      - 'rrg-sniper.html'
+      - 'rrg_sniper.py'
       - 'reports/**'
       - 'README.md'
       - '.github/workflows/pages.yml'
