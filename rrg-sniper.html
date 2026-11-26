@@ -18,15 +18,16 @@ main{max-width:1440px;margin:auto;padding:14px 12px 45px}.toolbar,.row{display:f
 <div class="toolbar"><button id="play">▶ Play</button><button id="reset">Ultima settimana</button><input id="timeline" type="range" min="0" max="0" value="0" style="flex:1;min-width:140px"><span id="dateLabel" class="small">—</span></div>
 <div class="grid" id="stats"></div><div class="status" id="stamp">Caricamento dati…</div><div class="plot"><canvas id="chart"></canvas></div>
 <div class="toolbar"><b>Radar rotazioni</b><span class="small">Ordine per accelerazione RS-Momentum e variazione RS-Ratio. Click ticker per evidenziarlo.</span></div>
-<div class="tablewrap"><table id="radar"><thead><tr><th>Ticker</th><th>Leva</th><th>Quadrante</th><th>RS-Ratio</th><th>RS-Momentum</th><th>Δ RS</th><th>Δ Mom</th><th>Direzione</th></tr></thead><tbody></tbody></table></div>
-<div class="status">RRG approssimato: RS = rendimento relativo logaritmico 12 settimane; momentum = variazione 4 settimane; normalizzazione z-score rolling 52 settimane. Non replica il calcolo proprietario JdK. Auto usa SPY per ETP azionari e DBC per materie prime. I prodotti leveraged/inverse hanno reset giornaliero e rischio path-dependency.</div>
+<div class="tablewrap"><table id="radar"><thead><tr><th>Ticker</th><th>Leva</th><th>Benchmark</th><th>Quadrante</th><th>RS-Ratio</th><th>RS-Momentum</th><th>Δ RS</th><th>Δ Mom</th><th>Direzione</th></tr></thead><tbody></tbody></table></div>
+<div class="status">RRG approssimato: RS = rendimento relativo logaritmico 12 settimane; momentum = variazione 4 settimane; normalizzazione z-score rolling 52 settimane. Non replica il calcolo proprietario JdK. Auto confronta ETP azionari con SPY e materie prime con DBC, anche nella vista Tutto; benchmark mostrato in tabella. I prodotti leveraged/inverse hanno reset giornaliero e rischio path-dependency.</div>
 </main>
 <script>
 var DATA=null,pop="3x",benchmark="auto",trail=12,direction=3,frame=0,chosen=new Set(),onlySelected=false,selected=null,timer=null,dates=[];
 var $=id=>document.getElementById(id);
 function esc(s){return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function currentBench(){return benchmark==="auto"?(pop==="commodity"?"DBC":"SPY"):benchmark}
-function candidates(){if(!DATA)return [];return Object.values(DATA.instruments).filter(x=>{if(pop==="3x")return !x.commodity&&x.leverage===3;if(pop==="2x")return !x.commodity&&x.leverage===2;if(pop==="commodity")return x.commodity;if(pop==="short")return x.short;return true})}
+function currentBench(){return benchmark==="auto"?(pop==="all"?"SPY + DBC":pop==="commodity"?"DBC":"SPY"):benchmark}
+function benchFor(x){return benchmark==="auto"?(x.commodity?"DBC":"SPY"):benchmark}
+function candidates(){if(!DATA)return [];return Object.values(DATA.instruments).filter(x=>{if(pop==="3x")return !x.commodity&&x.leverage===3;if(pop==="2x")return !x.commodity&&x.leverage===2;if(pop==="commodity")return x.commodity;if(pop==="short")return x.short&&!x.commodity;if(pop==="other")return !x.commodity&&x.leverage>3;return true})}
 function filtered(){let q=$("search").value.toLowerCase();return candidates().filter(x=>(x.ticker+" "+x.name).toLowerCase().includes(q))}
 function active(){let a=filtered();return onlySelected?a.filter(x=>chosen.has(x.ticker)):a}
 function draw(){
@@ -35,12 +36,12 @@ function draw(){
  $("checklist").innerHTML=cand.map(x=>'<label><input type="checkbox" data-t="'+esc(x.ticker)+'" '+(chosen.has(x.ticker)?"checked":"")+'>'+esc(x.ticker)+'</label>').join("");
  $("checklist").querySelectorAll("input").forEach(el=>el.onchange=()=>{el.checked?chosen.add(el.dataset.t):chosen.delete(el.dataset.t);draw()});
  $("dateLabel").textContent=maxD||"—";
- let series=data.map(x=>({x:x,pts:(x.rrg[b]||[]).filter(p=>p.date<=maxD)})).filter(s=>s.pts.length);
+ let series=data.map(x=>({x:x,b:benchFor(x),pts:(x.rrg[benchFor(x)]||[]).filter(p=>p.date<=maxD)})).filter(s=>s.pts.length);
  let last=series.map(s=>s.pts[s.pts.length-1]),quad=p=>p.x>=100?(p.y>=100?"Leading":"Weakening"):(p.y>=100?"Improving":"Lagging"),counts={Leading:0,Improving:0,Weakening:0,Lagging:0};last.forEach(p=>counts[quad(p)]++);
  $("stats").innerHTML='<div class="card"><div class="k">Benchmark</div><div class="v">'+esc(b)+'</div><div class="small">'+esc(DATA.benchmarks[b]||"")+'</div></div><div class="card"><div class="k">Strumenti tracciati</div><div class="v">'+series.length+'</div></div>'+Object.keys(counts).map(k=>'<div class="card"><div class="k">'+k+'</div><div class="v '+k.toLowerCase()+'">'+counts[k]+'</div></div>').join("");
  drawChart(series);
  let rows=series.map(s=>{let p=s.pts[s.pts.length-1],prev=s.pts[Math.max(0,s.pts.length-1-direction)],q=quad(p);return {s,p,prev,q,dx:prev?p.x-prev.x:0,dy:prev?p.y-prev.y:0}}).sort((a,b)=>(b.dy+b.dx*.25)-(a.dy+a.dx*.25));
- $("radar").querySelector("tbody").innerHTML=rows.map(r=>'<tr><td class="ticker" data-t="'+esc(r.s.x.ticker)+'">'+esc(r.s.x.ticker)+'</td><td>'+r.s.x.leverage+'×</td><td class="'+r.q.toLowerCase()+'">'+r.q+'</td><td>'+r.p.x.toFixed(2)+'</td><td>'+r.p.y.toFixed(2)+'</td><td class="'+(r.dx>=0?"good":"bad")+'">'+r.dx.toFixed(2)+'</td><td class="'+(r.dy>=0?"good":"bad")+'">'+r.dy.toFixed(2)+'</td><td>'+((r.dx>=0&&r.dy>=0)?"↗":(r.dx<0&&r.dy<0)?"↙":(r.dx>=0?"→":"←"))+'</td></tr>').join("")||'<tr><td colspan="8">Nessun dato con questo filtro.</td></tr>';
+ $("radar").querySelector("tbody").innerHTML=rows.map(r=>'<tr><td class="ticker" data-t="'+esc(r.s.x.ticker)+'">'+esc(r.s.x.ticker)+'</td><td>'+r.s.x.leverage+'×</td><td>'+r.s.b+'</td><td class="'+r.q.toLowerCase()+'">'+r.q+'</td><td>'+r.p.x.toFixed(2)+'</td><td>'+r.p.y.toFixed(2)+'</td><td class="'+(r.dx>=0?"good":"bad")+'">'+r.dx.toFixed(2)+'</td><td class="'+(r.dy>=0?"good":"bad")+'">'+r.dy.toFixed(2)+'</td><td>'+((r.dx>=0&&r.dy>=0)?"↗":(r.dx<0&&r.dy<0)?"↙":(r.dx>=0?"→":"←"))+'</td></tr>').join("")||'<tr><td colspan="8">Nessun dato con questo filtro.</td></tr>';
  $("radar").querySelectorAll(".ticker").forEach(el=>el.onclick=()=>{selected=el.dataset.t;draw()});
 }
 function drawChart(series){
