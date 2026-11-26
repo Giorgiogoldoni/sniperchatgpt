@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SNIPER · RRG Rotation Radar</title>
+<style>
+:root{--bg:#f4f6f9;--panel:#fff;--line:#d5dde7;--txt:#182230;--muted:#667589;--blue:#1769aa;--green:#13865c;--red:#c43e50;--amber:#a96a00}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{background:#fff;border-bottom:1px solid var(--line);padding:17px max(12px,calc((100% - 1440px)/2))}h1{font-size:23px;margin:0}header p{margin:4px 0;color:var(--muted)}
+main{max-width:1440px;margin:auto;padding:14px 12px 45px}.toolbar,.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.toolbar{margin:12px 0}
+.box,.card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px}.toolbar select,.toolbar input,button{font:inherit;border:1px solid var(--line);border-radius:8px;background:#fff;padding:8px 10px;color:var(--txt)}button{cursor:pointer}button:hover{border-color:var(--blue)}.tab.active{background:#1769aa;color:white;border-color:#1769aa}.small{font-size:12px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:9px;margin:10px 0}.k{font-size:11px;color:var(--muted);text-transform:uppercase}.v{font-size:22px;font-weight:750}.plot{height:540px;background:white;border:1px solid var(--line);border-radius:10px;overflow:hidden}.plot canvas{width:100%;height:100%;display:block;touch-action:pan-y}.checks{max-height:160px;overflow:auto;display:flex;flex-wrap:wrap;gap:4px 10px;border-top:1px solid var(--line);padding-top:8px;margin-top:8px}.checks label{font-size:12px;display:inline-flex;align-items:center;gap:4px}.checks input{min-width:auto;margin:0}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:9px;margin-top:8px}table{border-collapse:collapse;width:100%;min-width:800px;background:white}th,td{font-size:12px;padding:8px 9px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}th{position:sticky;top:0;background:#edf1f6;z-index:1}.ticker{color:var(--blue);font-weight:750;cursor:pointer}.good{color:var(--green)}.bad{color:var(--red)}.improving{color:#2672c9}.leading{color:#13865c}.weakening{color:#a96a00}.lagging{color:#c43e50}.status{margin:7px 0;color:var(--muted);font-size:12px}a{color:var(--blue)}
+@media(max-width:700px){h1{font-size:19px}.plot{height:440px}.grid .v{font-size:19px}.box{padding:9px}}
+</style></head><body>
+<header><h1>SNIPER <span style="color:var(--blue)">/ RRG ROTATION RADAR</span></h1><p>Leva 2× / 3× · Materie prime · Short/inversi · rotazione relativa e accelerazione</p><div class="row"><span class="small">PAPER ONLY · Radar informativo · non genera ordini</span><a href="index.html">← Dashboard Sniper</a></div></header>
+<main>
+<div class="toolbar" id="populations"><button class="tab active" data-pop="3x">LEVA 3×</button><button class="tab" data-pop="2x">LEVA 2×</button><button class="tab" data-pop="commodity">MATERIE PRIME</button><button class="tab" data-pop="short">SHORT / INVERSE</button><button class="tab" data-pop="all">TUTTO L'UNIVERS</button>
+<label class="small">Benchmark <select id="bench"><option value="auto">Automatico per popolazione</option><option value="SPY">SPY · S&amp;P 500</option><option value="QQQ">QQQ · Nasdaq 100</option><option value="DBC">DBC · Commodity broad</option><option value="GLD">GLD · Oro</option></select></label>
+<label class="small">Coda <input id="trail" type="range" min="4" max="52" value="12" style="min-width:120px"><span id="trailN">12</span> sett.</label><label class="small">Direzione <select id="direction"><option>2</option><option selected>3</option><option>4</option><option>6</option><option>8</option></select> sett.</label></div>
+<div class="box"><div class="row"><b>Selezione strumenti</b><span id="selectionCount" class="small"></span><button id="selectAll">Seleziona tutti (filtrati)</button><button id="clear">Deseleziona</button><label class="small"><input type="checkbox" id="onlySelected"> Solo selezionati</label><input id="search" placeholder="Filtra ticker/nome" style="flex:1;min-width:140px"></div><div class="checks" id="checklist"></div></div>
+<div class="toolbar"><button id="play">▶ Play</button><button id="reset">Ultima settimana</button><input id="timeline" type="range" min="0" max="0" value="0" style="flex:1;min-width:140px"><span id="dateLabel" class="small">—</span></div>
+<div class="grid" id="stats"></div><div class="status" id="stamp">Caricamento dati…</div><div class="plot"><canvas id="chart"></canvas></div>
+<div class="toolbar"><b>Radar rotazioni</b><span class="small">Ordine per accelerazione RS-Momentum e variazione RS-Ratio. Click ticker per evidenziarlo.</span></div>
+<div class="tablewrap"><table id="radar"><thead><tr><th>Ticker</th><th>Leva</th><th>Quadrante</th><th>RS-Ratio</th><th>RS-Momentum</th><th>Δ RS</th><th>Δ Mom</th><th>Direzione</th></tr></thead><tbody></tbody></table></div>
+<div class="status">RRG approssimato: RS = rendimento relativo logaritmico 12 settimane; momentum = variazione 4 settimane; normalizzazione z-score rolling 52 settimane. Non replica il calcolo proprietario JdK. Auto usa SPY per ETP azionari e DBC per materie prime. I prodotti leveraged/inverse hanno reset giornaliero e rischio path-dependency.</div>
+</main>
+<script>
+var DATA=null,pop="3x",benchmark="auto",trail=12,direction=3,frame=0,chosen=new Set(),onlySelected=false,selected=null,timer=null,dates=[];
+var $=id=>document.getElementById(id);
+function esc(s){return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function currentBench(){return benchmark==="auto"?(pop==="commodity"?"DBC":"SPY"):benchmark}
+function candidates(){if(!DATA)return [];return Object.values(DATA.instruments).filter(x=>{if(pop==="3x")return !x.commodity&&x.leverage===3;if(pop==="2x")return !x.commodity&&x.leverage===2;if(pop==="commodity")return x.commodity;if(pop==="short")return x.short;return true})}
+function filtered(){let q=$("search").value.toLowerCase();return candidates().filter(x=>(x.ticker+" "+x.name).toLowerCase().includes(q))}
+function active(){let a=filtered();return onlySelected?a.filter(x=>chosen.has(x.ticker)):a}
+function draw(){
+ if(!DATA)return;let cand=filtered(),data=active(),b=currentBench(),maxD=dates[frame]||dates[dates.length-1];
+ $("selectionCount").textContent=chosen.size+" scelti · "+cand.length+" nella popolazione";
+ $("checklist").innerHTML=cand.map(x=>'<label><input type="checkbox" data-t="'+esc(x.ticker)+'" '+(chosen.has(x.ticker)?"checked":"")+'>'+esc(x.ticker)+'</label>').join("");
+ $("checklist").querySelectorAll("input").forEach(el=>el.onchange=()=>{el.checked?chosen.add(el.dataset.t):chosen.delete(el.dataset.t);draw()});
+ $("dateLabel").textContent=maxD||"—";
+ let series=data.map(x=>({x:x,pts:(x.rrg[b]||[]).filter(p=>p.date<=maxD)})).filter(s=>s.pts.length);
+ let last=series.map(s=>s.pts[s.pts.length-1]),quad=p=>p.x>=100?(p.y>=100?"Leading":"Weakening"):(p.y>=100?"Improving":"Lagging"),counts={Leading:0,Improving:0,Weakening:0,Lagging:0};last.forEach(p=>counts[quad(p)]++);
+ $("stats").innerHTML='<div class="card"><div class="k">Benchmark</div><div class="v">'+esc(b)+'</div><div class="small">'+esc(DATA.benchmarks[b]||"")+'</div></div><div class="card"><div class="k">Strumenti tracciati</div><div class="v">'+series.length+'</div></div>'+Object.keys(counts).map(k=>'<div class="card"><div class="k">'+k+'</div><div class="v '+k.toLowerCase()+'">'+counts[k]+'</div></div>').join("");
+ drawChart(series);
+ let rows=series.map(s=>{let p=s.pts[s.pts.length-1],prev=s.pts[Math.max(0,s.pts.length-1-direction)],q=quad(p);return {s,p,prev,q,dx:prev?p.x-prev.x:0,dy:prev?p.y-prev.y:0}}).sort((a,b)=>(b.dy+b.dx*.25)-(a.dy+a.dx*.25));
+ $("radar").querySelector("tbody").innerHTML=rows.map(r=>'<tr><td class="ticker" data-t="'+esc(r.s.x.ticker)+'">'+esc(r.s.x.ticker)+'</td><td>'+r.s.x.leverage+'×</td><td class="'+r.q.toLowerCase()+'">'+r.q+'</td><td>'+r.p.x.toFixed(2)+'</td><td>'+r.p.y.toFixed(2)+'</td><td class="'+(r.dx>=0?"good":"bad")+'">'+r.dx.toFixed(2)+'</td><td class="'+(r.dy>=0?"good":"bad")+'">'+r.dy.toFixed(2)+'</td><td>'+((r.dx>=0&&r.dy>=0)?"↗":(r.dx<0&&r.dy<0)?"↙":(r.dx>=0?"→":"←"))+'</td></tr>').join("")||'<tr><td colspan="8">Nessun dato con questo filtro.</td></tr>';
+ $("radar").querySelectorAll(".ticker").forEach(el=>el.onclick=()=>{selected=el.dataset.t;draw()});
+}
+function drawChart(series){
+ let c=$("chart"),ctx=c.getContext("2d"),w=c.clientWidth,h=c.clientHeight,dpr=window.devicePixelRatio||1;c.width=w*dpr;c.height=h*dpr;ctx.scale(dpr,dpr);ctx.clearRect(0,0,w,h);
+ let L=48,R=18,T=24,B=40,pw=w-L-R,ph=h-T-B,xMin=80,xMax=120,yMin=80,yMax=120,X=v=>L+(v-xMin)/(xMax-xMin)*pw,Y=v=>T+(yMax-v)/(yMax-yMin)*ph;
+ ctx.fillStyle="#eff6ff";ctx.fillRect(L,T,pw/2,ph/2);ctx.fillStyle="#f1f8f2";ctx.fillRect(X(100),T,pw/2,ph/2);ctx.fillStyle="#fff0f2";ctx.fillRect(L,Y(100),pw/2,ph/2);ctx.fillStyle="#fff7e6";ctx.fillRect(X(100),Y(100),pw/2,ph/2);
+ ctx.strokeStyle="#cbd5df";ctx.beginPath();ctx.moveTo(X(100),T);ctx.lineTo(X(100),T+ph);ctx.moveTo(L,Y(100));ctx.lineTo(L+pw,Y(100));ctx.stroke();
+ ctx.fillStyle="#526175";ctx.font="12px system-ui";ctx.fillText("IMPROVING",L+8,T+18);ctx.fillText("LEADING",L+pw-70,T+18);ctx.fillText("LAGGING",L+8,T+ph-8);ctx.fillText("WEAKENING",L+pw-90,T+ph-8);
+ ctx.fillStyle="#6a788a";ctx.font="11px system-ui";for(let v=80;v<=120;v+=10){ctx.fillText(v,X(v)-9,T+ph+18);ctx.fillText(v,L-28,Y(v)+4)}ctx.fillText("Relative Strength →",L+pw/2-50,h-7);ctx.save();ctx.translate(14,T+ph/2);ctx.rotate(-Math.PI/2);ctx.fillText("Relative Momentum →",0,0);ctx.restore();
+ series.forEach(s=>{let pts=s.pts.slice(-trail);if(!pts.length)return;ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(X(p.x),Y(p.y)):ctx.moveTo(X(p.x),Y(p.y)));ctx.strokeStyle=s.x.ticker===selected?"#111827":"rgba(32,105,170,.45)";ctx.lineWidth=s.x.ticker===selected?3:1.5;ctx.stroke();let p=pts[pts.length-1];ctx.beginPath();ctx.arc(X(p.x),Y(p.y),s.x.ticker===selected?6:4,0,Math.PI*2);ctx.fillStyle=s.x.ticker===selected?"#111827":"#1769aa";ctx.fill();ctx.font="11px system-ui";ctx.fillStyle="#26384d";ctx.fillText(s.x.ticker,X(p.x)+6,Y(p.y)-5);
+ if(pts.length>direction){let a=pts[pts.length-1-direction],ang=Math.atan2(-(p.y-a.y),p.x-a.x);ctx.beginPath();ctx.moveTo(X(p.x),Y(p.y));ctx.lineTo(X(p.x)-8*Math.cos(ang-.5),Y(p.y)-8*Math.sin(ang-.5));ctx.lineTo(X(p.x)-8*Math.cos(ang+.5),Y(p.y)-8*Math.sin(ang+.5));ctx.closePath();ctx.fillStyle=s.x.ticker===selected?"#111827":"#1769aa";ctx.fill()}
+ });
+ c.onclick=e=>{let r=c.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top,near=null,dist=100;series.forEach(s=>{let p=s.pts[s.pts.length-1],d=Math.hypot(X(p.x)-mx,Y(p.y)-my);if(d<dist){dist=d;near=s.x.ticker}});if(dist<30){selected=near;draw()}};
+}
+function loadData(){fetch("reports/sniper_rrg.json?ts="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(d=>{DATA=d;dates=Array.from(new Set(Object.values(d.instruments).flatMap(x=>Object.values(x.rrg).flatMap(a=>a.map(p=>p.date))))).sort();frame=dates.length-1;$("timeline").max=Math.max(0,dates.length-1);$("timeline").value=frame;$("stamp").textContent="Dati aggiornati "+d.generated_utc+" · "+Object.keys(d.instruments).length+" strumenti · benchmark "+Object.keys(d.benchmarks).join(", ");draw()}).catch(e=>$("stamp").textContent="Dati RRG non disponibili: "+e.message+" (workflow backtest/RRG deve terminare).")}
+$("populations").querySelectorAll("[data-pop]").forEach(b=>b.onclick=()=>{pop=b.dataset.pop;$("populations").querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x===b));draw()});
+$("bench").onchange=e=>{benchmark=e.target.value;draw()};$("trail").oninput=e=>{trail=+e.target.value;$("trailN").textContent=trail;draw()};$("direction").onchange=e=>{direction=+e.target.value;draw()};$("search").oninput=draw;$("onlySelected").onchange=e=>{onlySelected=e.target.checked;draw()};
+$("selectAll").onclick=()=>filtered().forEach(x=>chosen.add(x.ticker))||draw();$("clear").onclick=()=>{chosen.clear();onlySelected=false;$("onlySelected").checked=false;draw()};
+$("timeline").oninput=e=>{frame=+e.target.value;draw()};$("reset").onclick=()=>{frame=dates.length-1;$("timeline").value=frame;draw()};
+$("play").onclick=()=>{if(timer){clearInterval(timer);timer=null;$("play").textContent="▶ Play";return}timer=setInterval(()=>{frame=(frame+1)%dates.length;$("timeline").value=frame;draw()},650);$("play").textContent="❚❚ Pause"};
+window.addEventListener("resize",()=>draw());loadData();
+</script></body></html>
