@@ -81,13 +81,23 @@ def main():
         cat=m.get("classification","");commodity=cat.startswith("MATERIE_PRIME")
         lev=float(m.get("leverage") or 1);short=bool(m.get("short")) or cat in ("LEVA_SHORT","MATERIE_PRIME_SHORT")
         inst[sym]={"ticker":m.get("ticker") or sym,"name":m.get("name") or sym,"category":cat,
-          "leverage":lev,"commodity":commodity,"short":short,"prices":prices[sym],"rrg":{}}
+          "leverage":lev,"commodity":commodity,"short":short,"rrg":{}}
         for bench,bs in bench_series.items():inst[sym]["rrg"][bench]=make_points(prices[sym],bs)
     payload={"generated_utc":pd.Timestamp.now(tz="UTC").isoformat(),"source":"Yahoo Finance adjusted weekly closes; RRG approximation, not proprietary JdK",
       "benchmarks":BENCH,"benchmark_prices":bench_series,"instruments":inst,
       "fetch_status":{"total":len(instruments),"ok":len(prices),"unavailable":len(instruments)-len(prices)},
       "method":{"RS":"12-week relative log return","RS-Momentum":"4-week change in RS","normalization":"rolling 52-week z-score, clipped +/-4, centered 100, scale 5"}}
     path=OUT/"sniper_rrg.json";path.write_text(json.dumps(payload,separators=(",",":"),ensure_ascii=False)+"\n",encoding="utf-8")
-    npoints=sum(len(x["rrg"].get("SPY",[])) for x in inst.values())
+    category_counts={}
+    benchmark_stats={}
+    for x in inst.values():
+        category_counts[x["category"]]=category_counts.get(x["category"],0)+1
+    for b in BENCH:
+        arr=[p for x in inst.values() for p in x["rrg"].get(b,[])]
+        benchmark_stats[b]={"instruments_with_points":sum(bool(x["rrg"].get(b)) for x in inst.values()),"points":len(arr),"latest":max((p["date"] for p in arr),default=None)}
+    summary={"generated_utc":payload["generated_utc"],"instruments":len(inst),"category_counts":category_counts,
+      "benchmark_stats":benchmark_stats,"fetch_status":payload["fetch_status"],"benchmark_labels":BENCH,"method":payload["method"]}
+    (OUT/"sniper_rrg_summary.json").write_text(json.dumps(summary,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
+    npoints=benchmark_stats.get("SPY",{}).get("points",0)
     print(f"Sniper RRG: {len(inst)} instruments; {npoints} weekly points vs SPY; benchmarks={list(bench_series)}; report={path.stat().st_size} bytes")
 if __name__=="__main__":main()
