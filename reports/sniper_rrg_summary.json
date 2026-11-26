@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-26T10:29:56.415835+00:00",
+  "generated_utc": "2026-11-26T10:31:51.490893+00:00",
   "instruments": 284,
   "category_counts": {
     "LEVA_SHORT": 76,
@@ -11,23 +11,23 @@
   "benchmark_stats": {
     "SPY": {
       "instruments_with_points": 284,
-      "points": 21363,
-      "latest": "2026-11-27"
+      "points": 21079,
+      "latest": "2026-11-20"
     },
     "QQQ": {
       "instruments_with_points": 284,
-      "points": 21363,
-      "latest": "2026-11-27"
+      "points": 21079,
+      "latest": "2026-11-20"
     },
     "DBC": {
       "instruments_with_points": 284,
-      "points": 21363,
-      "latest": "2026-11-27"
+      "points": 21079,
+      "latest": "2026-11-20"
     },
     "GLD": {
       "instruments_with_points": 284,
-      "points": 21363,
-      "latest": "2026-11-27"
+      "points": 21079,
+      "latest": "2026-11-20"
     }
   },
   "fetch_status": {
