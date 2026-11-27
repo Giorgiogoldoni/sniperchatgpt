@@ -8,7 +8,8 @@ on:
       - 'reports/market_data.json'
       - '.github/workflows/rrg.yml'
   schedule:
-    - cron: '30 22 * * 1-5'
+    - cron: '0 10 * * *'
+    - cron: '0 22 * * *'
   workflow_dispatch:
 concurrency:
   group: sniper-rrg-refresh
