@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_utc": "2026-11-25T05:44:24.233765+00:00",
-  "generated_rome": "2026-11-25T06:44:24.233779+01:00",
+  "generated_utc": "2026-11-27T16:08:56.352580+00:00",
+  "generated_rome": "2026-11-27T17:08:56.352589+01:00",
   "paper_only": true,
   "interpretation": "Il radar mostra il movimento del riferimento USA; non modifica né genera segnali TF/MR.",
   "quotes_count": 79,
@@ -26,9 +26,9 @@
       "quotes": [
         {
           "ticker": "FLGB",
-          "date": "2026-11-24",
-          "close": 35.369999,
-          "change_pct": 0.683,
+          "date": "2026-11-27",
+          "close": 36.040001,
+          "change_pct": 1.264,
           "status": "OK"
         }
       ]
@@ -43,9 +43,9 @@
       "quotes": [
         {
           "ticker": "PA=F",
-          "date": "2026-11-25",
-          "close": 847.5,
-          "change_pct": -1.224,
+          "date": "2026-11-27",
+          "close": 890.5,
+          "change_pct": 7.147,
           "status": "OK"
         }
       ]
@@ -60,16 +60,16 @@
       "quotes": [
         {
           "ticker": "SPY",
-          "date": "2026-11-24",
-          "close": 718.780029,
-          "change_pct": -0.486,
+          "date": "2026-11-27",
+          "close": 725.130005,
+          "change_pct": 1.176,
           "status": "OK"
         },
         {
           "ticker": "ES=F",
-          "date": "2026-11-25",
-          "close": 7155.75,
-          "change_pct": -0.856,
+          "date": "2026-11-27",
+          "close": 7282.5,
+          "change_pct": 1.206,
           "status": "OK"
         }
       ]
@@ -84,9 +84,9 @@
       "quotes": [
         {
           "ticker": "CARZ",
-          "date": "2026-11-24",
-          "close": 83.809998,
-          "change_pct": -3.278,
+          "date": "2026-11-25",
+          "close": 83.290001,
+          "change_pct": -0.62,
           "status": "OK"
         }
       ]
@@ -101,9 +101,9 @@
       "quotes": [
         {
           "ticker": "GC=F",
-          "date": "2026-11-25",
-          "close": 3537.0,
-          "change_pct": -0.699,
+          "date": "2026-11-27",
+          "close": 3655.600098,
+          "change_pct": 3.388,
           "status": "OK"
         }
       ]
@@ -118,9 +118,9 @@
       "quotes": [
         {
           "ticker": "FLGB",
-          "date": "2026-11-24",
-          "close": 35.369999,
-          "change_pct": 0.683,
+          "date": "2026-11-27",
+          "close": 36.040001,
+          "change_pct": 1.264,
           "status": "OK"
         }
       ]
@@ -135,9 +135,9 @@
       "quotes": [
         {
           "ticker": "IXC",
-          "date": "2026-11-24",
-          "close": 55.099998,
-          "change_pct": 0.805,
+          "date": "2026-11-27",
+          "close": 56.34,
+          "change_pct": 1.404,
           "status": "OK"
         }
       ]
@@ -152,9 +152,9 @@
       "quotes": [
         {
           "ticker": "PA=F",
-          "date": "2026-11-25",
-          "close": 847.5,
-          "change_pct": -1.224,
+          "date": "2026-11-27",
+          "close": 890.5,
+          "change_pct": 7.147,
           "status": "OK"
         }
       ]
@@ -169,16 +169,16 @@
       "quotes": [
         {
           "ticker": "QQQ",
-          "date": "2026-11-24",
-          "close": 638.099976,
-          "change_pct": -1.986,
+          "date": "2026-11-27",
+          "close": 645.049988,
+          "change_pct": 1.754,
           "status": "OK"
         },
         {
           "ticker": "NQ=F",
-          "date": "2026-11-25",
-          "close": 25893.5,
-          "change_pct": -1.455,
+          "date": "2026-11-27",
+          "close": 26564.25,
+          "change_pct": 1.778,
           "status": "OK"
         }
       ]
@@ -193,9 +193,9 @@
       "quotes": [
         {
           "ticker": "PEJ",
-          "date": "2026-11-24",
-          "close": 67.190002,
-          "change_pct": 0.75,
+          "date": "2026-11-27",
+          "close": 68.089996,
+          "change_pct": 0.919,
           "status": "OK"
         }
       ]
@@ -210,9 +210,9 @@
       "quotes": [
         {
           "ticker": "PEJ",
-          "date": "2026-11-24",
-          "close": 67.190002,
-          "change_pct": 0.75,
+          "date": "2026-11-27",
+          "close": 68.089996,
+          "change_pct": 0.919,
           "status": "OK"
         }
       ]
@@ -227,9 +227,9 @@
       "quotes": [
         {
           "ticker": "EWU",
-          "date": "2026-11-24",
-          "close": 45.869999,
-          "change_pct": 0.769,
+          "date": "2026-11-27",
+          "close": 46.779999,
+          "change_pct": 1.431,
           "status": "OK"
         }
       ]
@@ -244,9 +244,9 @@
       "quotes": [
         {
           "ticker": "EWU",
-          "date": "2026-11-24",
-          "close": 45.869999,
-          "change_pct": 0.769,
+          "date": "2026-11-27",
+          "close": 46.779999,
+          "change_pct": 1.431,
           "status": "OK"
         }
       ]
@@ -261,9 +261,9 @@
       "quotes": [
         {
           "ticker": "AAPL",
-          "date": "2026-11-24",
-          "close": 354.070007,
-          "change_pct": 1.429,
+          "date": "2026-11-27",
+          "close": 358.915009,
+          "change_pct": 0.938,
           "status": "OK"
         }
       ]
@@ -278,9 +278,9 @@
       "quotes": [
         {
           "ticker": "AMZN",
-          "date": "2026-11-24",
-          "close": 252.289993,
-          "change_pct": -1.214,
+          "date": "2026-11-27",
+          "close": 254.110001,
+          "change_pct": 3.96,
           "status": "OK"
         }
       ]
@@ -295,9 +295,9 @@
       "quotes": [
         {
           "ticker": "EUFN",
-          "date": "2026-11-24",
-          "close": 37.52,
-          "change_pct": 0.214,
+          "date": "2026-11-27",
+          "close": 37.875,
+          "change_pct": 1.46,
           "status": "OK"
         }
       ]
@@ -312,9 +312,9 @@
       "quotes": [
         {
           "ticker": "CL=F",
-          "date": "2026-11-25",
-          "close": 80.599998,
-          "change_pct": -1.767,
+          "date": "2026-11-27",
+          "close": 83.459999,
+          "change_pct": -0.263,
           "status": "OK"
         }
       ]
@@ -329,9 +329,9 @@
       "quotes": [
         {
           "ticker": "CL=F",
-          "date": "2026-11-25",
-          "close": 80.599998,
-          "change_pct": -1.767,
+          "date": "2026-11-27",
+          "close": 83.459999,
+          "change_pct": -0.263,
           "status": "OK"
         }
       ]
@@ -373,9 +373,9 @@
       "quotes": [
         {
           "ticker": "KC=F",
-          "date": "2026-11-24",
-          "close": 268.549988,
-          "change_pct": -2.114,
+          "date": "2026-11-27",
+          "close": 276.299988,
+          "change_pct": 0.236,
           "status": "OK"
         }
       ]
@@ -390,9 +390,9 @@
       "quotes": [
         {
           "ticker": "COIN",
-          "date": "2026-11-24",
-          "close": 102.349998,
-          "change_pct": -5.911,
+          "date": "2026-11-27",
+          "close": 107.82,
+          "change_pct": 3.953,
           "status": "OK"
         }
       ]
@@ -407,9 +407,9 @@
       "quotes": [
         {
           "ticker": "EWG",
-          "date": "2026-11-24",
-          "close": 40.07,
-          "change_pct": -0.05,
+          "date": "2026-11-27",
+          "close": 40.435001,
+          "change_pct": 0.886,
           "status": "OK"
         }
       ]
@@ -424,9 +424,9 @@
       "quotes": [
         {
           "ticker": "EWG",
-          "date": "2026-11-24",
-          "close": 40.07,
-          "change_pct": -0.05,
+          "date": "2026-11-27",
+          "close": 40.435001,
+          "change_pct": 0.886,
           "status": "OK"
         }
       ]
@@ -441,9 +441,9 @@
       "quotes": [
         {
           "ticker": "EWG",
-          "date": "2026-11-24",
-          "close": 40.07,
-          "change_pct": -0.05,
+          "date": "2026-11-27",
+          "close": 40.435001,
+          "change_pct": 0.886,
           "status": "OK"
         }
       ]
@@ -458,9 +458,9 @@
       "quotes": [
         {
           "ticker": "ITA",
-          "date": "2026-11-24",
-          "close": 68.120003,
-          "change_pct": -0.526,
+          "date": "2026-11-27",
+          "close": 69.739998,
+          "change_pct": 1.411,
           "status": "OK"
         }
       ]
@@ -475,9 +475,9 @@
       "quotes": [
         {
           "ticker": "ITA",
-          "date": "2026-11-24",
-          "close": 68.120003,
-          "change_pct": -0.526,
+          "date": "2026-11-27",
+          "close": 69.739998,
+          "change_pct": 1.411,
           "status": "OK"
         }
       ]
@@ -492,9 +492,9 @@
       "quotes": [
         {
           "ticker": "EEM",
-          "date": "2026-11-24",
-          "close": 56.689999,
-          "change_pct": -1.971,
+          "date": "2026-11-27",
+          "close": 57.805,
+          "change_pct": 2.491,
           "status": "OK"
         }
       ]
@@ -509,9 +509,9 @@
       "quotes": [
         {
           "ticker": "EEM",
-          "date": "2026-11-24",
-          "close": 56.689999,
-          "change_pct": -1.971,
+          "date": "2026-11-27",
+          "close": 57.805,
+          "change_pct": 2.491,
           "status": "OK"
         }
       ]
@@ -526,9 +526,9 @@
       "quotes": [
         {
           "ticker": "FEZ",
-          "date": "2026-11-24",
-          "close": 63.09,
-          "change_pct": 0.0,
+          "date": "2026-11-27",
+          "close": 63.48,
+          "change_pct": 1.099,
           "status": "OK"
         }
       ]
@@ -543,9 +543,9 @@
       "quotes": [
         {
           "ticker": "FEZ",
-          "date": "2026-11-24",
-          "close": 63.09,
-          "change_pct": 0.0,
+          "date": "2026-11-27",
+          "close": 63.48,
+          "change_pct": 1.099,
           "status": "OK"
         }
       ]
@@ -560,9 +560,9 @@
       "quotes": [
         {
           "ticker": "META",
-          "date": "2026-11-24",
-          "close": 589.820007,
-          "change_pct": -1.302,
+          "date": "2026-11-27",
+          "close": 632.325012,
+          "change_pct": 3.679,
           "status": "OK"
         }
       ]
@@ -595,9 +595,9 @@
       "quotes": [
         {
           "ticker": "GC=F",
-          "date": "2026-11-25",
-          "close": 3537.0,
-          "change_pct": -0.699,
+          "date": "2026-11-27",
+          "close": 3655.600098,
+          "change_pct": 3.388,
           "status": "OK"
         }
       ]
@@ -612,9 +612,9 @@
       "quotes": [
         {
           "ticker": "GOOGL",
-          "date": "2026-11-24",
-          "close": 279.049988,
-          "change_pct": -1.081,
+          "date": "2026-11-27",
+          "close": 272.940002,
+          "change_pct": -0.059,
           "status": "OK"
         }
       ]
@@ -629,9 +629,9 @@
       "quotes": [
         {
           "ticker": "GC=F",
-          "date": "2026-11-25",
-          "close": 3537.0,
-          "change_pct": -0.699,
+          "date": "2026-11-27",
+          "close": 3655.600098,
+          "change_pct": 3.388,
           "status": "OK"
         }
       ]
@@ -646,9 +646,9 @@
       "quotes": [
         {
           "ticker": "HG=F",
-          "date": "2026-11-25",
-          "close": 5.4255,
-          "change_pct": 1.175,
+          "date": "2026-11-27",
+          "close": 5.606,
+          "change_pct": 5.129,
           "status": "OK"
         }
       ]
@@ -663,9 +663,9 @@
       "quotes": [
         {
           "ticker": "HG=F",
-          "date": "2026-11-25",
-          "close": 5.4255,
-          "change_pct": 1.175,
+          "date": "2026-11-27",
+          "close": 5.606,
+          "change_pct": 5.129,
           "status": "OK"
         }
       ]
@@ -680,9 +680,9 @@
       "quotes": [
         {
           "ticker": "EWI",
-          "date": "2026-11-24",
-          "close": 54.830002,
-          "change_pct": -0.4,
+          "date": "2026-11-27",
+          "close": 55.665001,
+          "change_pct": 2.063,
           "status": "OK"
         }
       ]
@@ -697,9 +697,9 @@
       "quotes": [
         {
           "ticker": "EWI",
-          "date": "2026-11-24",
-          "close": 54.830002,
-          "change_pct": -0.4,
+          "date": "2026-11-27",
+          "close": 55.665001,
+          "change_pct": 2.063,
           "status": "OK"
         }
       ]
@@ -714,9 +714,9 @@
       "quotes": [
         {
           "ticker": "BABA",
-          "date": "2026-11-24",
-          "close": 84.860001,
-          "change_pct": -1.371,
+          "date": "2026-11-27",
+          "close": 90.220001,
+          "change_pct": 4.591,
           "status": "OK"
         }
       ]
@@ -731,9 +731,9 @@
       "quotes": [
         {
           "ticker": "AMD",
-          "date": "2026-11-24",
-          "close": 413.269989,
-          "change_pct": -8.863,
+          "date": "2026-11-27",
+          "close": 416.459991,
+          "change_pct": 2.569,
           "status": "OK"
         }
       ]
@@ -748,9 +748,9 @@
       "quotes": [
         {
           "ticker": "AMD",
-          "date": "2026-11-24",
-          "close": 413.269989,
-          "change_pct": -8.863,
+          "date": "2026-11-27",
+          "close": 416.459991,
+          "change_pct": 2.569,
           "status": "OK"
         }
       ]
@@ -765,9 +765,9 @@
       "quotes": [
         {
           "ticker": "AAPL",
-          "date": "2026-11-24",
-          "close": 354.070007,
-          "change_pct": 1.429,
+          "date": "2026-11-27",
+          "close": 358.915009,
+          "change_pct": 0.938,
           "status": "OK"
         }
       ]
@@ -782,9 +782,9 @@
       "quotes": [
         {
           "ticker": "BAC",
-          "date": "2026-11-24",
-          "close": 48.560001,
-          "change_pct": 0.872,
+          "date": "2026-11-27",
+          "close": 49.195,
+          "change_pct": 1.349,
           "status": "OK"
         }
       ]
@@ -799,9 +799,9 @@
       "quotes": [
         {
           "ticker": "COIN",
-          "date": "2026-11-24",
-          "close": 102.349998,
-          "change_pct": -5.911,
+          "date": "2026-11-27",
+          "close": 107.82,
+          "change_pct": 3.953,
           "status": "OK"
         }
       ]
@@ -825,9 +825,9 @@
       "quotes": [
         {
           "ticker": "META",
-          "date": "2026-11-24",
-          "close": 589.820007,
-          "change_pct": -1.302,
+          "date": "2026-11-27",
+          "close": 632.325012,
+          "change_pct": 3.679,
           "status": "OK"
         }
       ]
@@ -842,9 +842,9 @@
       "quotes": [
         {
           "ticker": "GOOGL",
-          "date": "2026-11-24",
-          "close": 279.049988,
-          "change_pct": -1.081,
+          "date": "2026-11-27",
+          "close": 272.940002,
+          "change_pct": -0.059,
           "status": "OK"
         }
       ]
@@ -859,9 +859,9 @@
       "quotes": [
         {
           "ticker": "JPM",
-          "date": "2026-11-24",
-          "close": 317.100006,
-          "change_pct": 0.139,
+          "date": "2026-11-27",
+          "close": 323.799988,
+          "change_pct": 2.229,
           "status": "OK"
         }
       ]
@@ -876,9 +876,9 @@
       "quotes": [
         {
           "ticker": "MSTR",
-          "date": "2026-11-24",
-          "close": 77.550003,
-          "change_pct": -8.116,
+          "date": "2026-11-27",
+          "close": 82.099998,
+          "change_pct": 2.676,
           "status": "OK"
         }
       ]
@@ -893,9 +893,9 @@
       "quotes": [
         {
           "ticker": "MRNA",
-          "date": "2026-11-24",
-          "close": 227.380005,
-          "change_pct": 7.214,
+          "date": "2026-11-27",
+          "close": 217.899994,
+          "change_pct": -1.331,
           "status": "OK"
         }
       ]
@@ -910,9 +910,9 @@
       "quotes": [
         {
           "ticker": "MSFT",
-          "date": "2026-11-24",
-          "close": 496.130005,
-          "change_pct": 0.737,
+          "date": "2026-11-27",
+          "close": 490.415009,
+          "change_pct": 0.099,
           "status": "OK"
         }
       ]
@@ -927,9 +927,9 @@
       "quotes": [
         {
           "ticker": "META",
-          "date": "2026-11-24",
-          "close": 589.820007,
-          "change_pct": -1.302,
+          "date": "2026-11-27",
+          "close": 632.325012,
+          "change_pct": 3.679,
           "status": "OK"
         }
       ]
@@ -944,9 +944,9 @@
       "quotes": [
         {
           "ticker": "NFLX",
-          "date": "2026-11-24",
-          "close": 58.869999,
-          "change_pct": 1.325,
+          "date": "2026-11-27",
+          "close": 60.855,
+          "change_pct": 2.432,
           "status": "OK"
         }
       ]
@@ -961,9 +961,9 @@
       "quotes": [
         {
           "ticker": "NVDA",
-          "date": "2026-11-24",
-          "close": 155.380005,
-          "change_pct": -5.859,
+          "date": "2026-11-27",
+          "close": 148.102005,
+          "change_pct": -0.802,
           "status": "OK"
         }
       ]
@@ -978,9 +978,9 @@
       "quotes": [
         {
           "ticker": "PYPL",
-          "date": "2026-11-24",
-          "close": 56.169998,
-          "change_pct": 1.684,
+          "date": "2026-11-27",
+          "close": 59.25,
+          "change_pct": 2.491,
           "status": "OK"
         }
       ]
@@ -995,9 +995,9 @@
       "quotes": [
         {
           "ticker": "XYZ",
-          "date": "2026-11-24",
-          "close": 74.150002,
-          "change_pct": 1.242,
+          "date": "2026-11-27",
+          "close": 78.474998,
+          "change_pct": 3.121,
           "status": "OK"
         }
       ]
@@ -1012,9 +1012,9 @@
       "quotes": [
         {
           "ticker": "TSLA",
-          "date": "2026-11-24",
-          "close": 384.679993,
-          "change_pct": -0.202,
+          "date": "2026-11-27",
+          "close": 398.674988,
+          "change_pct": 4.876,
           "status": "OK"
         }
       ]
@@ -1029,9 +1029,9 @@
       "quotes": [
         {
           "ticker": "UBER",
-          "date": "2026-11-24",
-          "close": 64.699997,
-          "change_pct": 0.983,
+          "date": "2026-11-27",
+          "close": 67.290001,
+          "change_pct": 1.417,
           "status": "OK"
         }
       ]
@@ -1046,9 +1046,9 @@
       "quotes": [
         {
           "ticker": "AMZN",
-          "date": "2026-11-24",
-          "close": 252.289993,
-          "change_pct": -1.214,
+          "date": "2026-11-27",
+          "close": 254.110001,
+          "change_pct": 3.96,
           "status": "OK"
         }
       ]
@@ -1063,9 +1063,9 @@
       "quotes": [
         {
           "ticker": "MAGS",
-          "date": "2026-11-24",
-          "close": 65.75,
-          "change_pct": -0.919,
+          "date": "2026-11-27",
+          "close": 66.379997,
+          "change_pct": 2.029,
           "status": "OK"
         }
       ]
@@ -1080,9 +1080,9 @@
       "quotes": [
         {
           "ticker": "MAGS",
-          "date": "2026-11-24",
-          "close": 65.75,
-          "change_pct": -0.919,
+          "date": "2026-11-27",
+          "close": 66.379997,
+          "change_pct": 2.029,
           "status": "OK"
         }
       ]
@@ -1097,9 +1097,9 @@
       "quotes": [
         {
           "ticker": "MSFT",
-          "date": "2026-11-24",
-          "close": 496.130005,
-          "change_pct": 0.737,
+          "date": "2026-11-27",
+          "close": 490.415009,
+          "change_pct": 0.099,
           "status": "OK"
         }
       ]
@@ -1114,9 +1114,9 @@
       "quotes": [
         {
           "ticker": "MSTR",
-          "date": "2026-11-24",
-          "close": 77.550003,
-          "change_pct": -8.116,
+          "date": "2026-11-27",
+          "close": 82.099998,
+          "change_pct": 2.676,
           "status": "OK"
         }
       ]
@@ -1131,9 +1131,9 @@
       "quotes": [
         {
           "ticker": "NFLX",
-          "date": "2026-11-24",
-          "close": 58.869999,
-          "change_pct": 1.325,
+          "date": "2026-11-27",
+          "close": 60.855,
+          "change_pct": 2.432,
           "status": "OK"
         }
       ]
@@ -1148,9 +1148,9 @@
       "quotes": [
         {
           "ticker": "NG=F",
-          "date": "2026-11-25",
-          "close": 3.682,
-          "change_pct": 10.803,
+          "date": "2026-11-27",
+          "close": 3.498,
+          "change_pct": 7.005,
           "status": "OK"
         }
       ]
@@ -1165,9 +1165,9 @@
       "quotes": [
         {
           "ticker": "NIO",
-          "date": "2026-11-24",
-          "close": 2.58,
-          "change_pct": 0.389,
+          "date": "2026-11-27",
+          "close": 2.835,
+          "change_pct": 5.39,
           "status": "OK"
         }
       ]
@@ -1182,9 +1182,9 @@
       "quotes": [
         {
           "ticker": "NVDA",
-          "date": "2026-11-24",
-          "close": 155.380005,
-          "change_pct": -5.859,
+          "date": "2026-11-27",
+          "close": 148.102005,
+          "change_pct": -0.802,
           "status": "OK"
         }
       ]
@@ -1199,9 +1199,9 @@
       "quotes": [
         {
           "ticker": "CL=F",
-          "date": "2026-11-25",
-          "close": 80.599998,
-          "change_pct": -1.767,
+          "date": "2026-11-27",
+          "close": 83.459999,
+          "change_pct": -0.263,
           "status": "OK"
         }
       ]
@@ -1216,9 +1216,9 @@
       "quotes": [
         {
           "ticker": "CL=F",
-          "date": "2026-11-25",
-          "close": 80.599998,
-          "change_pct": -1.767,
+          "date": "2026-11-27",
+          "close": 83.459999,
+          "change_pct": -0.263,
           "status": "OK"
         }
       ]
@@ -1233,9 +1233,9 @@
       "quotes": [
         {
           "ticker": "RACE",
-          "date": "2026-11-24",
-          "close": 397.820007,
-          "change_pct": -0.358,
+          "date": "2026-11-27",
+          "close": 411.809998,
+          "change_pct": 0.542,
           "status": "OK"
         }
       ]
@@ -1250,9 +1250,9 @@
       "quotes": [
         {
           "ticker": "BABA",
-          "date": "2026-11-24",
-          "close": 84.860001,
-          "change_pct": -1.371,
+          "date": "2026-11-27",
+          "close": 90.220001,
+          "change_pct": 4.591,
           "status": "OK"
         }
       ]
@@ -1267,9 +1267,9 @@
       "quotes": [
         {
           "ticker": "AMZN",
-          "date": "2026-11-24",
-          "close": 252.289993,
-          "change_pct": -1.214,
+          "date": "2026-11-27",
+          "close": 254.110001,
+          "change_pct": 3.96,
           "status": "OK"
         }
       ]
@@ -1284,9 +1284,9 @@
       "quotes": [
         {
           "ticker": "AAPL",
-          "date": "2026-11-24",
-          "close": 354.070007,
-          "change_pct": 1.429,
+          "date": "2026-11-27",
+          "close": 358.915009,
+          "change_pct": 0.938,
           "status": "OK"
         }
       ]
@@ -1310,9 +1310,9 @@
       "quotes": [
         {
           "ticker": "SOXX",
-          "date": "2026-11-24",
-          "close": 128.619995,
-          "change_pct": -8.273,
+          "date": "2026-11-27",
+          "close": 131.800003,
+          "change_pct": 2.985,
           "status": "OK"
         }
       ]
@@ -1327,9 +1327,9 @@
       "quotes": [
         {
           "ticker": "GOOGL",
-          "date": "2026-11-24",
-          "close": 279.049988,
-          "change_pct": -1.081,
+          "date": "2026-11-27",
+          "close": 272.940002,
+          "change_pct": -0.059,
           "status": "OK"
         }
       ]
@@ -1344,9 +1344,9 @@
       "quotes": [
         {
           "ticker": "SI=F",
-          "date": "2026-11-25",
-          "close": 40.330002,
-          "change_pct": -1.055,
+          "date": "2026-11-27",
+          "close": 43.794998,
+          "change_pct": 9.345,
           "status": "OK"
         }
       ]
@@ -1361,9 +1361,9 @@
       "quotes": [
         {
           "ticker": "SI=F",
-          "date": "2026-11-25",
-          "close": 40.330002,
-          "change_pct": -1.055,
+          "date": "2026-11-27",
+          "close": 43.794998,
+          "change_pct": 9.345,
           "status": "OK"
         }
       ]
@@ -1378,9 +1378,9 @@
       "quotes": [
         {
           "ticker": "MSTR",
-          "date": "2026-11-24",
-          "close": 77.550003,
-          "change_pct": -8.116,
+          "date": "2026-11-27",
+          "close": 82.099998,
+          "change_pct": 2.676,
           "status": "OK"
         }
       ]
@@ -1404,9 +1404,9 @@
       "quotes": [
         {
           "ticker": "MSFT",
-          "date": "2026-11-24",
-          "close": 496.130005,
-          "change_pct": 0.737,
+          "date": "2026-11-27",
+          "close": 490.415009,
+          "change_pct": 0.099,
           "status": "OK"
         }
       ]
@@ -1421,9 +1421,9 @@
       "quotes": [
         {
           "ticker": "META",
-          "date": "2026-11-24",
-          "close": 589.820007,
-          "change_pct": -1.302,
+          "date": "2026-11-27",
+          "close": 632.325012,
+          "change_pct": 3.679,
           "status": "OK"
         }
       ]
@@ -1438,9 +1438,9 @@
       "quotes": [
         {
           "ticker": "NFLX",
-          "date": "2026-11-24",
-          "close": 58.869999,
-          "change_pct": 1.325,
+          "date": "2026-11-27",
+          "close": 60.855,
+          "change_pct": 2.432,
           "status": "OK"
         }
       ]
@@ -1455,9 +1455,9 @@
       "quotes": [
         {
           "ticker": "NIO",
-          "date": "2026-11-24",
-          "close": 2.58,
-          "change_pct": 0.389,
+          "date": "2026-11-27",
+          "close": 2.835,
+          "change_pct": 5.39,
           "status": "OK"
         }
       ]
@@ -1472,9 +1472,9 @@
       "quotes": [
         {
           "ticker": "NVDA",
-          "date": "2026-11-24",
-          "close": 155.380005,
-          "change_pct": -5.859,
+          "date": "2026-11-27",
+          "close": 148.102005,
+          "change_pct": -0.802,
           "status": "OK"
         }
       ]
@@ -1489,9 +1489,9 @@
       "quotes": [
         {
           "ticker": "PLTR",
-          "date": "2026-11-24",
-          "close": 161.179993,
-          "change_pct": 1.142,
+          "date": "2026-11-27",
+          "close": 170.960007,
+          "change_pct": 4.505,
           "status": "OK"
         }
       ]
@@ -1506,9 +1506,9 @@
       "quotes": [
         {
           "ticker": "XYZ",
-          "date": "2026-11-24",
-          "close": 74.150002,
-          "change_pct": 1.242,
+          "date": "2026-11-27",
+          "close": 78.474998,
+          "change_pct": 3.121,
           "status": "OK"
         }
       ]
@@ -1523,9 +1523,9 @@
       "quotes": [
         {
           "ticker": "RACE",
-          "date": "2026-11-24",
-          "close": 397.820007,
-          "change_pct": -0.358,
+          "date": "2026-11-27",
+          "close": 411.809998,
+          "change_pct": 0.542,
           "status": "OK"
         }
       ]
@@ -1540,9 +1540,9 @@
       "quotes": [
         {
           "ticker": "XYZ",
-          "date": "2026-11-24",
-          "close": 74.150002,
-          "change_pct": 1.242,
+          "date": "2026-11-27",
+          "close": 78.474998,
+          "change_pct": 3.121,
           "status": "OK"
         }
       ]
@@ -1557,9 +1557,9 @@
       "quotes": [
         {
           "ticker": "TSLA",
-          "date": "2026-11-24",
-          "close": 384.679993,
-          "change_pct": -0.202,
+          "date": "2026-11-27",
+          "close": 398.674988,
+          "change_pct": 4.876,
           "status": "OK"
         }
       ]
@@ -1574,9 +1574,9 @@
       "quotes": [
         {
           "ticker": "SB=F",
-          "date": "2026-11-24",
-          "close": 17.66,
-          "change_pct": 0.284,
+          "date": "2026-11-27",
+          "close": 18.83,
+          "change_pct": 2.672,
           "status": "OK"
         }
       ]
@@ -1591,9 +1591,9 @@
       "quotes": [
         {
           "ticker": "TSLA",
-          "date": "2026-11-24",
-          "close": 384.679993,
-          "change_pct": -0.202,
+          "date": "2026-11-27",
+          "close": 398.674988,
+          "change_pct": 4.876,
           "status": "OK"
         }
       ]
@@ -1608,16 +1608,16 @@
       "quotes": [
         {
           "ticker": "IEF",
-          "date": "2026-11-24",
-          "close": 91.639999,
-          "change_pct": 0.0,
+          "date": "2026-11-27",
+          "close": 91.800003,
+          "change_pct": -0.282,
           "status": "OK"
         },
         {
           "ticker": "ZN=F",
-          "date": "2026-11-25",
-          "close": 106.953125,
-          "change_pct": 0.088,
+          "date": "2026-11-27",
+          "close": 106.65625,
+          "change_pct": -0.496,
           "status": "OK"
         }
       ]
@@ -1641,9 +1641,9 @@
       "quotes": [
         {
           "ticker": "EWU",
-          "date": "2026-11-24",
-          "close": 45.869999,
-          "change_pct": 0.769,
+          "date": "2026-11-27",
+          "close": 46.779999,
+          "change_pct": 1.431,
           "status": "OK"
         }
       ]
@@ -1658,9 +1658,9 @@
       "quotes": [
         {
           "ticker": "EWU",
-          "date": "2026-11-24",
-          "close": 45.869999,
-          "change_pct": 0.769,
+          "date": "2026-11-27",
+          "close": 46.779999,
+          "change_pct": 1.431,
           "status": "OK"
         }
       ]
@@ -1675,16 +1675,16 @@
       "quotes": [
         {
           "ticker": "SPY",
-          "date": "2026-11-24",
-          "close": 718.780029,
-          "change_pct": -0.486,
+          "date": "2026-11-27",
+          "close": 725.130005,
+          "change_pct": 1.176,
           "status": "OK"
         },
         {
           "ticker": "ES=F",
-          "date": "2026-11-25",
-          "close": 7155.75,
-          "change_pct": -0.856,
+          "date": "2026-11-27",
+          "close": 7282.5,
+          "change_pct": 1.206,
           "status": "OK"
         }
       ]
@@ -1699,16 +1699,16 @@
       "quotes": [
         {
           "ticker": "SPY",
-          "date": "2026-11-24",
-          "close": 718.780029,
-          "change_pct": -0.486,
+          "date": "2026-11-27",
+          "close": 725.130005,
+          "change_pct": 1.176,
           "status": "OK"
         },
         {
           "ticker": "ES=F",
-          "date": "2026-11-25",
-          "close": 7155.75,
-          "change_pct": -0.856,
+          "date": "2026-11-27",
+          "close": 7282.5,
+          "change_pct": 1.206,
           "status": "OK"
         }
       ]
@@ -1723,9 +1723,9 @@
       "quotes": [
         {
           "ticker": "ZW=F",
-          "date": "2026-11-25",
-          "close": 582.75,
-          "change_pct": 2.282,
+          "date": "2026-11-27",
+          "close": 569.75,
+          "change_pct": 0.752,
           "status": "OK"
         }
       ]
@@ -1758,9 +1758,9 @@
       "quotes": [
         {
           "ticker": "FEZ",
-          "date": "2026-11-24",
-          "close": 63.09,
-          "change_pct": 0.0,
+          "date": "2026-11-27",
+          "close": 63.48,
+          "change_pct": 1.099,
           "status": "OK"
         }
       ]
@@ -1775,9 +1775,9 @@
       "quotes": [
         {
           "ticker": "FEZ",
-          "date": "2026-11-24",
-          "close": 63.09,
-          "change_pct": 0.0,
+          "date": "2026-11-27",
+          "close": 63.48,
+          "change_pct": 1.099,
           "status": "OK"
         }
       ]
@@ -1792,9 +1792,9 @@
       "quotes": [
         {
           "ticker": "EWI",
-          "date": "2026-11-24",
-          "close": 54.830002,
-          "change_pct": -0.4,
+          "date": "2026-11-27",
+          "close": 55.665001,
+          "change_pct": 2.063,
           "status": "OK"
         }
       ]
@@ -1809,9 +1809,9 @@
       "quotes": [
         {
           "ticker": "EWI",
-          "date": "2026-11-24",
-          "close": 54.830002,
-          "change_pct": -0.4,
+          "date": "2026-11-27",
+          "close": 55.665001,
+          "change_pct": 2.063,
           "status": "OK"
         }
       ]
@@ -1835,16 +1835,16 @@
       "quotes": [
         {
           "ticker": "QQQ",
-          "date": "2026-11-24",
-          "close": 638.099976,
-          "change_pct": -1.986,
+          "date": "2026-11-27",
+          "close": 645.049988,
+          "change_pct": 1.754,
           "status": "OK"
         },
         {
           "ticker": "NQ=F",
-          "date": "2026-11-25",
-          "close": 25893.5,
-          "change_pct": -1.455,
+          "date": "2026-11-27",
+          "close": 26564.25,
+          "change_pct": 1.778,
           "status": "OK"
         }
       ]
@@ -1877,16 +1877,16 @@
       "quotes": [
         {
           "ticker": "IEF",
-          "date": "2026-11-24",
-          "close": 91.639999,
-          "change_pct": 0.0,
+          "date": "2026-11-27",
+          "close": 91.800003,
+          "change_pct": -0.282,
           "status": "OK"
         },
         {
           "ticker": "ZN=F",
-          "date": "2026-11-25",
-          "close": 106.953125,
-          "change_pct": 0.088,
+          "date": "2026-11-27",
+          "close": 106.65625,
+          "change_pct": -0.496,
           "status": "OK"
         }
       ]
@@ -1919,9 +1919,9 @@
       "quotes": [
         {
           "ticker": "DBA",
-          "date": "2026-11-24",
-          "close": 26.280001,
-          "change_pct": 0.152,
+          "date": "2026-11-27",
+          "close": 26.809799,
+          "change_pct": 1.784,
           "status": "OK"
         }
       ]
@@ -1936,9 +1936,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -1953,9 +1953,9 @@
       "quotes": [
         {
           "ticker": "XLE",
-          "date": "2026-11-24",
-          "close": 60.450001,
-          "change_pct": 0.969,
+          "date": "2026-11-27",
+          "close": 61.820099,
+          "change_pct": 1.511,
           "status": "OK"
         }
       ]
@@ -1970,9 +1970,9 @@
       "quotes": [
         {
           "ticker": "DBA",
-          "date": "2026-11-24",
-          "close": 26.280001,
-          "change_pct": 0.152,
+          "date": "2026-11-27",
+          "close": 26.809799,
+          "change_pct": 1.784,
           "status": "OK"
         }
       ]
@@ -1996,23 +1996,23 @@
       "quotes": [
         {
           "ticker": "LE=F",
-          "date": "2026-11-24",
-          "close": 225.899994,
-          "change_pct": 0.601,
+          "date": "2026-11-27",
+          "close": 224.375,
+          "change_pct": 0.47,
           "status": "OK"
         },
         {
           "ticker": "HE=F",
-          "date": "2026-11-24",
-          "close": 51.799999,
-          "change_pct": -1.239,
+          "date": "2026-11-27",
+          "close": 50.75,
+          "change_pct": 1.652,
           "status": "OK"
         },
         {
           "ticker": "GF=F",
-          "date": "2026-11-24",
-          "close": 332.899994,
-          "change_pct": -0.426,
+          "date": "2026-11-27",
+          "close": 330.524994,
+          "change_pct": 0.916,
           "status": "OK"
         }
       ]
@@ -2027,9 +2027,9 @@
       "quotes": [
         {
           "ticker": "XLE",
-          "date": "2026-11-24",
-          "close": 60.450001,
-          "change_pct": 0.969,
+          "date": "2026-11-27",
+          "close": 61.820099,
+          "change_pct": 1.511,
           "status": "OK"
         }
       ]
@@ -2044,9 +2044,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -2079,9 +2079,9 @@
       "quotes": [
         {
           "ticker": "ARM",
-          "date": "2026-11-24",
-          "close": 161.559998,
-          "change_pct": -8.553,
+          "date": "2026-11-27",
+          "close": 167.100006,
+          "change_pct": 3.461,
           "status": "OK"
         }
       ]
@@ -2096,16 +2096,16 @@
       "quotes": [
         {
           "ticker": "6A=F",
-          "date": "2026-11-25",
-          "close": 0.65885,
-          "change_pct": -0.746,
+          "date": "2026-11-27",
+          "close": 0.66415,
+          "change_pct": 0.249,
           "status": "OK"
         },
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -2120,9 +2120,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -2137,9 +2137,9 @@
       "quotes": [
         {
           "ticker": "XLE",
-          "date": "2026-11-24",
-          "close": 60.450001,
-          "change_pct": 0.969,
+          "date": "2026-11-27",
+          "close": 61.820099,
+          "change_pct": 1.511,
           "status": "OK"
         }
       ]
@@ -2154,9 +2154,9 @@
       "quotes": [
         {
           "ticker": "BZ=F",
-          "date": "2026-11-25",
-          "close": 87.330002,
-          "change_pct": -4.453,
+          "date": "2026-11-27",
+          "close": 90.629997,
+          "change_pct": -4.207,
           "status": "OK"
         }
       ]
@@ -2180,9 +2180,9 @@
       "quotes": [
         {
           "ticker": "BZ=F",
-          "date": "2026-11-25",
-          "close": 87.330002,
-          "change_pct": -4.453,
+          "date": "2026-11-27",
+          "close": 90.629997,
+          "change_pct": -4.207,
           "status": "OK"
         }
       ]
@@ -2197,9 +2197,9 @@
       "quotes": [
         {
           "ticker": "GC=F",
-          "date": "2026-11-25",
-          "close": 3537.0,
-          "change_pct": -0.699,
+          "date": "2026-11-27",
+          "close": 3655.600098,
+          "change_pct": 3.388,
           "status": "OK"
         }
       ]
@@ -2214,9 +2214,9 @@
       "quotes": [
         {
           "ticker": "KRBN",
-          "date": "2026-11-24",
-          "close": 33.103001,
-          "change_pct": 0.343,
+          "date": "2026-11-27",
+          "close": 33.5,
+          "change_pct": 2.103,
           "status": "OK"
         }
       ]
@@ -2231,9 +2231,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -2248,9 +2248,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -2265,16 +2265,16 @@
       "quotes": [
         {
           "ticker": "6S=F",
-          "date": "2026-11-25",
-          "close": 1.19865,
-          "change_pct": -0.1,
+          "date": "2026-11-27",
+          "close": 1.19775,
+          "change_pct": -0.717,
           "status": "OK"
         },
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -2289,16 +2289,16 @@
       "quotes": [
         {
           "ticker": "6S=F",
-          "date": "2026-11-25",
-          "close": 1.19865,
-          "change_pct": -0.1,
+          "date": "2026-11-27",
+          "close": 1.19775,
+          "change_pct": -0.717,
           "status": "OK"
         },
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -2313,9 +2313,9 @@
       "quotes": [
         {
           "ticker": "KRBN",
-          "date": "2026-11-24",
-          "close": 33.103001,
-          "change_pct": 0.343,
+          "date": "2026-11-27",
+          "close": 33.5,
+          "change_pct": 2.103,
           "status": "OK"
         }
       ]
@@ -2330,9 +2330,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -2347,9 +2347,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -2364,9 +2364,9 @@
       "quotes": [
         {
           "ticker": "KRBN",
-          "date": "2026-11-24",
-          "close": 33.103001,
-          "change_pct": 0.343,
+          "date": "2026-11-27",
+          "close": 33.5,
+          "change_pct": 2.103,
           "status": "OK"
         }
       ]
@@ -2381,9 +2381,9 @@
       "quotes": [
         {
           "ticker": "CC=F",
-          "date": "2026-11-24",
-          "close": 5281.0,
-          "change_pct": 1.832,
+          "date": "2026-11-27",
+          "close": 5529.0,
+          "change_pct": 4.281,
           "status": "OK"
         }
       ]
@@ -2398,9 +2398,9 @@
       "quotes": [
         {
           "ticker": "KC=F",
-          "date": "2026-11-24",
-          "close": 268.549988,
-          "change_pct": -2.114,
+          "date": "2026-11-27",
+          "close": 276.299988,
+          "change_pct": 0.236,
           "status": "OK"
         }
       ]
@@ -2415,9 +2415,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -2432,9 +2432,9 @@
       "quotes": [
         {
           "ticker": "DBA",
-          "date": "2026-11-24",
-          "close": 26.280001,
-          "change_pct": 0.152,
+          "date": "2026-11-27",
+          "close": 26.809799,
+          "change_pct": 1.784,
           "status": "OK"
         }
       ]
@@ -2449,9 +2449,9 @@
       "quotes": [
         {
           "ticker": "DBA",
-          "date": "2026-11-24",
-          "close": 26.280001,
-          "change_pct": 0.152,
+          "date": "2026-11-27",
+          "close": 26.809799,
+          "change_pct": 1.784,
           "status": "OK"
         }
       ]
@@ -2466,9 +2466,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -2483,9 +2483,9 @@
       "quotes": [
         {
           "ticker": "HG=F",
-          "date": "2026-11-25",
-          "close": 5.4255,
-          "change_pct": 1.175,
+          "date": "2026-11-27",
+          "close": 5.606,
+          "change_pct": 5.129,
           "status": "OK"
         }
       ]
@@ -2509,9 +2509,9 @@
       "quotes": [
         {
           "ticker": "HG=F",
-          "date": "2026-11-25",
-          "close": 5.4255,
-          "change_pct": 1.175,
+          "date": "2026-11-27",
+          "close": 5.606,
+          "change_pct": 5.129,
           "status": "OK"
         }
       ]
@@ -2535,9 +2535,9 @@
       "quotes": [
         {
           "ticker": "ZC=F",
-          "date": "2026-11-25",
-          "close": 448.5,
-          "change_pct": 3.341,
+          "date": "2026-11-27",
+          "close": 448.25,
+          "change_pct": 1.933,
           "status": "OK"
         }
       ]
@@ -2552,9 +2552,9 @@
       "quotes": [
         {
           "ticker": "CT=F",
-          "date": "2026-11-24",
-          "close": 79.120003,
-          "change_pct": 2.051,
+          "date": "2026-11-25",
+          "close": 81.970001,
+          "change_pct": 3.602,
           "status": "OK"
         }
       ]
@@ -2569,9 +2569,9 @@
       "quotes": [
         {
           "ticker": "HG=F",
-          "date": "2026-11-25",
-          "close": 5.4255,
-          "change_pct": 1.175,
+          "date": "2026-11-27",
+          "close": 5.606,
+          "change_pct": 5.129,
           "status": "OK"
         }
       ]
@@ -2586,9 +2586,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -2603,9 +2603,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -2620,9 +2620,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -2637,9 +2637,9 @@
       "quotes": [
         {
           "ticker": "CL=F",
-          "date": "2026-11-25",
-          "close": 80.599998,
-          "change_pct": -1.767,
+          "date": "2026-11-27",
+          "close": 83.459999,
+          "change_pct": -0.263,
           "status": "OK"
         }
       ]
@@ -2654,9 +2654,9 @@
       "quotes": [
         {
           "ticker": "EWG",
-          "date": "2026-11-24",
-          "close": 40.07,
-          "change_pct": -0.05,
+          "date": "2026-11-27",
+          "close": 40.435001,
+          "change_pct": 0.886,
           "status": "OK"
         }
       ]
@@ -2671,9 +2671,9 @@
       "quotes": [
         {
           "ticker": "EWG",
-          "date": "2026-11-24",
-          "close": 40.07,
-          "change_pct": -0.05,
+          "date": "2026-11-27",
+          "close": 40.435001,
+          "change_pct": 0.886,
           "status": "OK"
         }
       ]
@@ -2697,9 +2697,9 @@
       "quotes": [
         {
           "ticker": "CL=F",
-          "date": "2026-11-25",
-          "close": 80.599998,
-          "change_pct": -1.767,
+          "date": "2026-11-27",
+          "close": 83.459999,
+          "change_pct": -0.263,
           "status": "OK"
         }
       ]
@@ -2714,9 +2714,9 @@
       "quotes": [
         {
           "ticker": "GC=F",
-          "date": "2026-11-25",
-          "close": 3537.0,
-          "change_pct": -0.699,
+          "date": "2026-11-27",
+          "close": 3655.600098,
+          "change_pct": 3.388,
           "status": "OK"
         }
       ]
@@ -2731,9 +2731,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -2748,16 +2748,16 @@
       "quotes": [
         {
           "ticker": "6S=F",
-          "date": "2026-11-25",
-          "close": 1.19865,
-          "change_pct": -0.1,
+          "date": "2026-11-27",
+          "close": 1.19775,
+          "change_pct": -0.717,
           "status": "OK"
         },
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -2772,9 +2772,9 @@
       "quotes": [
         {
           "ticker": "KC=F",
-          "date": "2026-11-24",
-          "close": 268.549988,
-          "change_pct": -2.114,
+          "date": "2026-11-27",
+          "close": 276.299988,
+          "change_pct": 0.236,
           "status": "OK"
         }
       ]
@@ -2789,9 +2789,9 @@
       "quotes": [
         {
           "ticker": "HG=F",
-          "date": "2026-11-25",
-          "close": 5.4255,
-          "change_pct": 1.175,
+          "date": "2026-11-27",
+          "close": 5.606,
+          "change_pct": 5.129,
           "status": "OK"
         }
       ]
@@ -2806,9 +2806,9 @@
       "quotes": [
         {
           "ticker": "CL=F",
-          "date": "2026-11-25",
-          "close": 80.599998,
-          "change_pct": -1.767,
+          "date": "2026-11-27",
+          "close": 83.459999,
+          "change_pct": -0.263,
           "status": "OK"
         }
       ]
@@ -2823,9 +2823,9 @@
       "quotes": [
         {
           "ticker": "ZC=F",
-          "date": "2026-11-25",
-          "close": 448.5,
-          "change_pct": 3.341,
+          "date": "2026-11-27",
+          "close": 448.25,
+          "change_pct": 1.933,
           "status": "OK"
         }
       ]
@@ -2840,9 +2840,9 @@
       "quotes": [
         {
           "ticker": "CT=F",
-          "date": "2026-11-24",
-          "close": 79.120003,
-          "change_pct": 2.051,
+          "date": "2026-11-25",
+          "close": 81.970001,
+          "change_pct": 3.602,
           "status": "OK"
         }
       ]
@@ -2857,9 +2857,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -2874,16 +2874,16 @@
       "quotes": [
         {
           "ticker": "6B=F",
-          "date": "2026-11-25",
-          "close": 1.3091,
-          "change_pct": -0.206,
+          "date": "2026-11-27",
+          "close": 1.3106,
+          "change_pct": -0.13,
           "status": "OK"
         },
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -2907,16 +2907,16 @@
       "quotes": [
         {
           "ticker": "6J=F",
-          "date": "2026-11-25",
-          "close": 0.00628,
-          "change_pct": -0.183,
+          "date": "2026-11-27",
+          "close": 0.006275,
+          "change_pct": -0.27,
           "status": "OK"
         },
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -2931,9 +2931,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -2948,9 +2948,9 @@
       "quotes": [
         {
           "ticker": "NG=F",
-          "date": "2026-11-25",
-          "close": 3.682,
-          "change_pct": 10.803,
+          "date": "2026-11-27",
+          "close": 3.498,
+          "change_pct": 7.005,
           "status": "OK"
         }
       ]
@@ -2980,9 +2980,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -2997,9 +2997,9 @@
       "quotes": [
         {
           "ticker": "ZS=F",
-          "date": "2026-11-25",
-          "close": 1222.5,
-          "change_pct": -0.932,
+          "date": "2026-11-27",
+          "close": 1268.25,
+          "change_pct": 1.949,
           "status": "OK"
         }
       ]
@@ -3014,9 +3014,9 @@
       "quotes": [
         {
           "ticker": "SB=F",
-          "date": "2026-11-24",
-          "close": 17.66,
-          "change_pct": 0.284,
+          "date": "2026-11-27",
+          "close": 18.83,
+          "change_pct": 2.672,
           "status": "OK"
         }
       ]
@@ -3031,9 +3031,9 @@
       "quotes": [
         {
           "ticker": "SI=F",
-          "date": "2026-11-25",
-          "close": 40.330002,
-          "change_pct": -1.055,
+          "date": "2026-11-27",
+          "close": 43.794998,
+          "change_pct": 9.345,
           "status": "OK"
         }
       ]
@@ -3048,9 +3048,9 @@
       "quotes": [
         {
           "ticker": "FEZ",
-          "date": "2026-11-24",
-          "close": 63.09,
-          "change_pct": 0.0,
+          "date": "2026-11-27",
+          "close": 63.48,
+          "change_pct": 1.099,
           "status": "OK"
         }
       ]
@@ -3065,16 +3065,16 @@
       "quotes": [
         {
           "ticker": "6A=F",
-          "date": "2026-11-25",
-          "close": 0.65885,
-          "change_pct": -0.746,
+          "date": "2026-11-27",
+          "close": 0.66415,
+          "change_pct": 0.249,
           "status": "OK"
         },
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -3089,16 +3089,16 @@
       "quotes": [
         {
           "ticker": "6S=F",
-          "date": "2026-11-25",
-          "close": 1.19865,
-          "change_pct": -0.1,
+          "date": "2026-11-27",
+          "close": 1.19775,
+          "change_pct": -0.717,
           "status": "OK"
         },
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -3113,16 +3113,16 @@
       "quotes": [
         {
           "ticker": "6B=F",
-          "date": "2026-11-25",
-          "close": 1.3091,
-          "change_pct": -0.206,
+          "date": "2026-11-27",
+          "close": 1.3106,
+          "change_pct": -0.13,
           "status": "OK"
         },
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -3137,16 +3137,16 @@
       "quotes": [
         {
           "ticker": "6J=F",
-          "date": "2026-11-25",
-          "close": 0.00628,
-          "change_pct": -0.183,
+          "date": "2026-11-27",
+          "close": 0.006275,
+          "change_pct": -0.27,
           "status": "OK"
         },
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -3170,9 +3170,9 @@
       "quotes": [
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -3187,9 +3187,9 @@
       "quotes": [
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -3204,16 +3204,16 @@
       "quotes": [
         {
           "ticker": "6S=F",
-          "date": "2026-11-25",
-          "close": 1.19865,
-          "change_pct": -0.1,
+          "date": "2026-11-27",
+          "close": 1.19775,
+          "change_pct": -0.717,
           "status": "OK"
         },
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -3228,9 +3228,9 @@
       "quotes": [
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -3245,9 +3245,9 @@
       "quotes": [
         {
           "ticker": "ZW=F",
-          "date": "2026-11-25",
-          "close": 582.75,
-          "change_pct": 2.282,
+          "date": "2026-11-27",
+          "close": 569.75,
+          "change_pct": 0.752,
           "status": "OK"
         }
       ]
@@ -3262,9 +3262,9 @@
       "quotes": [
         {
           "ticker": "DBA",
-          "date": "2026-11-24",
-          "close": 26.280001,
-          "change_pct": 0.152,
+          "date": "2026-11-27",
+          "close": 26.809799,
+          "change_pct": 1.784,
           "status": "OK"
         }
       ]
@@ -3279,9 +3279,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -3296,9 +3296,9 @@
       "quotes": [
         {
           "ticker": "DBB",
-          "date": "2026-11-24",
-          "close": 22.0,
-          "change_pct": -3.297,
+          "date": "2026-11-27",
+          "close": 22.48,
+          "change_pct": 1.812,
           "status": "OK"
         }
       ]
@@ -3313,9 +3313,9 @@
       "quotes": [
         {
           "ticker": "CL=F",
-          "date": "2026-11-25",
-          "close": 80.599998,
-          "change_pct": -1.767,
+          "date": "2026-11-27",
+          "close": 83.459999,
+          "change_pct": -0.263,
           "status": "OK"
         }
       ]
@@ -3339,16 +3339,16 @@
       "quotes": [
         {
           "ticker": "6B=F",
-          "date": "2026-11-25",
-          "close": 1.3091,
-          "change_pct": -0.206,
+          "date": "2026-11-27",
+          "close": 1.3106,
+          "change_pct": -0.13,
           "status": "OK"
         },
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -3363,16 +3363,16 @@
       "quotes": [
         {
           "ticker": "6B=F",
-          "date": "2026-11-25",
-          "close": 1.3091,
-          "change_pct": -0.206,
+          "date": "2026-11-27",
+          "close": 1.3106,
+          "change_pct": -0.13,
           "status": "OK"
         },
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -3387,9 +3387,9 @@
       "quotes": [
         {
           "ticker": "GC=F",
-          "date": "2026-11-25",
-          "close": 3537.0,
-          "change_pct": -0.699,
+          "date": "2026-11-27",
+          "close": 3655.600098,
+          "change_pct": 3.388,
           "status": "OK"
         }
       ]
@@ -3404,9 +3404,9 @@
       "quotes": [
         {
           "ticker": "GC=F",
-          "date": "2026-11-25",
-          "close": 3537.0,
-          "change_pct": -0.699,
+          "date": "2026-11-27",
+          "close": 3655.600098,
+          "change_pct": 3.388,
           "status": "OK"
         }
       ]
@@ -3421,9 +3421,9 @@
       "quotes": [
         {
           "ticker": "GC=F",
-          "date": "2026-11-25",
-          "close": 3537.0,
-          "change_pct": -0.699,
+          "date": "2026-11-27",
+          "close": 3655.600098,
+          "change_pct": 3.388,
           "status": "OK"
         }
       ]
@@ -3456,9 +3456,9 @@
       "quotes": [
         {
           "ticker": "INTC",
-          "date": "2026-11-24",
-          "close": 54.799999,
-          "change_pct": -8.146,
+          "date": "2026-11-27",
+          "close": 56.029999,
+          "change_pct": 2.864,
           "status": "OK"
         }
       ]
@@ -3473,9 +3473,9 @@
       "quotes": [
         {
           "ticker": "INTC",
-          "date": "2026-11-24",
-          "close": 54.799999,
-          "change_pct": -8.146,
+          "date": "2026-11-27",
+          "close": 56.029999,
+          "change_pct": 2.864,
           "status": "OK"
         }
       ]
@@ -3499,9 +3499,9 @@
       "quotes": [
         {
           "ticker": "HIMS",
-          "date": "2026-11-24",
-          "close": 14.74,
-          "change_pct": -2.125,
+          "date": "2026-11-27",
+          "close": 14.965,
+          "change_pct": 2.15,
           "status": "OK"
         }
       ]
@@ -3516,9 +3516,9 @@
       "quotes": [
         {
           "ticker": "HOOD",
-          "date": "2026-11-24",
-          "close": 65.650002,
-          "change_pct": -2.553,
+          "date": "2026-11-27",
+          "close": 67.550003,
+          "change_pct": 2.691,
           "status": "OK"
         }
       ]
@@ -3533,9 +3533,9 @@
       "quotes": [
         {
           "ticker": "INTC",
-          "date": "2026-11-24",
-          "close": 54.799999,
-          "change_pct": -8.146,
+          "date": "2026-11-27",
+          "close": 56.029999,
+          "change_pct": 2.864,
           "status": "OK"
         }
       ]
@@ -3550,16 +3550,16 @@
       "quotes": [
         {
           "ticker": "6J=F",
-          "date": "2026-11-25",
-          "close": 0.00628,
-          "change_pct": -0.183,
+          "date": "2026-11-27",
+          "close": 0.006275,
+          "change_pct": -0.27,
           "status": "OK"
         },
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -3574,16 +3574,16 @@
       "quotes": [
         {
           "ticker": "6J=F",
-          "date": "2026-11-25",
-          "close": 0.00628,
-          "change_pct": -0.183,
+          "date": "2026-11-27",
+          "close": 0.006275,
+          "change_pct": -0.27,
           "status": "OK"
         },
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -3598,9 +3598,9 @@
       "quotes": [
         {
           "ticker": "KRBN",
-          "date": "2026-11-24",
-          "close": 33.103001,
-          "change_pct": 0.343,
+          "date": "2026-11-27",
+          "close": 33.5,
+          "change_pct": 2.103,
           "status": "OK"
         }
       ]
@@ -3615,9 +3615,9 @@
       "quotes": [
         {
           "ticker": "DBA",
-          "date": "2026-11-24",
-          "close": 26.280001,
-          "change_pct": 0.152,
+          "date": "2026-11-27",
+          "close": 26.809799,
+          "change_pct": 1.784,
           "status": "OK"
         }
       ]
@@ -3641,9 +3641,9 @@
       "quotes": [
         {
           "ticker": "CL=F",
-          "date": "2026-11-25",
-          "close": 80.599998,
-          "change_pct": -1.767,
+          "date": "2026-11-27",
+          "close": 83.459999,
+          "change_pct": -0.263,
           "status": "OK"
         }
       ]
@@ -3658,9 +3658,9 @@
       "quotes": [
         {
           "ticker": "GC=F",
-          "date": "2026-11-25",
-          "close": 3537.0,
-          "change_pct": -0.699,
+          "date": "2026-11-27",
+          "close": 3655.600098,
+          "change_pct": 3.388,
           "status": "OK"
         }
       ]
@@ -3675,9 +3675,9 @@
       "quotes": [
         {
           "ticker": "KC=F",
-          "date": "2026-11-24",
-          "close": 268.549988,
-          "change_pct": -2.114,
+          "date": "2026-11-27",
+          "close": 276.299988,
+          "change_pct": 0.236,
           "status": "OK"
         }
       ]
@@ -3692,9 +3692,9 @@
       "quotes": [
         {
           "ticker": "CC=F",
-          "date": "2026-11-24",
-          "close": 5281.0,
-          "change_pct": 1.832,
+          "date": "2026-11-27",
+          "close": 5529.0,
+          "change_pct": 4.281,
           "status": "OK"
         }
       ]
@@ -3709,9 +3709,9 @@
       "quotes": [
         {
           "ticker": "HG=F",
-          "date": "2026-11-25",
-          "close": 5.4255,
-          "change_pct": 1.175,
+          "date": "2026-11-27",
+          "close": 5.606,
+          "change_pct": 5.129,
           "status": "OK"
         }
       ]
@@ -3726,9 +3726,9 @@
       "quotes": [
         {
           "ticker": "ZC=F",
-          "date": "2026-11-25",
-          "close": 448.5,
-          "change_pct": 3.341,
+          "date": "2026-11-27",
+          "close": 448.25,
+          "change_pct": 1.933,
           "status": "OK"
         }
       ]
@@ -3752,9 +3752,9 @@
       "quotes": [
         {
           "ticker": "NG=F",
-          "date": "2026-11-25",
-          "close": 3.682,
-          "change_pct": 10.803,
+          "date": "2026-11-27",
+          "close": 3.498,
+          "change_pct": 7.005,
           "status": "OK"
         }
       ]
@@ -3784,9 +3784,9 @@
       "quotes": [
         {
           "ticker": "CL=F",
-          "date": "2026-11-25",
-          "close": 80.599998,
-          "change_pct": -1.767,
+          "date": "2026-11-27",
+          "close": 83.459999,
+          "change_pct": -0.263,
           "status": "OK"
         }
       ]
@@ -3801,9 +3801,9 @@
       "quotes": [
         {
           "ticker": "XLE",
-          "date": "2026-11-24",
-          "close": 60.450001,
-          "change_pct": 0.969,
+          "date": "2026-11-27",
+          "close": 61.820099,
+          "change_pct": 1.511,
           "status": "OK"
         }
       ]
@@ -3818,9 +3818,9 @@
       "quotes": [
         {
           "ticker": "PL=F",
-          "date": "2026-11-25",
-          "close": 1239.699951,
-          "change_pct": -1.509,
+          "date": "2026-11-27",
+          "close": 1308.599976,
+          "change_pct": 5.413,
           "status": "OK"
         }
       ]
@@ -3835,16 +3835,16 @@
       "quotes": [
         {
           "ticker": "QQQ",
-          "date": "2026-11-24",
-          "close": 638.099976,
-          "change_pct": -1.986,
+          "date": "2026-11-27",
+          "close": 645.049988,
+          "change_pct": 1.754,
           "status": "OK"
         },
         {
           "ticker": "NQ=F",
-          "date": "2026-11-25",
-          "close": 25893.5,
-          "change_pct": -1.455,
+          "date": "2026-11-27",
+          "close": 26564.25,
+          "change_pct": 1.778,
           "status": "OK"
         }
       ]
@@ -3859,9 +3859,9 @@
       "quotes": [
         {
           "ticker": "SI=F",
-          "date": "2026-11-25",
-          "close": 40.330002,
-          "change_pct": -1.055,
+          "date": "2026-11-27",
+          "close": 43.794998,
+          "change_pct": 9.345,
           "status": "OK"
         }
       ]
@@ -3876,9 +3876,9 @@
       "quotes": [
         {
           "ticker": "SB=F",
-          "date": "2026-11-24",
-          "close": 17.66,
-          "change_pct": 0.284,
+          "date": "2026-11-27",
+          "close": 18.83,
+          "change_pct": 2.672,
           "status": "OK"
         }
       ]
@@ -3893,16 +3893,16 @@
       "quotes": [
         {
           "ticker": "^VIX",
-          "date": "2026-11-24",
-          "close": 26.360001,
-          "change_pct": -0.977,
+          "date": "2026-11-27",
+          "close": 25.51,
+          "change_pct": -4.813,
           "status": "OK"
         },
         {
           "ticker": "VIXY",
-          "date": "2026-11-24",
-          "close": 22.290001,
-          "change_pct": -1.284,
+          "date": "2026-11-27",
+          "close": 22.254999,
+          "change_pct": -4.403,
           "status": "OK"
         }
       ]
@@ -3917,9 +3917,9 @@
       "quotes": [
         {
           "ticker": "ZW=F",
-          "date": "2026-11-25",
-          "close": 582.75,
-          "change_pct": 2.282,
+          "date": "2026-11-27",
+          "close": 569.75,
+          "change_pct": 0.752,
           "status": "OK"
         }
       ]
@@ -3934,9 +3934,9 @@
       "quotes": [
         {
           "ticker": "MAGS",
-          "date": "2026-11-24",
-          "close": 65.75,
-          "change_pct": -0.919,
+          "date": "2026-11-27",
+          "close": 66.379997,
+          "change_pct": 2.029,
           "status": "OK"
         }
       ]
@@ -3960,9 +3960,9 @@
       "quotes": [
         {
           "ticker": "URA",
-          "date": "2026-11-24",
-          "close": 27.6,
-          "change_pct": -2.714,
+          "date": "2026-11-27",
+          "close": 28.945,
+          "change_pct": 4.457,
           "status": "OK"
         }
       ]
@@ -3977,9 +3977,9 @@
       "quotes": [
         {
           "ticker": "NG=F",
-          "date": "2026-11-25",
-          "close": 3.682,
-          "change_pct": 10.803,
+          "date": "2026-11-27",
+          "close": 3.498,
+          "change_pct": 7.005,
           "status": "OK"
         }
       ]
@@ -4027,9 +4027,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -4044,9 +4044,9 @@
       "quotes": [
         {
           "ticker": "SI=F",
-          "date": "2026-11-25",
-          "close": 40.330002,
-          "change_pct": -1.055,
+          "date": "2026-11-27",
+          "close": 43.794998,
+          "change_pct": 9.345,
           "status": "OK"
         }
       ]
@@ -4061,9 +4061,9 @@
       "quotes": [
         {
           "ticker": "GC=F",
-          "date": "2026-11-25",
-          "close": 3537.0,
-          "change_pct": -0.699,
+          "date": "2026-11-27",
+          "close": 3655.600098,
+          "change_pct": 3.388,
           "status": "OK"
         }
       ]
@@ -4078,9 +4078,9 @@
       "quotes": [
         {
           "ticker": "PA=F",
-          "date": "2026-11-25",
-          "close": 847.5,
-          "change_pct": -1.224,
+          "date": "2026-11-27",
+          "close": 890.5,
+          "change_pct": 7.147,
           "status": "OK"
         }
       ]
@@ -4104,9 +4104,9 @@
       "quotes": [
         {
           "ticker": "PL=F",
-          "date": "2026-11-25",
-          "close": 1239.699951,
-          "change_pct": -1.509,
+          "date": "2026-11-27",
+          "close": 1308.599976,
+          "change_pct": 5.413,
           "status": "OK"
         }
       ]
@@ -4121,16 +4121,16 @@
       "quotes": [
         {
           "ticker": "QQQ",
-          "date": "2026-11-24",
-          "close": 638.099976,
-          "change_pct": -1.986,
+          "date": "2026-11-27",
+          "close": 645.049988,
+          "change_pct": 1.754,
           "status": "OK"
         },
         {
           "ticker": "NQ=F",
-          "date": "2026-11-25",
-          "close": 25893.5,
-          "change_pct": -1.455,
+          "date": "2026-11-27",
+          "close": 26564.25,
+          "change_pct": 1.778,
           "status": "OK"
         }
       ]
@@ -4145,16 +4145,16 @@
       "quotes": [
         {
           "ticker": "QQQ",
-          "date": "2026-11-24",
-          "close": 638.099976,
-          "change_pct": -1.986,
+          "date": "2026-11-27",
+          "close": 645.049988,
+          "change_pct": 1.754,
           "status": "OK"
         },
         {
           "ticker": "NQ=F",
-          "date": "2026-11-25",
-          "close": 25893.5,
-          "change_pct": -1.455,
+          "date": "2026-11-27",
+          "close": 26564.25,
+          "change_pct": 1.778,
           "status": "OK"
         }
       ]
@@ -4169,16 +4169,16 @@
       "quotes": [
         {
           "ticker": "QQQ",
-          "date": "2026-11-24",
-          "close": 638.099976,
-          "change_pct": -1.986,
+          "date": "2026-11-27",
+          "close": 645.049988,
+          "change_pct": 1.754,
           "status": "OK"
         },
         {
           "ticker": "NQ=F",
-          "date": "2026-11-25",
-          "close": 25893.5,
-          "change_pct": -1.455,
+          "date": "2026-11-27",
+          "close": 26564.25,
+          "change_pct": 1.778,
           "status": "OK"
         }
       ]
@@ -4193,16 +4193,16 @@
       "quotes": [
         {
           "ticker": "QQQ",
-          "date": "2026-11-24",
-          "close": 638.099976,
-          "change_pct": -1.986,
+          "date": "2026-11-27",
+          "close": 645.049988,
+          "change_pct": 1.754,
           "status": "OK"
         },
         {
           "ticker": "NQ=F",
-          "date": "2026-11-25",
-          "close": 25893.5,
-          "change_pct": -1.455,
+          "date": "2026-11-27",
+          "close": 26564.25,
+          "change_pct": 1.778,
           "status": "OK"
         }
       ]
@@ -4217,16 +4217,16 @@
       "quotes": [
         {
           "ticker": "QQQ",
-          "date": "2026-11-24",
-          "close": 638.099976,
-          "change_pct": -1.986,
+          "date": "2026-11-27",
+          "close": 645.049988,
+          "change_pct": 1.754,
           "status": "OK"
         },
         {
           "ticker": "NQ=F",
-          "date": "2026-11-25",
-          "close": 25893.5,
-          "change_pct": -1.455,
+          "date": "2026-11-27",
+          "close": 26564.25,
+          "change_pct": 1.778,
           "status": "OK"
         }
       ]
@@ -4241,9 +4241,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -4258,9 +4258,9 @@
       "quotes": [
         {
           "ticker": "BABA",
-          "date": "2026-11-24",
-          "close": 84.860001,
-          "change_pct": -1.371,
+          "date": "2026-11-27",
+          "close": 90.220001,
+          "change_pct": 4.591,
           "status": "OK"
         }
       ]
@@ -4275,9 +4275,9 @@
       "quotes": [
         {
           "ticker": "CL=F",
-          "date": "2026-11-25",
-          "close": 80.599998,
-          "change_pct": -1.767,
+          "date": "2026-11-27",
+          "close": 83.459999,
+          "change_pct": -0.263,
           "status": "OK"
         }
       ]
@@ -4292,9 +4292,9 @@
       "quotes": [
         {
           "ticker": "GC=F",
-          "date": "2026-11-25",
-          "close": 3537.0,
-          "change_pct": -0.699,
+          "date": "2026-11-27",
+          "close": 3655.600098,
+          "change_pct": 3.388,
           "status": "OK"
         }
       ]
@@ -4309,9 +4309,9 @@
       "quotes": [
         {
           "ticker": "SOXX",
-          "date": "2026-11-24",
-          "close": 128.619995,
-          "change_pct": -8.273,
+          "date": "2026-11-27",
+          "close": 131.800003,
+          "change_pct": 2.985,
           "status": "OK"
         }
       ]
@@ -4326,9 +4326,9 @@
       "quotes": [
         {
           "ticker": "HG=F",
-          "date": "2026-11-25",
-          "close": 5.4255,
-          "change_pct": 1.175,
+          "date": "2026-11-27",
+          "close": 5.606,
+          "change_pct": 5.129,
           "status": "OK"
         }
       ]
@@ -4343,9 +4343,9 @@
       "quotes": [
         {
           "ticker": "CL=F",
-          "date": "2026-11-25",
-          "close": 80.599998,
-          "change_pct": -1.767,
+          "date": "2026-11-27",
+          "close": 83.459999,
+          "change_pct": -0.263,
           "status": "OK"
         }
       ]
@@ -4360,16 +4360,16 @@
       "quotes": [
         {
           "ticker": "SPY",
-          "date": "2026-11-24",
-          "close": 718.780029,
-          "change_pct": -0.486,
+          "date": "2026-11-27",
+          "close": 725.130005,
+          "change_pct": 1.176,
           "status": "OK"
         },
         {
           "ticker": "ES=F",
-          "date": "2026-11-25",
-          "close": 7155.75,
-          "change_pct": -0.856,
+          "date": "2026-11-27",
+          "close": 7282.5,
+          "change_pct": 1.206,
           "status": "OK"
         }
       ]
@@ -4384,16 +4384,16 @@
       "quotes": [
         {
           "ticker": "6S=F",
-          "date": "2026-11-25",
-          "close": 1.19865,
-          "change_pct": -0.1,
+          "date": "2026-11-27",
+          "close": 1.19775,
+          "change_pct": -0.717,
           "status": "OK"
         },
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -4408,9 +4408,9 @@
       "quotes": [
         {
           "ticker": "GC=F",
-          "date": "2026-11-25",
-          "close": 3537.0,
-          "change_pct": -0.699,
+          "date": "2026-11-27",
+          "close": 3655.600098,
+          "change_pct": 3.388,
           "status": "OK"
         }
       ]
@@ -4425,9 +4425,9 @@
       "quotes": [
         {
           "ticker": "GC=F",
-          "date": "2026-11-25",
-          "close": 3537.0,
-          "change_pct": -0.699,
+          "date": "2026-11-27",
+          "close": 3655.600098,
+          "change_pct": 3.388,
           "status": "OK"
         }
       ]
@@ -4442,9 +4442,9 @@
       "quotes": [
         {
           "ticker": "GC=F",
-          "date": "2026-11-25",
-          "close": 3537.0,
-          "change_pct": -0.699,
+          "date": "2026-11-27",
+          "close": 3655.600098,
+          "change_pct": 3.388,
           "status": "OK"
         }
       ]
@@ -4477,9 +4477,9 @@
       "quotes": [
         {
           "ticker": "SI=F",
-          "date": "2026-11-25",
-          "close": 40.330002,
-          "change_pct": -1.055,
+          "date": "2026-11-27",
+          "close": 43.794998,
+          "change_pct": 9.345,
           "status": "OK"
         }
       ]
@@ -4494,9 +4494,9 @@
       "quotes": [
         {
           "ticker": "SMCI",
-          "date": "2026-11-24",
-          "close": 22.620001,
-          "change_pct": -7.786,
+          "date": "2026-11-27",
+          "close": 23.747999,
+          "change_pct": 1.879,
           "status": "OK"
         }
       ]
@@ -4511,9 +4511,9 @@
       "quotes": [
         {
           "ticker": "MSTR",
-          "date": "2026-11-24",
-          "close": 77.550003,
-          "change_pct": -8.116,
+          "date": "2026-11-27",
+          "close": 82.099998,
+          "change_pct": 2.676,
           "status": "OK"
         }
       ]
@@ -4552,9 +4552,9 @@
       "quotes": [
         {
           "ticker": "NVDA",
-          "date": "2026-11-24",
-          "close": 155.380005,
-          "change_pct": -5.859,
+          "date": "2026-11-27",
+          "close": 148.102005,
+          "change_pct": -0.802,
           "status": "OK"
         }
       ]
@@ -4569,9 +4569,9 @@
       "quotes": [
         {
           "ticker": "CL=F",
-          "date": "2026-11-25",
-          "close": 80.599998,
-          "change_pct": -1.767,
+          "date": "2026-11-27",
+          "close": 83.459999,
+          "change_pct": -0.263,
           "status": "OK"
         }
       ]
@@ -4586,9 +4586,9 @@
       "quotes": [
         {
           "ticker": "SOXX",
-          "date": "2026-11-24",
-          "close": 128.619995,
-          "change_pct": -8.273,
+          "date": "2026-11-27",
+          "close": 131.800003,
+          "change_pct": 2.985,
           "status": "OK"
         }
       ]
@@ -4603,9 +4603,9 @@
       "quotes": [
         {
           "ticker": "SOXX",
-          "date": "2026-11-24",
-          "close": 128.619995,
-          "change_pct": -8.273,
+          "date": "2026-11-27",
+          "close": 131.800003,
+          "change_pct": 2.985,
           "status": "OK"
         }
       ]
@@ -4620,9 +4620,9 @@
       "quotes": [
         {
           "ticker": "ZS=F",
-          "date": "2026-11-25",
-          "close": 1222.5,
-          "change_pct": -0.932,
+          "date": "2026-11-27",
+          "close": 1268.25,
+          "change_pct": 1.949,
           "status": "OK"
         }
       ]
@@ -4637,9 +4637,9 @@
       "quotes": [
         {
           "ticker": "ZL=F",
-          "date": "2026-11-25",
-          "close": 57.68,
-          "change_pct": -0.74,
+          "date": "2026-11-27",
+          "close": 58.57,
+          "change_pct": 0.844,
           "status": "OK"
         }
       ]
@@ -4654,16 +4654,16 @@
       "quotes": [
         {
           "ticker": "QQQ",
-          "date": "2026-11-24",
-          "close": 638.099976,
-          "change_pct": -1.986,
+          "date": "2026-11-27",
+          "close": 645.049988,
+          "change_pct": 1.754,
           "status": "OK"
         },
         {
           "ticker": "NQ=F",
-          "date": "2026-11-25",
-          "close": 25893.5,
-          "change_pct": -1.455,
+          "date": "2026-11-27",
+          "close": 26564.25,
+          "change_pct": 1.778,
           "status": "OK"
         }
       ]
@@ -4678,9 +4678,9 @@
       "quotes": [
         {
           "ticker": "SI=F",
-          "date": "2026-11-25",
-          "close": 40.330002,
-          "change_pct": -1.055,
+          "date": "2026-11-27",
+          "close": 43.794998,
+          "change_pct": 9.345,
           "status": "OK"
         }
       ]
@@ -4695,9 +4695,9 @@
       "quotes": [
         {
           "ticker": "SB=F",
-          "date": "2026-11-24",
-          "close": 17.66,
-          "change_pct": 0.284,
+          "date": "2026-11-27",
+          "close": 18.83,
+          "change_pct": 2.672,
           "status": "OK"
         }
       ]
@@ -4712,9 +4712,9 @@
       "quotes": [
         {
           "ticker": "EWU",
-          "date": "2026-11-24",
-          "close": 45.869999,
-          "change_pct": 0.769,
+          "date": "2026-11-27",
+          "close": 46.779999,
+          "change_pct": 1.431,
           "status": "OK"
         }
       ]
@@ -4747,9 +4747,9 @@
       "quotes": [
         {
           "ticker": "TSLA",
-          "date": "2026-11-24",
-          "close": 384.679993,
-          "change_pct": -0.202,
+          "date": "2026-11-27",
+          "close": 398.674988,
+          "change_pct": 4.876,
           "status": "OK"
         }
       ]
@@ -4764,9 +4764,9 @@
       "quotes": [
         {
           "ticker": "URA",
-          "date": "2026-11-24",
-          "close": 27.6,
-          "change_pct": -2.714,
+          "date": "2026-11-27",
+          "close": 28.945,
+          "change_pct": 4.457,
           "status": "OK"
         }
       ]
@@ -4790,16 +4790,16 @@
       "quotes": [
         {
           "ticker": "IEF",
-          "date": "2026-11-24",
-          "close": 91.639999,
-          "change_pct": 0.0,
+          "date": "2026-11-27",
+          "close": 91.800003,
+          "change_pct": -0.282,
           "status": "OK"
         },
         {
           "ticker": "ZN=F",
-          "date": "2026-11-25",
-          "close": 106.953125,
-          "change_pct": 0.088,
+          "date": "2026-11-27",
+          "close": 106.65625,
+          "change_pct": -0.496,
           "status": "OK"
         }
       ]
@@ -4814,9 +4814,9 @@
       "quotes": [
         {
           "ticker": "UNH",
-          "date": "2026-11-24",
-          "close": 341.880005,
-          "change_pct": 1.726,
+          "date": "2026-11-27",
+          "close": 351.75,
+          "change_pct": 1.606,
           "status": "OK"
         }
       ]
@@ -4831,9 +4831,9 @@
       "quotes": [
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -4848,9 +4848,9 @@
       "quotes": [
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -4865,9 +4865,9 @@
       "quotes": [
         {
           "ticker": "6E=F",
-          "date": "2026-11-25",
-          "close": 1.0956,
-          "change_pct": -0.173,
+          "date": "2026-11-27",
+          "close": 1.0947,
+          "change_pct": -0.382,
           "status": "OK"
         }
       ]
@@ -4882,16 +4882,16 @@
       "quotes": [
         {
           "ticker": "^VIX",
-          "date": "2026-11-24",
-          "close": 26.360001,
-          "change_pct": -0.977,
+          "date": "2026-11-27",
+          "close": 25.51,
+          "change_pct": -4.813,
           "status": "OK"
         },
         {
           "ticker": "VIXY",
-          "date": "2026-11-24",
-          "close": 22.290001,
-          "change_pct": -1.284,
+          "date": "2026-11-27",
+          "close": 22.254999,
+          "change_pct": -4.403,
           "status": "OK"
         }
       ]
@@ -4906,9 +4906,9 @@
       "quotes": [
         {
           "ticker": "DBA",
-          "date": "2026-11-24",
-          "close": 26.280001,
-          "change_pct": 0.152,
+          "date": "2026-11-27",
+          "close": 26.809799,
+          "change_pct": 1.784,
           "status": "OK"
         }
       ]
@@ -4923,9 +4923,9 @@
       "quotes": [
         {
           "ticker": "KRBN",
-          "date": "2026-11-24",
-          "close": 33.103001,
-          "change_pct": 0.343,
+          "date": "2026-11-27",
+          "close": 33.5,
+          "change_pct": 2.103,
           "status": "OK"
         }
       ]
@@ -4940,9 +4940,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -4957,9 +4957,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -4974,9 +4974,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -4991,9 +4991,9 @@
       "quotes": [
         {
           "ticker": "PDBC",
-          "date": "2026-11-24",
-          "close": 17.280001,
-          "change_pct": -0.289,
+          "date": "2026-11-27",
+          "close": 17.605,
+          "change_pct": 0.888,
           "status": "OK"
         }
       ]
@@ -5008,9 +5008,9 @@
       "quotes": [
         {
           "ticker": "ZW=F",
-          "date": "2026-11-25",
-          "close": 582.75,
-          "change_pct": 2.282,
+          "date": "2026-11-27",
+          "close": 569.75,
+          "change_pct": 0.752,
           "status": "OK"
         }
       ]
@@ -5034,9 +5034,9 @@
       "quotes": [
         {
           "ticker": "GC=F",
-          "date": "2026-11-25",
-          "close": 3537.0,
-          "change_pct": -0.699,
+          "date": "2026-11-27",
+          "close": 3655.600098,
+          "change_pct": 3.388,
           "status": "OK"
         }
       ]
@@ -5051,9 +5051,9 @@
       "quotes": [
         {
           "ticker": "SI=F",
-          "date": "2026-11-25",
-          "close": 40.330002,
-          "change_pct": -1.055,
+          "date": "2026-11-27",
+          "close": 43.794998,
+          "change_pct": 9.345,
           "status": "OK"
         }
       ]
@@ -5077,9 +5077,9 @@
       "quotes": [
         {
           "ticker": "DBA",
-          "date": "2026-11-24",
-          "close": 26.280001,
-          "change_pct": 0.152,
+          "date": "2026-11-27",
+          "close": 26.809799,
+          "change_pct": 1.784,
           "status": "OK"
         }
       ]
@@ -5103,23 +5103,23 @@
       "quotes": [
         {
           "ticker": "LE=F",
-          "date": "2026-11-24",
-          "close": 225.899994,
-          "change_pct": 0.601,
+          "date": "2026-11-27",
+          "close": 224.375,
+          "change_pct": 0.47,
           "status": "OK"
         },
         {
           "ticker": "HE=F",
-          "date": "2026-11-24",
-          "close": 51.799999,
-          "change_pct": -1.239,
+          "date": "2026-11-27",
+          "close": 50.75,
+          "change_pct": 1.652,
           "status": "OK"
         },
         {
           "ticker": "GF=F",
-          "date": "2026-11-24",
-          "close": 332.899994,
-          "change_pct": -0.426,
+          "date": "2026-11-27",
+          "close": 330.524994,
+          "change_pct": 0.916,
           "status": "OK"
         }
       ]
@@ -5134,9 +5134,9 @@
       "quotes": [
         {
           "ticker": "EWG",
-          "date": "2026-11-24",
-          "close": 40.07,
-          "change_pct": -0.05,
+          "date": "2026-11-27",
+          "close": 40.435001,
+          "change_pct": 0.886,
           "status": "OK"
         }
       ]
@@ -5151,16 +5151,16 @@
       "quotes": [
         {
           "ticker": "QQQ",
-          "date": "2026-11-24",
-          "close": 638.099976,
-          "change_pct": -1.986,
+          "date": "2026-11-27",
+          "close": 645.049988,
+          "change_pct": 1.754,
           "status": "OK"
         },
         {
           "ticker": "NQ=F",
-          "date": "2026-11-25",
-          "close": 25893.5,
-          "change_pct": -1.455,
+          "date": "2026-11-27",
+          "close": 26564.25,
+          "change_pct": 1.778,
           "status": "OK"
         }
       ]
@@ -5175,16 +5175,16 @@
       "quotes": [
         {
           "ticker": "SPY",
-          "date": "2026-11-24",
-          "close": 718.780029,
-          "change_pct": -0.486,
+          "date": "2026-11-27",
+          "close": 725.130005,
+          "change_pct": 1.176,
           "status": "OK"
         },
         {
           "ticker": "ES=F",
-          "date": "2026-11-25",
-          "close": 7155.75,
-          "change_pct": -0.856,
+          "date": "2026-11-27",
+          "close": 7282.5,
+          "change_pct": 1.206,
           "status": "OK"
         }
       ]
@@ -5199,9 +5199,9 @@
       "quotes": [
         {
           "ticker": "DBB",
-          "date": "2026-11-24",
-          "close": 22.0,
-          "change_pct": -3.297,
+          "date": "2026-11-27",
+          "close": 22.48,
+          "change_pct": 1.812,
           "status": "OK"
         }
       ]
