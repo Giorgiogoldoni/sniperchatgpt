@@ -1,10 +1,8 @@
 name: SNIPER USA Radar — evening reference
 on:
   schedule:
-    # UTC schedules: evening close refresh plus a morning retry for delayed vendor data.
-    - cron: '30 21 * * 1-5'
-    - cron: '30 22 * * 1-5'
-    - cron: '30 6 * * 1-5'
+    - cron: '0 10 * * *'
+    - cron: '0 22 * * *'
   push:
     branches: [main]
     paths:
